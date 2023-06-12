@@ -1,9 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Scala CI
+name: Quality
 
 on:
   push:
@@ -15,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  build-linux:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -26,9 +21,9 @@ jobs:
         distribution: 'temurin'
         cache: 'sbt'
 
-  tests-linux:
+  tests:
     runs-on: ubuntu-latest
-    needs: build-linux
+    needs: build
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -40,8 +35,9 @@ jobs:
     - name: Run tests
       run: sbt test
 
-  build-macos:
-    runs-on: macos-latest
+  code-coverage:
+    runs-on: ubuntu-latest
+    needs: build
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -50,10 +46,17 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: 'sbt'
+    - name: Run tests with code coverage
+      run: sbt clean coverage test coverageReport
+    - name: Upload code coverage report
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage
+        path: target/scala-2.13/scoverage-report/
 
-  tests-macos:
-    runs-on: macos-latest
-    needs: build-macos
+  static-code-analysis:
+    runs-on: ubuntu-latest
+    needs: build
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -62,11 +65,12 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: 'sbt'
-    - name: Run tests
-      run: sbt test
+    - name: Run static code analysis
+      run: sbt scalastyle
 
-  build-windows:
-    runs-on: windows-latest
+  dependency-analysis:
+    runs-on: ubuntu-latest
+    needs: build
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -75,10 +79,12 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: 'sbt'
+    - name: Run dependency analysis
+      run: sbt dependencyUpdates
 
-  tests-windows:
-    runs-on: windows-latest
-    needs: build-windows
+  build-package:
+    runs-on: ubuntu-latest
+    needs: build
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -87,5 +93,26 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: 'sbt'
-    - name: Run tests
-      run: sbt test
+    - name: Build JAR package
+      run: sbt assembly
+    - name: Upload JAR package
+      uses: actions/upload-artifact@v2
+      with:
+        name: jar-package
+        path: target/scala-2.13/myproject-assembly-*.jar
+
+  code-analysis:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: 'sbt'
+    - name: Analyze source code
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
