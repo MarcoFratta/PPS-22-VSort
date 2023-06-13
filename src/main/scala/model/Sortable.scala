@@ -24,7 +24,7 @@ object Sortable:
   def apply[T](): Sortable[T] = new SteppedList[T](Seq.empty, Seq.empty)
   def apply[T](seq:T*): Sortable[T] = new SteppedList[T](seq, Seq.empty)
 
-private case class SteppedList[T](data: Seq[T], steps: Seq[Step]) extends Sortable[T]:
+private case class SteppedList[T](data: Seq[T],  steps: Seq[Step]) extends Sortable[T]:
 
 
   def swap(a: Int, b: Int): Try[Sortable[T]] =
