@@ -26,17 +26,20 @@ object Sortable:
 
 private case class SteppedList[T](data: Seq[T], steps: Seq[Step]) extends Sortable[T]:
 
+
+  def swap(a: Int, b: Int): Try[Sortable[T]] =
+    Try(SteppedList(swapElements(a, b), addStep(Step.Swap(a, b))))
   def select(a: Int): Try[Sortable[T]] =
-    Try(StepList(data, addStep(Step.Selection(validIndex(a)))))
+    Try(SteppedList(data, addStep(Step.Selection(validIndex(a)))))
 
   def deselect(a: Int): Try[Sortable[T]] =
-    Try(StepList(data, addStep(Step.Deselection(validIndex(a)))))
+    Try(SteppedList(data, addStep(Step.Deselection(validIndex(a)))))
 
   def compare(a: Int, b: Int)(ifTrue: Sortable[T] => Sortable[T])
              (ifFalse: Sortable[T] => Sortable[T])
              (using f: (T, T) => Boolean): Try[Sortable[T]] =
     Try {
-      val memoryList = StepList(data, addStep(Step.Comparison(a, b)))
+      val memoryList = SteppedList(data, addStep(Step.Comparison(a, b)))
       if f(data(a), data(b)) then ifTrue(memoryList) else ifFalse(memoryList)
     }
 
