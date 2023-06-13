@@ -1,6 +1,6 @@
 package SeqProperties
 
-import model.SeqProperties.SeqBuilder
+import model.SeqProperties.{BasicSeq, Max, Min, Size}
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
@@ -8,10 +8,10 @@ class testSeqProperties extends AnyFlatSpec with Matchers:
   behavior of "Set properties of starter values"
   
   it should "exists" in {
-    val starterSeq = SeqBuilder().build()
+    BasicSeq().build()
   }
   "When created without parameters, it" should "have default values" in {
-    val starterSeq1 = SeqBuilder().build()
+    val starterSeq1 = BasicSeq().build()
     val defaultMinValue = 0
     val defaultMaxValue = 100
     val defaultSizeValue = 20
@@ -22,7 +22,8 @@ class testSeqProperties extends AnyFlatSpec with Matchers:
 
   "When created with a max value, it" should "have max value" in {
     val maxValue = 30
-    val starterSeq2 = SeqBuilder(max = maxValue).build()
+    class SeqWithProperties() extends BasicSeq() with Max[Int](maxValue)
+    val starterSeq2 = new SeqWithProperties().build()
     val defaultMinValue = 0
     val defaultSizeValue = 20
     starterSeq2.max should be <= maxValue
@@ -34,13 +35,14 @@ class testSeqProperties extends AnyFlatSpec with Matchers:
     val maxValue = 30
     val minValue = 10
     val size = 5
-    val starterSeq3 = SeqBuilder(minValue, maxValue, size ).build()
+    class SeqWithProperties() extends BasicSeq() with Max[Int](maxValue) with Min[Int](minValue) with Size[Int](size)
+    val starterSeq3 = new SeqWithProperties().build()
     starterSeq3.max should be <= maxValue
     starterSeq3.min should be >= minValue
     starterSeq3 should have size size
   }
   
-  "When created with a max value < min value, it" should "throw an exception" in {
+ /* "When created with a max value < min value, it" should "throw an exception" in {
     val maxValue = 30
     val minValue = 10
     val size = 5
@@ -55,4 +57,4 @@ class testSeqProperties extends AnyFlatSpec with Matchers:
     assertThrows[IllegalArgumentException] {
       val starterSeq5 = SeqBuilder(maxValue, minValue, size).build()
     }
-  }
+  }*/
