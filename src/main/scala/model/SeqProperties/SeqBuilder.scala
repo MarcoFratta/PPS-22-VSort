@@ -1,5 +1,5 @@
 // create enum/ class for type of distriubution
-package SeqProperties
+package model.SeqProperties
 
 case class SeqBuilder(
     min: Int = 0,

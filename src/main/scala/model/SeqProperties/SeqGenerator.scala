@@ -1,5 +1,4 @@
-package SeqProperties
-
+package model.SeqProperties
 
 trait SeqGenerator:
   def createSet(): Seq[Int]
