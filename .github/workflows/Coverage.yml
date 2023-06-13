@@ -22,8 +22,3 @@ jobs:
         cache: 'sbt'
     - name: Run tests with code coverage
       run: sbt clean coverage test coverageReport
-    - name: Upload code coverage report
-      uses: actions/upload-artifact@v2
-      with:
-        name: code-coverage
-        path: target/scala-2.12/scoverage-report/
