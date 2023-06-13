@@ -73,4 +73,18 @@ class SortableEdgeCases extends AnyFlatSpec with Matchers:
       case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Deselection(2))))
   }
 
+  "A correct comparison" should "not fail" in {
+    val list = Sortable(0, 1, 5)
+    list.compare(0, 1)(x => x)(x => x)(using _ - _ > 0) match
+      case Failure(_) => fail()
+      case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Comparison(0, 1))))
+  }
+
+  "Compare(0, 1) on an single element list" should "fail" in {
+    val list = Sortable(0)
+    list.compare(0, 1)(x => x)(x => x)(using _ - _ > 0) match
+      case Failure(e) =>
+      case Success(_) => fail()
+  }
+
 

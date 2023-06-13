@@ -44,4 +44,16 @@ class SortableBehaviourTest extends AnyFlatSpec with Matchers:
     val mList1 = Sortable(1, 0, 2)
     val mList2 = Sortable(List(1, 0, 2), List(Step.Comparison(0, 1)))
     mList1.compare(0, 1)(x => x)(x => x)(using _ - _ > 0) shouldBe Success(mList2)
-}
+  }
+
+  "After a true comparison," should "apply the then function" in {
+    val mList1 = Sortable(1, 0, 2)
+    val mList2 = Sortable(List(0, 1, 2), List(Step.Comparison(0, 1), Step.Swap(0, 1)))
+    mList1.compare(0, 1)(x => x.swap(0, 1).get)(x => x)(using _ - _ > 0) shouldBe Success(mList2)
+  }
+
+  "After a false comparison," should "apply the else function" in {
+    val mList1 = Sortable(0, 1, 2)
+    val mList2 = Sortable(List(1, 0, 2), List(Step.Comparison(0, 1), Step.Swap(0, 1)))
+    mList1.compare(0, 1)(x => x)(x => x.swap(0, 1).get)(using _ - _ > 0) shouldBe Success(mList2)
+  }

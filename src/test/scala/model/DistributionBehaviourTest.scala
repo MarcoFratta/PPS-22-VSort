@@ -8,7 +8,7 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
 
   import Distribution.*
 
-  "A sequence (7,6,4) with ascending ordering distribution" should  "be (4,6,7)" in {
+  "A sequence (7,6,4) with ascending ordering distribution" should "be (4,6,7)" in {
     val seq = Seq(7,6,4).ordered(using scala.Ordering.Int)
     assert(seq == Seq(4,6,7))
   }
