@@ -1,15 +1,13 @@
-// create enum/ class for type of distriubution
 package SetProperties
-case class SetValues(min: Int = 0, max: Int = 100, size: Int = 20, distribution: String = "random")
 
-case class SetBuilder(
-    min: Int = 0,
-    max: Int = 100,
-    size: Int = 20,
-    distribution: String = "random"){
-  def min(minVal: Int): SetBuilder = copy(min = minVal)
-  def max(maxVal: Int): SetBuilder = copy(max = maxVal)
-  def size(size: Int): SetBuilder = copy(size = size)
 
-  def build() = SetValues(min = min, max = max, size = size)
-}
+trait Generator:
+  def createSet(): Seq[Int]
+
+object Generator:
+  def apply(min: Int, max: Int, size: Int, distribution: String): Generator =
+    GeneratorImpl(min: Int, max: Int, size: Int, distribution: String)
+  private case class GeneratorImpl(min: Int, max: Int, size: Int, distribution: String) extends Generator:
+    val rndm = new scala.util.Random()
+    override def createSet(): Seq[Int] =
+      Array.fill(size)(rndm.between(min, max)).toSeq
