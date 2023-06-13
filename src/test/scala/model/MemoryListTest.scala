@@ -40,6 +40,6 @@ class MemoryListTest extends AnyFlatSpec with Matchers:
 
   "After a comparison," should "have the same data and have a compare step" in {
     val mList1 = MemoryList(List(1, 0, 2), List())
-    val mList2 = MemoryList(List(0, 1, 2), List(Step.Comparison(0, 1), Step.Swap(0,1)))
-    mList1.compare(0, 1)(x => x.swap(0, 1))(x => x)(using _ - _) shouldBe mList2
+    val mList2 = MemoryList(List(1, 0, 2), List(Step.Comparison(0, 1)))
+    mList1.compare(0, 1)(x => x)(x => x)(using _ - _ > 0) shouldBe Success(mList2)
 }
