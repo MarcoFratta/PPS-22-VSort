@@ -2,6 +2,7 @@ package model
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
+import scala.util.{Failure, Success, Try}
 
 class MemoryListTest extends AnyFlatSpec with Matchers:
 
@@ -14,19 +15,19 @@ class MemoryListTest extends AnyFlatSpec with Matchers:
   "After a swap, it" should "have a swap step and the elements must be swapped" in {
     val mList1 = MemoryList(List(0, 1, 2), List())
     val mList2 = MemoryList(List(1, 0, 2), List(Step.Swap(0,1)))
-    mList1.swap(0,1) shouldBe mList2
+    mList1.swap(0,1) shouldBe Success(mList2)
   }
 
   "After a selection, it" should "have 1 selection step and the same data" in {
     val mList1 = MemoryList(List(0, 1, 2), List())
     val mList2 = MemoryList(List(0, 1, 2), List(Step.Selection(0)))
-    mList1.select(0) shouldBe mList2
+    mList1.select(0) shouldBe Success(mList2)
   }
 
   "After a deselection," should "have 1 deselection step and the same data" in {
     val mList1 = MemoryList(List(0, 1, 2), List())
     val mList2 = MemoryList(List(0, 1, 2), List(Step.Deselection(0)))
-    mList1.deselect(0) shouldBe mList2
+    mList1.deselect(0) shouldBe Success(mList2)
   }
 
   "An empty list" should "have size 0" in {
