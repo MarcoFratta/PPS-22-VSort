@@ -10,7 +10,7 @@ class SortableEdgeCases extends AnyFlatSpec with Matchers:
 
   import model.Sortable.*
 
-  "Swap on an empty list" should "fail" in{
+  "Swap on an empty list" should "fail" in {
     val list = Sortable()
     list.swap(3, 4) match
       case Failure(_) =>
@@ -31,5 +31,25 @@ class SortableEdgeCases extends AnyFlatSpec with Matchers:
       case Success(l) => assert(l == Sortable(List(5,1,0), List(Step.Swap(0,2))))
   }
 
+  "Select on an empty list" should "fail" in {
+    val list = Sortable()
+    list.select(3) match
+      case Failure(e) =>
+      case Success(_) => fail()
+  }
+
+  "Select(0) on an empty list" should "fail" in {
+    val list = Sortable()
+    list.select(0) match
+      case Failure(e) =>
+      case Success(_) => fail()
+  }
+
+  "A correct selection" should "not fail" in {
+    val list = Sortable(0, 1, 5)
+    list.select(2) match
+      case Failure(_) => fail()
+      case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Selection(2))))
+  }
 
 
