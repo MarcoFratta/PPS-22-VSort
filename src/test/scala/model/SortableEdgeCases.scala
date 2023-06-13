@@ -52,4 +52,25 @@ class SortableEdgeCases extends AnyFlatSpec with Matchers:
       case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Selection(2))))
   }
 
+  "Deselect on an empty list" should "fail" in {
+    val list = Sortable()
+    list.deselect(3) match
+      case Failure(e) =>
+      case Success(_) => fail()
+  }
+
+  "Deselect(0) on an empty list" should "fail" in {
+    val list = Sortable()
+    list.deselect(0) match
+      case Failure(e) =>
+      case Success(_) => fail()
+  }
+
+  "A correct deselection" should "not fail" in {
+    val list = Sortable(0, 1, 5)
+    list.deselect(2) match
+      case Failure(_) => fail()
+      case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Deselection(2))))
+  }
+
 
