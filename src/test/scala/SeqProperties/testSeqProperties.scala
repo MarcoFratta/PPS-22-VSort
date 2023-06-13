@@ -4,6 +4,8 @@ import model.SeqProperties.{BasicSeq, Max, Min, Size}
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
+import scala.util.{Failure, Success}
+
 class testSeqProperties extends AnyFlatSpec with Matchers:
   behavior of "Set properties of starter values"
   
@@ -15,9 +17,12 @@ class testSeqProperties extends AnyFlatSpec with Matchers:
     val defaultMinValue = 0
     val defaultMaxValue = 100
     val defaultSizeValue = 20
-    starterSeq1.max should be <= defaultMaxValue
-    starterSeq1.min should be >= defaultMinValue
-    starterSeq1 should have size defaultSizeValue
+    starterSeq1 match
+      case Success(seq) =>
+        seq.max should be <= defaultMaxValue
+        seq.min should be >= defaultMinValue
+        seq should have size defaultSizeValue
+      case Failure(_) => fail()
   }
 
   "When created with a max value, it" should "have max value" in {
@@ -26,9 +31,12 @@ class testSeqProperties extends AnyFlatSpec with Matchers:
     val starterSeq2 = new SeqWithProperties().build()
     val defaultMinValue = 0
     val defaultSizeValue = 20
-    starterSeq2.max should be <= maxValue
-    starterSeq2.min should be >= defaultMinValue
-    starterSeq2 should have size defaultSizeValue
+    starterSeq2 match
+      case Success(seq) =>
+        seq.max should be <= maxValue
+        seq.min should be >= defaultMinValue
+        seq should have size defaultSizeValue
+      case Failure(_) => fail()
   }
 
   "When created with a max, min value and a size, it" should "have these properties" in {
@@ -37,24 +45,31 @@ class testSeqProperties extends AnyFlatSpec with Matchers:
     val size = 5
     class SeqWithProperties() extends BasicSeq() with Max[Int](maxValue) with Min[Int](minValue) with Size[Int](size)
     val starterSeq3 = new SeqWithProperties().build()
-    starterSeq3.max should be <= maxValue
-    starterSeq3.min should be >= minValue
-    starterSeq3 should have size size
+    starterSeq3 match
+      case Success(seq) =>
+        seq.max should be <= maxValue
+        seq.min should be >= minValue
+        seq should have size size
+      case Failure(_) => fail()
   }
   
- /* "When created with a max value < min value, it" should "throw an exception" in {
-    val maxValue = 30
-    val minValue = 10
+  "When created with a max value < min value, it" should "fail" in {
+    val maxValue = 10
+    val minValue = 30
     val size = 5
-    assertThrows[IllegalArgumentException]{
-      val starterSeq4 = SeqBuilder(maxValue, minValue, size).build()
-    }
+    class SeqWithProperties() extends BasicSeq() with Max[Int](maxValue) with Min[Int](minValue) with Size[Int](size)
+    val starterSeq4 = new SeqWithProperties().build()
+    starterSeq4 match
+      case Failure(_) =>
+      case Success(_) => fail()
   }
-  "When created with a not valid size, it" should "throw an exception" in {
+  "When created with a not valid size, it" should "fail" in {
     val maxValue = 30
     val minValue = 10
     val size = -3
-    assertThrows[IllegalArgumentException] {
-      val starterSeq5 = SeqBuilder(maxValue, minValue, size).build()
-    }
-  }*/
+    class SeqWithProperties() extends BasicSeq() with Max[Int](maxValue) with Min[Int](minValue) with Size[Int](size)
+    val starterSeq4 = new SeqWithProperties().build()
+    starterSeq4 match
+      case Failure(_) =>
+      case Success(_) => fail()
+  }

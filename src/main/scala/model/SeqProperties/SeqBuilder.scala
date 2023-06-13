@@ -1,12 +1,16 @@
 // create enum/ class for type of distriubution
 package model.SeqProperties
 
+import scala.util.Try
+
 abstract class Seq[T]:
   def max: Int
   def min: Int
   def size: Int
-  def build()=
+
+  def build(): Try[scala.Seq[Int]] = Try {
     Array.fill(size)(new scala.util.Random().between(min, max)).toSeq
+  }
   
 case class BasicSeq() extends Seq[Int]:
   override def max: Int = 100
