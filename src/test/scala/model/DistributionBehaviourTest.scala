@@ -20,8 +20,8 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
   }
 
 
-  "A Gaussian distributed seq with mean 4 and std 15" should "have mean 2 and std 15" in{
-    val seq = normalDistribution(4,15).take(500)
+  "A Gaussian distributed seq with mean 4 and std 15" should "have mean 4 and std 15" in{
+    val seq = normalDistribution(4,15).take(1000)
     val avg = seq.sum / seq.size
     val std = scala.math.sqrt(seq.map(x => math.pow(x - avg, 2)).sum / seq.size)
     avg should be >= 3.0
@@ -31,7 +31,7 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
   }
 
   "A uniform distributed seq " should "have values between 0 and 1" in {
-    val seq = uniformDistribution().take(150)
+    val seq = uniformDistribution().take(1000)
     assert(seq.forall(x => x >= 0 && x <= 1))
   }
 
