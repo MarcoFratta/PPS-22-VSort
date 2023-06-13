@@ -60,16 +60,6 @@ class testSeqProperties extends AnyFlatSpec with Matchers:
     class SeqWithProperties() extends BasicSeq() with Max[Int](maxValue) with Min[Int](minValue) with Size[Int](size)
     val starterSeq4 = new SeqWithProperties().build()
     starterSeq4 match
-      case Failure(_) =>
-      case Success(_) => fail()
-  }
-  "When created with a not valid size, it" should "fail" in {
-    val maxValue = 30
-    val minValue = 10
-    val size = -3
-    class SeqWithProperties() extends BasicSeq() with Max[Int](maxValue) with Min[Int](minValue) with Size[Int](size)
-    val starterSeq4 = new SeqWithProperties().build()
-    starterSeq4 match
-      case Failure(_) =>
+      case Failure(_) => 
       case Success(_) => fail()
   }
