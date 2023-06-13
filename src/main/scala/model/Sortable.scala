@@ -18,14 +18,17 @@ trait Sortable[T]:
              (using f: (T, T) => Boolean): Try[Sortable[T]]
   def length(): Int
 
+  def data: Seq[T]
+
+  def steps: Seq[Step]
+
 object Sortable:
 
   def apply[T](seq: Seq[T], step: Seq[Step]): Sortable[T] = new SteppedList[T](seq, step)
   def apply[T](): Sortable[T] = new SteppedList[T](Seq.empty, Seq.empty)
   def apply[T](seq:T*): Sortable[T] = new SteppedList[T](seq, Seq.empty)
 
-private case class SteppedList[T](data: Seq[T], steps: Seq[Step]) extends Sortable[T]:
-
+private case class SteppedList[T](override val data: Seq[T], override val steps: Seq[Step]) extends Sortable[T]:
 
   def swap(a: Int, b: Int): Try[Sortable[T]] =
     Try(SteppedList(swapElements(a, b), addStep(Step.Swap(a, b))))
