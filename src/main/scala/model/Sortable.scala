@@ -14,6 +14,7 @@ trait Sortable[T]:
              (ifFalse: Sortable[T] => Sortable[T])
              (using f: (T, T) => Boolean): Try[Sortable[T]]
   def length(): Int
+
 object Sortable:
   def apply[T](seq: Seq[T], step: Seq[Step]): Sortable[T] = new StepList[T](seq, step)
   def apply[T](): Sortable[T] = new StepList[T](Seq.empty, Seq.empty)
@@ -24,11 +25,11 @@ private case class StepList[T](data: Seq[T], steps: Seq[Step]) extends Sortable[
   def swap(a: Int, b: Int): Try[Sortable[T]] =
     Try(StepList(swapElements(a, b), addStep(Step.Swap(a, b))))
 
-  def select(a: Int): Try[Sortable[T]]=
-    Try(StepList(data, addStep(Step.Selection(a))))
+  def select(a: Int): Try[Sortable[T]] =
+    Try(StepList(data, addStep(Step.Selection(validIndex(a)))))
 
   def deselect(a: Int): Try[Sortable[T]] =
-    Try(StepList(data, addStep(Step.Deselection(a))))
+    Try(StepList(data, addStep(Step.Deselection(validIndex(a)))))
 
   def compare(a: Int, b: Int)(ifTrue: Sortable[T] => Sortable[T])
              (ifFalse: Sortable[T] => Sortable[T])
@@ -44,3 +45,6 @@ private case class StepList[T](data: Seq[T], steps: Seq[Step]) extends Sortable[
     data updated(a, data.toList(b)) updated(b, data.toList(a))
 
   private def addStep(step: Step): Seq[Step] = steps :+ step
+
+  private def validIndex(index: Int): Int =
+    if data.size > index then index else throw IllegalArgumentException()
