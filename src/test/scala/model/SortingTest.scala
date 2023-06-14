@@ -41,7 +41,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
       mList = mList.select("sel", i).get
       for (j <- i - 1 to 0 by -1) {
         mList = mList.compare(j, mList.getSelection("sel"))(x => x
-          .swap(mList.getSelection("sel"), j).get.select("sel", j).get)(x => x)(using _ - _ > 0).get
+          .swap(mList.getSelection("sel"), j).get.select("sel", j).get)(x => x).get
       }
     }
     mList.data shouldBe Seq(1, 2, 3, 4, 5)
