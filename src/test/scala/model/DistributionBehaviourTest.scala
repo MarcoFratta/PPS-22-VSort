@@ -34,6 +34,11 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
     assert(seq == Seq(20.0, 27.5, 22.5, 30.0))
   }
 
+  "A sequence (11.0, 25.7, 15.2, 31.6)" should "be (11, 26, 15, 32) after conversion in integer" in {
+    val seq = Seq(11.0, 25.1, 15.2, 31.6).doubleToInt
+    assert(seq == Seq(11, 25, 15, 31))
+  }
+
   "A Gaussian distributed seq with mean 4 and std 15" should "have mean 4 and std 15" in{
     val seq = normalDistribution(4,15).take(1000)
     val avg = seq.sum / seq.size
