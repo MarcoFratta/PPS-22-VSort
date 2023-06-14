@@ -43,6 +43,14 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
     std should be >= 14.0
     std should be <= 16.0
   }
+
+  "A Gaussian distributed seq with mean 30" should "have all positive values" in {
+
+
+  }
+
+
+
 /*
   "A Gaussian distributed seq with mean 4 and std 15 and max 100" should "have values between 0 and 100" in {
     val seq = normalDistribution(4, 15).take(10).setMax(100)
@@ -52,17 +60,19 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
   }
 */
   "A uniform distributed seq " should "have values between 0 and 1" in {
-    val seq = uniformDistribution().take(1000)
+    val seq = uniformDistribution(0,1).take(1000)
     assert(seq.forall(x => x >= 0 && x <= 1))
   }
   "A uniform distributed seq with max 500 " should "have values between 0 and 500" in {
-    val seq = uniformDistribution().take(10).setMax(500)
+    val seq = uniformDistribution(0,500).take(10)
     assert(seq.forall(x => x >= 0 && x <= 500))
   }
   "A uniform distributed seq with max 500 and min 100 " should "have values between 100 and 500" in {
-    val seq = uniformDistribution().take(10).setMax(500).setMin(100)
+    val seq = uniformDistribution(100,500).take(10)
     assert(seq.forall(x => x >= 100 && x <= 500))
   }
+
+
 
 
 
