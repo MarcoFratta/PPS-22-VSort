@@ -79,7 +79,7 @@ class SelectableEdgeCases extends AnyFlatSpec with Matchers:
     val list = Selectable(Seq(0, 1, 5), Seq.empty)
     list.compare(0, 1)(x => x)(x => x) match
       case Failure(_) => fail()
-      case Success(l) => assert(l == Seq(List(0, 1, 5), List(Step.Comparison(0, 1))))
+      case Success(l) => assert(l == Selectable(List(0, 1, 5), List(Step.Comparison(0, 1))))
   }
 
   "Compare(0, 1) on an single element list" should "fail" in {
