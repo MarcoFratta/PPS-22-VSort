@@ -71,8 +71,3 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
     val seq = uniformDistribution(100,500).take(10)
     assert(seq.forall(x => x >= 100 && x <= 500))
   }
-
-
-
-
-

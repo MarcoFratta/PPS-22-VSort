@@ -15,10 +15,10 @@ class StepTest extends AnyFlatSpec with Matchers {
     }
 
     "A selection step" should "exists" in {
-        var step = Step.Selection(0)
+        var step = Step.Selection("test", 0)
     }
 
     "A deselection step" should "exists" in {
-        var step = Step.Deselection(0)
+        var step = Step.Deselection("test")
     }
 }

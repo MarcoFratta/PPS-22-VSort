@@ -22,14 +22,14 @@ class SortableBehaviourTest extends AnyFlatSpec with Matchers:
 
   "After a selection, it" should "have 1 selection step and the same data" in {
     val mList1 = Sortable(0, 1, 2)
-    val mList2 = Sortable(List(0, 1, 2), List(Step.Selection(0)))
-    mList1.select(0) shouldBe Success(mList2)
+    val mList2 = Sortable(List(0, 1, 2), List(Step.Selection("test", 0)), Map("test" -> 0))
+    mList1.select("test", 0) shouldBe Success(mList2)
   }
 
   "After a deselection," should "have 1 deselection step and the same data" in {
     val mList1 = Sortable(0, 1, 2)
-    val mList2 = Sortable(List(0, 1, 2), List(Step.Deselection(0)))
-    mList1.deselect(0) shouldBe Success(mList2)
+    val mList2 = Sortable(List(0, 1, 2), List(Step.Deselection("test")))
+    mList1.deselect("test") shouldBe Success(mList2)
   }
 
   "An empty list" should "have size 0" in {

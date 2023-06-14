@@ -33,44 +33,44 @@ class SortableEdgeCases extends AnyFlatSpec with Matchers:
 
   "Select on an empty list" should "fail" in {
     val list = Sortable()
-    list.select(3) match
+    list.select("test", 3) match
       case Failure(e) =>
       case Success(_) => fail()
   }
 
   "Select(0) on an empty list" should "fail" in {
     val list = Sortable()
-    list.select(0) match
+    list.select("test", 0) match
       case Failure(e) =>
       case Success(_) => fail()
   }
 
   "A correct selection" should "not fail" in {
     val list = Sortable(0, 1, 5)
-    list.select(2) match
+    list.select("test", 2) match
       case Failure(_) => fail()
-      case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Selection(2))))
+      case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Selection("test", 2)), Map("test" -> 2)))
   }
 
-  "Deselect on an empty list" should "fail" in {
-    val list = Sortable()
-    list.deselect(3) match
-      case Failure(e) =>
-      case Success(_) => fail()
-  }
-
-  "Deselect(0) on an empty list" should "fail" in {
-    val list = Sortable()
-    list.deselect(0) match
-      case Failure(e) =>
-      case Success(_) => fail()
-  }
-
-  "A correct deselection" should "not fail" in {
+  "A correct double selection" should "not fail" in {
     val list = Sortable(0, 1, 5)
-    list.deselect(2) match
+    list.select("test", 2).get.select("test", 0) match
       case Failure(_) => fail()
-      case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Deselection(2))))
+      case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Selection("test", 2), Step.Selection("test", 0)), Map("test" -> 0)))
+  }
+
+  "A deselection" should "not fail" in {
+    val list = Sortable(0, 1, 5)
+    list.deselect("test") match
+      case Failure(_) => fail()
+      case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Deselection("test"))))
+  }
+
+  "A deselection after a selection" should "not fail" in {
+    val list = Sortable(0, 1, 5)
+    list.select("test", 2).get.deselect("test") match
+      case Failure(_) => fail()
+      case Success(l) => assert(l == Sortable(List(0, 1, 5), List(Step.Selection("test", 2), Step.Deselection("test"))))
   }
 
   "A correct comparison" should "not fail" in {
