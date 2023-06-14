@@ -17,6 +17,8 @@ object Setters:
       val newStep = newMax - newMin
       seq.map(a => roundDouble(((a - oldMin) * newStep) / oldStep) + newMin)
 
+    def doubleToInt:Seq[Int] =
+      seq.map(a => a.toInt)
       
 object Generators:
   import Setters.*
