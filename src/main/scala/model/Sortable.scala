@@ -18,6 +18,8 @@ trait Sortable[T]:
 
   def deselect(s: String): Try[Sortable[T]]
 
+  def foreach(r:Range)(f: (Sortable[T],Int) => Sortable[T]):Sortable[T]
+
   def compare(a: Index, b: Index)(ifTrue: Sortable[T] => Sortable[T])
              (ifFalse: Sortable[T] => Sortable[T]): Try[Sortable[T]]
   def length(): Int
@@ -67,5 +69,9 @@ private case class SteppedList[T: Comparable](override val data: Seq[T], overrid
   private def deleteSelection(s: String): Map[String, Index] =
     map removed s
 
-  private def validIndex(index: Index): Int =
-    if data.size > index then index else throw IllegalArgumentException()
+  private def validIndex(index: Int): Int =
+    if data.size > index then index else throw IllegalArgumentException(f"Invalid index $index" )
+
+  def foreach(r:Range)(f: (Sortable[T],Int) => Sortable[T]):Sortable[T] = r.size match
+    case 0 => this
+    case _ =>  f(this, validIndex(r.head)).foreach(r.drop(1))(f)

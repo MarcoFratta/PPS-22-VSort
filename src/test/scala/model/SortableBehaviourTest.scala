@@ -60,3 +60,19 @@ class SortableBehaviourTest extends AnyFlatSpec with Matchers:
     val mList2 = Sortable(List(1, 0, 2), List(Step.Comparison(0, 1), Step.Swap(0, 1)))
     mList1.compare(0, 1)(x => x)(x => x.swap(0, 1).get) shouldBe Success(mList2)
   }
+
+  "Swapping each element on (3,4,5) " should "give (4,5,3)" in {
+    val mList1 = Sortable(3, 4, 5)
+    val m2 = mList1.foreach(1 to 2)((l,i) => l.swap(i - 1, i).get)
+    assert(m2.data == Seq(4, 5, 3))
+  }
+
+  "Swapping each element with double loop on (3,4,5) " should "give (5,4,3)" in {
+    val mList1 = Sortable(3, 4, 5)
+    val m2 = mList1.foreach(0 to 2)((l, i) =>
+      l.foreach(i + 1 until l.length())((l2,j) =>
+        l2.swap(i, j).get))
+    assert(m2.data == Seq(5, 4, 3))
+  }
+
+
