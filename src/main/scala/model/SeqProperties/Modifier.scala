@@ -1,10 +1,10 @@
 package model.SeqProperties
 import scala.util.Random
 object Modifier:
-  extension [T](s:scala.Seq[T])
-    def ordered(using o:Ordering[T]):scala.Seq[T] = s.sorted
+  extension [T](s: Seq[T])
+    def ordered(using o:Ordering[T]): Seq[T] = s.sorted
 object Setters:
-  extension (seq:Seq[Double])
+  extension (seq: Seq[Double])
 
     def shift(min:Int, max: Int): Seq[Double] =
      normalize(seq.min, seq.max,min, max)
@@ -17,16 +17,16 @@ object Setters:
       val newStep = newMax - newMin
       seq.map(a => roundDouble(((a - oldMin) * newStep) / oldStep) + newMin)
 
-    def doubleToInt:Seq[Int] =
+    def doubleToInt: Seq[Int] =
       seq.map(a => a.toInt)
       
 object Generators:
   import Setters.*
-  def normalDistribution(mean:Double, std:Double):scala.Seq[Double] =
+  def normalDistribution(mean: Double, std: Double): Seq[Double] =
     generate(Random.nextGaussian())(x => x * std + mean)
 
-  def uniformDistribution(min:Int, max:Int): scala.Seq[Double] =
-    generate(Random.nextDouble())(x => Seq(x).normalize(0,1,min,max).head)
+  def uniformDistribution(min:Int, max:Int): Seq[Double] =
+    generate(Random.nextDouble())(x => Seq(x).normalize(0, 1, min, max).head)
 
-private def generate[T](g: => T)(f: T => T): scala.Seq[T] =
+private def generate[T](g: => T)(f: T => T): Seq[T] =
   LazyList.iterate(f(g))(x => f(g))

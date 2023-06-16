@@ -26,7 +26,7 @@ object Sortable:
   def apply[T:Comparable](seq: Seq[T], step: Seq[Step]): Sortable[T] = SteppedList(seq, step)
   def apply[T:Comparable](): Sortable[T] = SteppedList(Seq.empty, Seq.empty)
 
-  def apply[T:Comparable](seq:T*): Sortable[T]  = SteppedList(seq, Seq.empty)
+  def apply[T:Comparable](seq: T*): Sortable[T]  = SteppedList(seq, Seq.empty)
 
 
 object SortableUtils:

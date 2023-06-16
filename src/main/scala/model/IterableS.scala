@@ -6,8 +6,8 @@ trait IterableS[T] extends Sortable[T]:
 
   override type Index = Int
 
-  def iterating(range: Range):IterableS[T]
-  def at(i:Index):IterableS[T]
+  def iterating(range: Range): IterableS[T]
+  def at(i:Index): IterableS[T]
 
   def index:Int
   def from:Int
@@ -18,11 +18,11 @@ trait IterableS[T] extends Sortable[T]:
 
 object IterableS:
   import Sortable.*
-  def apply[T:Comparable](sortable: Sortable[T], range: Range,i:Int):IterableS[T] =
+  def apply[T:Comparable](sortable: Sortable[T], range: Range,i: Int):IterableS[T] =
     IterableSortableX(sortable, range, i)
 
-private case class IterableSortableX[T :Comparable](sortable: Sortable[T], range: Range,
-                                   override val index:Int) extends IterableS[T]:
+private case class IterableSortableX[T: Comparable](sortable: Sortable[T], range: Range,
+                                   override val index: Int) extends IterableS[T]:
 
   export sortable.*
 
