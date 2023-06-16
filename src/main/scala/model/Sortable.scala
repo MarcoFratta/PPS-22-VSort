@@ -4,7 +4,7 @@ import scala.util.{Failure, Success, Try}
 
 import Step.*
 trait Comparable[A]:
-  def compare(a:A, b:A): Boolean
+  def compare(a: A, b: A): Boolean
 
 trait Sortable[T]:
 
@@ -12,7 +12,7 @@ trait Sortable[T]:
 
   def swap(a: Index, b: Index): Try[Sortable[T]]
 
-  def compare[A >: Sortable[T],B <: Sortable[T]](a: Index, b: Index)(ifTrue: A => B)
+  def compare[A >: Sortable[T], B <: Sortable[T]](a: Index, b: Index)(ifTrue: A => B)
                    (ifFalse: A => B): Try[B]
 
   def length: Int
@@ -25,7 +25,6 @@ object Sortable:
 
   def apply[T:Comparable](seq: Seq[T], step: Seq[Step]): Sortable[T] = SteppedList(seq, step)
   def apply[T:Comparable](): Sortable[T] = SteppedList(Seq.empty, Seq.empty)
-
   def apply[T:Comparable](seq: T*): Sortable[T]  = SteppedList(seq, Seq.empty)
 
 
@@ -35,7 +34,6 @@ object SortableUtils:
     Try {
       if summon[Comparable[T]].compare(data(a), data(b)) then ifTrue(input) else ifFalse(input)
     }
-
 
 
 private case class SteppedList[T: Comparable](override val data: Seq[T], override val steps: Seq[Step])
