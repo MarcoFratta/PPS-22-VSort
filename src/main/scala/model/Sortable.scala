@@ -2,7 +2,7 @@ package model
 
 import scala.util.{Failure, Success, Try}
 
-
+import Step.*
 trait Comparable[A]:
   def compare(a:A, b:A): Boolean
 
@@ -12,17 +12,10 @@ trait Sortable[T]:
 
   def swap(a: Index, b: Index): Try[Sortable[T]]
 
-  def select(s: String, a: Index): Try[Sortable[T]]
+  def compare[A >: Sortable[T],B <: Sortable[T]](a: Index, b: Index)(ifTrue: A => B)
+                   (ifFalse: A => B): Try[B]
 
-  def getSelection(s: String): Index
-
-  def deselect(s: String): Try[Sortable[T]]
-
-  def foreach(r:Range)(f: (Sortable[T],Int) => Sortable[T]):Sortable[T]
-
-  def compare(a: Index, b: Index)(ifTrue: Sortable[T] => Sortable[T])
-             (ifFalse: Sortable[T] => Sortable[T]): Try[Sortable[T]]
-  def length(): Int
+  def length: Int
 
   def data: Seq[T]
 
@@ -30,23 +23,34 @@ trait Sortable[T]:
 
 object Sortable:
 
-  def apply[T:Comparable](seq: Seq[T], step: Seq[Step]): Sortable[T] = SteppedList[T](seq, step)
-  def apply[T:Comparable](): Sortable[T] = SteppedList[T](Seq.empty, Seq.empty)
-  def apply[T:Comparable](seq: T*): Sortable[T] = SteppedList[T](seq, Seq.empty)
+  def apply[T:Comparable](seq: Seq[T], step: Seq[Step]): Sortable[T] = SteppedList(seq, step)
+  def apply[T:Comparable](): Sortable[T] = SteppedList(Seq.empty, Seq.empty)
 
-private case class SteppedList[T: Comparable](override val data: Seq[T], override val steps: Seq[Step]) extends Sortable[T]:
+  def apply[T:Comparable](seq:T*): Sortable[T]  = SteppedList(seq, Seq.empty)
 
-  def swap(a: Int, b: Int): Try[Sortable[T]] =
-    Try(SteppedList(swapElements(a, b), addStep(Step.Swap(a, b))))
 
-  def compare(a: Index, b: Index)(ifTrue: Sortable[T] => Sortable[T])
-             (ifFalse: Sortable[T] => Sortable[T]): Try[Sortable[T]] =
+object SortableUtils:
+  def genericCompare[A, B, T:Comparable](input: A)(data:Seq[T])(a: Int, b: Int)
+                                                (ifTrue: A => B)(ifFalse: A => B): Try[B] =
     Try {
-      val l = SteppedList(data, addStep(Step.Comparison(a, b)))
-      if summon[Comparable[T]].compare(data(a), data(b)) then ifTrue(l) else ifFalse(l)
+      if summon[Comparable[T]].compare(data(a), data(b)) then ifTrue(input) else ifFalse(input)
     }
 
-  def length(): Int = data.size
+
+
+private case class SteppedList[T: Comparable](override val data: Seq[T], override val steps: Seq[Step])
+  extends Sortable[T]:
+  import SortableUtils.*
+
+  def swap(a: Int, b: Int): Try[Sortable[T]]=
+    Try(SteppedList(swapElements(a, b), addStep(Step.Swap(a, b))))
+
+  override def compare[A >: Sortable[T], B <: Sortable[T]](a: Index, b: Index)(ifTrue: A => B)
+                            (ifFalse: A => B): Try[B] =
+    genericCompare(SteppedList(data, addStep(Step.Comparison(a, b))))(data)(a,b)(ifTrue)(ifFalse)
+
+
+  def length: Int = data.size
 
   private def swapElements(a: Index, b: Index): Seq[T] =
     data updated(a, data.toList(b)) updated(b, data.toList(a))
@@ -54,8 +58,4 @@ private case class SteppedList[T: Comparable](override val data: Seq[T], overrid
   private def addStep(step: Step): Seq[Step] = steps :+ step
 
   private def validIndex(index: Int): Int =
-    if data.size > index then index else throw IllegalArgumentException(f"Invalid index $index" )
-
-  def foreach(r:Range)(f: (Sortable[T],Int) => Sortable[T]):Sortable[T] = r.size match
-    case 0 => this
-    case _ =>  f(this, validIndex(r.head)).foreach(r.drop(1))(f)
+    if data.size > index then index else throw IllegalArgumentException(f"Invalid index $index")

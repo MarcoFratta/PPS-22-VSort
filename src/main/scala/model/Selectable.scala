@@ -1,71 +1,59 @@
 package model
 
-import scala.util.Try
+import model.Selectable.Key
 import model.Sortable.*
 
-trait Selectable[T] extends Sortable[T]:
+import scala.util.Try
 
-  type Index = Int
+trait Selectable[K, T] extends Sortable[T]:
 
-  def select(s: String, a: Index): Try[Selectable[T]]
 
-  def getSelection(s: String): Index
+  def select(s: K, a: Index): Try[Selectable[K, T]]
 
-  def deselect(s: String): Try[Selectable[T]]
+  def getSelection(s: K): Index
 
-  override def swap(a: Index, b: Index): Try[Selectable[T]]
-
-  override def compare(a: Int, b: Int)(ifTrue: Sortable[T] => Sortable[T])
-    (ifFalse: Sortable[T] => Sortable[T]): Try[Selectable[T]]
+  def deselect(s: K): Try[Selectable[K, T]]
 
 object Selectable:
 
-  def apply[T:Comparable](seq: Seq[T], step: Seq[Step], map: Map[String, Int]): Selectable[T] =
-    SelectedSteppedList[T](Sortable[T](seq, step), map)
-  def apply[T:Comparable](seq: Seq[T], step: Seq[Step]): Selectable[T] =
-    SelectedSteppedList[T](Sortable[T](seq, step), Map.empty)
-  def apply[T:Comparable](): Selectable[T] =
-    SelectedSteppedList[T](Sortable[T](), Map.empty)
-  def apply[T: Comparable](sortable: Sortable[T]): Selectable[T] =
-    SelectedSteppedList[T](sortable, Map.empty)
+  import Sortable.*
+  type Key = String
 
-private case class SelectedSteppedList[T: Comparable](list: Sortable[T], map: Map[String, Int]) extends Selectable[T]:
+  def apply[T: Comparable](): Selectable[Key, T] =
+    SelectedSteppedList[Key, T](Sortable[T](), Map.empty)
 
-  override def swap(a: Int, b: Int): Try[Selectable[T]] =
-    Try(Selectable(list.swap(a, b).get))
+  def apply[T: Comparable](seq: T*): Selectable[Key, T] =
+      SelectedSteppedList[Key, T](Sortable(seq, Seq.empty), Map.empty)
 
-  override def select(s: String, a: Int): Try[Selectable[T]] =
-    Try(Selectable(data, addStep(Step.Selection(s, validIndex(a))), addSelection(s, a)))
+private case class SelectedSteppedList[K,T: Comparable](list: Sortable[T], map: Map[K, Int])
+  extends Selectable[K, T]:
+  import SortableUtils.*
 
-  def getSelection(s: String): Int = map(s)
+  override type Index = Int
 
-  def deselect(s: String): Try[Selectable[T]] =
-    Try(Selectable(data, addStep(Step.Deselection(s)), deleteSelection(s)))
+  export list.{steps, data, length}
 
-//  override def compare(a: Index, b: Index)(ifTrue: Selectable[T] => Selectable[T])
-//             (ifFalse: Selectable[T] => Selectable[T]): Try[Selectable[T]] =
-//    Try {
-//      val l = SelectedSteppedList(Sortable(data, addStep(Step.Comparison(a, b))), map)
-//      if summon[Comparable[T]].compare(data(a), data(b)) then ifTrue(l) else ifFalse(l)
-//    }
+  override def swap(a: Index, b: Index): Try[Sortable[T]] =
+    list.swap(a,b).map(v => SelectedSteppedList(v,map))
 
-  override def compare(a: Int, b: Int)(ifTrue: Sortable[T] => Sortable[T])
-             (ifFalse: Sortable[T] => Sortable[T]): Try[Selectable[T]] =
-    Try(Selectable(list.compare(a, b)(ifTrue)(ifFalse).get))
+  override def compare[A >: Selectable[K,T], B](a: Index, b: Index)(ifTrue: A => B)(ifFalse: A => B): Try[B] =
+    genericCompare(SelectedSteppedList(Sortable(data, addStep(Step.Comparison(a, b))),map))(data)(a, b)(ifTrue)(ifFalse)
 
-  def data: Seq[T] = list.data
 
-  def steps: Seq[Step] = list.steps
+  override def select(s: K, a: Int): Try[Selectable[K, T]] =
+    Try(SelectedSteppedList(Sortable(data, addStep(Step.Selection(s, validIndex(a)))), addSelection(s, a)))
 
-  def length(): Int = list.length()
+  def getSelection(s: K): Int = map(s)
 
-  private def addSelection(s: String, a: Index) : Map[String, Index] =
+  def deselect(s: K): Try[Selectable[K, T]] =
+    Try(SelectedSteppedList(Sortable(data, addStep(Step.Deselection(s))), deleteSelection(s)))
+
+  private def deleteSelection(s: K): Map[K, Index] = map removed s
+
+  private def addStep(step: Step): Seq[Step] = steps :+ step
+
+  private def addSelection(s: K, a: Index): Map[K, Index] =
     map updated(s, a)
-
-  private def deleteSelection(s: String): Map[String, Index] =
-    map removed s
 
   private def validIndex(index: Index): Int =
     if data.size > index then index else throw IllegalArgumentException()
-
-  private def addStep(step: Step): Seq[Step] = steps :+ step

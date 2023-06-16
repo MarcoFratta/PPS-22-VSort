@@ -8,6 +8,7 @@ import scala.util.{Failure, Success}
 class SelectableEdgeCases extends AnyFlatSpec with Matchers:
 
   import model.Selectable.*
+  import model.Step.*
 
   given Comparable[Int] with
     override def compare(a: Int, b: Int): Boolean = a - b > 0
@@ -27,10 +28,11 @@ class SelectableEdgeCases extends AnyFlatSpec with Matchers:
   }
 
   "A correct swap" should "not fail" in {
-    val list = Selectable(Seq(0,1,5), Seq.empty)
+    val list = Selectable(0,1,5)
     list.swap(0, 2) match
       case Failure(_) => fail()
-      case Success(l) => assert(l == Selectable(List(5,1,0), List(Step.Swap(0,2))))
+      case Success(l) =>l.data  shouldEqual List(5,1,0)
+                        l.steps shouldEqual List(Step.Swap(0,2))
   }
 
   "Select on an empty list" should "fail" in {
@@ -48,42 +50,52 @@ class SelectableEdgeCases extends AnyFlatSpec with Matchers:
   }
 
   "A correct selection" should "not fail" in {
-    val list = Selectable(Seq(0, 1, 5), Seq.empty)
+    val list = Selectable(0, 1, 5)
     list.select("test", 2) match
       case Failure(_) => fail()
-      case Success(l) => assert(l == Selectable(List(0, 1, 5), List(Step.Selection("test", 2)), Map("test" -> 2)))
+      case Success(l) => l.data shouldEqual List(0, 1, 5)
+                         l.steps shouldEqual List(Selection("test", 2))
+                         l.getSelection("test") shouldBe 2
+
   }
 
   "A correct double selection" should "not fail" in {
-    val list = Selectable(Seq(0, 1, 5), Seq.empty)
+    val list = Selectable(0, 1, 5)
     list.select("test", 2).get.select("test", 0) match
       case Failure(_) => fail()
-      case Success(l) => assert(l == Selectable(List(0, 1, 5), List(Step.Selection("test", 2), Step.Selection("test", 0)), Map("test" -> 0)))
+      case Success(l) => l.data shouldEqual List(0, 1, 5)
+                         l.steps shouldEqual List(Selection("test", 2), Selection("test", 0))
+                         l.getSelection("test") shouldBe 0
   }
 
   "A deselection" should "not fail" in {
-    val list = Selectable(Seq(0, 1, 5), Seq.empty)
+    val list = Selectable(0, 1, 5)
     list.deselect("test") match
       case Failure(_) => fail()
-      case Success(l) => assert(l == Selectable(List(0, 1, 5), List(Step.Deselection("test"))))
+      case Success(l) => l.data shouldEqual List(0, 1, 5)
+                         l.steps shouldEqual List(Deselection("test"))
   }
 
   "A deselection after a selection" should "not fail" in {
-    val list = Selectable(Seq(0, 1, 5), Seq.empty)
+    val list = Selectable(0, 1, 5)
     list.select("test", 2).get.deselect("test") match
       case Failure(_) => fail()
-      case Success(l) => assert(l == Selectable(List(0, 1, 5), List(Step.Selection("test", 2), Step.Deselection("test"))))
+      case Success(l) => l.data shouldEqual List(0, 1, 5)
+                         l.steps shouldEqual List(Selection("test", 2), Deselection("test"))
+
   }
 
   "A correct comparison" should "not fail" in {
-    val list = Selectable(Seq(0, 1, 5), Seq.empty)
+    val list = Selectable(0, 1, 5)
     list.compare(0, 1)(x => x)(x => x) match
       case Failure(_) => fail()
-      case Success(l) => assert(l == Selectable(List(0, 1, 5), List(Step.Comparison(0, 1))))
+      case Success(l) => l.data shouldEqual List(0, 1, 5)
+                         l.steps shouldEqual List(Comparison(0, 1))
+
   }
 
   "Compare(0, 1) on an single element list" should "fail" in {
-    val list = Selectable(Seq(0), Seq.empty)
+    val list = Selectable(0)
     list.compare(0, 1)(x => x)(x => x) match
       case Failure(e) =>
       case Success(_) => fail()

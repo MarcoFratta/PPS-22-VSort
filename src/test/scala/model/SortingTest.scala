@@ -14,8 +14,8 @@ class SortingTest extends AnyFlatSpec with Matchers:
 
   "Bubble sort" should "work" in {
     var mList1 = Sortable(5, 4, 2, 1, 3)
-    for (_ <- 0 to mList1.length() - 2) {
-      for (j <- 0 to mList1.length() - 2) {
+    for (_ <- 0 to mList1.length - 2) {
+      for (j <- 0 to mList1.length - 2) {
         mList1 = mList1.compare(j, j + 1)(x => x.swap(j, j + 1).get)(x => x).get
       }
     }
