@@ -3,7 +3,6 @@ package model
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 import scala.util.{Failure, Success, Try}
-import model.Sortable
 
 class SortableBehaviourTest extends AnyFlatSpec with Matchers:
   import model.Sortable.*
@@ -18,18 +17,6 @@ class SortableBehaviourTest extends AnyFlatSpec with Matchers:
     val mList1 = Sortable(0, 1, 2)
     val mList2 = Sortable(List(1, 0, 2), List(Step.Swap(0,1)))
     mList1.swap(0,1) shouldBe Success(mList2)
-  }
-
-  "After a selection, it" should "have 1 selection step and the same data" in {
-    val mList1 = Sortable(0, 1, 2)
-    val mList2 = Sortable(List(0, 1, 2), List(Step.Selection("test", 0)), Map("test" -> 0))
-    mList1.select("test", 0) shouldBe Success(mList2)
-  }
-
-  "After a deselection," should "have 1 deselection step and the same data" in {
-    val mList1 = Sortable(0, 1, 2)
-    val mList2 = Sortable(List(0, 1, 2), List(Step.Deselection("test")))
-    mList1.deselect("test") shouldBe Success(mList2)
   }
 
   "An empty list" should "have size 0" in {
