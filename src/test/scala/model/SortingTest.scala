@@ -34,14 +34,14 @@ class SortingTest extends AnyFlatSpec with Matchers:
 //    mList.data shouldBe Seq(1, 2, 3, 4, 5)
 //  }
 
-//  "Insertion sort" should "work" in {
-//    var mList = Sortable(5, 4, 2, 1, 3)
-//    for (i <- 1 until mList.length()) {
-//      mList = mList.select("sel", i).get
-//      for (j <- i - 1 to 0 by -1) {
-//        mList = mList.compare(j, mList.getSelection("sel"))(x => x
-//          .swap(mList.getSelection("sel"), j).get.select("sel", j).get)(x => x).get
-//      }
-//    }
-//    mList.data shouldBe Seq(1, 2, 3, 4, 5)
-//  }
+  "Insertion sort" should "work" in {
+    var mList = Selectable(5, 4, 2, 1, 3)
+    for (i <- 1 until mList.length ) {
+      mList = mList.select("sel", i).get
+      for (j <- i - 1 to 0 by -1) {
+        mList = mList.compare(j, mList.getSelection("sel"))(x => x
+          .swap(mList.getSelection("sel"), j).get.select("sel", j).get)(x => x).get
+      }
+    }
+    mList.data shouldBe Seq(1, 2, 3, 4, 5)
+  }

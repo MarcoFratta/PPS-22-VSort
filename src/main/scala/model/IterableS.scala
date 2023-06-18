@@ -2,40 +2,44 @@ package model
 
 import Sortable.*
 
-trait IterableS[T] extends Sortable[T]:
+trait IterableS[T] extends Indexable:
 
-  override type Index = Int
-
-  def iterating(range: Range):IterableS[T]
-  def at(i:Index):IterableS[T]
-
+  def iterating(range: Range):T
+  def at(index:Index):T
   def index:Int
   def from:Int
   def to:Int
-
-  def foreach(f: IterableS[T] => IterableS[T]): IterableS[T]
+  def flatMap[B](f: T => B): B
+  def map[B](f: T => B):B
 
 
 object IterableS:
   import Sortable.*
-  def apply[T:Comparable](sortable: Sortable[T], range: Range,i:Int):IterableS[T] =
-    IterableSortableX(sortable, range, i)
 
-private case class IterableSortableX[T :Comparable](sortable: Sortable[T], range: Range,
-                                   override val index:Int) extends IterableS[T]:
+  def apply[T:Comparable](seq: T*):IterableS[T] =
+    IterableSortableX(Sortable(seq, Seq.empty), 0 to seq.length by 1, 0)
 
-  export sortable.*
+private case class IterableSortableX[T :Comparable](source: DataSource[T], range: Range,
+                                                    override val index:Int) extends IterableS[T]:
 
-  override def at(i: Index): IterableS[T] = IterableS(sortable, range, i)
+  export source.*
 
-  override def iterating(range: Range): IterableS[T] = IterableS(sortable, range, index)
+
+  override def at(i: Index): T = ???//IterableSortableX(source, range, i)
+
+  override def iterating(range: Range): T = ???//IterableSortableX(source, range, index)
 
   override def from: Index = index
 
+  override def flatMap[B](f: T => B): B = ???
+
+  override def map[B](f: T => B): B = ???
+
   override def to: Index = to
 
-  override def foreach(f: IterableS[T] => IterableS[T]): IterableS[T] =
-    if range.isDefinedAt(index) then f(this) at index + range.step else this
+
+   def foreach(f: IterableS[T] => IterableS[T]): IterableS[T] = ???
+
 
 
 

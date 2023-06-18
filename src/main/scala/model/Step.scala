@@ -1,8 +1,13 @@
 package model
 
 enum Step:
-    case Swap(a: Int, b: Int)
-    case Selection[K](s: K, a: Int)
+    case Swap[K](a: K, b: K)
+    case Selection[K](s: K, a: K)
     case Deselection[K](s: K)
-    case Comparison(a: Int, b: Int)
+    case Comparison[K](a: K, b: K)
+
+object Step:
+
+    extension (steps: Seq[Step])
+        def +(step: Step): Seq[Step] = steps :+ step
 
