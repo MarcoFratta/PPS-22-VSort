@@ -13,12 +13,16 @@ class SortingTest extends AnyFlatSpec with Matchers:
     override def compare(a: Int, b: Int): Boolean = a - b > 0
 
   "Bubble sort" should "work" in {
-    var mList1 = Sortable(5, 4, 2, 1, 3)
-    for (_ <- 0 to mList1.length - 2) {
-      for (j <- 0 to mList1.length - 2) {
+    val data = List(5, 4, 2, 1, 3)
+    var mList1 = Sortable(data, List.empty)
+    for (i <- 0 to mList1.length - 2) {
+      for (j <- 0 to mList1.length - 2 - i) {
         mList1 = mList1.compare(j, j + 1)(x => x.swap(j, j + 1).get)(x => x).get
       }
     }
+
+    StepsVisualizer.visualize(mList1.steps, data)
+
     mList1.data shouldBe Seq(1, 2, 3, 4, 5)
   }
 
@@ -45,3 +49,11 @@ class SortingTest extends AnyFlatSpec with Matchers:
 //    }
 //    mList.data shouldBe Seq(1, 2, 3, 4, 5)
 //  }
+
+  import model.SortingAlgorithms.*
+
+  "Merge Sort" should "work" in {
+    val list = List(5, 4, 2, 1, 3)
+    val res = mergeSort(list)
+    res shouldBe List(1, 2, 3, 4, 5)
+  }
