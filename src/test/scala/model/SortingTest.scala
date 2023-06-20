@@ -21,9 +21,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
       }
     }
 
-    //print(mList1.steps)
-
-    print(StepsVisualizer.visualize(mList1.steps, data))
+    print(StepsVisualizer.visualizeSteps(mList1.steps, data))
 
     mList1.data shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
