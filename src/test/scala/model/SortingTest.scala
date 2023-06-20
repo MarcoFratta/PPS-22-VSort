@@ -13,7 +13,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
     override def compare(a: Int, b: Int): Boolean = a - b > 0
 
   "Bubble sort" should "work" in {
-    val data = List(60, 50, 40, 30, 20, 10)
+    val data = List(60, 20, 30, 40, 50, 10)
     var mList1 = Sortable(data, List.empty)
     for (i <- 0 to mList1.length - 2) {
       for (j <- 0 to mList1.length - 2 - i) {
@@ -55,7 +55,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
   import model.SortingAlgorithms.*
 
   "Merge Sort" should "work" in {
-    val list = List(5, 4, 2, 1, 3)
-    val res = mergeSort(list)
-    res shouldBe List(1, 2, 3, 4, 5)
+    val list = List(500, 427, 223, 12, 34, 8, 3, 9, 94)
+    val res = mergesort(list)
+    res shouldBe List(3, 8, 9, 12, 34, 94, 223, 427, 500)
   }
