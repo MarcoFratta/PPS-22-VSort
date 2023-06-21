@@ -1,6 +1,31 @@
 package model
 
+import model.SortOperation.*
+import model.SortableFunctionalities.*
+import model.Step.Comparison
+
+import scala.language.postfixOps
+
 object SortingAlgorithms {
+
+  given Comparable[Int] with
+    override def compare(a: Int, b: Int): Boolean = a - b > 0
+  given Conversion[Steps[Int], SortOps[Steps[Int]]] = _ !
+
+  def bubbleSort(seq: Seq[Int]): Seq[Step] =
+    (for res <- SortableM(seq).iterate(0 to seq.length - 2)(
+      (i, t) => t.iterate(0 to t.length - 2 - i)(
+        (j, t2) => t2.compare(j, j + 1)(x => x.swap(j, j + 1))(x => x)))
+    yield (res.data, res.steps)).get._2
+
+
+  def selectionSort(seq: Seq[Int]): Seq[Step] = ???
+
+  def insertionSort(seq: Seq[Int]): Seq[Step] = ???
+
+  def mergeSort(seq: Seq[Int]): Seq[Step] = ???
+
+
 
   def mergesort(seq: List[Int]): List[Int] = seq.length match
     case n if n < 2 => seq
