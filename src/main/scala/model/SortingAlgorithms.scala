@@ -1,8 +1,9 @@
 package model
 
-import model.SortOperation.*
-import model.SortableFunctionalities.*
 import model.Step.Comparison
+import model.sortModel.SortOperation.*
+import model.sortModel.SortableFunctionalities.*
+import model.sortModel.SortableM
 
 import scala.language.postfixOps
 
@@ -10,6 +11,7 @@ object SortingAlgorithms {
 
   given Comparable[Int] with
     override def compare(a: Int, b: Int): Boolean = a - b > 0
+
   given Conversion[Steps[Int], SortOps[Steps[Int]]] = _ !
 
   def bubbleSort(seq: Seq[Int]): Seq[Step] =

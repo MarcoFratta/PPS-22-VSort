@@ -1,13 +1,16 @@
-package model
+package model.sortModel
 
-import model.SortOperation.{SortOps, unit}
-import model.SortableFunctionalities.{IndexableM, SortableM, Steps}
+import model.Step
 import model.Step.*
+import model.sortModel.SortOperation.{SortOps, unit}
+import model.sortModel.SortableFunctionalities.*
 
 import scala.annotation.targetName
-import scala.util.{Failure, Success, Try}
 
 object SortableFunctionalities:
+
+  trait Comparable[A]:
+    def compare(a: A, b: A): Boolean
 
   trait IndexableM:
     type IndexType
@@ -17,7 +20,7 @@ object SortableFunctionalities:
 
     def data: Seq[T] = data_
 
-    def withData(seq: Seq[T]): SortableM[T] =
+    private[sortModel] def withData(seq: Seq[T]): SortableM[T] =
       data_ = seq
       this
 
@@ -32,41 +35,62 @@ object SortableFunctionalities:
 
     def steps: Seq[Step] = steps_
 
-    def withSteps(steps: Seq[Step]): SortableM[T] with Steps[T] =
+    private[sortModel] def withSteps(steps: Seq[Step]): SortableM[T] with Steps[T] =
       steps_ = steps
       this
 
-    override def withData(seq: Seq[T]): SortableM[T] with Steps[T] =
+    override private[sortModel] def withData(seq: Seq[T]): SortableM[T] with Steps[T] =
       super.withData(seq)
       this
 
 trait Selections[K, T] extends SortableM[T]:
   private var map_ : Map[K, IndexType] = Map.empty
+  override type IndexType = Int
 
-  def select(s: K, a: IndexType): SortableM[T] with Selections[K, T]
+  def getSelection(s: K): Option[IndexType] =
+    map_.get(s)
 
+  private[sortModel] def selected(s: K, a: IndexType): SortableM[T] with Selections[K, T] =
+    map_ = map_ + ((s, a))
+    this
 
-  def getSelection(s: K): IndexType
-
-  def deselect(s: K): SortableM[T] with Selections[K, T]
+  private[sortModel] def deselected(s: K): SortableM[T] with Selections[K, T] =
+    map_ = map_.removed(s)
+    this
 
 object SortableM:
-
   def apply[T: Comparable](seq: Seq[T]):
-  SortableM[T] with Steps[T] = new IndexableM
-    with SortableM[T](seq)
-    with Steps[T](Seq.empty):
-    override type IndexType = Int
+  SortableM[T] with Steps[T] =
+    new IndexableM
+      with SortableM[T](seq)
+      with Steps[T](Seq.empty):
+      override type IndexType = Int
+
+object SelectableM:
+  def apply[T: Comparable](seq: Seq[T]):
+  SortableM[T] with Steps[T] with Selections[String, T] =
+    new IndexableM
+      with SortableM[T](seq)
+      with Steps[T](Seq.empty)
+      with Selections[String, T]
 
 
 object SortOperation:
+
   import Step.*
+
   trait SortOps[T]:
 
     def flatMap[B](f: T => SortOps[B]): SortOps[B] = f(get)
 
     def map[B](f: T => B): SortOps[B] = flatMap(x => unit(f(x)))
 
+    def foreach(f: T => Unit): Unit = f(get)
+
+    /** Should be only used in tests.
+     *
+     * @return the value contained in the monad after its application.
+     */
     def get: T
 
 
@@ -81,8 +105,10 @@ object SortOperation:
     def compare[C <: A, D <: A](a: Int, b: Int)(ifTrue: A => SortOps[C])(ifFalse: A => SortOps[D]): SortOps[C | D] =
       new SortOps[C | D]:
         override def get: C | D =
-          s.withSteps(s.steps + Comparison(a, b))
-          checkBranch(a, b)(ifTrue)(ifFalse)
+          if s.data.isDefinedAt(a) && s.data.isDefinedAt(b) then
+            s.withSteps(s.steps + Comparison(a, b))
+            checkBranch(a, b)(ifTrue)(ifFalse)
+          else throw new IllegalArgumentException("Invalid index")
 
         private def checkBranch(a: Int, b: Int)(ifTrue: A => SortOps[C])(ifFalse: A => SortOps[D]): C | D =
           if summon[Comparable[T]].compare(s.data(a), s.data(b)) then ifTrue(s).get else ifFalse(s).get
@@ -91,7 +117,7 @@ object SortOperation:
     def swap(a: Int, b: Int): SortOps[A] =
       new SortOps[A]:
         override def get: A =
-          s.withData(swapElements(s.data)(a, b)).withSteps(s.steps + Swap(a, b))
+          if (s.data.nonEmpty) s.withData(swapElements(s.data)(a, b)).withSteps(s.steps + Swap(a, b))
           s
 
         private def swapElements(data: Seq[T])(a: Int, b: Int): Seq[T] =
@@ -101,6 +127,24 @@ object SortOperation:
     def iterate(range: Range)(g: (Int, A) => SortOps[A]): SortOps[A] =
       new SortOps[A]:
         override def get: A = range.tail.foldLeft(g(range.head, s))((b, i) => g(i, b.get)).get
+
+  extension[T: Comparable, K, A <: Selections[K, T] with Steps[T]] (s: A)
+    def select(k: K, i: s.IndexType): SortOps[A] =
+      new SortOps[A]:
+        override def get: A =
+          if (s.data.nonEmpty)
+            s.selected(k, i)
+            s.withSteps(s.steps + Selection(k, i))
+          s
+
+    def deselect(k: K): SortOps[A] =
+      new SortOps[A]:
+        override def get: A =
+          s.deselected(k)
+          s.withSteps(s.steps + Deselection(k))
+          s
+
+
 
 
 

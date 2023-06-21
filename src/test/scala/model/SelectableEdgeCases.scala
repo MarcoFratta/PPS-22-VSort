@@ -1,104 +1,91 @@
 package model
 
+import model.sortModel.SelectableM
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
+import scala.language.postfixOps
 import scala.util.{Failure, Success}
 
 class SelectableEdgeCases extends AnyFlatSpec with Matchers:
 
-  import model.Selectable.*
   import model.Step.*
+  import model.sortModel.SortOperation.*
+  import model.sortModel.SortableFunctionalities.*
 
   given Comparable[Int] with
     override def compare(a: Int, b: Int): Boolean = a - b > 0
 
-  "Swap on an empty list" should "fail" in {
-    val list = Selectable()
-    list.swap(3, 4) match
-      case Failure(_) =>
-      case Success(_) => fail()
+  "Swap on an empty list" should "not do anything" in {
+    val list = SelectableM(Seq.empty)
+    list.swap(3, 4).get.steps shouldEqual Seq.empty
   }
 
-  "Swap(0,0) on an empty list" should "fail" in {
-    val list = Selectable()
-    list.swap(0, 0) match
-      case Failure(e) =>
-      case Success(_) => fail()
+  "Swap(0,0) on an empty list" should "not do anything" in {
+    val list = SelectableM(Seq.empty)
+    list.swap(0, 0).get.steps shouldEqual Seq.empty
   }
 
-  "A correct swap" should "not fail" in {
-    val list = Selectable(0,1,5)
-    list.swap(0, 2) match
-      case Failure(_) => fail()
-      case Success(l) =>l.data  shouldEqual List(5,1,0)
-                        l.steps shouldEqual List(Step.Swap(0,2))
+  "Select on an empty list" should "not do anything" in {
+    val list = SelectableM(Seq.empty)
+    list.select("test", 3).get.steps shouldEqual Seq.empty
   }
 
-  "Select on an empty list" should "fail" in {
-    val list = Selectable()
-    list.select("test", 3) match
-      case Failure(e) =>
-      case Success(_) => fail()
-  }
-
-  "Select(0) on an empty list" should "fail" in {
-    val list = Selectable()
-    list.select("test", 0) match
-      case Failure(e) =>
-      case Success(_) => fail()
+  "Select(0) on an empty list" should "not do anything" in {
+    val list = SelectableM(Seq.empty)
+    list.select("test", 0).get.steps shouldEqual Seq.empty
   }
 
   "A correct selection" should "not fail" in {
-    val list = Selectable(0, 1, 5)
-    list.select("test", 2) match
-      case Failure(_) => fail()
-      case Success(l) => l.data shouldEqual List(0, 1, 5)
-                         l.steps shouldEqual List(Selection("test", 2))
-                         l.getSelection("test") shouldBe 2
+    val list = SelectableM(Seq(0, 1, 5))
+    for l <- list.select("test", 2) do
+      l.data shouldEqual List(0, 1, 5)
+      l.steps shouldEqual List(Selection("test", 2))
+      l.getSelection("test") shouldBe Option(2)
 
   }
 
   "A correct double selection" should "not fail" in {
-    val list = Selectable(0, 1, 5)
-    list.select("test", 2).get.select("test", 0) match
-      case Failure(_) => fail()
-      case Success(l) => l.data shouldEqual List(0, 1, 5)
-                         l.steps shouldEqual List(Selection("test", 2), Selection("test", 0))
-                         l.getSelection("test") shouldBe 0
+    val list = SelectableM(Seq(0, 1, 5))
+    for l <- list.select("test", 2)
+        l2 <- l.select("test2", 0) do
+      l2.data shouldEqual List(0, 1, 5)
+      l2.steps shouldEqual List(Selection("test", 2), Selection("test2", 0))
+      l2.getSelection("test") shouldBe Option(2)
   }
 
   "A deselection" should "not fail" in {
-    val list = Selectable(0, 1, 5)
-    list.deselect("test") match
-      case Failure(_) => fail()
-      case Success(l) => l.data shouldEqual List(0, 1, 5)
-                         l.steps shouldEqual List(Deselection("test"))
+    val list = SelectableM(Seq(0, 1, 5))
+    for l <- list.deselect("test") do
+      l.data shouldEqual List(0, 1, 5)
+      l.steps shouldEqual List(Deselection("test"))
   }
 
   "A deselection after a selection" should "not fail" in {
-    val list = Selectable(0, 1, 5)
-    list.select("test", 2).get.deselect("test") match
-      case Failure(_) => fail()
-      case Success(l) => l.data shouldEqual List(0, 1, 5)
-                         l.steps shouldEqual List(Selection("test", 2), Deselection("test"))
+    val list = SelectableM(Seq(0, 1, 5))
+    for l <- list.select("test", 2)
+        l2 <- l.deselect("test") do
+      l2.data shouldEqual List(0, 1, 5)
+      l2.steps shouldEqual List(Selection("test", 2), Deselection("test"))
 
   }
 
   "A correct comparison" should "not fail" in {
-    val list = Selectable(0, 1, 5)
-    list.compare(0, 1)(x => x)(x => x) match
-      case Failure(_) => fail()
-      case Success(l) => l.data shouldEqual List(0, 1, 5)
-                         l.steps shouldEqual List(Comparison(0, 1))
+    val list = SelectableM(Seq(0, 1, 5))
+    for l <- list.compare(0, 1)(x => x !)(x => x !) do
+      l.data shouldEqual List(0, 1, 5)
+      l.steps shouldEqual List(Comparison(0, 1))
 
   }
 
   "Compare(0, 1) on an single element list" should "fail" in {
-    val list = Selectable(0)
-    list.compare(0, 1)(x => x)(x => x) match
-      case Failure(e) =>
-      case Success(_) => fail()
+    the[IllegalArgumentException] thrownBy {
+      val list = SelectableM(Seq(0))
+      for l <- list.compare(0, 1)(x => x.select("x", 0))(x => x.select("x", 1)) do
+        l.steps shouldEqual Seq.empty
+        l.data shouldEqual Seq(0)
+    } should have message "Invalid index"
+
   }
 
 
