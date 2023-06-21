@@ -21,7 +21,7 @@ trait Swappable[T] extends Indexable:
   def swap(a: Index, b: Index): Try[T]
 
 
-trait Sortable[T] extends Indexable:
+trait SortableOld[T] extends Indexable:
 
   def length: Int
 
@@ -30,15 +30,17 @@ trait Sortable[T] extends Indexable:
   def steps: Seq[Step]
 
 trait DataSource[T] extends IntIndexable
-  with Sortable[T]
+  with SortableOld[T]
   with Swappable[DataSource[T]]
   with ComparableSortable[DataSource[T]]
 
-object Sortable:
+object SortableOld:
 
-  def apply[T:Comparable](seq: Seq[T], step: Seq[Step]): DataSource[T] = SteppedList(seq, step)
-  def apply[T:Comparable](): DataSource[T] = SteppedList(Seq.empty, Seq.empty)
-  def apply[T:Comparable](seq:T*): DataSource[T]  = SteppedList(seq, Seq.empty)
+  def apply[T: Comparable](seq: Seq[T], step: Seq[Step]): DataSource[T] = SteppedList(seq, step)
+
+  def apply[T: Comparable](): DataSource[T] = SteppedList(Seq.empty, Seq.empty)
+
+  def apply[T: Comparable](seq: T*): DataSource[T] = SteppedList(seq, Seq.empty)
 
 
 object SortableUtils:

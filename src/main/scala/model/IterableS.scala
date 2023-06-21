@@ -1,6 +1,6 @@
 package model
 
-import Sortable.*
+import model.SortableOld.*
 
 trait IterableS[T] extends Indexable:
 
@@ -14,10 +14,11 @@ trait IterableS[T] extends Indexable:
 
 
 object IterableS:
-  import Sortable.*
 
-  def apply[T:Comparable](seq: T*):IterableS[T] =
-    IterableSortableX(Sortable(seq, Seq.empty), 0 to seq.length by 1, 0)
+  import SortableOld.*
+
+  def apply[T: Comparable](seq: T*): IterableS[T] =
+    IterableSortableX(SortableOld(seq, Seq.empty), 0 to seq.length by 1, 0)
 
 private case class IterableSortableX[T :Comparable](source: DataSource[T], range: Range,
                                                     override val index:Int) extends IterableS[T]:

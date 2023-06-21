@@ -7,14 +7,14 @@ import scala.util.{Failure, Success}
 
 class SortingTest extends AnyFlatSpec with Matchers:
 
-  import model.Sortable.*
+  import model.SortableOld.*
 
   given Comparable[Int] with
     override def compare(a: Int, b: Int): Boolean = a - b > 0
 
   "Bubble sort" should "work" in {
     val data = List(60, 20, 30, 40, 50, 10)
-    var mList1 = Sortable(data, List.empty)
+    var mList1 = SortableOld(data, List.empty)
     for (i <- 0 to mList1.length - 2) {
       for (j <- 0 to mList1.length - 2 - i) {
         mList1 = mList1.compare(j, j + 1)(x => x.swap(j, j + 1).get)(x => x).get

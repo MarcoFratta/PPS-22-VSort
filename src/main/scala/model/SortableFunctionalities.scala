@@ -40,27 +40,23 @@ object SortableFunctionalities:
       super.withData(seq)
       this
 
-  trait Comparation[T, A, B, C]() extends SortableM[T]:
-    private var ifTrue_ : Option[A => B] = Option.empty
-    private var ifFalse_ : Option[A => C] = Option.empty
+trait Selections[K, T] extends SortableM[T]:
+  private var map_ : Map[K, IndexType] = Map.empty
 
-    def compare(a: IndexType, b: IndexType)(using f: Comparable[T]): Boolean
+  def select(s: K, a: IndexType): SortableM[T] with Selections[K, T]
 
-    def ifTrue(f: A => B): SortableM[T] with Comparation[T, A, B, C] =
-      this.ifTrue_ = Option(f)
-      this
 
-    def ifFalse(f: A => C): SortableM[T] with Comparation[T, A, B, C] =
-      this.ifFalse_ = Option(f)
-      this
+  def getSelection(s: K): IndexType
 
-  object SortableM:
+  def deselect(s: K): SortableM[T] with Selections[K, T]
 
-    def apply[T: Comparable](seq: T*):
-    SortableM[T] with Steps[T] = new IndexableM
-      with SortableM[T](seq)
-      with Steps[T](Seq.empty):
-      override type IndexType = Int
+object SortableM:
+
+  def apply[T: Comparable](seq: Seq[T]):
+  SortableM[T] with Steps[T] = new IndexableM
+    with SortableM[T](seq)
+    with Steps[T](Seq.empty):
+    override type IndexType = Int
 
 
 object SortOperation:
