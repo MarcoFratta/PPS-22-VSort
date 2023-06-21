@@ -5,22 +5,27 @@ import model.Step.Comparison
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
+import scala.language.postfixOps
+
+
 class SortableMTest extends AnyFlatSpec with Matchers:
 
   import SortOperation.*
 
-  given comp:Comparable[Int] with
-      override def compare(a: Int, b: Int): Boolean = a - b > 0
+  given comp: Comparable[Int] with
+    override def compare(a: Int, b: Int): Boolean = a - b > 0
 
   "A sortable with steps" should "exists" in {
     SortableM()
   }
 
   "A comparison " should "add one comparison step" in {
+    given Conversion[Steps[Int], SortOps[Steps[Int]]] = _ !
+
     val s = SortableM(5, 6, 7)
-    for p1 <- s.compare(0, 1)(x => x)(x => x)
-          yield p1.steps shouldEqual Seq(Comparison(0,1))
- }
+    for p1 <- s.compare(0, 1)(x => x)(x => x !)
+      yield p1.steps shouldEqual Seq(Comparison(0, 1))
+  }
 
   "A swap " should "swap data" in {
     val s = SortableM(5, 6, 7)
@@ -30,15 +35,15 @@ class SortableMTest extends AnyFlatSpec with Matchers:
 
   "If true, a comparison " should "execute true branch" in {
     val s = SortableM(5, 6, 7)
-    for result <- s.compare(0, 1)(ifTrue =>
-      for t <-  s.swap(0,1) yield s)(ifFalse =>
-      for t <-  s.swap(0,2) yield s) yield ()
+    val k = for result <- s.compare(0, 1)(ifTrue =>
+      s.swap(0, 1))(ifFalse =>
+      s.swap(0, 2)) yield (result.data, result.steps)
 
-    s.steps shouldEqual Seq(Comparison(0,1), Step.Swap(0,2))
-    s.data shouldEqual Seq(7,6,5)
+
+    k.get._2 shouldEqual Seq(Comparison(0, 1), Step.Swap(0, 2))
+    k.get._1 shouldEqual Seq(7, 6, 5)
 
   }
-
 
 
   "An iteration on (1,2,3)" should "iterate 3 times over data" in {
@@ -49,27 +54,21 @@ class SortableMTest extends AnyFlatSpec with Matchers:
 
   "An iteration on (1,2,3)" should "swap 3 times" in {
     val array = SortableM(1, 2, 3)
-    val y = for l <- array.iterate(0 to 1 by 1)((i,t) =>
+    val y = for l <- array.iterate(0 to 1 by 1)((i, t) =>
       println(f"i -> $i t-> ${t.data}")
       t.swap(i, i + 1)) // meglio i <- o (i,array) <- ???
-                yield ()
-    array.data shouldEqual Seq(2,3,1)
+    yield ()
+    array.data shouldEqual Seq(2, 3, 1)
   }
 
-//  "Bubble sort" should "work" in {
-//      val mList1 = SortableM(3,2,1)
-//      val y = for i <- mList1.iterate(0 to mList1.length - 2)((i, t) => {
-//        for j <- t.iterate(0 to t.length - 2 - i)((j, t2) => {
-//          t2.compare(j, j + 1)(x =>
-//                    print("i -> " + i)
-//                    x.swap(j, j + 1))(x =>
-//                    print("j -> " + j)
-//                    x).get
-//        }) yield ()
-//      }) yield ()
-//
-//
-//      mList1.steps.foreach(println)
-//      mList1.data shouldBe Seq(1,2,3)
-    //}
+  "Bubble sort" should "work" in {
+    import StepsVisualizer.*
+    val s = SortableM(3, 2, 1, 5, 8, 3, 5, 0, 1)
+    val y = for i <- s.iterate(0 to s.length - 2)(
+      (i, t) => t.iterate(0 to t.length - 2 - i)(
+        (j, t2) => t2.compare(j, j + 1)(x => x.swap(j, j + 1))(_ !)))
+    yield (i.data, i.steps)
 
+    println(visualizeSteps(y.get._2, y.get._1))
+    y.get._1 shouldBe Seq(0, 1, 1, 2, 3, 3, 5, 5, 8)
+  }
