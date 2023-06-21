@@ -26,9 +26,9 @@ object StepsVisualizer {
     case s => stepFunction(s)(map)
 
   private def stepFunction(step: Step): Map[Int, Entry] => Map[Int, Entry] = step match
-    case Step.Swap(a, b) => map => map.updated(a, map(b)).updated(b, map(a))
-    case Step.Selection(s, a) => map => map.updated(a, Entry(map(a).value, s.toString))
-    case Step.Comparison(a, b) => map => map.updated(a, Entry(map(a).value, "!"))
+    case Step.Swap(a: Int, b: Int) => map => map.updated(a, map(b)).updated(b, map(a))
+    case Step.Selection(s, a: Int) => map => map.updated(a, Entry(map(a).value, s.toString))
+    case Step.Comparison(a: Int, b: Int) => map => map.updated(a, Entry(map(a).value, "!"))
       .updated(b, Entry(map(b).value, "!"))
     case Step.Deselection(s) => map => map.mapValues(e => if (e.label == s) new Entry(e.value, "") else e).toMap
 
