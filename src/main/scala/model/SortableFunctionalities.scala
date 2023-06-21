@@ -1,33 +1,38 @@
 package model
 
-import scala.util.{Failure, Success, Try}
-import Step.*
 import model.SortOperation.SortOps
 import model.SortableFunctionalities.{IndexableM, IterableM, SortableM, Stepped}
+import model.Step.*
+
+import scala.util.{Failure, Success, Try}
+
 object SortableFunctionalities:
 
   trait IndexableM:
     type IndexType
-  trait SortableM[T:Comparable](private var data_ : Seq[T]) extends IndexableM:
-    def data:Seq[T] =data_
+
+  trait SortableM[T: Comparable](private var data_ : Seq[T]) extends IndexableM:
+    def data: Seq[T] = data_
 
     def withData(seq: Seq[T]): SortableM[T] =
-      data_ = seq;
+      data_ = seq
       this
+
     def length: Int = data_.length
 
 
-
-  trait Stepped[T:Comparable](s: Seq[Step]) extends SortableM[T]:
+  trait Stepped[T: Comparable](s: Seq[Step]) extends SortableM[T]:
     private var steps_ : Seq[Step] = s
-    def steps:Seq[Step] = steps_
 
-    def withSteps(steps: Seq[Step]): SortableM[T] with Stepped[T]=
+    def steps: Seq[Step] = steps_
+
+    def withSteps(steps: Seq[Step]): SortableM[T] with Stepped[T] =
       steps_ = steps
       this
 
-    override def withData(seq: Seq[T]): SortableM[T] with Stepped[T]=
-      super.withData(seq); this
+    override def withData(seq: Seq[T]): SortableM[T] with Stepped[T] =
+      super.withData(seq)
+      this
 
   trait IterableM[T](range:Range, i:Int):
     sortable:SortableM[T] =>

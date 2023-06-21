@@ -1,15 +1,18 @@
 package model
 
+import model.Step.*
+
 import scala.util.{Failure, Success, Try}
 
-import Step.*
 trait Comparable[A]:
-  def compare(a:A, b:A): Boolean
+  def compare(a: A, b: A): Boolean
 
 trait Indexable:
   type Index
+
 class IntIndexable() extends Indexable:
   override type Index = Int
+
 trait ComparableSortable[T] extends Indexable:
   def compare(a: Index, b: Index)(ifTrue: T => T)
                 (ifFalse: T => T): Try[T]
@@ -18,7 +21,7 @@ trait Swappable[T] extends Indexable:
   def swap(a: Index, b: Index): Try[T]
 
 
-trait Sortable[T]:
+trait Sortable[T] extends Indexable:
 
   def length: Int
 
