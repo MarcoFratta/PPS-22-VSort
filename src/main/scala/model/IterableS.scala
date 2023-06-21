@@ -38,7 +38,8 @@ private case class IterableSortableX[T :Comparable](source: DataSource[T], range
   override def to: Index = to
 
 
-   def foreach(f: IterableS[T] => IterableS[T]): IterableS[T] = ???
+//   def foreach(f: IterableS[T] => IterableS[T]): IterableS[T] =
+//    if range.isDefinedAt(index) then f(this) at index + range.step else this
 
 
 
