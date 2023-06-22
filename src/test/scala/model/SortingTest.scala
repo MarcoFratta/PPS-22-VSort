@@ -2,7 +2,7 @@ package model
 
 import model.SortingAlgorithms.*
 import model.StepsVisualizer.*
-import model.sortModel.{SelectableM, Selections}
+import model.sortModel.{SortableM, SelectableM, Selections}
 import model.sortModel.SortableFunctionalities.*
 import model.sortModel.SortOperation.*
 import org.scalatest.flatspec.AnyFlatSpec
@@ -52,7 +52,10 @@ class SortingTest extends AnyFlatSpec with Matchers:
 //  }
 
   "Merge Sort" should "work" in {
-    val list = List(4, 3, 2, 1)
-    val res = mergesort(list, 0, list.length-1)._1
-    res shouldEqual List(1, 2, 3, 4)
+    val data = Seq(60, 20, 30, 40, 50, 10)
+    val steps = mergeSort(data)
+    val (result, string) = visualizeSteps(steps, data)
+
+    print(string)
+    result shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
