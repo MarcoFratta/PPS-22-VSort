@@ -47,7 +47,7 @@ trait Selections[K, T] extends SortableM[T]:
   private var map_ : Map[K, IndexType] = Map.empty
   override type IndexType = Int
 
-  def getSelection(s: K): Option[IndexType] =
+  def get(s: K): Option[IndexType] =
     map_.get(s)
 
   private[sortModel] def selected(s: K, a: IndexType): SortableM[T] with Selections[K, T] =
@@ -143,6 +143,10 @@ object SortOperation:
           s.deselected(k)
           s.withSteps(s.steps + Deselection(k))
           s
+    def getSelection(k: K): SortOps[Option[s.IndexType]] =
+      new SortOps[Option[s.IndexType]]:
+        override def get: Option[s.IndexType] =
+          s.get(k)
 
 
 

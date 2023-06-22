@@ -41,7 +41,7 @@ class SelectableEdgeCases extends AnyFlatSpec with Matchers:
     for l <- list.select("test", 2) do
       l.data shouldEqual List(0, 1, 5)
       l.steps shouldEqual List(Selection("test", 2))
-      l.getSelection("test") shouldBe Option(2)
+      l.get("test") shouldBe Option(2)
 
   }
 
@@ -51,7 +51,7 @@ class SelectableEdgeCases extends AnyFlatSpec with Matchers:
         l2 <- l.select("test2", 0) do
       l2.data shouldEqual List(0, 1, 5)
       l2.steps shouldEqual List(Selection("test", 2), Selection("test2", 0))
-      l2.getSelection("test") shouldBe Option(2)
+      l2.get("test") shouldBe Option(2)
   }
 
   "A deselection" should "not fail" in {

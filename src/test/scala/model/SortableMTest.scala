@@ -1,6 +1,7 @@
 package model
 
 import model.Step.Comparison
+import model.sortModel.Selections
 import model.sortModel.SortableFunctionalities.*
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers

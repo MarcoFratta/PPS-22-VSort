@@ -39,6 +39,7 @@ object SortingAlgorithms {
   private def merge(l: List[Int], r: List[Int]): List[Int] =
     var list = l.concat(r)
 
+
     var i = 0
     var j = l.length
 
@@ -47,7 +48,7 @@ object SortingAlgorithms {
         i = i + 1
       else
         for (k <- j until i by -1) {
-          list = list.updated(k, list(k-1)).updated(k-1, list(k))
+          list = list.updated(k, list(k - 1)).updated(k - 1, list(k))
         }
         i = i + 1
         j = j + 1

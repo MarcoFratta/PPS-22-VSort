@@ -31,7 +31,7 @@ class SelectableBehaviourTest extends AnyFlatSpec with Matchers:
     val s = (for p1 <- mList1.select("test", 0) yield p1).get
     s.data shouldEqual Seq(0, 1, 2)
     s.steps shouldEqual Seq(Selection("test", 0))
-    s.getSelection("test") shouldEqual Some(0)
+    s.get("test") shouldEqual Some(0)
   }
 
   "After a deselection," should "have 1 deselection step and the same data" in {
@@ -76,19 +76,25 @@ class SelectableBehaviourTest extends AnyFlatSpec with Matchers:
                  p3 <- p2.deselect("test2") yield p3).get
     s.data shouldEqual Seq(0, 1, 2)
     s.steps shouldEqual Seq(Selection("test", 0), Selection("test2", 1), Deselection("test2"))
-    s.getSelection("test") shouldEqual Some(0)
+    s.get("test") shouldEqual Some(0)
   }
 
   "After 1 selection the getSelection" should "give the selected index" in {
 
     val s = (for p1 <- SelectableM(Seq(0, 1, 2)).select("test", 0)
-                 p2 <- p1.select("test2", 1) yield p2.getSelection("test")).get
+                 p2 <- p1.select("test2", 1) yield p2.get("test")).get
     s shouldEqual Some(0)
   }
 
   "After 1 selection and 1 deselection it" should "give no selections" in {
     for p1 <- SelectableM(Seq(0, 1, 2)).select("test", 0)
         p2 <- p1.deselect("test")
-    do p2.getSelection("test") shouldEqual Option.empty
+    do p2.get("test") shouldEqual Option.empty
+  }
+
+  "After 1 selection the get selection" should "give the selected item" in {
+    for p1 <- SelectableM(Seq(0, 1, 2)).select("test", 0)
+        p2 <- p1.getSelection("test")
+    do p2 shouldEqual Some(0)
   }
 
