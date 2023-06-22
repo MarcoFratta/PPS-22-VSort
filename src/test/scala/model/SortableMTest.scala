@@ -61,6 +61,16 @@ class SortableMTest extends AnyFlatSpec with Matchers:
     yield ()
     array.data shouldEqual Seq(2, 3, 1)
   }
+  "A loop for 3 times on (1,2,3)" should "swap 3 times" in {
+    val array = sortModel.SortableM(Seq(1, 2, 3))
+    var t = -1
+    val y = (for l <- array.loopWhile(x => t < 2)(x =>
+      t = t + 1
+      x.swap(t, 0))
+    yield l).get
+    y.data shouldEqual Seq(3, 1, 2)
+    t shouldEqual 2
+  }
 
   "Bubble sort" should "work" in {
     import StepsVisualizer.*

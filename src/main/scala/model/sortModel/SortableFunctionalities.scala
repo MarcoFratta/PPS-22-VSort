@@ -100,6 +100,12 @@ object SortOperation:
   extension[T: Comparable, A <: SortableM[T]] (s: A)
     @targetName("unit")
     def ! : SortOps[A] = unit(s)
+
+    def loopWhile(f: A => Boolean)(g: A => SortOps[A]): SortOps[A] =
+      new SortOps[A]:
+        override def get: A = if f(s) then g(s).get.loopWhile(f)(g).get else s
+
+
   extension[T: Comparable, A <: SortableM[T] with Steps[T]] (s: A)
 
     def compare[C <: A, D <: A](a: Int, b: Int)(ifTrue: A => SortOps[C])(ifFalse: A => SortOps[D]): SortOps[C | D] =
@@ -151,6 +157,8 @@ object SortOperation:
       new SortOps[Option[s.IndexType]]:
         override def get: Option[s.IndexType] =
           s.get(k)
+
+
 
 
 
