@@ -2,7 +2,8 @@ package model.SeqProperties
 import scala.util.Random
 object Modifier:
   extension [T](s: Seq[T])
-    def ordered(using o:Ordering[T]): Seq[T] = s.sorted
+    def ordered(using o: Ordering[T]): Seq[T] = s.sorted
+    def duplicated(rate: Double): Seq[T] = ???
 object Setters:
   extension (seq: Seq[Double])
 
@@ -21,11 +22,16 @@ object Setters:
       seq.map(a => a.toInt)
       
 object Generators:
+
   import Setters.*
+
   def normalDistribution(mean: Double, std: Double): Seq[Double] =
     generate(Random.nextGaussian())(x => x * std + mean)
 
-  def uniformDistribution(min:Int, max:Int): Seq[Double] =
+  def exponentialDistribution(rate: Double): Seq[Double] =
+    generate(Random.nextDouble())(x => math.log(1 - Random.nextDouble()) / (-rate))
+
+  def uniformDistribution(min: Int, max: Int): Seq[Double] =
     generate(Random.nextDouble())(x => Seq(x).normalize(0, 1, min, max).head)
 
 private def generate[T](g: => T)(f: T => T): Seq[T] =
