@@ -34,7 +34,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
     print(string)
     result shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
-//
+
 //  "Insertion sort" should "work" in {
 //    var mList = Selectable(5, 4, 2, 1, 3)
 //    for (i <- 1 until mList.length) {
@@ -52,10 +52,10 @@ class SortingTest extends AnyFlatSpec with Matchers:
 //  }
 
   "Merge Sort" should "work" in {
-    val data = Seq(60, 20, 30, 40, 50, 10)
+    val data = Seq(20, 30, 40, 10, 80, 140, 12)
     val steps = mergeSort(data)
-    val (result, string) = visualizeSteps(steps, data)
+    //val (result, string) = visualizeSteps(steps, data)
 
-    print(string)
-    result shouldBe Seq(10, 20, 30, 40, 50, 60)
+    //print(string)
+    steps shouldBe Seq(10, 12, 20, 30, 40, 80, 140)
   }
