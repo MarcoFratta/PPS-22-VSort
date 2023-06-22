@@ -1,14 +1,14 @@
 package model
 
+import model.SeqProperties.Modifier
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
-import model.SeqProperties.Modifier
 
 class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
 
   import Modifier.*
-  import model.SeqProperties.Setters.*
   import model.SeqProperties.Generators.*
+  import model.SeqProperties.Setters.*
 
   "A sequence (7,6,4) with ascending ordering distribution" should "be (4,6,7)" in {
     val seq = Seq(7,6,4).ordered(using scala.Ordering.Int)
@@ -49,17 +49,8 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
     std should be <= 16.0
   }
 
-  "A Gaussian distributed seq with mean 30" should "have all positive values" in {
-
-
-  }
-
-
-
-
   "A Gaussian distributed seq with mean 4 and std 15 and values between 0 and 100" should "have values between 0 and 100" in {
     val seq = normalDistribution(4, 15).take(10).shift(0,100)
-    seq.foreach(x => print(x + " "))
     seq.max should be <= 100.0
     seq.min should be >= 0.0
   }
@@ -69,10 +60,24 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
     assert(seq.forall(x => x >= 0 && x <= 1))
   }
   "A uniform distributed seq with max 500 " should "have values between 0 and 500" in {
-    val seq = uniformDistribution(0,500).take(10)
+    val seq = uniformDistribution(0, 500).take(10)
     assert(seq.forall(x => x >= 0 && x <= 500))
   }
   "A uniform distributed seq with max 500 and min 100 " should "have values between 100 and 500" in {
-    val seq = uniformDistribution(100,500).take(10)
+    val seq = uniformDistribution(100, 500).take(10)
     assert(seq.forall(x => x >= 100 && x <= 500))
+  }
+
+  "A exponential distributed seq with rate 0.8 " should "have a rate >= 0.7 and <= 0.9" in {
+    val rateFromula: Seq[Double] => Double = s => 1 / (s.sum / s.size)
+    val n = 1000
+    var sum = 0.0
+    for _ <- 0 to n do
+      val seq = exponentialDistribution(0.8).take(10000)
+      sum = sum + rateFromula(seq)
+
+    sum = sum / n
+    println(f"sum -> $sum")
+    sum should be >= 0.7
+    sum should be <= 0.9
   }

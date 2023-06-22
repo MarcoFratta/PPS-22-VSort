@@ -126,7 +126,11 @@ object SortOperation:
 
     def iterate(range: Range)(g: (Int, A) => SortOps[A]): SortOps[A] =
       new SortOps[A]:
-        override def get: A = range.tail.foldLeft(g(range.head, s))((b, i) => g(i, b.get)).get
+        override def get: A = range.size match
+          case n if n > 1 => range.tail.foldLeft(g(range.head, s))((b, i) => g(i, b.get)).get
+          case 1 => g(range.head, s).get
+          case _ => s
+
 
   extension[T: Comparable, K, A <: Selections[K, T] with Steps[T]] (s: A)
     def select(k: K, i: s.IndexType): SortOps[A] =
