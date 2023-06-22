@@ -10,10 +10,9 @@ import scala.language.postfixOps
 
 object SortingAlgorithms:
 
-  given Comparable[Int] with
-    override def compare(a: Int, b: Int): Boolean = b - a > 0
-
   def bubbleSort(seq: Seq[Int]): Seq[Step] =
+    given Comparable[Int] with
+      override def compare(a: Int, b: Int): Boolean = a - b > 0
     given Conversion[Steps[Int], SortOps[Steps[Int]]] = _ !
 
     (for res <- SortableM(seq).iterate(0 to seq.length - 2)(
@@ -22,6 +21,8 @@ object SortingAlgorithms:
     yield (res.data, res.steps)).get._2
 
   def selectionSort(seq: Seq[Int]): Seq[Step] =
+    given Comparable[Int] with
+      override def compare(a: Int, b: Int): Boolean = a - b > 0
     given Conversion[Steps[Int] with Selections[String, Int], SortOps[Steps[Int] with Selections[String, Int]]] = _ !
 
     (for res <- SelectableM(seq).iterate(0 to seq.length - 2)(
@@ -39,6 +40,8 @@ object SortingAlgorithms:
     ) yield (res.data, res.steps)).get._2
 
   //  def insertionSort(seq: Seq[Int]): Seq[Step] = ???
+  given Comparable[Int] with
+    override def compare(a: Int, b: Int): Boolean = b - a > 0
 
   def mergeSort(seq: Seq[Int]): Seq[Int] = mergesort(SelectableM(seq), 0, seq.length-1)._1.data
 
