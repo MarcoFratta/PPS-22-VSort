@@ -3,40 +3,40 @@ package model
 import model.Step.Comparison
 import model.sortModel.SortOperation.*
 import model.sortModel.SortableFunctionalities.*
+import model.sortModel.*
+import model.sortModel.SortAddOns.IterateOps
 import model.sortModel.{SelectableM, Selections, SortableM}
 
 import scala.language.postfixOps
 
 object SortingAlgorithms:
+  import model.sortModel.SortAddOns.IterateOps
 
   def bubbleSort(seq: Seq[Int]): Seq[Step] =
     given Comparable[Int] with
       override def compare(a: Int, b: Int): Boolean = a - b > 0
     given Conversion[Steps[Int], SortOps[Steps[Int]]] = _ !
 
-    (for res <- SortableM(seq).iterate(0 to seq.length - 2)(
-      (i, t) => t.iterate(0 to t.length - 2 - i)(
-        (j, t2) => t2.compare(j, j + 1)(x => x.swap(j, j + 1))(x => x)))
-    yield (res.data, res.steps)).get._2
+    (for i <- SortableM(seq).loopFor(0 to seq.length - 2)
+         j <- i.previous.loopFor(0 to seq.length - 2 - i.value)
+         p1 <- j.previous.compare(j.value, j.value + 1)(x => x.swap(j.value, j.value + 1))(x => x)
+      yield p1).get.steps
 
   def selectionSort(seq: Seq[Int]): Seq[Step] =
     given Comparable[Int] with
       override def compare(a: Int, b: Int): Boolean = a - b > 0
     given Conversion[Steps[Int] with Selections[String, Int], SortOps[Steps[Int] with Selections[String, Int]]] = _ !
 
-    (for res <- SelectableM(seq).iterate(0 to seq.length - 2)(
-      (i, t1) => for p1 <- t1.select("min", i)
-                     p2 <- p1.iterate(i + 1 until seq.length)(
-                       (j, t2) => t2.compare(t2 -> "min", j)(x =>
-                         for p5 <- x.select("min", j)
-                         yield p5)
-                       (x => x)
-                     )
-                     min <- p2.getSelection("min")
-                     p3 <- p2.deselect("min")
-                     p4 <- p3.swap(min.get, i)
-      yield p4
-    ) yield (res.data, res.steps)).get._2
+    (for i <- SelectableM(seq).loopFor(0 to seq.length - 2)
+         p1 <- i.previous.select("min", i.value)
+         p2 <- for j <- p1.loopFor(i.value + 1 until seq.length)
+                  p3 <- j.previous.compare(j.previous -> "min", j.value)(x =>
+                    x.select("min", j.value))(x => x)
+              yield p3
+         min <- p2.getSelection("min")
+         p4 <- p2.deselect("min")
+         p5 <- p4.swap(min.get, i.value)
+      yield p5).get.steps
 
   def insertionSort(seq: Seq[Int]): Seq[Step] =
 
@@ -44,18 +44,16 @@ object SortingAlgorithms:
       override def compare(a: Int, b: Int): Boolean = a - b > 0
     given Conversion[Steps[Int] with Selections[String, Int], SortOps[Steps[Int] with Selections[String, Int]]] = _ !
 
-    (for res <- SelectableM(seq).iterate(1 until seq.length)(
-      (i, t1) => for p1 <- t1.select("sel", i)
-                     p2 <- p1.iterate(i - 1 to 0 by -1)(
-                       (j, t2) => t2.compare(j, t2 -> "sel")(x =>
-                         for p5 <- x.swap(x -> "sel", j)
-                             p6 <- p5.select("sel", j)
-                         yield p6)
-                       (x => x) // dovrebbe breakare il for
-                     )
-                     p3 <- p2.deselect("sel")
-      yield p3
-    ) yield (res.data, res.steps)).get._2
+    (for i <- SelectableM(seq).loopFor(1 until seq.length)
+         p1 <- i.previous.select("sel", i.value)
+         p2 <- for j <- p1.loopFor(i.value - 1 to 0 by -1)
+                  p3 <- j.previous.compare(j.value, j.previous -> "sel")(x =>
+                    for p4 <- x.swap(x -> "sel", j.value)
+                        p5 <- p4.select("sel", j.value)
+                    yield p5)(x => x)
+                yield p3
+         p3 <- p2.deselect("sel")
+    yield p3).get.steps
 
   given Comparable[Int] with
     override def compare(a: Int, b: Int): Boolean = b - a > 0
