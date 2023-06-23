@@ -65,12 +65,13 @@ object SortingAlgorithms:
   private def mergesort[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], start: Int, end: Int):
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) = end - start match
     case n if n < 1 => ((for p1 <- seq.divide(start, end) yield p1).get, start, end)
-    case n => merge((for p1 <- mergesort(mergesort(
-      (for p1 <- seq.divide(start, end)
-        yield p1).get, start, start + (n / 2)
-    )._1, start + 1 + (n / 2), end)._1
-      .divide(start, end)
-    yield p1).get, start, start + (n / 2), end)
+    case n =>
+      ((for p1 <- seq.divide(start, end)
+            p2 <- mergesort(p1, start, start + (n / 2))._1.!
+            p3 <- p2.divide(start + 1 + (n / 2), end)
+            p4 <- mergesort(p3, start + 1 + (n / 2), end)._1.!
+            p5 <- merge(p4, start, start + (n / 2), end)._1.!
+      yield p5).get, start, end)
 
   private def merge[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], start: Int, mid: Int, end: Int):
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) =
