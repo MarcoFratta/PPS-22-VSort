@@ -38,7 +38,25 @@ object SortingAlgorithms:
       yield p4
     ) yield (res.data, res.steps)).get._2
 
-  //  def insertionSort(seq: Seq[Int]): Seq[Step] = ???
+  def insertionSort(seq: Seq[Int]): Seq[Step] =
+
+    given Comparable[Int] with
+      override def compare(a: Int, b: Int): Boolean = a - b > 0
+    given Conversion[Steps[Int] with Selections[String, Int], SortOps[Steps[Int] with Selections[String, Int]]] = _ !
+
+    (for res <- SelectableM(seq).iterate(1 until seq.length)(
+      (i, t1) => for p1 <- t1.select(" sel", i)
+                     p2 <- p1.iterate(i - 1 to 0 by -1)(
+                       (j, t2) => t2.compare(j, t2 -> " sel")(x =>
+                         for p5 <- x.swap(x -> " sel", j)
+                             p6 <- p5.deselect(" sel")
+                             p7 <- p6.select(" sel", j)
+                         yield p7)
+                       (x => x)
+                     )
+                     p3 <- p2.deselect(" sel")
+      yield p3
+    ) yield (res.data, res.steps)).get._2
 
   given Comparable[Int] with
     override def compare(a: Int, b: Int): Boolean = b - a > 0
