@@ -34,7 +34,11 @@ object StepsVisualizer {
   private def stepFunction(step: Step): Map[Int, Entry] => Map[Int, Entry] = step match
     case Step.Swap(a: Int, b: Int) => map => map.updated(a, Entry(map(b).value, map(a).label))
       .updated(b, Entry(map(a).value, map(b).label))
-    case Step.Selection(s, a: Int) => map => if a < map.size then map.updated(a, Entry(map(a).value, s.toString)) else map
+    case Step.Selection(s, a: Int) => map => if a < map.size
+      then
+        stepFunction(Step.Deselection(s))(map).updated(a, Entry(stepFunction(Step.Deselection(s))(map)(a).value, s.toString))
+      else
+        stepFunction(Step.Deselection(s))(map)
     case Step.Comparison(a: Int, b: Int) => map => map.updated(a, Entry(map(a).value, map(a).label + "!"))
       .updated(b, Entry(map(b).value, map(b).label + "!"))
     case Step.Deselection(s) => map => map.mapValues(e => if (e.label == s) new Entry(e.value, "") else e).toMap

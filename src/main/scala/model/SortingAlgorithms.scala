@@ -25,16 +25,16 @@ object SortingAlgorithms:
     given Conversion[Steps[Int] with Selections[String, Int], SortOps[Steps[Int] with Selections[String, Int]]] = _ !
 
     (for res <- SelectableM(seq).iterate(0 to seq.length - 2)(
-      (i, t1) => for p1 <- t1.select(" min", i)
+      (i, t1) => for p1 <- t1.select("min", i)
                      p2 <- p1.iterate(i + 1 until seq.length)(
-                       (j, t2) => t2.compare(t2 -> " min", j)(x =>
-                         for p5 <- x.deselect(" min")
-                             p6 <- p5.select(" min", j)
-                         yield p6)
+                       (j, t2) => t2.compare(t2 -> "min", j)(x =>
+                         for p5 <- x.select("min", j)
+                         yield p5)
                        (x => x)
                      )
-                     p3 <- p2.swap(p2 -> " min", i)
-                     p4 <- p3.deselect(" min")
+                     min <- p2.getSelection("min")
+                     p3 <- p2.deselect("min")
+                     p4 <- p3.swap(min.get, i)
       yield p4
     ) yield (res.data, res.steps)).get._2
 
@@ -45,16 +45,15 @@ object SortingAlgorithms:
     given Conversion[Steps[Int] with Selections[String, Int], SortOps[Steps[Int] with Selections[String, Int]]] = _ !
 
     (for res <- SelectableM(seq).iterate(1 until seq.length)(
-      (i, t1) => for p1 <- t1.select(" sel", i)
+      (i, t1) => for p1 <- t1.select("sel", i)
                      p2 <- p1.iterate(i - 1 to 0 by -1)(
-                       (j, t2) => t2.compare(j, t2 -> " sel")(x =>
-                         for p5 <- x.swap(x -> " sel", j)
-                             p6 <- p5.deselect(" sel")
-                             p7 <- p6.select(" sel", j)
-                         yield p7)
-                       (x => x)
+                       (j, t2) => t2.compare(j, t2 -> "sel")(x =>
+                         for p5 <- x.swap(x -> "sel", j)
+                             p6 <- p5.select("sel", j)
+                         yield p6)
+                       (x => x) // dovrebbe breakare il for
                      )
-                     p3 <- p2.deselect(" sel")
+                     p3 <- p2.deselect("sel")
       yield p3
     ) yield (res.data, res.steps)).get._2
 
@@ -81,18 +80,15 @@ object SortingAlgorithms:
             for p1 <- g.compare(g -> "i", g -> "j")(x =>
               for
                 i <- x.getSelection("i")
-                p2 <- x.deselect("i")
-                p3 <- p2.select("i", i.get + 1)
-              yield p3)(x => for p2 <- x.iterate(x -> "j" until x -> "i" by -1)(
+                p2 <- x.select("i", i.get + 1)
+              yield p2)(x => for p2 <- x.iterate(x -> "j" until x -> "i" by -1)(
               (k, t) => for p3 <- t.swap(k, k - 1)
                 yield p3)
                                  i <- p2.getSelection("i")
-                                 p3 <- p2.deselect("i")
-                                 p4 <- p3.select("i", i.get + 1)
-                                 j <- p4.getSelection("j")
-                                 p5 <- p4.deselect("j")
-                                 p6 <- p5.select("j", j.get + 1)
-            yield p6
+                                 p3 <- p2.select("i", i.get + 1)
+                                 j <- p3.getSelection("j")
+                                 p4 <- p3.select("j", j.get + 1)
+            yield p4
             ) yield p1)
           p3 <- r.deselect("i")
           p4 <- p3.deselect("j")
