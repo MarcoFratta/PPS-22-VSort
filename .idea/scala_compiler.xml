@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="VSort" />
+    <profile name="sbt 1" modules="VSort">
+      <parameters>
+        <parameter value="-scalajs" />
+      </parameters>
+    </profile>
   </component>
 </project>
