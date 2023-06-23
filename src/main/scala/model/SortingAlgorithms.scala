@@ -1,10 +1,9 @@
 package model
 
 import model.Step.Comparison
-import model.sortModel.{SelectableM, Selections}
 import model.sortModel.SortOperation.*
 import model.sortModel.SortableFunctionalities.*
-import model.sortModel.SortableM
+import model.sortModel.{SelectableM, Selections, SortableM}
 
 import scala.language.postfixOps
 
@@ -55,39 +54,25 @@ object SortingAlgorithms:
 
   private def merge[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], start: Int, mid: Int, end: Int):
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) =
-
-    var i = start
-    var j = mid + 1
-
-    var res = (for p1 <- seq.select("i", start)
-                   p2 <- p1.select("j", mid + 1)
-    yield p2).get
-
-    while (j < end + 1 && i != j) {
-
-      res = (for p1 <- res.compare(res.get("i").get, res.get("j").get)(x =>
-        i = i + 1
-        for
-          i <- x.getSelection("i")
-          p2 <- x.deselect("i")
-          p3 <- p2.select("i", i.get + 1)
-        yield p3)(x =>
-        i = i + 1
-        j = j + 1
-        for
-          p2 <- x.iterate(x.get("j").get until x.get("i").get by -1)(
-            (k, t) => for p3 <- t.swap(k, k - 1)
-            yield p3)
-          i <- p2.getSelection("i")
-          p3 <- p2.deselect("i")
-          p4 <- p3.select("i", i.get + 1)
-          j <- p4.getSelection("j")
-          p5 <- p4.deselect("j")
-          p6 <- p5.select("j", j.get + 1)
-        yield p6
-      ) yield p1).get
-    }
-
-    ((for p1 <- res.deselect("i")
-      p2 <- p1.deselect("j")
-      yield p2).get, start, end)
+    ((for p1 <- seq.select("i", start)
+          p2 <- p1.select("j", mid + 1)
+          r <- p2.loopWhile(h => h.get("j").get < end + 1 && h.get("i").get != h.get("j").get)(g =>
+            for p1 <- g.compare(g.get("i").get, g.get("j").get)(x =>
+              for
+                i <- x.getSelection("i")
+                p2 <- x.deselect("i")
+                p3 <- p2.select("i", i.get + 1)
+              yield p3)(x => for p2 <- x.iterate(x.get("j").get until x.get("i").get by -1)(
+              (k, t) => for p3 <- t.swap(k, k - 1)
+                yield p3)
+                                 i <- p2.getSelection("i")
+                                 p3 <- p2.deselect("i")
+                                 p4 <- p3.select("i", i.get + 1)
+                                 j <- p4.getSelection("j")
+                                 p5 <- p4.deselect("j")
+                                 p6 <- p5.select("j", j.get + 1)
+            yield p6
+            ) yield p1)
+          p3 <- r.deselect("i")
+          p4 <- p1.deselect("j")
+    yield p4).get, start, end)
