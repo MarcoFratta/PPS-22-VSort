@@ -158,6 +158,9 @@ object SortOperation:
         override def get: Option[s.IndexType] =
           s.get(k)
 
+    @targetName("Alias for getSelection of Selection")
+    def ->(k: K): s.IndexType = s.get(k).get
+
 
 
 

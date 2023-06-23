@@ -27,13 +27,13 @@ object SortingAlgorithms:
     (for res <- SelectableM(seq).iterate(0 to seq.length - 2)(
       (i, t1) => for p1 <- t1.select(" min", i)
                      p2 <- p1.iterate(i + 1 until seq.length)(
-                       (j, t2) => t2.compare(t2.get(" min").get, j)(x =>
+                       (j, t2) => t2.compare(t2 -> " min", j)(x =>
                          for p5 <- x.deselect(" min")
                              p6 <- p5.select(" min", j)
                          yield p6)
                        (x => x)
                      )
-                     p3 <- p2.swap(p2.get(" min").get, i)
+                     p3 <- p2.swap(p2 -> " min", i)
                      p4 <- p3.deselect(" min")
       yield p4
     ) yield (res.data, res.steps)).get._2
@@ -56,13 +56,13 @@ object SortingAlgorithms:
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) =
     ((for p1 <- seq.select("i", start)
           p2 <- p1.select("j", mid + 1)
-          r <- p2.loopWhile(h => h.get("j").get < end + 1 && h.get("i").get != h.get("j").get)(g =>
-            for p1 <- g.compare(g.get("i").get, g.get("j").get)(x =>
+          r <- p2.loopWhile(h => h -> "j" < end + 1 && h -> "i" != h -> "j")(g =>
+            for p1 <- g.compare(g -> "i", g -> "j")(x =>
               for
                 i <- x.getSelection("i")
                 p2 <- x.deselect("i")
                 p3 <- p2.select("i", i.get + 1)
-              yield p3)(x => for p2 <- x.iterate(x.get("j").get until x.get("i").get by -1)(
+              yield p3)(x => for p2 <- x.iterate(x -> "j" until x -> "i" by -1)(
               (k, t) => for p3 <- t.swap(k, k - 1)
                 yield p3)
                                  i <- p2.getSelection("i")
