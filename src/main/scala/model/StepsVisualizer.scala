@@ -28,14 +28,17 @@ object StepsVisualizer {
     mapToString(stepFunction(step)(map)) + " -> " + step.toString
   private def getNewMap(step: Step, map: Map[Int, Entry]): Map[Int, Entry] = step match
     case Step.Comparison(_, _) => map
+    case Step.Divide(_, _) => map
     case s => stepFunction(s)(map)
 
   private def stepFunction(step: Step): Map[Int, Entry] => Map[Int, Entry] = step match
-    case Step.Swap(a: Int, b: Int) => map => map.updated(a, map(b)).updated(b, map(a))
-    case Step.Selection(s, a: Int) => map => map.updated(a, Entry(map(a).value, s.toString))
+    case Step.Swap(a: Int, b: Int) => map => map.updated(a, Entry(map(b).value, map(a).label))
+      .updated(b, Entry(map(a).value, map(b).label))
+    case Step.Selection(s, a: Int) => map => if a < map.size then map.updated(a, Entry(map(a).value, s.toString)) else map
     case Step.Comparison(a: Int, b: Int) => map => map.updated(a, Entry(map(a).value, map(a).label + "!"))
       .updated(b, Entry(map(b).value, map(b).label + "!"))
     case Step.Deselection(s) => map => map.mapValues(e => if (e.label == s) new Entry(e.value, "") else e).toMap
+    case Step.Divide(a: Int, b: Int) => map => map.filter((k, _) => k >= a && k <= b)
 
   private def arrayToMap(array: Seq[Int]): Map[Int, Entry] =
     array.zipWithIndex.map((n, i) => i -> Entry(n.toString, "")).toMap

@@ -39,10 +39,11 @@ object SortingAlgorithms:
     ) yield (res.data, res.steps)).get._2
 
   //  def insertionSort(seq: Seq[Int]): Seq[Step] = ???
+
   given Comparable[Int] with
     override def compare(a: Int, b: Int): Boolean = b - a > 0
 
-  def mergeSort(seq: Seq[Int]): Seq[Int] = mergesort(SelectableM(seq), 0, seq.length-1)._1.data
+  def mergeSort(seq: Seq[Int]): Seq[Step] = mergesort(SelectableM(seq), 0, seq.length-1)._1.steps
 
   private def mergesort[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], start: Int, end: Int):
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) = end - start match
@@ -74,5 +75,5 @@ object SortingAlgorithms:
             yield p6
             ) yield p1)
           p3 <- r.deselect("i")
-          p4 <- p1.deselect("j")
+          p4 <- p3.deselect("j")
     yield p4).get, start, end)

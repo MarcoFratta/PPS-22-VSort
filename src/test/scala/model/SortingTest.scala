@@ -52,10 +52,10 @@ class SortingTest extends AnyFlatSpec with Matchers:
 //  }
 
   "Merge Sort" should "work" in {
-    val data = Seq(20, 30, 40, 10, 80, 140, 12)
+    val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = mergeSort(data)
-    //val (result, string) = visualizeSteps(steps, data)
+    val (result, string) = visualizeSteps(steps, data)
 
-    //print(string)
-    steps shouldBe Seq(10, 12, 20, 30, 40, 80, 140)
+    print(string)
+    result shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
