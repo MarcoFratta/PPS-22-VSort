@@ -108,13 +108,20 @@ object SortOperation:
 
   extension[T: Comparable, A <: SortableM[T] with Steps[T]] (s: A)
 
+    def divide(a: Int, b: Int): SortOps[A] =
+      new SortOps[A]:
+        override def get: A = if s.data.isDefinedAt(a) && s.data.isDefinedAt(b) then
+          s.withSteps(s.steps + Divide(a, b))
+          s
+        else throw new IllegalArgumentException(f"Invalid divide indexes ($a - $b)")
+
     def compare[C <: A, D <: A](a: Int, b: Int)(ifTrue: A => SortOps[C])(ifFalse: A => SortOps[D]): SortOps[C | D] =
       new SortOps[C | D]:
         override def get: C | D =
           if s.data.isDefinedAt(a) && s.data.isDefinedAt(b) then
             s.withSteps(s.steps + Comparison(a, b))
             checkBranch(a, b)(ifTrue)(ifFalse)
-          else throw new IllegalArgumentException("Invalid index")
+          else throw new IllegalArgumentException(f"Invalid compare indexes ($a - $b)")
 
         private def checkBranch(a: Int, b: Int)(ifTrue: A => SortOps[C])(ifFalse: A => SortOps[D]): C | D =
           if summon[Comparable[T]].compare(s.data(a), s.data(b)) then ifTrue(s).get else ifFalse(s).get
