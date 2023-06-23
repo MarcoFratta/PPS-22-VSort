@@ -19,13 +19,14 @@ object Main:
   import BottomBar.*
   import TopBar.*
   import model.*
+  import view.rectangles.*
 
   def appElement(): Element =
     div(
       renderTopBar(),
      // renderDataTable(),
       //renderDataList(),
-      canvasTag(idAttr:= "canvas"),
+      getRectangle(),
       renderBottomBar()
     )
   end appElement
