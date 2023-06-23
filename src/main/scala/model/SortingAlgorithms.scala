@@ -47,15 +47,13 @@ object SortingAlgorithms:
 
   private def mergesort[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], start: Int, end: Int):
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) = end - start match
-    case n if n < 1 =>
-      val seq1 = (for p1 <- seq.divide(start, end) yield p1).get
-      (seq1, start, end)
-    case n =>
-      val seq1 = (for p1 <- seq.divide(start, end) yield p1).get
-      val t1 = mergesort(seq1, start, start + (n / 2))
-      val t2 = mergesort(t1._1, start + 1 + (n / 2), end)
-      val seq2 = (for p1 <- t2._1.divide(start, end) yield p1).get
-      merge(seq2, start, start + (n / 2), end)
+    case n if n < 1 => ((for p1 <- seq.divide(start, end) yield p1).get, start, end)
+    case n => merge((for p1 <- mergesort(mergesort(
+      (for p1 <- seq.divide(start, end)
+        yield p1).get, start, start + (n / 2)
+    )._1, start + 1 + (n / 2), end)._1
+      .divide(start, end)
+    yield p1).get, start, start + (n / 2), end)
 
   private def merge[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], start: Int, mid: Int, end: Int):
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) =
