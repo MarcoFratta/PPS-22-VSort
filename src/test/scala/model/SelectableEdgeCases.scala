@@ -84,7 +84,7 @@ class SelectableEdgeCases extends AnyFlatSpec with Matchers:
       for l <- list.compare(0, 1)(x => x.select("x", 0))(x => x.select("x", 1)) do
         l.steps shouldEqual Seq.empty
         l.data shouldEqual Seq(0)
-    } should have message "Invalid index"
+    } should have message "Invalid compare indexes (0 - 1)"
 
   }
 
