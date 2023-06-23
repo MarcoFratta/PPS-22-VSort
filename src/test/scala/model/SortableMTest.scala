@@ -1,7 +1,8 @@
 package model
 
 import model.Step.Comparison
-import model.sortModel.{Selections, SortableFunctionalities, SortableM}
+import model.sortModel.*
+import model.sortModel.SortAddOns.IterateOps
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
@@ -11,6 +12,7 @@ import scala.language.postfixOps
 class SortableMTest extends AnyFlatSpec with Matchers:
 
   import model.Step.*
+  import model.sortModel.SortAddOns.{!!, IterateOps}
   import model.sortModel.SortOperation.*
   import model.sortModel.SortableFunctionalities.*
 
@@ -110,3 +112,27 @@ class SortableMTest extends AnyFlatSpec with Matchers:
     println(visualizeSteps(y.get._2, Seq(3, 2, 1, 5, 8, 3, 5, 0, 1)))
     y.get._1 shouldBe Seq(0, 1, 1, 2, 3, 3, 5, 5, 8)
   }
+
+  "An iteration on (1,2,3)" should "not modify data" in {
+    val s = SortableM(Seq(1, 2, 3))
+    val y = (for i <- s.loopFor(0 to 3 by 1)
+      yield i.previous).get.data
+    y shouldEqual Seq(1, 2, 3)
+
+  }
+
+  "Bubble sort with loop for" should "work" in {
+    import StepsVisualizer.*
+    given Conversion[Steps[Int], SortOps[Steps[Int]]] = _ !
+
+
+    val s = SortableM(Seq(9, 8, 7, 6, 5, 4, 3, 2, 1, 0))
+    val y = for i <- s.loopFor(0 to s.length - 2)
+                j <- s.loopFor(0 to i.previous.length - 2 - i.value)
+                res <- j.previous.compare(j.value, j.value + 1)(x => x.swap(j.value, j.value + 1))(x => x)
+    yield res
+
+    y.get.data shouldEqual Seq(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+  }
+
+

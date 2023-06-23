@@ -120,6 +120,7 @@ object SortOperation:
         override def get: C | D =
           if s.data.isDefinedAt(a) && s.data.isDefinedAt(b) then
             s.withSteps(s.steps + Comparison(a, b))
+            println(f"Comparing ($a - $b) -> ${summon[Comparable[T]].compare(s.data(a), s.data(b))} ")
             checkBranch(a, b)(ifTrue)(ifFalse)
           else throw new IllegalArgumentException(f"Invalid compare indexes ($a - $b)")
 
