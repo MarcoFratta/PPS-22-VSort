@@ -53,22 +53,3 @@ extension[T: Comparable, A <: SortableM[T]] (s: A)
           b.flatMap(x => f(Iteration(i, b.get))))
 
 
-extension[T: Comparable, A <: SortableM[T] with Steps[T]] (s: A)
-
-  def compareAfter[C <: A, D <: A](a: => Int, b: => Int)(ifTrue: A => IterateOps[C])(ifFalse: A => IterateOps[D]): IterateOps[C | D] =
-    new IterateOps[C | D]:
-
-      import SortAddOns.!!
-
-      override def get: C | D =
-        if s.data.isDefinedAt(a) && s.data.isDefinedAt(b) then
-          s.withSteps(s.steps + Step.Comparison(a, b))
-          checkBranch(a, b)(ifTrue)(ifFalse)
-        else throw new IllegalArgumentException(f"Invalid compare indexes ($a - $b)")
-
-      override def flatMap(f: Iteration[C | D] => SortOps[C | D]): SortOps[C | D] = f(Iteration(0, get))
-
-      private def checkBranch(a: Int, b: Int)(ifTrue: A => IterateOps[C])(ifFalse: A => IterateOps[D]): C | D =
-        if summon[Comparable[T]].compare(s.data(a), s.data(b)) then ifTrue(s).get else ifFalse(s).get
-
-
