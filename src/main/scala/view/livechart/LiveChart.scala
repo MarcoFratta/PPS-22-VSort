@@ -26,7 +26,7 @@ object Main:
       renderTopBar(),
      // renderDataTable(),
       //renderDataList(),
-      getRectangle(),
+      getRectangle(Seq(49, 10.0,29,  3.5)),
       renderBottomBar()
     )
   end appElement
