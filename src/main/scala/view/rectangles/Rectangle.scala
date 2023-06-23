@@ -4,25 +4,33 @@ import org.scalajs.dom
 import org.scalajs.dom.html
 
 //val rectangleWidth = 20
-val rectangleHeight = 100
 val rectangleCount = 10
-def drawRectangle(canvas: html.Canvas): Unit = {
+
+
+
+
+def drawRectangles(canvas: html.Canvas, list: List[Int]): Unit =
   val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
   val rectangleWidth = canvas.width / rectangleCount
+  val max = list.max
+  drawSingleRectangle(list, 0)
+  def drawSingleRectangle(list: List[Int], index: Int): Unit =
+    list match
+      case h::t =>
+        val x = index * (rectangleWidth + 10) // 10 is the spacing between rectangles
+          ctx.fillStyle = "red"
+          val height = (h * canvas.height) / max
+          ctx.fillRect(x, canvas.height - height, rectangleWidth, height)
+          drawSingleRectangle(t, index+1)
+      case Nil =>
 
-  for (i <- 0 until rectangleCount) {
-    val x = i * (rectangleWidth + 10) // 10 is the spacing between rectangles
-    ctx.fillStyle = "red"
-    ctx.fillRect(x, canvas.height - rectangleHeight, rectangleWidth, rectangleHeight)
-  }
-}
 
 def getRectangle(): Element =
     canvasTag(
       //width := s"${rectangleCount * (rectangleWidth + 10)}",
-      height := s"${rectangleHeight}",
+      //height := s"${rectangleHeight}",
       inContext { el =>
-      onMountCallback(_ => drawRectangle(el.ref))
+      onMountCallback(_ => drawRectangles(el.ref, List(1, 10, 5, 8, 19, 3)))
      }
   )
 
