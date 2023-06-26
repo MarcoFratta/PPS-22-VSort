@@ -1,5 +1,6 @@
 import org.scalajs.linker.interface.ModuleSplitStyle
 
+
 lazy val livechart = project.in(file("."))
   .enablePlugins(ScalaJSPlugin) // Enable the Scala.js plugin in this project
   .settings(
@@ -24,6 +25,7 @@ lazy val livechart = project.in(file("."))
     /* Depend on the scalajs-dom library.
      * It provides static types for the browser DOM APIs.
      */
+
     libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "2.4.0",
 
     // Depend on Laminar
@@ -32,5 +34,7 @@ lazy val livechart = project.in(file("."))
     // Testing framework
     libraryDependencies += "org.scalameta" %%% "munit" % "0.7.29" % Test,
     name := "VSort",
+
+    libraryDependencies += "ai.dragonfly" %%% "vector" % "0.101",
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.15" % Test
   )
