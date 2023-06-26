@@ -1,6 +1,8 @@
 package view.livechart
 
 import com.raquo.laminar.api.L.{*, given}
+import model.SeqProperties.Generators.{exponentialDistribution, normalDistribution}
+import model.SeqProperties.Setters.*
 import org.scalajs.dom
 
 import scala.scalajs.js
@@ -14,6 +16,12 @@ def LiveChart(): Unit =
   )
 end LiveChart
 
+trait ConversionToDouble[T]:
+  def apply(x: T): Double
+given ConversionToDouble[String] with
+  def apply(str: String): Double = str.toDouble
+given ConversionToDouble[Int] with
+  def apply(int: Int): Double = int.toDouble
 object Main:
   val model = new Model
   import BottomBar.*
@@ -22,11 +30,15 @@ object Main:
   import view.rectangles.*
 
   def appElement(): Element =
+    //val seq = normalDistribution(100,15).take(200)
+    //val seq = exponentialDistribution(0.8).take(100).sorted
+    val seq = Seq(1,2,4)
+
     div(
       renderTopBar(),
      // renderDataTable(),
       //renderDataList(),
-      getRectangle(Seq(49, 10.0,29,  3.5)),
+      getRectangle(seq),
       renderBottomBar()
     )
   end appElement
