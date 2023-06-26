@@ -18,25 +18,33 @@ end LiveChart
 
 trait ConversionToDouble[T]:
   def apply(x: T): Double
+
 given ConversionToDouble[String] with
   def apply(str: String): Double = str.toDouble
+
 given ConversionToDouble[Int] with
   def apply(int: Int): Double = int.toDouble
+
+given ConversionToDouble[Double] with
+  def apply(int: Double): Double = int
+
 object Main:
   val model = new Model
+
   import BottomBar.*
   import TopBar.*
   import model.*
   import view.rectangles.*
 
   def appElement(): Element =
-    //val seq = normalDistribution(100,15).take(200)
-    //val seq = exponentialDistribution(0.8).take(100).sorted
-    val seq = Seq(1,2,4)
+    val seq = normalDistribution(100, 50).take(500).shift(1, 200)
+    seq.foreach(println(_))
+    //val seq = exponentialDistribution(0.4).take(100)
+    //val seq = Seq(1,2,4)
 
     div(
       renderTopBar(),
-     // renderDataTable(),
+      // renderDataTable(),
       //renderDataList(),
       getRectangle(seq),
       renderBottomBar()

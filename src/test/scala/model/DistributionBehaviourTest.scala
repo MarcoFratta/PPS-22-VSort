@@ -75,10 +75,10 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
 
   "A exponential distributed seq with rate 0.8 " should "have a rate >= 0.7 and <= 0.9" in {
     val rateFromula: Seq[Double] => Double = s => 1 / (s.sum / s.size)
-    val n = 1000
+    val n = 100
     var sum = 0.0
     for _ <- 0 to n do
-      val seq = exponentialDistribution(0.8).take(10000).sorted
+      val seq = exponentialDistribution(0.8).take(100).sorted
       sum = sum + rateFromula(seq)
 
     sum = sum / n

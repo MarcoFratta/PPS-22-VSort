@@ -11,5 +11,8 @@
   "devDependencies": {
     "@scala-js/vite-plugin-scalajs": "^1.0.0",
     "vite": "^4.1.0"
+  },
+  "dependencies": {
+    "source-map-support": "^0.5.21"
   }
 }
