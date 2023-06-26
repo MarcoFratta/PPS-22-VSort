@@ -52,13 +52,33 @@ object SortingAlgorithms:
                         p5 <- p4.select("sel", j.value)
                     yield p5)(x => x)
                 yield p3
-         p3 <- p2.deselect("sel")
+         p6 <- p2.deselect("sel")
+    yield p6).get.steps
+
+  def heapSort(seq: Seq[Int]): Seq[Step] =
+    (for p1 <- for i <- SelectableM(seq).loopFor(seq.length / 2 - 1 to 0 by -1)
+                  p2 <- heapify(i.previous, seq.length, i.value).!
+               yield p2
+         p3 <- for i <- p1.loopFor(p1.length - 1 to 0 by -1)
+               p4 <- i.previous.swap(i.value, 0)
+               p5 <- heapify(p4, i.value, 0).!
+         yield p5
     yield p3).get.steps
+
+  def heapify[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], n: Int, i: Int):
+  SortableM[T] with Steps[T] with Selections[String, T] =
+    (for p1 <- seq.select("max", i)
+         p2 <- if 2*i+1 < n then p1.compare(p1 -> "max", 2*i+1)(x => x.select("max", 2*i+1))(x => x.!) else p1.!
+         p3 <- if 2*i+2 < n then p2.compare(p2 -> "max", 2*i+2)(x => x.select("max", 2*i+2))(x => x.!) else p2.!
+         p4 <- if i != (p3 -> "max") then for p5 <- p3.swap(i, p3 -> "max")
+                                              p6 <- heapify(p5, n, p5 -> "max").!
+                                          yield p6 else p3.!
+      yield p4).get
 
   given Comparable[Int] with
     override def compare(a: Int, b: Int): Boolean = b - a > 0
 
-  def mergeSort(seq: Seq[Int]): Seq[Step] = mergesort(SelectableM(seq), 0, seq.length-1)._1.steps
+  def mergeSort(seq: Seq[Int]): Seq[Step] = mergesort(SelectableM(seq), 0, seq.length - 1)._1.steps
 
   private def mergesort[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], start: Int, end: Int):
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) = end - start match
