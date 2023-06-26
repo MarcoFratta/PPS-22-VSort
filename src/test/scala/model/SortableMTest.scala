@@ -2,7 +2,7 @@ package model
 
 import model.Step.Comparison
 import model.sortModel.*
-import model.sortModel.SortAddOns.IterateOps
+import model.sortModel.SortAddOns.{IterateOps, LoopOps}
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
@@ -64,7 +64,7 @@ class SortableMTest extends AnyFlatSpec with Matchers:
     yield ()
     array.data shouldEqual Seq(2, 3, 1)
   }
-  "A loop for 3 times on (1,2,3)" should "swap 3 times" in {
+  "A while loop for 3 times on (1,2,3)" should "swap 3 times" in {
     val array = SortableM(Seq(1, 2, 3))
     var t = -1
     val y = (for l <- array.loopWhile(x => t < 2)(x =>
@@ -134,5 +134,30 @@ class SortableMTest extends AnyFlatSpec with Matchers:
 
     y.get.data shouldEqual Seq(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
   }
+
+
+  "A while (i < 3) on (1,2,3) incrementing i at each iteration" should "swap 3 times" in {
+    val array = SortableM(Seq(1, 2, 3, 4))
+    var t = -1
+    val y = (for l <- array.whileLoop(_ =>
+      t += 1
+      println(f"check $t")
+      t < 3)
+                 l2 <- l.swap(t, t + 1) yield l2).get
+
+    y.data shouldEqual Seq(2, 3, 4, 1)
+    t shouldEqual 3
+  }
+
+  "A while true on (1,2,3" should "stop after a swap and a break" in {
+    val array = IterableM(Seq(1, 2, 3, 4))
+    val y = (for l <- array.whileBreak(_ => true)
+                 l2 <- l.swap(0, 3)
+                 l3 <- l2.break
+    yield l3).get
+
+    y.data shouldEqual Seq(4, 2, 3, 1)
+  }
+
 
 

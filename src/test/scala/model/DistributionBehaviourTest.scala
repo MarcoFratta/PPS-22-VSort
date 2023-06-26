@@ -50,13 +50,18 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
   }
 
   "A Gaussian distributed seq with mean 4 and std 15 and values between 0 and 100" should "have values between 0 and 100" in {
-    val seq = normalDistribution(4, 15).take(10).shift(0,100)
+    val seq = normalDistribution(4, 15).take(10).shift(0, 100)
     seq.max should be <= 100.0
     seq.min should be >= 0.0
   }
 
+  "A Gaussian distributed seq with mean 4 and std 15 and values > 0 " should "have values between 0 and 100" in {
+    val seq = normalDistribution(500, 150).take(10000)
+    println(f"Count >= 0 ${seq.count(_ >= 0)}")
+  }
+
   "A uniform distributed seq " should "have values between 0 and 1" in {
-    val seq = uniformDistribution(0,1).take(1000)
+    val seq = uniformDistribution(0, 1).take(1000)
     assert(seq.forall(x => x >= 0 && x <= 1))
   }
   "A uniform distributed seq with max 500 " should "have values between 0 and 500" in {
@@ -73,7 +78,7 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
     val n = 1000
     var sum = 0.0
     for _ <- 0 to n do
-      val seq = exponentialDistribution(0.8).take(10000)
+      val seq = exponentialDistribution(0.8).take(10000).sorted
       sum = sum + rateFromula(seq)
 
     sum = sum / n
