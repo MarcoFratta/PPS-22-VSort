@@ -52,3 +52,12 @@ class SortingTest extends AnyFlatSpec with Matchers:
     print("Merge sort\n" + string)
     result shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
+
+  "Heap Sort" should "work" in {
+    val data = Seq(60, 20, 30, 40, 50, 10)
+    val steps = heapSort(data)
+    val (result, string) = visualizeSteps(steps, data)
+
+    print("Heap sort\n" + string)
+    result shouldBe Seq(10, 20, 30, 40, 50, 60)
+  }
