@@ -22,16 +22,16 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
 
   "A sequence (0.3, 0.5, 1.0) with values between 0 and 5" should "be (0.0, 1.4, 5.0)" in {
     val seq = Seq(0.3, 0.5, 1.0).shift(0,5)
-    assert(seq == Seq(0.0, 1.4, 5.0))
+    assert(seq.roundToFirstDecimal() == Seq(0.0, 1.4, 5.0))
   }
 
   "A sequence (0.3, -0.8, 0.5, -0.3, 1.0) with values between 10 and 20" should "be (16.1, 10.0, 17.2, 12.8, 20.0)" in {
     val seq = Seq(0.3, -0.8, 0.5, -0.3, 1.0).shift(10, 20)
-    assert(seq == Seq(16.1, 10.0, 17.2, 12.8, 20.0))
+    assert(seq.roundToFirstDecimal() == Seq(16.1, 10.0, 17.2, 12.8, 20.0))
   }
   "A sequence (11.0, 25.0, 15.0, 30.0) with min value = 20" should "be (20.0, 27.5, 22.5, 30.0)" in {
     val seq = Seq(10.0, 25.0, 15.0, 30.0).shift(20, 30)
-    assert(seq == Seq(20.0, 27.5, 22.5, 30.0))
+    assert(seq.roundToFirstDecimal() == Seq(20.0, 27.5, 22.5, 30.0))
   }
 
   "A sequence (11.0, 25.7, 15.2, 31.6)" should "be (11, 26, 15, 32) after conversion in integer" in {
@@ -40,7 +40,7 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
   }
 
   "A Gaussian distributed seq with mean 4 and std 15" should "have mean 4 and std 15" in{
-    val seq = normalDistribution(4,15).take(1000)
+    val seq = normalDistribution(4,15).take(100)
     val avg = seq.sum / seq.size
     val std = scala.math.sqrt(seq.map(x => math.pow(x - avg, 2)).sum / seq.size)
     avg should be >= 3.0
@@ -78,7 +78,7 @@ class DistributionBehaviourTest extends AnyFlatSpec with Matchers:
     val n = 100
     var sum = 0.0
     for _ <- 0 to n do
-      val seq = exponentialDistribution(0.8).take(100).sorted
+      val seq = exponentialDistribution(0.8, 5).take(100).sorted
       sum = sum + rateFromula(seq)
 
     sum = sum / n

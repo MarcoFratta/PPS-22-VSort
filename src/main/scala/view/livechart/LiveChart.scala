@@ -37,9 +37,10 @@ object Main:
   import view.rectangles.*
 
   def appElement(): Element =
-    val seq = normalDistribution(100, 50).take(500).shift(1, 200)
+    //val seq = normalDistribution(80, 50).take(160).shift(1, 200).doubleToInt
+    //seq.foreach(println(_))
+    val seq = exponentialDistribution(50, 200).take(200)
     seq.foreach(println(_))
-    //val seq = exponentialDistribution(0.4).take(100)
     //val seq = Seq(1,2,4)
 
     div(
