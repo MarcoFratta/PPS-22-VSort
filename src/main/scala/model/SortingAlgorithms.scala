@@ -30,13 +30,13 @@ object SortingAlgorithms:
     (for i <- SelectableM(seq).loopFor(0 to seq.length - 2)
          p1 <- i.previous.select("min", i.value)
          p2 <- for j <- p1.loopFor(i.value + 1 until seq.length)
-                  p3 <- j.previous.compare(j.previous -> "min", j.value)(x =>
+                  l1 <- j.previous.compare(j.previous -> "min", j.value)(x =>
                     x.select("min", j.value))(x => x)
-              yield p3
+              yield l1
          min <- p2.getSelection("min")
-         p4 <- p2.deselect("min")
-         p5 <- p4.swap(min.get, i.value)
-      yield p5).get.steps
+         p3 <- p2.deselect("min")
+         p4 <- p3.swap(min.get, i.value)
+      yield p4).get.steps
 
   def insertionSort(seq: Seq[Int]): Seq[Step] =
 
@@ -47,23 +47,23 @@ object SortingAlgorithms:
     (for i <- SelectableM(seq).loopFor(1 until seq.length)
          p1 <- i.previous.select("sel", i.value)
          p2 <- for j <- p1.loopFor(i.value - 1 to 0 by -1)
-                  p3 <- j.previous.compare(j.value, j.previous -> "sel")(x =>
-                    for p4 <- x.swap(x -> "sel", j.value)
-                        p5 <- p4.select("sel", j.value)
-                    yield p5)(x => x) // x => x con break
-                yield p3
-         p6 <- p2.deselect("sel")
-    yield p6).get.steps
+                  l1 <- j.previous.compare(j.value, j.previous -> "sel")(x =>
+                    for ll1 <- x.swap(x -> "sel", j.value)
+                        ll2 <- ll1.select("sel", j.value)
+                    yield ll2)(x => x) // x => x con break
+                yield l1
+         p3 <- p2.deselect("sel")
+    yield p3).get.steps
 
   def heapSort(seq: Seq[Int]): Seq[Step] =
     (for p1 <- for i <- SelectableM(seq).loopFor(seq.length / 2 - 1 to 0 by -1)
-                  p2 <- heapify(i.previous, seq.length, i.value).!
-               yield p2
-         p3 <- for i <- p1.loopFor(p1.length - 1 to 0 by -1)
-               p4 <- i.previous.swap(i.value, 0)
-               p5 <- heapify(p4, i.value, 0).!
-         yield p5
-    yield p3).get.steps
+                  l1 <- heapify(i.previous, seq.length, i.value).!
+               yield l1
+         p2 <- for i <- p1.loopFor(p1.length - 1 to 0 by -1)
+                  l1 <- i.previous.swap(i.value, 0)
+                  l2 <- heapify(l1, i.value, 0).!
+               yield l2
+    yield p2).get.steps
 
   def heapify[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], n: Int, i: Int):
   SortableM[T] with Steps[T] with Selections[String, T] =
@@ -78,33 +78,34 @@ object SortingAlgorithms:
   given Comparable[Int] with
     override def compare(a: Int, b: Int): Boolean = b - a > 0
 
-  def mergeSort(seq: Seq[Int]): Seq[Step] = mergesort(SelectableM(seq), 0, seq.length - 1)._1.steps
+  def mergeSort(seq: Seq[Int]): Seq[Step] = mergeSort(SelectableM(seq), 0, seq.length - 1)._1.steps
 
-  private def mergesort[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], start: Int, end: Int):
+  private def mergeSort[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], start: Int, end: Int):
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) = end - start match
     case n if n < 1 => ((for p1 <- seq.divide(start, end) yield p1).get, start, end)
     case n =>
-      ((for p1 <- seq.divide(start, end)
-            p2 <- mergesort(p1, start, start + (n / 2))._1.!
+      ((for p1 <- seq.divide(start, start + (n / 2))
+            p2 <- mergeSort(p1, start, start + (n / 2))._1.!
             p3 <- p2.divide(start + 1 + (n / 2), end)
-            p4 <- mergesort(p3, start + 1 + (n / 2), end)._1.!
-            p5 <- merge(p4, start, start + (n / 2), end)._1.!
-      yield p5).get, start, end)
+            p4 <- mergeSort(p3, start + 1 + (n / 2), end)._1.!
+            p5 <- p4.divide(start, end)
+            p6 <- merge(p5, start, start + (n / 2), end)._1.!
+      yield p6).get, start, end)
 
   private def merge[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], start: Int, mid: Int, end: Int):
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) =
-    ((for p1 <- seq.select("i", start)
-          p2 <- p1.select("j", mid + 1)
-          p3 <- for p10 <- p2.whileLoop(h => h -> "j" < end + 1 && h -> "i" != h -> "j")
-                    p4 <- p10.compare(p10 -> "i", p10 -> "j")(x => x.select("i", p10 -> "i" + 1))(x =>
-                        for p5 <- for k <- x.loopFor(x -> "j" until x -> "i" by -1)
-                                      p6 <- k.previous.swap(k.value, k.value - 1)
-                                  yield p6
-                            p7 <- p5.select("i", p5 -> "i" + 1)
-                            p8 <- p7.select("j", p7 -> "j" + 1)
-                        yield p8)
-                yield p4
-          p8 <- p3.deselect("i")
-          p9 <- p8.deselect("j")
-    yield p9).get, start, end)
+    ((for a1 <- seq.select("i", start)
+          a2 <- a1.select("j", mid + 1)
+          a3 <- for b1 <- a2.whileLoop(h => h -> "j" < end + 1 && h -> "i" != h -> "j")
+                    b2 <- b1.compare(b1 -> "i", b1 -> "j")(x => x.select("i", b1 -> "i" + 1))(x =>
+                        for c1 <- for k <- x.loopFor(x -> "j" until x -> "i" by -1)
+                                      d1 <- k.previous.swap(k.value, k.value - 1)
+                                  yield d1
+                            c2 <- c1.select("i", c1 -> "i" + 1)
+                            c3 <- c2.select("j", c2 -> "j" + 1)
+                        yield c3)
+                yield b2
+          a4 <- a3.deselect("i")
+          a5 <- a4.deselect("j")
+    yield a5).get, start, end)
 
