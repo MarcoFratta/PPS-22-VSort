@@ -15,8 +15,10 @@ object Setters:
     def shift(min: Int, max: Int): Seq[Double] =
       normalize(seq.min, seq.max, min, max)
 
-    private def roundDouble(v: Double): Double =
-      BigDecimal(v).setScale(1, BigDecimal.RoundingMode.HALF_UP).toDouble
+    def roundToNDecimal(n: Int): Seq[Double] =
+      seq.map(x => roundDouble(x, n))
+    private def roundDouble(v: Double, n: Int): Double =
+      BigDecimal(v).setScale(n, BigDecimal.RoundingMode.HALF_UP).toDouble
 
     def normalize(oldMin: Double, oldMax: Double, newMin: Double, newMax: Double): Seq[Double] =
       val oldStep = oldMax - oldMin
@@ -36,15 +38,15 @@ object Generators:
     generate(d.p(_))
 
   def normalDistribution(mean: Double, std: Double): Seq[Double] =
-    val d = Gaussian(mean, std)
+    val d = Gaussian(mean, std*std)
     generate(d.p(_))
 
-  def exponentialDistribution(rate: Double): Seq[Double] =
-    generate(x => math.log(1 - x) / (-rate))
+  def exponentialDistribution(rate: Double, max: Double): Seq[Double] =
+    generate(x => math.log(1 - Seq(x.toDouble).normalize(0, max,0, 1).head) / (-rate))
 
   def uniformDistribution(min: Int, max: Int): Seq[Double] =
     val d = Uniform(min, max)
-    generate(d.p(_))
+    generate(_ => d.random())
 
 private def generate[T](f: Int => T): Seq[T] =
   LazyList.iterate(0)(_ + 1).map(x => f(x))
