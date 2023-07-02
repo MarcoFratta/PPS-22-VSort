@@ -12,7 +12,7 @@ object StepsVisualizer {
 
   import model.Step.*
 
-  def visualizeSteps(steps: Seq[Step], array: Seq[Int]): (Seq[Int], String) =
+  def getSteps(steps: Seq[Step], array: Seq[Int]): (Seq[Int], String) =
     (this.applySteps(steps, arrayToMap(array)), this.getStepsString(steps, arrayToMap(array)))
 
   @tailrec
