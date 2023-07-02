@@ -65,8 +65,14 @@ object SortingAlgorithms:
                yield l2
     yield p2).get.steps
 
-  def heapify[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], n: Int, i: Int):
+  def heapify(seq: Seq[Int]) : Seq[Step] =
+    (for i <- SelectableM(seq).loopFor(seq.length / 2 - 1 to 0 by -1)
+                   l1 <- heapify(i.previous, seq.length, i.value).!
+              yield l1).get.steps
+
+  private def heapify[T: Comparable](seq: SortableM[T] with Steps[T] with Selections[String, T], n: Int, i: Int):
   SortableM[T] with Steps[T] with Selections[String, T] =
+
     (for p1 <- seq.select("max", i)
          p2 <- if 2*i+1 < n then p1.compare(p1 -> "max", 2*i+1)(x => x.select("max", 2*i+1))(x => x.!) else p1.!
          p3 <- if 2*i+2 < n then p2.compare(p2 -> "max", 2*i+2)(x => x.select("max", 2*i+2))(x => x.!) else p2.!
