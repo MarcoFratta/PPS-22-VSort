@@ -1,10 +1,11 @@
 package view.livechart
 
 import com.raquo.laminar.api.L.*
+import view.livechart.Main.sliderValue
 
 object TopBar:
 
-  def renderTopBar(): Element =
+  def renderTopBar(sliderValue: Var[Int]): Element =
     ul(
       li(renderSelectionAlg()),
       li(renderSelectionDistribution()),
@@ -12,6 +13,7 @@ object TopBar:
       li(renderArrayProperties("Min")),
       li(renderArrayProperties("Size")),
       li(renderArrayProperties("% valori duplicati")),
+      li(renderSlider(sliderValue)),
       li(
         button (
           i(
@@ -19,6 +21,27 @@ object TopBar:
           )
         )
       )
+    )
+
+  def renderSlider(sliderValue: Var[Int]): Element =
+    //val slidVal = Var(sliderValue.now())
+
+    div(
+    input(
+      className := "slider",
+      typ := "range",
+      minAttr := "0",
+      maxAttr := "200",
+
+      sliderValue.signal --> (newV => println("topBar: "+ newV.toString)),
+
+      onInput.mapToValue.map(_.toInt) --> sliderValue
+
+    ),
+
+      child.text <-- sliderValue.signal.map(_.toString),
+
+
     )
   def renderSelectionAlg(): Element =
     form(

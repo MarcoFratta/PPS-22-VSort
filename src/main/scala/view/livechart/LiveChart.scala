@@ -1,9 +1,11 @@
 package view.livechart
 
 import com.raquo.laminar.api.L.{*, given}
+import com.raquo.laminar.nodes.ReactiveHtmlElement
 import model.SeqProperties.Generators.{exponentialDistribution, normalDistribution}
 import model.SeqProperties.Setters.*
 import org.scalajs.dom
+import org.scalajs.dom.html.Canvas
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.*
@@ -28,28 +30,33 @@ given ConversionToDouble[Int] with
 given ConversionToDouble[Double] with
   def apply(int: Double): Double = int
 
+
 object Main:
   val model = new Model
-
+  val minValue =120
+  val sliderValue = Var(minValue)
   import BottomBar.*
   import TopBar.*
   import model.*
   import view.rectangles.*
 
-  def appElement(): Element =
-    //val seq = normalDistribution(80, 50).take(160).shift(1, 200).doubleToInt
-    //seq.foreach(println(_))
-    val seq = exponentialDistribution(50, 200).take(200)
-    seq.foreach(println(_))
-    //val seq = Seq(1,2,4)
 
+
+  def appElement(): Element =
+
+    //val seq = normalDistribution(50, 50).take(sliderValue.signal.now()).shift(1, 200).doubleToInt
+    //seq.foreach(println(_))
+    //val seq = exponentialDistribution(50, 200).take(200)
+    //seq.foreach(println(_))
+    //val seq = Seq(1,2,4)
     div(
-      renderTopBar(),
-      // renderDataTable(),
-      //renderDataList(),
-      getRectangle(seq),
-      renderBottomBar()
-    )
+        renderTopBar(sliderValue),
+        // renderDataTable(),
+        //renderDataList(),
+        getRectangle(sliderValue),
+        renderBottomBar(),
+        sliderValue.signal --> (newV => println("main: "+ newV))
+  )
   end appElement
 
 
