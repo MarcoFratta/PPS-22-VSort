@@ -12,8 +12,16 @@ object StepsVisualizer {
 
   import model.Step.*
 
-  def visualizeSteps(steps: Seq[Step], array: Seq[Int]): (Seq[Int], String) =
+  def getSteps(steps: Seq[Step], array: Seq[Int]): (Seq[Int], String) =
     (this.applySteps(steps, arrayToMap(array)), this.getStepsString(steps, arrayToMap(array)))
+
+  def getMapList(steps: Seq[Step], array: Seq[Int]): List[List[(Int, String)]] =
+    getMapList(steps, List(arrayToMap(array))).map(m => m.toList.sortBy(_._1).map((_, p) => (p.value.toInt, p.label)))
+
+  @tailrec
+  private def getMapList(steps: Seq[Step], maps: List[Map[Int, Entry]]): List[Map[Int, Entry]] = steps match
+    case s :: t => getMapList(t, maps.appended(getNewMap(s, maps.last)))
+    case Nil => maps
 
   @tailrec
   private def applySteps(steps: Seq[Step], map: Map[Int, Entry]): Seq[Int] = steps match

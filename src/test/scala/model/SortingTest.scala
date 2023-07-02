@@ -20,7 +20,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
   "Bubble sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = bubbleSort(data)
-    val (result, string) = visualizeSteps(steps, data)
+    val (result, string) = getSteps(steps, data)
 
     print("Bubble sort\n" + string)
     result shouldBe Seq(10, 20, 30, 40, 50, 60)
@@ -29,7 +29,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
   "Selection sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = selectionSort(data)
-    val (result, string) = visualizeSteps(steps, data)
+    val (result, string) = getSteps(steps, data)
 
     print("Selection sort\n" + string)
     result shouldBe Seq(10, 20, 30, 40, 50, 60)
@@ -38,7 +38,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
   "Insertion sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = insertionSort(data)
-    val (result, string) = visualizeSteps(steps, data)
+    val (result, string) = getSteps(steps, data)
 
     print("Insertion Sort\n" + string)
     result shouldBe Seq(10, 20, 30, 40, 50, 60)
@@ -47,7 +47,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
   "Merge Sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = mergeSort(data)
-    val (result, string) = visualizeSteps(steps, data)
+    val (result, string) = getSteps(steps, data)
 
     print("Merge sort\n" + string)
     result shouldBe Seq(10, 20, 30, 40, 50, 60)
@@ -56,7 +56,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
   "Heap Sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = heapSort(data)
-    val (result, string) = visualizeSteps(steps, data)
+    val (result, string) = getSteps(steps, data)
 
     print("Heap sort\n" + string)
     result shouldBe Seq(10, 20, 30, 40, 50, 60)
