@@ -32,9 +32,8 @@ object TopBar:
       typ := "range",
       minAttr := "0",
       maxAttr := "200",
-
+      value:= sliderValue.now().toString,
       sliderValue.signal --> (newV => println("topBar: "+ newV.toString)),
-
       onInput.mapToValue.map(_.toInt) --> sliderValue
 
     ),
