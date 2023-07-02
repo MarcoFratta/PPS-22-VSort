@@ -15,6 +15,14 @@ object StepsVisualizer {
   def getSteps(steps: Seq[Step], array: Seq[Int]): (Seq[Int], String) =
     (this.applySteps(steps, arrayToMap(array)), this.getStepsString(steps, arrayToMap(array)))
 
+  def getMapList(steps: Seq[Step], array: Seq[Int]): List[Map[Int, Entry]] =
+    getMapList(steps, List(arrayToMap(array)))
+
+  @tailrec
+  private def getMapList(steps: Seq[Step], maps: List[Map[Int, Entry]]): List[Map[Int, Entry]] = steps match
+    case s :: t => getMapList(t, maps.appended(getNewMap(s, maps.last)))
+    case Nil => maps
+
   @tailrec
   private def applySteps(steps: Seq[Step], map: Map[Int, Entry]): Seq[Int] = steps match
     case s :: t => applySteps(t, getNewMap(s, map))

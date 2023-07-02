@@ -7,7 +7,7 @@ import org.scalatest.matchers.should.Matchers
 
 class HeapifyTest extends AnyFlatSpec with Matchers:
 
-  "A sequence (4,10,3,5,1) " should "be (10, 5, 3, 4, 1) after heapify" in {
+  "A sequence (4, 10, 3, 5, 1) " should "be (10, 5, 3, 4, 1) after heapify" in {
     val data = Seq(4,10,3,5,1)
     val steps = heapify(data)
     val result = getSteps(steps, data)._1
