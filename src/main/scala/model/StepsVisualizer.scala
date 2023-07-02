@@ -15,8 +15,8 @@ object StepsVisualizer {
   def getSteps(steps: Seq[Step], array: Seq[Int]): (Seq[Int], String) =
     (this.applySteps(steps, arrayToMap(array)), this.getStepsString(steps, arrayToMap(array)))
 
-  def getMapList(steps: Seq[Step], array: Seq[Int]): List[Map[Int, Entry]] =
-    getMapList(steps, List(arrayToMap(array)))
+  def getMapList(steps: Seq[Step], array: Seq[Int]): List[List[(Int, String)]] =
+    getMapList(steps, List(arrayToMap(array))).map(m => m.toList.sortBy(_._1).map((_, p) => (p.value.toInt, p.label)))
 
   @tailrec
   private def getMapList(steps: Seq[Step], maps: List[Map[Int, Entry]]): List[Map[Int, Entry]] = steps match
