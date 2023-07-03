@@ -1,11 +1,10 @@
 package model
 
 import model.Step.Comparison
+import model.sortModel.SortAddOns.IterateOps
 import model.sortModel.SortOperation.*
 import model.sortModel.SortableFunctionalities.*
-import model.sortModel.*
-import model.sortModel.SortAddOns.IterateOps
-import model.sortModel.{SelectableM, Selections, SortableM}
+import model.sortModel.{SortableM, *}
 
 import scala.language.postfixOps
 
@@ -74,11 +73,11 @@ object SortingAlgorithms:
   SortableM[T] with Steps[T] with Selections[String, T] =
 
     (for p1 <- seq.select("max", i)
-         p2 <- if 2*i+1 < n then p1.compare(p1 -> "max", 2*i+1)(x => x.select("max", 2*i+1))(x => x.!) else p1.!
-         p3 <- if 2*i+2 < n then p2.compare(p2 -> "max", 2*i+2)(x => x.select("max", 2*i+2))(x => x.!) else p2.!
+         p2 <- if 2 * i + 1 < n then p1.compare(p1 -> "max", 2 * i + 1)(_.select("max", 2 * i + 1))(_ !) else p1.!
+         p3 <- if 2 * i + 2 < n then p2.compare(p2 -> "max", 2 * i + 2)(_.select("max", 2 * i + 2))(_ !) else p2.!
          p4 <- if i != (p3 -> "max") then for p5 <- p3.swap(i, p3 -> "max")
                                               p6 <- heapify(p5, n, p5 -> "max").!
-                                          yield p6 else p3.!
+         yield p6 else p3.!
       yield p4).get
 
   given Comparable[Int] with

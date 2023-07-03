@@ -18,6 +18,6 @@ class PercentageGeneratorsTest extends AnyFlatSpec with Matchers:
     given Generable[Int] = x => x.toInt
 
     val g = GaussianGen(4, 15)
-    val y = g.generateAll(300)
-    y.forall(x => x >= 0 && x <= 100) shouldBe true
+    val y = g.generateAll(4 to 20)
+    y.forall((x, y) => y >= 0 && y <= 100) shouldBe true
   }
