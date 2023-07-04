@@ -45,12 +45,13 @@ object Main:
 
 
   def appElement(): Element =
-    val data = uniformDistribution(0,100).take(50).map(a => a.toInt)
+    /*val data = uniformDistribution(0,100).take(50).map(a => a.toInt)
     val steps = bubbleSort(data)
     val list = getMapList(steps, data)
     val allSeq = list.map(a => a.toSeq)
     val seq = uniformDistribution(0,100).take(50).map(a => a.toInt)
     seq.foreach(println(_))
+    */
     //val seq = exponentialDistribution(50, 200).take(200)
     //seq.foreach(println(_))
     //val seq = Seq(1,2,4)

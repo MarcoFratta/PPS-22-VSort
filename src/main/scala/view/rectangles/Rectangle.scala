@@ -27,15 +27,15 @@ def CanvasComponent(rect: Var[List[Rectangle]]): HtmlElement =
 */
 //def drawAllRectangles(canvas: html.Canvas, list: List[Int]): Unit =
 
-
+var canvas: Option[html.Canvas] = None
 var allRectangles: List[Rectangle] = List()
-def colorRect(canvas: html.Canvas, indexList: List[Int]): Unit =
-  val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+def colorRect(indexList: List[Int], color: String): Unit =
+  val ctx = canvas.get.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
   indexList match
     case h::t => {ctx.clearRect(allRectangles(h).x, allRectangles(h).y, allRectangles(h).width, allRectangles(h).height)
-    ctx.fillStyle = "yellow"
+    ctx.fillStyle = color
     ctx.fillRect(allRectangles(h).x, allRectangles(h).y, allRectangles(h).width, allRectangles(h).height)
-    colorRect(canvas, t)}
+    colorRect(t, color)}
     case Nil =>
 
 def drawRectangles(canvas: html.Canvas, list: List[Int]): Unit =
@@ -77,6 +77,8 @@ def computeAndDraw(canvas: dom.html.Canvas, seq:List[Int], size: Int): Unit =
 
 def drawGraphic(seq: List[Int], size: Var[Int]):Unit =
   val parent: dom.Element = dom.document.querySelector(".div_canvas")
+  parent.innerHTML= ""
+  allRectangles = List()
   render(parent, getRectangle(seq, size))
 def getRectangle[T](seq: List[Int], size: Var[Int]): Element =
 
@@ -85,11 +87,15 @@ def getRectangle[T](seq: List[Int], size: Var[Int]): Element =
     //width := s"${rectangleCount * (rectangleWidth + 10)}",
     //height := s"${rectangleHeight}",
     //size.signal--> (newValue => computeAndDraw(re , newValue)),
-    inContext(thisNode => size.signal--> (newValue => computeAndDraw(thisNode.ref,seq, newValue))),
+
+    inContext(thisNode => size.signal--> (newValue =>  {
+      canvas = Some(thisNode.ref)
+      computeAndDraw(thisNode.ref,seq, newValue)
+    })),
     onMountCallback(el =>
+      canvas = Some(el.thisNode.ref)
       size.signal --> (newValue => computeAndDraw(el.thisNode.ref, seq, newValue))
       computeAndDraw(el.thisNode.ref, seq, size.now())
-      colorRect(el.thisNode.ref, List(4, 10))
     )
   )
 def getAllStepsWithString(list: List[List[(Int, String)]]): Element =
@@ -107,7 +113,6 @@ def getAllStepsWithString(list: List[List[(Int, String)]]): Element =
         var listToColor: List[Int] = List()
         print(list(i))
         list(i).foreach(a => if a._2=="!" then listToColor = listToColor.appended(list(i).indexOf(a)))
-        colorRect(el.thisNode.ref, listToColor)
         i = i+1
         if i equals(list.size) then
           timerIdRef.now().foreach(dom.window.clearInterval)
