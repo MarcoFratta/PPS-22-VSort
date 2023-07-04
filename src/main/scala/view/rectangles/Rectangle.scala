@@ -6,6 +6,38 @@ import org.scalajs.dom.html
 import model.SeqProperties.Setters.*
 
 
+case class Rectangle(x: Double, y: Double, width: Double, height: Double)
+/*
+def RectangleComponent(rect: Rectangle): HtmlElement =
+  div(
+    position.absolute,
+    left := rect.x.toString,
+    top := rect.y.toString,
+    width := rect.width.toString,
+    height := rect.height.toString,
+    backgroundColor := rect.color
+  )
+
+def CanvasComponent(rect: Var[List[Rectangle]]): HtmlElement =
+  div(
+    children <-- rect.signal.map { ballList =>
+      ballList.map(ball => RectangleComponent(ball))
+    }
+  )
+*/
+//def drawAllRectangles(canvas: html.Canvas, list: List[Int]): Unit =
+
+
+var allRectangles: List[Rectangle] = List()
+def colorRect(canvas: html.Canvas, indexList: List[Int]): Unit =
+  val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+  indexList match
+    case h::t => {ctx.clearRect(allRectangles(h).x, allRectangles(h).y, allRectangles(h).width, allRectangles(h).height)
+    ctx.fillStyle = "yellow"
+    ctx.fillRect(allRectangles(h).x, allRectangles(h).y, allRectangles(h).width, allRectangles(h).height)
+    colorRect(canvas, t)}
+    case Nil =>
+
 def drawRectangles(canvas: html.Canvas, list: List[Int]): Unit =
   val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
   ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -18,9 +50,12 @@ def drawRectangles(canvas: html.Canvas, list: List[Int]): Unit =
         val x = index * (rectangleWidth +0.5) // 10 is the spacing between rectangles
           ctx.fillStyle = "red"
           val height = (h * canvas.height) / max
+          val rect: Rectangle = Rectangle(x, canvas.height - height, rectangleWidth, height)
+          allRectangles = allRectangles.appended(rect)
           ctx.fillRect(x, canvas.height - height, rectangleWidth, height)
           drawSingleRectangle(t, index+1)
       case Nil =>
+
 
 def convertToDouble[T](value: T): Double = value match {
   case intValue: Int => intValue.toDouble
@@ -51,8 +86,10 @@ def getRectangle[T](seq: List[Int], size: Var[Int]): Element =
     onMountCallback(el =>
       size.signal --> (newValue => computeAndDraw(el.thisNode.ref, seq, newValue))
       computeAndDraw(el.thisNode.ref, seq, size.now())
+      colorRect(el.thisNode.ref, List(4, 10))
     )
   )
+
 
 def getAllSteps[T](list: List[List[Int]]): Element =
   var i =0
@@ -73,7 +110,7 @@ def getAllSteps[T](list: List[List[Int]]): Element =
 
 
 
-      val timerId = dom.window.setInterval(() => updateCanvas(), 10)
+      val timerId = dom.window.setInterval(() => updateCanvas(), 1000)
       timerIdRef.set(Some(timerId))
       /*onUnmountCallback { _ =>
         dom.window.clearInterval(timerId)

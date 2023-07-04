@@ -35,7 +35,7 @@ given ConversionToDouble[Double] with
 
 object Main:
   val model = new Model
-  val minValue = 120
+  val minValue = 50
   val sliderValue = Var(minValue)
   import BottomBar.*
   import TopBar.*
@@ -49,7 +49,7 @@ object Main:
     val steps = bubbleSort(data)
     val list = getMapList(steps, data).map(l => l.map((v, _) => v))
     val allSeq = list.map(a => a.toSeq)
-    val seq = normalDistribution(50, 50).take(sliderValue.signal.now()).shift(1, 200).doubleToInt
+    val seq = uniformDistribution(0,100).take(50).map(a => a.toInt)
     seq.foreach(println(_))
     //val seq = exponentialDistribution(50, 200).take(200)
     //seq.foreach(println(_))
@@ -58,7 +58,7 @@ object Main:
         renderTopBar(sliderValue),
         // renderDataTable(),
         //renderDataList(),
-        getAllSteps(allSeq),
+        getRectangle(seq.toList, Var(seq.size)),
         renderBottomBar(),
         sliderValue.signal --> (newV => println("main: "+ newV))
   )
