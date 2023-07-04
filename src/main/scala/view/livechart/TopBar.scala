@@ -1,6 +1,7 @@
 package view.livechart
 
 import com.raquo.laminar.api.L.*
+import controller.Graphic
 import view.livechart.Main.sliderValue
 
 object TopBar:
@@ -17,7 +18,9 @@ object TopBar:
       li(
         button (
           i(
-            className:="fa fa-check"
+            className:="fa fa-check",
+            onClick --> (_ => Graphic.showGraph())
+
           )
         )
       )

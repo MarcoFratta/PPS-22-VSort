@@ -47,7 +47,7 @@ object Main:
   def appElement(): Element =
     val data = uniformDistribution(0,100).take(50).map(a => a.toInt)
     val steps = bubbleSort(data)
-    val list = getMapList(steps, data).map(l => l.map((v, _) => v))
+    val list = getMapList(steps, data)
     val allSeq = list.map(a => a.toSeq)
     val seq = uniformDistribution(0,100).take(50).map(a => a.toInt)
     seq.foreach(println(_))
@@ -58,7 +58,9 @@ object Main:
         renderTopBar(sliderValue),
         // renderDataTable(),
         //renderDataList(),
-        getRectangle(seq.toList, Var(seq.size)),
+        //getRectangle(seq.toList, Var(seq.size)),
+        //getAllStepsWithString(list),
+        div(className:= "div_canvas"),
         renderBottomBar(),
         sliderValue.signal --> (newV => println("main: "+ newV))
   )

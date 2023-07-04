@@ -75,6 +75,9 @@ def computeAndDraw(canvas: dom.html.Canvas, seq:List[Int], size: Int): Unit =
   // Esegui le operazioni desiderate sul canvas utilizzando il valore fornito
   // ...
 
+def drawGraphic(seq: List[Int], size: Var[Int]):Unit =
+  val parent: dom.Element = dom.document.querySelector(".div_canvas")
+  render(parent, getRectangle(seq, size))
 def getRectangle[T](seq: List[Int], size: Var[Int]): Element =
 
   canvasTag(
@@ -89,12 +92,43 @@ def getRectangle[T](seq: List[Int], size: Var[Int]): Element =
       colorRect(el.thisNode.ref, List(4, 10))
     )
   )
+def getAllStepsWithString(list: List[List[(Int, String)]]): Element =
+  var i =0
+  canvasTag(
+    className := "canvas",
+    //width := s"${rectangleCount * (rectangleWidth + 10)}",
+    //height := s"${rectangleHeight}",
+    //size.signal--> (newValue => computeAndDraw(re , newValue)),
+    //inContext(thisNode => size.signal--> (newValue => computeAndDraw(thisNode.ref,seq, newValue))),
+    onMountCallback(el =>
+      val timerIdRef: Var[Option[Int]] = Var(None)
+      def updateCanvas(): Unit=
+        computeAndDraw(el.thisNode.ref, list(i).map((a,s) => a), list(i).size)
+        var listToColor: List[Int] = List()
+        print(list(i))
+        list(i).foreach(a => if a._2=="!" then listToColor = listToColor.appended(list(i).indexOf(a)))
+        colorRect(el.thisNode.ref, listToColor)
+        i = i+1
+        if i equals(list.size) then
+          timerIdRef.now().foreach(dom.window.clearInterval)
+          timerIdRef.set(None)
 
+
+
+      val timerId = dom.window.setInterval(() => updateCanvas(), 1000)
+      timerIdRef.set(Some(timerId))
+      /*onUnmountCallback { _ =>
+        dom.window.clearInterval(timerId)
+      }
+      */
+
+    )
+  )
 
 def getAllSteps[T](list: List[List[Int]]): Element =
   var i =0
   canvasTag(
-    className := "canvas",
+    //className := "canvas",
     //width := s"${rectangleCount * (rectangleWidth + 10)}",
     //height := s"${rectangleHeight}",
     //size.signal--> (newValue => computeAndDraw(re , newValue)),
