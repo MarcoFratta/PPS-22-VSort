@@ -16,6 +16,16 @@ object Graphic:
   def showGraph(): Unit =
     drawGraphic(seq.toList, Var(seq.size))
 
+  import java.util.{Timer, TimerTask}
+  def play(): Unit =
+    println("play")
+    val timer = new Timer()
+    val task = new TimerTask {
+      def run(): Unit = {
+        nextStep()
+      }
+    }
+    timer.schedule(task, 0, 10)
 
   def nextStep(): Unit =
     println("next step")
