@@ -101,7 +101,7 @@ object SortingAlgorithms:
   (SortableM[T] with Steps[T] with Selections[String, T], Int, Int) =
     ((for a1 <- seq.select("i", start)
           a2 <- a1.select("j", mid + 1)
-          a3 <- for b1 <- a2.whileLoop(h => h -> "j" < end + 1 && h -> "i" != h -> "j")
+          a3 <- for b1 <- a2.whileLoop(h => h -> "j" <= end && h -> "i" != h -> "j")
                     b2 <- b1.compare(b1 -> "i", b1 -> "j")(x => x.select("i", b1 -> "i" + 1))(x =>
                         for c1 <- for k <- x.loopFor(x -> "j" until x -> "i" by -1)
                                       d1 <- k.previous.swap(k.value, k.value - 1)

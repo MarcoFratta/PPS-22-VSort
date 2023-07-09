@@ -20,44 +20,48 @@ class SortingTest extends AnyFlatSpec with Matchers:
   "Bubble sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = bubbleSort(data)
-    val (result, string) = getSteps(steps, data)
 
-    print("Bubble sort\n" + string)
-    result shouldBe Seq(10, 20, 30, 40, 50, 60)
+    print("Bubble sort\n" + getString(steps, data))
+    getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
   "Selection sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = selectionSort(data)
-    val (result, string) = getSteps(steps, data)
 
-    print("Selection sort\n" + string)
-    result shouldBe Seq(10, 20, 30, 40, 50, 60)
+    print("Selection sort\n" + getString(steps, data))
+    getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
   "Insertion sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = insertionSort(data)
-    val (result, string) = getSteps(steps, data)
 
-    print("Insertion Sort\n" + string)
-    result shouldBe Seq(10, 20, 30, 40, 50, 60)
+    print("Insertion Sort\n" + getString(steps, data))
+    getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
   "Merge Sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = mergeSort(data)
-    val (result, string) = getSteps(steps, data)
 
-    print("Merge sort\n" + string)
-    result shouldBe Seq(10, 20, 30, 40, 50, 60)
+    print("Merge sort\n" + getString(steps, data))
+    println(getMapList(steps, data))
+    getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
   "Heap Sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = heapSort(data)
-    val (result, string) = getSteps(steps, data)
 
-    print("Heap sort\n" + string)
-    result shouldBe Seq(10, 20, 30, 40, 50, 60)
+    print("Heap sort\n" + getString(steps, data))
+    getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
+  }
+
+  "getMapList" should "work" in {
+    val data = Seq(20, 30, 10)
+    val steps = bubbleSort(data)
+
+    println("Bubble sort\n" + getString(steps, data))
+    println(getMapList(steps, data))
   }
