@@ -18,6 +18,7 @@ object Graphic:
 
 
   var seq = uniformDistribution(0, 100).take(50).map(a => a.toInt)
+  val starterSeq = seq
   var steps: Seq[Step] = bubbleSort(seq)
   var index: Int = 0
 
@@ -26,6 +27,12 @@ object Graphic:
     drawGraphic(seq.toList, Var(seq.size))
 
   import java.util.{Timer, TimerTask}
+
+  def replay(): Unit =
+    index = 0
+    seq = starterSeq
+    stop()
+    showGraph()
 
   def play(): Unit =
     println("play")

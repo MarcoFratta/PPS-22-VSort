@@ -15,7 +15,7 @@ object BottomBar:
   def renderBottomBar() : Element =
 
     ul(
-      li(renderBottomIcon("", "fa-rotate-left", (_) => ())),
+      li(renderBottomIcon("", "fa-rotate-left", (_) => replay())),
       li(renderBottomIcon("", "fa-backward", _ => backStep())),
       li(controlButton),
       li(renderBottomIcon("", "fa-forward", _ => nextStep())),
