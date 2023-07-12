@@ -65,8 +65,8 @@ object SortingAlgorithms:
   LoopableS[T, String] =
 
     (for p1 <- seq.select("max", i)
-         p2 <- if 2 * i + 1 < n then p1.compare(p1 -> "max", 2 * i + 1)(_.select("max", 2 * i + 1))(_ !) else p1.!
-         p3 <- if 2 * i + 2 < n then p2.compare(p2 -> "max", 2 * i + 2)(_.select("max", 2 * i + 2))(_ !) else p2.!
+         p2 <- if 2 * i + 1 < n then p1.compare(2 * i + 1, p1 -> "max")(_.select("max", 2 * i + 1))(_ !) else p1.!
+         p3 <- if 2 * i + 2 < n then p2.compare(2 * i + 2, p2 -> "max")(_.select("max", 2 * i + 2))(_ !) else p2.!
          p4 <- if i != (p3 -> "max") then for p5 <- p3.swap(i, p3 -> "max")
                                               p6 <- heapify(p5, n, p5 -> "max").!
          yield p6 else p3.!
