@@ -31,25 +31,35 @@ object Graphic:
   def replay(): Unit =
     index = 0
     seq = starterSeq
+    enableBackButton(false)
+    disableNextButton(false)
     stop()
     showGraph()
 
   def play(): Unit =
     println("play")
     changePlayIcon()
+
     val task = new TimerTask {
       def run(): Unit = index match
-        case _ if index equals steps.size => end()
+        case _ if index equals (steps.size -1) => end()
         case _ => nextStep()
 
     }
     timer = new Timer()
-    timer.schedule(task, 0, 10)
+    timer.schedule(task, 0, 20)
 
   def end(): Unit =
     println("fine")
+    timer.cancel()
+    disableNextButton(true)
   def nextStep(): Unit =
     //println("next step")
+    enableBackButton(true)
+    if index < steps.size -1
+      then disableNextButton(false)
+    if index equals steps.size -1
+      then end()
     steps(index) match
     case Swap(a: Int, b: Int) =>
       //println("a" + a + "b" + b)
@@ -68,6 +78,11 @@ object Graphic:
 
   def backStep(): Unit =
     println("back step")
+    if index equals 1 then
+      enableBackButton(false)
+
+    if index < steps.size-1 then
+      disableNextButton(false)
     index = index - 1
     steps(index) match
     case Swap(a: Int, b: Int) =>

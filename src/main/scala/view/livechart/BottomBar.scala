@@ -1,24 +1,26 @@
 package view.livechart
 
 import com.raquo.laminar.api.L
-import com.raquo.laminar.api.L.*
+import com.raquo.laminar.api.L.{onClick, *}
 import com.raquo.laminar.nodes.ReactiveHtmlElement
+import jdk.jfr.Enabled
 import org.scalajs.dom
 import view.livechart.BottomBar.renderBottomIcon
 object BottomBar:
   import controller.Graphic.*
 
+  var backDisable = Var(true)
+  var nextDisable = Var(false)
   var playButton = renderBottomIcon("play", "fa-play", _ => play())
   var stopButton = renderBottomIcon("stop", "fa-stop", _ => stop())
-  var controlButton = renderBottomIcon("", "fa-play", _ => play())
-
+  var controlButton = renderDisablingButton("fa-play", _ => play(), nextDisable)
   def renderBottomBar() : Element =
 
     ul(
       li(renderBottomIcon("", "fa-rotate-left", (_) => replay())),
-      li(renderBottomIcon("", "fa-backward", _ => backStep())),
+      li(renderDisablingButton("fa-backward", _ => backStep(), backDisable)),
       li(controlButton),
-      li(renderBottomIcon("", "fa-forward", _ => nextStep())),
+      li(renderDisablingButton( "fa-forward", _ => nextStep(), nextDisable)),
       li(renderBottomIcon("", "fa-tachometer-alt", _ => ()))
     )
 
@@ -26,17 +28,34 @@ object BottomBar:
   def renderBottomIcon(name: String, icon: String, function: (Any) => Unit): Element =
   button(
     i(
-      idAttr := name,
       className := "fa "+icon,
-      onClick --> function
-    )
+      idAttr := name,
+
+    ),
+    onClick --> function
+
   )
+
+  def renderDisablingButton(icon: String, function: (Any) => Unit, buttonDisabled: Var[Boolean]): Element =
+    button(
+      i(
+        className := "fa " + icon,
+        onClick --> function,
+      ),
+
+      disabled <-- buttonDisabled
+    )
   def changePlayIcon(): Unit =
     controlButton.ref.innerHTML = stopButton.ref.innerHTML
     dom.document.getElementById("stop").addEventListener("click",  _ => stop())
 
   def changeStopIcon(): Unit =
-    //dom.document.getElementById("stop").replaceWith(playButton.ref)
-    println("change stop icon")
     controlButton.ref.innerHTML = playButton.ref.innerHTML
     dom.document.getElementById("play").addEventListener("click", _ => play())
+
+  def enableBackButton(enabled: Boolean): Unit =
+    backDisable.set(!enabled)
+
+  def disableNextButton(disable: Boolean): Unit =
+    nextDisable.set(disable)
+
