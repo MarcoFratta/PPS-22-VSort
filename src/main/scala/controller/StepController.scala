@@ -16,7 +16,7 @@ object Graphic:
   var seq = uniformDistribution(0,100).take(50).map(a => a.toInt)
   var steps: Seq[Step] = bubbleSort(seq)
   var index: Int = 0
-  val timer = new Timer()
+  var timer = new Timer()
   def showGraph(): Unit =
     drawGraphic(seq.toList, Var(seq.size))
 
@@ -30,6 +30,7 @@ object Graphic:
         case _ => nextStep()
 
     }
+    timer = new Timer()
     timer.schedule(task, 0, 10)
 
   def end(): Unit =
@@ -55,4 +56,6 @@ object Graphic:
   def stop(): Unit =
     println("stop")
     timer.cancel()
+    changeStopIcon()
+
 

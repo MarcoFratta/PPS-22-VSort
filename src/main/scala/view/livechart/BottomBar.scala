@@ -9,15 +9,15 @@ object BottomBar:
   import controller.Graphic.*
 
   var playButton = renderBottomIcon("play", "fa-play", _ => play())
-  var stopButton = renderBottomIcon("stop", "fa-stop", _ => println("Clickkk"))
-
+  var stopButton = renderBottomIcon("stop", "fa-stop", _ => stop())
+  var controlButton = renderBottomIcon("", "fa-play", _ => play())
 
   def renderBottomBar() : Element =
 
     ul(
       li(renderBottomIcon("", "fa-rotate-left", (_) => ())),
       li(renderBottomIcon("", "fa-backward", _ => ())),
-      li(playButton),
+      li(controlButton),
       li(renderBottomIcon("", "fa-forward", _ => nextStep())),
       li(renderBottomIcon("", "fa-tachometer-alt", _ => ()))
     )
@@ -32,7 +32,11 @@ object BottomBar:
     )
   )
   def changePlayIcon(): Unit =
-    playButton.ref.innerHTML = stopButton.ref.innerHTML
+    controlButton.ref.innerHTML = stopButton.ref.innerHTML
     dom.document.getElementById("stop").addEventListener("click",  _ => stop())
 
-
+  def changeStopIcon(): Unit =
+    //dom.document.getElementById("stop").replaceWith(playButton.ref)
+    println("change stop icon")
+    controlButton.ref.innerHTML = playButton.ref.innerHTML
+    dom.document.getElementById("play").addEventListener("click", _ => play())
