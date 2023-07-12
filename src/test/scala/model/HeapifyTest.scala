@@ -2,10 +2,13 @@ package model
 
 import model.SortingAlgorithms.heapify
 import model.StepsVisualizer.getResult
+import model.sortModel.SortOperations.*
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
 class HeapifyTest extends AnyFlatSpec with Matchers:
+
+  import model.sortModel.SortOperations.given
 
   "A sequence (4, 10, 3, 5, 1) " should "be (10, 5, 3, 4, 1) after heapify" in {
     val data = Seq(4,10,3,5,1)
