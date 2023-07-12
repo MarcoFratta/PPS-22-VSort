@@ -4,23 +4,29 @@ import model.*
 import model.SeqProperties.Generators.uniformDistribution
 import model.SortingAlgorithms.bubbleSort
 import model.Step.Swap
+import model.sortModel.SortOperations.*
 
 import java.util.Timer
 
 case class UniformDistribution(min: Int, max:Int, size:Int)
 
 object Graphic:
+
+  import model.sortModel.SortOperations.given
   import view.rectangles.*
   import view.livechart.BottomBar.*
 
-  var seq = uniformDistribution(0,100).take(50).map(a => a.toInt)
+
+  var seq = uniformDistribution(0, 100).take(50).map(a => a.toInt)
   var steps: Seq[Step] = bubbleSort(seq)
   var index: Int = 0
+
   var timer = new Timer()
   def showGraph(): Unit =
     drawGraphic(seq.toList, Var(seq.size))
 
   import java.util.{Timer, TimerTask}
+
   def play(): Unit =
     println("play")
     changePlayIcon()

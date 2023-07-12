@@ -1,6 +1,7 @@
 package model
 
-import model.sortModel.SelectableM
+import model.sortModel.SortOperations.*
+import model.sortModel.Sortable
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
@@ -10,34 +11,28 @@ import scala.util.{Failure, Success}
 class SelectableEdgeCases extends AnyFlatSpec with Matchers:
 
   import model.Step.*
-  import model.sortModel.SortOperation.*
-  import model.sortModel.SortableFunctionalities.*
+  import model.sortModel.SortOperations.given
+  import model.sortModel.SortableOps.*
 
-  given Comparable[Int] with
-    override def compare(a: Int, b: Int): Boolean = a - b > 0
 
   "Swap on an empty list" should "not do anything" in {
-    val list = SelectableM(Seq.empty)
+    val list = Sortable[Int, String](Seq.empty)
     list.swap(3, 4).get.steps shouldEqual Seq.empty
   }
 
   "Swap(0,0) on an empty list" should "not do anything" in {
-    val list = SelectableM(Seq.empty)
+    val list = Sortable[Int, String](Seq.empty)
     list.swap(0, 0).get.steps shouldEqual Seq.empty
   }
 
-  "Select on an empty list" should "not do anything" in {
-    val list = SelectableM(Seq.empty)
-    list.select("test", 3).get.steps shouldEqual Seq.empty
+  "Select on an empty list" should "add the selection" in {
+    val list = Sortable[Int, String](Seq.empty)
+    list.select("test", 3).get.steps shouldEqual Seq(Selection("test", 3))
   }
 
-  "Select(0) on an empty list" should "not do anything" in {
-    val list = SelectableM(Seq.empty)
-    list.select("test", 0).get.steps shouldEqual Seq.empty
-  }
 
   "A correct selection" should "not fail" in {
-    val list = SelectableM(Seq(0, 1, 5))
+    val list = Sortable[Int, String](Seq(0, 1, 5))
     for l <- list.select("test", 2) do
       l.data shouldEqual List(0, 1, 5)
       l.steps shouldEqual List(Selection("test", 2))
@@ -46,7 +41,7 @@ class SelectableEdgeCases extends AnyFlatSpec with Matchers:
   }
 
   "A correct double selection" should "not fail" in {
-    val list = SelectableM(Seq(0, 1, 5))
+    val list = Sortable[Int, String](Seq(0, 1, 5))
     for l <- list.select("test", 2)
         l2 <- l.select("test2", 0) do
       l2.data shouldEqual List(0, 1, 5)
@@ -55,14 +50,14 @@ class SelectableEdgeCases extends AnyFlatSpec with Matchers:
   }
 
   "A deselection" should "not fail" in {
-    val list = SelectableM(Seq(0, 1, 5))
+    val list = Sortable[Int, String](Seq(0, 1, 5))
     for l <- list.deselect("test") do
       l.data shouldEqual List(0, 1, 5)
       l.steps shouldEqual List(Deselection("test"))
   }
 
   "A deselection after a selection" should "not fail" in {
-    val list = SelectableM(Seq(0, 1, 5))
+    val list = Sortable[Int, String](Seq(0, 1, 5))
     for l <- list.select("test", 2)
         l2 <- l.deselect("test") do
       l2.data shouldEqual List(0, 1, 5)
@@ -71,7 +66,7 @@ class SelectableEdgeCases extends AnyFlatSpec with Matchers:
   }
 
   "A correct comparison" should "not fail" in {
-    val list = SelectableM(Seq(0, 1, 5))
+    val list = Sortable[Int, String](Seq(0, 1, 5))
     for l <- list.compare(0, 1)(x => x !)(x => x !) do
       l.data shouldEqual List(0, 1, 5)
       l.steps shouldEqual List(Comparison(0, 1))
@@ -80,7 +75,7 @@ class SelectableEdgeCases extends AnyFlatSpec with Matchers:
 
   "Compare(0, 1) on an single element list" should "fail" in {
     the[IllegalArgumentException] thrownBy {
-      val list = SelectableM(Seq(0))
+      val list = Sortable[Int, String](Seq(0))
       for l <- list.compare(0, 1)(x => x.select("x", 0))(x => x.select("x", 1)) do
         l.steps shouldEqual Seq.empty
         l.data shouldEqual Seq(0)

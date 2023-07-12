@@ -2,9 +2,7 @@ package model
 
 import model.SortingAlgorithms.*
 import model.StepsVisualizer.*
-import model.sortModel.{SortableM, SelectableM, Selections}
-import model.sortModel.SortableFunctionalities.*
-import model.sortModel.SortOperation.*
+import model.sortModel.SortOperations.*
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
@@ -13,9 +11,8 @@ import scala.util.{Failure, Success}
 
 class SortingTest extends AnyFlatSpec with Matchers:
 
-  given Comparable[Int] with
-    override def compare(a: Int, b: Int): Boolean = a - b > 0
-  given Conversion[Steps[Int] with Selections[String, Int], SortOps[Steps[Int] with Selections[String, Int]]] = _ !
+  import model.sortModel.SortOperations.given
+
 
   "Bubble sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
