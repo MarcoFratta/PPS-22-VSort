@@ -34,7 +34,6 @@ given ConversionToDouble[Double] with
 
 
 object Main:
-  val model = new Model
   val minValue = 50
   val sliderValue = Var(minValue)
   import BottomBar.*
@@ -70,63 +69,8 @@ object Main:
 
 
 
-  def renderDataList(): Element =
-    ul(
-      children <-- dataSignal.split(_.id) { (id, initial, itemSignal) =>
-        li(child.text <-- itemSignal.map(item => s"${item.count} ${item.label}"))
-      }
-    )
-  end renderDataList
 
-  def renderDataTable(): Element =
-    table(
-      thead(tr(th("Label"), th("Price"), th("Count"), th("Full price"), th("Action"))),
-      tbody(
-        children <-- dataSignal.split(_.id) { (id, initial, itemSignal) =>
-          renderDataItem(id, itemSignal)
-        },
-      ),
-      tfoot(tr(
-        td(button("➕", onClick --> (_ => addDataItem(DataItem())))),
-        td(),
-        td(),
-        td(child.text <-- dataSignal.map(data => "%.2f".format(data.map(_.fullPrice).sum))),
-      )),
-    )
-  end renderDataTable
 
-  def renderDataItem(id: DataItemID, itemSignal: Signal[DataItem]): Element =
-    tr(
-      td(
-        inputForString(
-          itemSignal.map(_.label),
-          makeDataItemUpdater(id, { (item, newLabel) =>
-            item.copy(label = newLabel)
-          })
-        )
-      ),
-      td(
-        inputForDouble(
-          itemSignal.map(_.price),
-          makeDataItemUpdater(id, { (item, newPrice) =>
-            item.copy(price = newPrice)
-          })
-        )
-      ),
-      td(
-        inputForInt(
-          itemSignal.map(_.count),
-          makeDataItemUpdater(id, { (item, newCount) =>
-            item.copy(count = newCount)
-          })
-        )
-      ),
-      td(
-        child.text <-- itemSignal.map(item => "%.2f".format(item.fullPrice))
-      ),
-      td(button("🗑️", onClick --> (_ => removeDataItem(id)))),
-    )
-  end renderDataItem
 
   def inputForString(valueSignal: Signal[String],
       valueUpdater: Observer[String]): Input =

@@ -68,7 +68,7 @@ def convertToDouble[T](value: T): Double = value match {
 def convertSeqToDouble[T](seq:Seq[T])(using f: T => Double): Seq[Double] =
   seq.map(a => f(a))
 def computeAndDraw(canvas: dom.html.Canvas, seq:List[Int], size: Int): Unit =
-  println("sizeComputeAndDraw :" +size)
+  //println("sizeComputeAndDraw :" +size)
   //val seq = normalDistribution(50,  15).take(size).shift(1, 200).doubleToInt
 
   drawRectangles(canvas, seq)
