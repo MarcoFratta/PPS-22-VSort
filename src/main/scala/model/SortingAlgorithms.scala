@@ -65,8 +65,8 @@ object SortingAlgorithms:
   LoopableS[T, String] =
 
     (for p1 <- seq.select("max", i)
-         p2 <- if 2 * i + 1 < n then p1.compare(p1 -> "max", 2 * i + 1)(_.select("max", 2 * i + 1))(_ !) else p1.!
-         p3 <- if 2 * i + 2 < n then p2.compare(p2 -> "max", 2 * i + 2)(_.select("max", 2 * i + 2))(_ !) else p2.!
+         p2 <- if 2 * i + 1 < n then p1.compare(2 * i + 1, p1 -> "max")(_.select("max", 2 * i + 1))(_ !) else p1.!
+         p3 <- if 2 * i + 2 < n then p2.compare(2 * i + 2, p2 -> "max")(_.select("max", 2 * i + 2))(_ !) else p2.!
          p4 <- if i != (p3 -> "max") then for p5 <- p3.swap(i, p3 -> "max")
                                               p6 <- heapify(p5, n, p5 -> "max").!
          yield p6 else p3.!
@@ -74,7 +74,7 @@ object SortingAlgorithms:
 
   private def mergeSort[T: Comparable](seq: LoopableS[T, String], start: Int, end: Int):
   (LoopableS[T, String], Int, Int) = end - start match
-    case n if n < 1 => ((for p1 <- seq.divide(start, end) yield p1).get, start, end)
+    case n if n < 1 => (seq.divide(start, end).get, start, end)
     case n =>
       ((for p1 <- seq.divide(start, start + (n / 2))
             p2 <- mergeSort(p1, start, start + (n / 2))._1.!
@@ -89,7 +89,7 @@ object SortingAlgorithms:
     ((for a1 <- seq.select("i", start)
           a2 <- a1.select("j", mid + 1)
           a3 <- for b1 <- a2.whileLoop(h => h -> "j" <= end && h -> "i" != h -> "j")
-                    b2 <- b1.compare(b1 -> "i", b1 -> "j")(x => x.select("i", b1 -> "i" + 1))(x =>
+                    b2 <- b1.compare(b1 -> "j", b1 -> "i")(x => x.select("i", b1 -> "i" + 1))(x =>
                       for c1 <- for k <- x.loopFor(x -> "j" until x -> "i" by -1)
                                     d1 <- k.prev.swap(k.index, k.index - 1)
                       yield d1
