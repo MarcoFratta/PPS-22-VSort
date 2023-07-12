@@ -38,6 +38,8 @@ def colorRect(indexList: List[Int], color: String): Unit =
     colorRect(t, color)}
     case Nil =>
 
+def decolorRect(indexList: List[Int]): Unit =
+  colorRect(indexList, "red")
 def drawRectangles(canvas: html.Canvas, list: List[Int]): Unit =
   val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
   ctx.clearRect(0, 0, canvas.width, canvas.height)

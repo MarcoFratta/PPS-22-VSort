@@ -16,7 +16,7 @@ object BottomBar:
 
     ul(
       li(renderBottomIcon("", "fa-rotate-left", (_) => ())),
-      li(renderBottomIcon("", "fa-backward", _ => ())),
+      li(renderBottomIcon("", "fa-backward", _ => backStep())),
       li(controlButton),
       li(renderBottomIcon("", "fa-forward", _ => nextStep())),
       li(renderBottomIcon("", "fa-tachometer-alt", _ => ()))

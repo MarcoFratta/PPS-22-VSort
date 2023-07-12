@@ -59,6 +59,25 @@ object Graphic:
       index = index + 1
     case _ => println("altro")
 
+  def backStep(): Unit =
+    println("back step")
+    index = index - 1
+    steps(index) match
+    case Swap(a: Int, b: Int) =>
+        println("a" + a + "b" + b)
+        seq = seq.updated(b, seq(a)).updated(a, seq(b))
+        drawGraphic(seq.toList, Var(seq.size))
+    case Step.Selection(a: Int, b: Int) =>
+        println("selection")
+        colorRect(List(a, b), "blue")
+
+    case Step.Comparison(a: Int, b: Int) =>
+        println("comp")
+        colorRect(List(a, b), "yellow")
+
+    case _ => println("altro")
+
+
   def stop(): Unit =
     println("stop")
     timer.cancel()
