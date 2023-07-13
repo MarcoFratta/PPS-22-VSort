@@ -17,14 +17,27 @@ object Graphic:
   import view.livechart.BottomBar.*
 
 
-  var seq = uniformDistribution(0, 100).take(50).map(a => a.toInt)
+  var seq = uniformDistribution(0, 100).take(20).map(a => a.toInt)
+  var example = seq.toList
   val starterSeq = seq
   var steps: Seq[Step] = bubbleSort(seq)
+
   var index: Int = 0
 
   var timer = new Timer()
   def showGraph(): Unit =
-    drawGraphic(seq.toList, Var(seq.size))
+    val visualizer: RectanglesVisualizer = RectanglesVisualizer(example.size, example.max)
+
+    def drawList(l: List[Int]): Unit =
+      l match
+        case h::t =>
+          visualizer.drawSingleRectangle(h, if h < 10 then "red" else "purple")
+          drawList(t)
+        case _ =>
+    drawList(example)
+
+    //drawGraphic(seq.toList, Var(seq.size))
+
 
   import java.util.{Timer, TimerTask}
 
