@@ -6,7 +6,8 @@ import model.SortingAlgorithms.bubbleSort
 import model.Step.Swap
 import model.sortModel.SortOperations.*
 
-import java.util.Timer
+import java.util.concurrent.ScheduledFuture
+import java.util.{Timer, TimerTask}
 
 case class UniformDistribution(min: Int, max:Int, size:Int)
 
@@ -15,6 +16,7 @@ object Graphic:
   import model.sortModel.SortOperations.given
   import view.rectangles.*
   import view.livechart.BottomBar.*
+  import java.util.concurrent.{Executors, ScheduledExecutorService, TimeUnit}
 
 
   var seq = uniformDistribution(0, 100).take(20).map(a => a.toInt)
@@ -23,9 +25,9 @@ object Graphic:
   var steps: Seq[Step] = bubbleSort(seq)
 
   var index: Int = 0
-
+ // val executor: ScheduledExecutorService = Executors.newScheduledThreadPool(1)
   var timer = new Timer()
-  def showGraph(): Unit =
+  def showGraphSeparatedRect(): Unit =
     val visualizer: RectanglesVisualizer = RectanglesVisualizer(example.size, example.max)
 
     def drawList(l: List[Int]): Unit =
@@ -36,10 +38,12 @@ object Graphic:
         case _ =>
     drawList(example)
 
-    //drawGraphic(seq.toList, Var(seq.size))
+  def showGraph(): Unit =
+    drawGraphic(seq.toList, Var(seq.size))
 
 
   import java.util.{Timer, TimerTask}
+
 
   def replay(): Unit =
     index = 0
@@ -52,17 +56,20 @@ object Graphic:
   def play(): Unit =
     println("play")
     changePlayIcon()
-
-    val task = new TimerTask {
+    timer = new Timer()
+    val task = new TimerTask() {
       def run(): Unit = index match
-        case _ if index equals (steps.size -1) => end()
+        case _ if index equals steps.size  => end()
         case _ => nextStep()
 
     }
-    timer = new Timer()
     timer.schedule(task, 0, 20)
+    //executor.scheduleAtFixedRate(task, 0, 20, TimeUnit.MILLISECONDS)
 
   def end(): Unit =
+    println("size: "+ steps.size)
+    println("index "+ index)
+    println("ultimo step"+ steps.last.toString)
     println("fine")
     timer.cancel()
     disableNextButton(true)
@@ -89,6 +96,7 @@ object Graphic:
       colorRect(List(a,b), "yellow")
       index = index + 1
     case _ => println("altro")
+
 
   def backStep(): Unit =
     println("back step")
@@ -120,3 +128,15 @@ object Graphic:
     changeStopIcon()
 
 
+  def setSpeed(speed: Int): Unit =
+    timer.cancel()
+    timer = new Timer()
+    val task = new TimerTask() {
+      def run(): Unit = index match
+        case _ if index equals steps.size => end()
+        case _ => nextStep()
+
+    }
+    timer.schedule(task, 0, speed)
+    //executor.shutdownNow()
+    //executor.schedule(task, speed, TimeUnit.MILLISECONDS)

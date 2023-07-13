@@ -21,7 +21,7 @@ object BottomBar:
       li(renderDisablingButton("fa-backward", _ => backStep(), backDisable)),
       li(controlButton),
       li(renderDisablingButton( "fa-forward", _ => nextStep(), nextDisable)),
-      li(renderBottomIcon("", "fa-tachometer-alt", _ => ()))
+      li(renderSpeedBar())
     )
 
 
@@ -44,6 +44,26 @@ object BottomBar:
       ),
 
       disabled <-- buttonDisabled
+    )
+
+  def renderSpeedBar(): Element =
+    val sliderValue: Var[Int] = Var(100)
+    div(
+      i(
+        className := "fa fa-tachometer-alt"
+      ),
+      input(
+        className := "slider",
+        typ := "range",
+        minAttr := "1",
+        maxAttr := "1000",
+        value := sliderValue.now().toString,
+        //sliderValue.signal --> (newV => setSpeed(newV)),
+        onInput.mapToValue.map(_.toInt) --> sliderValue,
+        onInput --> (v => setSpeed(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt))
+
+      ),
+      child.text <-- sliderValue.signal.map(_.toString),
     )
   def changePlayIcon(): Unit =
     controlButton.ref.innerHTML = stopButton.ref.innerHTML
