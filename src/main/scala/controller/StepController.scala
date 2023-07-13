@@ -58,7 +58,7 @@ object Graphic:
     enableBackButton(true)
     if index < steps.size -1
       then disableNextButton(false)
-    if index equals steps.size -1
+    if index equals steps.size
       then end()
     steps(index) match
     case Swap(a: Int, b: Int) =>
@@ -72,6 +72,7 @@ object Graphic:
       index = index + 1
     case Step.Comparison(a: Int, b: Int) =>
      // println("comp")
+      drawGraphic(seq.toList, Var(seq.size))
       colorRect(List(a,b), "yellow")
       index = index + 1
     case _ => println("altro")
