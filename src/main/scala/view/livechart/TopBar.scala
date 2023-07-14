@@ -1,11 +1,11 @@
 package view.livechart
 
 import com.raquo.laminar.api.L.*
-import controller.Graphic
-import controller.Graphic.changeSize
+import controller.{Graphic, SeqPropertiesController}
+import controller.Graphic.{changeSize, setSpeed}
 import view.livechart.Main.sliderValue
+import org.scalajs.dom
 
-object TopBar:
 
   def renderTopBar(sliderValue: Var[Int]): Element =
     ul(
@@ -20,7 +20,7 @@ object TopBar:
         button (
           i(
             className:="fa fa-check",
-            onClick --> (_ => Graphic.showGraph())
+            onClick --> (_ => Graphic.showGraphSeparatedRect())
 
           )
         )
@@ -37,7 +37,7 @@ object TopBar:
       minAttr := "2",
       maxAttr := "200",
       value:= sliderValue.now().toString,
-      sliderValue.signal --> (newV => changeSize(newV)),
+      onInput --> (v => changeSize(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
       onInput.mapToValue.map(_.toInt) --> sliderValue
 
     ),
@@ -46,12 +46,17 @@ object TopBar:
 
 
     )
+
+  def setAlgNames(l: List[String]): Element = l match
+    case h :: t =>
+      dom.document.getElementById("algList").appendChild(option(h).ref)
+      setAlgNames(t)
   def renderSelectionAlg(): Element =
     form(
-      select(
-        placeholder("Algorithm"),
-        option("bubble sort"),
-        option("heap sort")
+    select(
+      idAttr := "algList",
+      placeholder("Algorithm"),
+        //renderOption(n)
       )
     )
 

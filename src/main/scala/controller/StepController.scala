@@ -2,7 +2,7 @@ package controller
 import com.raquo.laminar.api.L.Var
 import model.*
 import model.SeqProperties.Generators.uniformDistribution
-import model.SortingAlgorithms.bubbleSort
+import model.SortingAlgorithms.{bubbleSort, insertionSort, mergeSort}
 import model.Step.Swap
 import model.sortModel.SortOperations.*
 
@@ -17,27 +17,37 @@ object Graphic:
   import view.rectangles.*
   import view.livechart.BottomBar.*
   import java.util.concurrent.{Executors, ScheduledExecutorService, TimeUnit}
+  import model.StepsVisualizer.*
 
+  var seq = uniformDistribution(0, 100).take(50).map(a => a.toInt)
 
-  var seq = uniformDistribution(0, 100).take(100).map(a => a.toInt)
-  var example = seq.toList
   var starterSeq = seq
-  var steps: Seq[Step] = bubbleSort(seq)
+  var steps: Seq[Step] = mergeSort(seq)
+  var example = StepsVisualizer.getSeqList(steps, seq)
   var isExecuting: Boolean = false
   var index: Int = 0
   var period: Int = 20
  // val executor: ScheduledExecutorService = Executors.newScheduledThreadPool(1)
   var timer = new Timer()
-  def showGraphSeparatedRect(): Unit =
-    val visualizer: RectanglesVisualizer = RectanglesVisualizer(example.size, example.max)
+  val visualizer: RectanglesVisualizer = RectanglesVisualizer(example(1).size, example(1).map(a => a.value).max)
 
-    def drawList(l: List[Int]): Unit =
+  def getColourFromProperties(elementInfo: ElementInfo[Int]): String =
+    elementInfo match
+      case _ if elementInfo.selected => "green"
+      case _ if elementInfo.compared => "blue"
+      case _ if elementInfo.hidden => "black"
+      case _ => "red"
+  def showGraphSeparatedRect(): Unit =
+    val list1 = example(index)
+    //val visualizer: RectanglesVisualizer = RectanglesVisualizer(list1.size, list1.map(a => a.value).max)
+    visualizer.clear()
+    def drawList(l: List[ElementInfo[Int]]): Unit =
       l match
         case h::t =>
-          visualizer.drawSingleRectangle(h, if h < 10 then "red" else "purple")
+          visualizer.drawSingleRectangle(h.value, getColourFromProperties(h))
           drawList(t)
         case _ =>
-    drawList(example)
+    drawList(list1.toList)
 
   def showGraph(): Unit =
     drawGraphic(seq.toList, Var(seq.size))
@@ -53,7 +63,7 @@ object Graphic:
   def replay(): Unit =
     index = 0
     seq = starterSeq
-    
+
     enableBackButton(false)
     disableNextButton(false)
     stop()
@@ -63,7 +73,7 @@ object Graphic:
   def play(): Unit =
     println("play")
     changePlayIcon()
-    steps = bubbleSort(starterSeq)
+    //steps = bubbleSort(starterSeq)
     timer = new Timer()
     isExecuting = true
     val task = new TimerTask() {
@@ -83,6 +93,8 @@ object Graphic:
     isExecuting = false
     timer.cancel()
     disableNextButton(true)
+    
+    
   def nextStep(): Unit =
     //println("next step")
     enableBackButton(true)
@@ -95,23 +107,9 @@ object Graphic:
         println("steps: "+ steps.size)
     if index equals steps.size
       then end()
-    steps(index) match
-    case Swap(a: Int, b: Int) =>
-      //println("a" + a + "b" + b)
-      seq = seq.updated(a, seq(b)).updated(b, seq(a))
-      index = index + 1
-      drawGraphic(seq.toList, Var(seq.size))
-    case Step.Selection(a: Int, b:Int) =>
-      //println("selection")
-      colorRect(List(a,b), "blue")
-      index = index + 1
-    case Step.Comparison(a: Int, b: Int) =>
-     // println("comp")
-      drawGraphic(seq.toList, Var(seq.size))
-      colorRect(List(a,b), "yellow")
-      index = index + 1
-    case _ => println("altro")
-
+    index = index + 1
+    showGraphSeparatedRect()
+    
 
   def backStep(): Unit =
     println("back step")
@@ -121,20 +119,7 @@ object Graphic:
     index = index - 1
     if index < steps.size then
       disableNextButton(false)
-    steps(index) match
-    case Swap(a: Int, b: Int) =>
-        println("a" + a + "b" + b)
-        seq = seq.updated(b, seq(a)).updated(a, seq(b))
-        drawGraphic(seq.toList, Var(seq.size))
-    case Step.Selection(a: Int, b: Int) =>
-        println("selection")
-        colorRect(List(a, b), "blue")
-
-    case Step.Comparison(a: Int, b: Int) =>
-        println("comp")
-        colorRect(List(a, b), "yellow")
-
-    case _ => println("altro")
+    showGraphSeparatedRect()
 
 
   def stop(): Unit =
