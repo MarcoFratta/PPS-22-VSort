@@ -23,7 +23,7 @@ object Graphic:
   var example = seq.toList
   val starterSeq = seq
   var steps: Seq[Step] = bubbleSort(seq)
-
+  var isExecuting: Boolean = false
   var index: Int = 0
  // val executor: ScheduledExecutorService = Executors.newScheduledThreadPool(1)
   var timer = new Timer()
@@ -51,12 +51,14 @@ object Graphic:
     enableBackButton(false)
     disableNextButton(false)
     stop()
+    isExecuting = false
     showGraph()
 
   def play(): Unit =
     println("play")
     changePlayIcon()
     timer = new Timer()
+    isExecuting = true
     val task = new TimerTask() {
       def run(): Unit = index match
         case _ if index equals steps.size  => end()
@@ -71,13 +73,17 @@ object Graphic:
     println("index "+ index)
     println("ultimo step"+ steps.last.toString)
     println("fine")
+    isExecuting = false
     timer.cancel()
     disableNextButton(true)
   def nextStep(): Unit =
     //println("next step")
     enableBackButton(true)
-    if index < steps.size -1
-      then disableNextButton(false)
+    if index >= steps.size - 1
+      then 
+        disableNextButton(true)
+        println("index: "+  index)
+        println("steps: "+ steps.size)
     if index equals steps.size
       then end()
     steps(index) match
@@ -102,10 +108,10 @@ object Graphic:
     println("back step")
     if index equals 1 then
       enableBackButton(false)
-
-    if index < steps.size-1 then
-      disableNextButton(false)
+    
     index = index - 1
+    if index < steps.size then
+      disableNextButton(false)
     steps(index) match
     case Swap(a: Int, b: Int) =>
         println("a" + a + "b" + b)
@@ -124,6 +130,7 @@ object Graphic:
 
   def stop(): Unit =
     println("stop")
+    isExecuting = false
     timer.cancel()
     changeStopIcon()
 
@@ -137,6 +144,7 @@ object Graphic:
         case _ => nextStep()
 
     }
-    timer.schedule(task, 0, speed)
+    if isExecuting
+      then timer.schedule(task, 0, speed)
     //executor.shutdownNow()
     //executor.schedule(task, speed, TimeUnit.MILLISECONDS)

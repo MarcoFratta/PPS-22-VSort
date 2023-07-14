@@ -3,48 +3,39 @@ package view.livechart
 import com.raquo.laminar.api.L
 import com.raquo.laminar.api.L.{onClick, *}
 import com.raquo.laminar.nodes.ReactiveHtmlElement
+import controller.Graphic.{play, stop}
 import jdk.jfr.Enabled
 import org.scalajs.dom
-import view.livechart.BottomBar.renderBottomIcon
+import view.livechart.BottomBar.renderButton
 object BottomBar:
   import controller.Graphic.*
 
-  var backDisable = Var(true)
-  var nextDisable = Var(false)
-  var playButton = renderBottomIcon("play", "fa-play", _ => play())
-  var stopButton = renderBottomIcon("stop", "fa-stop", _ => stop())
-  var controlButton = renderDisablingButton("fa-play", _ => play(), nextDisable)
+  private var backDisable = Var(true)
+  private var nextDisable = Var(false)
+
+  private var playButton = renderButton("play", "fa-play", _ =>  play(), nextDisable )
+  private var stopButton = renderButton("stop", "fa-stop", _ => stop(), nextDisable)
+
+  var controlButton = Var(renderButton("control", "fa-play", _ => if !nextDisable.now() then play(), nextDisable))
   def renderBottomBar() : Element =
 
     ul(
-      li(renderBottomIcon("", "fa-rotate-left", (_) => replay())),
-      li(renderDisablingButton("fa-backward", _ => backStep(), backDisable)),
-      li(controlButton),
-      li(renderDisablingButton( "fa-forward", _ => nextStep(), nextDisable)),
+      li(renderButton("replay", "fa-rotate-left", (_) => replay(), Var(false))),
+      li(renderButton("back","fa-backward", _ => backStep(), backDisable)),
+      li(child <-- controlButton.signal),
+      li(renderButton( "next","fa-forward", _ => nextStep(), nextDisable)),
       li(renderSpeedBar())
     )
 
 
-  def renderBottomIcon(name: String, icon: String, function: (Any) => Unit): Element =
-  button(
-    i(
-      className := "fa "+icon,
-      idAttr := name,
-
-    ),
-    onClick --> function
-
-  )
-
-  def renderDisablingButton(icon: String, function: (Any) => Unit, buttonDisabled: Var[Boolean]): Element =
+  def renderButton(id: String, icon: String, function: (Any) => Unit, buttonDisabled: Var[Boolean]): Element =
     button(
-      i(
-        className := "fa " + icon,
-        onClick --> function,
-      ),
-
-      disabled <-- buttonDisabled
+      className := "fa " + icon,
+      idAttr := id,
+      onClick --> function,
+      disabled <-- buttonDisabled.signal
     )
+
 
   def renderSpeedBar(): Element =
     val sliderValue: Var[Int] = Var(100)
@@ -66,12 +57,11 @@ object BottomBar:
       child.text <-- sliderValue.signal.map(_.toString),
     )
   def changePlayIcon(): Unit =
-    controlButton.ref.innerHTML = stopButton.ref.innerHTML
-    dom.document.getElementById("stop").addEventListener("click",  _ => stop())
+    controlButton.set(stopButton)
+
 
   def changeStopIcon(): Unit =
-    controlButton.ref.innerHTML = playButton.ref.innerHTML
-    dom.document.getElementById("play").addEventListener("click", _ => play())
+    controlButton.set(playButton)
 
   def enableBackButton(enabled: Boolean): Unit =
     backDisable.set(!enabled)
