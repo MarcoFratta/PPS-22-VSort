@@ -25,6 +25,7 @@ object Graphic:
   var steps: Seq[Step] = bubbleSort(seq)
   var isExecuting: Boolean = false
   var index: Int = 0
+  var period: Int = 20
  // val executor: ScheduledExecutorService = Executors.newScheduledThreadPool(1)
   var timer = new Timer()
   def showGraphSeparatedRect(): Unit =
@@ -65,7 +66,7 @@ object Graphic:
         case _ => nextStep()
 
     }
-    timer.schedule(task, 0, 20)
+    timer.schedule(task, 0, period)
     //executor.scheduleAtFixedRate(task, 0, 20, TimeUnit.MILLISECONDS)
 
   def end(): Unit =
@@ -144,6 +145,7 @@ object Graphic:
         case _ => nextStep()
 
     }
+    period = speed
     if isExecuting
       then timer.schedule(task, 0, speed)
     //executor.shutdownNow()
