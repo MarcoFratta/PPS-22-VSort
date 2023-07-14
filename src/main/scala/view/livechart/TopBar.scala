@@ -2,6 +2,7 @@ package view.livechart
 
 import com.raquo.laminar.api.L.*
 import controller.Graphic
+import controller.Graphic.changeSize
 import view.livechart.Main.sliderValue
 
 object TopBar:
@@ -25,7 +26,7 @@ object TopBar:
         )
       )
     )
-
+  import controller.*
   def renderSlider(sliderValue: Var[Int]): Element =
     //val slidVal = Var(sliderValue.now())
 
@@ -33,10 +34,10 @@ object TopBar:
     input(
       className := "slider",
       typ := "range",
-      minAttr := "0",
+      minAttr := "2",
       maxAttr := "200",
       value:= sliderValue.now().toString,
-      sliderValue.signal --> (newV => println("topBar: "+ newV.toString)),
+      sliderValue.signal --> (newV => changeSize(newV)),
       onInput.mapToValue.map(_.toInt) --> sliderValue
 
     ),

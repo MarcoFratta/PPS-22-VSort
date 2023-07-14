@@ -63,8 +63,8 @@ object Main:
         div(className:= "div_canvas"),
         renderBottomBar(),
         sliderValue.signal --> (newV => println("main: "+ newV))
-  )
-  end appElement
+    )
+
 
 
 

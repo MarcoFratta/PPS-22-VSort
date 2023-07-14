@@ -29,6 +29,23 @@ def CanvasComponent(rect: Var[List[Rectangle]]): HtmlElement =
 
 var canvas: Option[html.Canvas] = None
 var allRectangles: List[Rectangle] = List()
+
+case class RectanglesVisualizer(nRect: Int, maxValue: Int):
+  val parent: dom.Element = dom.document.querySelector(".div_canvas")
+  render(parent, canvasTag(
+      className := "canvas"))
+  val canvasElem: html.Canvas = dom.document.querySelector(".canvas").asInstanceOf[dom.html.Canvas]
+  val rectangleWidth = canvasElem.width / (1.5 * nRect)
+  var index = 0
+  def drawSingleRectangle(value: Int, color: String): Unit =
+    val ctx = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+    val x = index * (rectangleWidth + 0.5)
+    ctx.fillStyle = color
+    val height = (value * canvasElem.height) / maxValue
+    //val rect: Rectangle = Rectangle(x, canvas.height - height, rectangleWidth, height)
+    //allRectangles = allRectangles.appended(rect)
+    index = index + 1
+    ctx.fillRect(x, canvasElem.height - height, rectangleWidth, height)
 def colorRect(indexList: List[Int], color: String): Unit =
   val ctx = canvas.get.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
   indexList match
