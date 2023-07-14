@@ -19,9 +19,9 @@ object Graphic:
   import java.util.concurrent.{Executors, ScheduledExecutorService, TimeUnit}
 
 
-  var seq = uniformDistribution(0, 100).take(20).map(a => a.toInt)
+  var seq = uniformDistribution(0, 100).take(100).map(a => a.toInt)
   var example = seq.toList
-  val starterSeq = seq
+  var starterSeq = seq
   var steps: Seq[Step] = bubbleSort(seq)
   var isExecuting: Boolean = false
   var index: Int = 0
@@ -45,10 +45,15 @@ object Graphic:
 
   import java.util.{Timer, TimerTask}
 
+  def changeSize(size: Int): Unit =
+    starterSeq = uniformDistribution(0, 100).take(size).map(a => a.toInt)
+    replay()
+
 
   def replay(): Unit =
     index = 0
     seq = starterSeq
+    
     enableBackButton(false)
     disableNextButton(false)
     stop()
@@ -58,6 +63,7 @@ object Graphic:
   def play(): Unit =
     println("play")
     changePlayIcon()
+    steps = bubbleSort(starterSeq)
     timer = new Timer()
     isExecuting = true
     val task = new TimerTask() {
@@ -80,8 +86,10 @@ object Graphic:
   def nextStep(): Unit =
     //println("next step")
     enableBackButton(true)
+    println("step size " + steps.size)
+    println("index " + index)
     if index >= steps.size - 1
-      then 
+      then
         disableNextButton(true)
         println("index: "+  index)
         println("steps: "+ steps.size)
@@ -109,7 +117,7 @@ object Graphic:
     println("back step")
     if index equals 1 then
       enableBackButton(false)
-    
+
     index = index - 1
     if index < steps.size then
       disableNextButton(false)
@@ -137,6 +145,7 @@ object Graphic:
 
 
   def setSpeed(speed: Int): Unit =
+    println("setting speed")
     timer.cancel()
     timer = new Timer()
     val task = new TimerTask() {
