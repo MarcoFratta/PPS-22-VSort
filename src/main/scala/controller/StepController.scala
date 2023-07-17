@@ -1,17 +1,22 @@
 package controller
 import com.raquo.laminar.api.L.Var
 import model.*
-import model.SeqProperties.Generators.uniformDistribution
-import model.SortingAlgorithms.{bubbleSort, insertionSort, mergeSort}
+import model.SeqProperties.*
 import model.Step.Swap
 import model.sortModel.SortOperations.*
+import model.SortingAlgorithms.*
 
 import java.util.concurrent.ScheduledFuture
 import java.util.{Timer, TimerTask}
 
-case class UniformDistribution(min: Int, max:Int, size:Int)
 
 object Graphic:
+
+  given Generable[Int] = x => x.toInt
+
+  case class RangeGaussian[T: Generable]()
+    extends GaussianGen[T](75, 25)
+      with Shifted[T](1, 10000)
 
   import model.sortModel.SortOperations.given
   import view.rectangles.*
@@ -19,7 +24,9 @@ object Graphic:
   import java.util.concurrent.{Executors, ScheduledExecutorService, TimeUnit}
   import model.StepsVisualizer.*
 
-  var seq = uniformDistribution(0, 100).take(50).map(a => a.toInt)
+
+
+  var seq = RangeGaussian().generateAll(0 to 175).toList.sortWith((a,b) => a._1 <= b._1).map(x => x._2)
 
   var starterSeq = seq
   var steps: Seq[Step] = mergeSort(seq)
@@ -56,7 +63,7 @@ object Graphic:
   import java.util.{Timer, TimerTask}
 
   def changeSize(size: Int): Unit =
-    starterSeq = uniformDistribution(0, 100).take(size).map(a => a.toInt)
+    starterSeq = RangeGaussian().generateAll(0 to 175).toList.sortWith((a,b) => a._1 <= b._1).map(x => x._2)
     replay()
 
 

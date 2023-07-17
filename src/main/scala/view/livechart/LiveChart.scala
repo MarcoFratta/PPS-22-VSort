@@ -3,8 +3,6 @@ package view.livechart
 import com.raquo.laminar.api.L.{*, given}
 import com.raquo.laminar.nodes.ReactiveHtmlElement
 import controller.SeqPropertiesController
-import model.SeqProperties.Generators.{exponentialDistribution, normalDistribution, uniformDistribution}
-import model.SeqProperties.Setters.*
 import model.StepsVisualizer.*
 import model.SortingAlgorithms.*
 import org.scalajs.dom
@@ -61,7 +59,7 @@ object Main:
         //getRectangle(seq.toList, Var(seq.size)),
         //getAllStepsWithString(list),
         div(className:= "div_canvas"),
-      
+
         renderBottomBar(),
         sliderValue.signal --> (newV => println("main: "+ newV))
     )
