@@ -28,7 +28,7 @@ object StepsVisualizer:
       case n => n
     case Step.Deselection(s) => seq => seq.map(e => if e.label == Option(s) then deselect(e) else e)
     case Step.Comparison(a: Int, b: Int) => seq => seq.updated(a, compare(seq(a))).updated(b, compare(seq(b)))
-    case Step.Divide(a: Int, b: Int) => seq => seq.map(e => if seq.indexOf(e) < a || seq.indexOf(e) > b then hide(e) else show(e))
+    case Step.Divide(a: Int, b: Int) => seq => seq.zipWithIndex.map((e, i) => if i < a || i > b then hide(e) else show(e))
 
   def getString(steps: Seq[Step], seq: Seq[Int]): String = this.getStepsString(steps, seq.map(i => newInfo(i)))
 
