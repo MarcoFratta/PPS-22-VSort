@@ -28,8 +28,12 @@ trait HasRange(a: Int, b: Int):
 
   def max: Int = math.max(a, b)
 
-trait ToPercentage[T: Generable] extends Generator[T]:
-  abstract override def f(x: Int): Double = super.f(x) * 100
+trait Multiplied[T: Generable](r:Double) extends Generator[T] with HasRange:
+  abstract override def f(x: Int): Double = super.f(x) * r
+
+  abstract override def max: Int = (super.max * r).ceil.intValue
+
+  abstract override def min: Int = (super.min* r).floor.intValue
 
 trait Shifted[T](min: Double, max: Double) extends Generator[T] with HasRange:
   abstract override def f(x: Int): Double =
@@ -44,16 +48,3 @@ class GaussianGen[T: Generable](mean: Double, std: Double) extends Generator[T]
 
 class UniformGen[T: Generable](from: Int, to: Int) extends BasicGenerator[T](x => (x + from) % to)
   with HasRange(from, to)
-
-
-object PercentageGen:
-
-  def apply[T: Generable](generator: Generator[T]): Generator[T] with ToPercentage[T] =
-    WithPercentage(generator.f)
-
-  private class WithPercentage[T: Generable](f: Int => Double) extends BasicGenerator(f) with ToPercentage[T]
-
-
-
-
-

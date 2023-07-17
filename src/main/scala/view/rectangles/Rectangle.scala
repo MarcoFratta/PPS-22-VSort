@@ -1,9 +1,7 @@
 package view.rectangles
 import com.raquo.laminar.api.L.{Owner, *}
-import model.SeqProperties.Generators.normalDistribution
 import org.scalajs.dom
 import org.scalajs.dom.html
-import model.SeqProperties.Setters.*
 
 
 case class Rectangle(x: Double, y: Double, width: Double, height: Double)
