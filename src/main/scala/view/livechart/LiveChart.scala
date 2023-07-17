@@ -2,8 +2,7 @@ package view.livechart
 
 import com.raquo.laminar.api.L.{*, given}
 import com.raquo.laminar.nodes.ReactiveHtmlElement
-import model.SeqProperties.Generators.{exponentialDistribution, normalDistribution, uniformDistribution}
-import model.SeqProperties.Setters.*
+import controller.SeqPropertiesController
 import model.StepsVisualizer.*
 import model.SortingAlgorithms.*
 import org.scalajs.dom
@@ -37,12 +36,11 @@ object Main:
   val minValue = 50
   val sliderValue = Var(minValue)
   import BottomBar.*
-  import TopBar.*
   import model.*
   import view.rectangles.*
 
 
-
+  val seqPropertiesController = new SeqPropertiesController()
   def appElement(): Element =
     /*val data = uniformDistribution(0,100).take(50).map(a => a.toInt)
     val steps = bubbleSort(data)
@@ -61,6 +59,7 @@ object Main:
         //getRectangle(seq.toList, Var(seq.size)),
         //getAllStepsWithString(list),
         div(className:= "div_canvas"),
+
         renderBottomBar(),
         sliderValue.signal --> (newV => println("main: "+ newV))
     )

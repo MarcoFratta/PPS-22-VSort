@@ -1,9 +1,7 @@
 package view.rectangles
 import com.raquo.laminar.api.L.{Owner, *}
-import model.SeqProperties.Generators.normalDistribution
 import org.scalajs.dom
 import org.scalajs.dom.html
-import model.SeqProperties.Setters.*
 
 
 case class Rectangle(x: Double, y: Double, width: Double, height: Double)
@@ -39,6 +37,7 @@ case class RectanglesVisualizer(nRect: Int, maxValue: Int):
   var index = 0
   def drawSingleRectangle(value: Int, color: String): Unit =
     val ctx = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+    //ctx.clearRect(0, 0, canvasElem.width, canvasElem.height)
     val x = index * (rectangleWidth + 0.5)
     ctx.fillStyle = color
     val height = (value * canvasElem.height) / maxValue
@@ -46,6 +45,10 @@ case class RectanglesVisualizer(nRect: Int, maxValue: Int):
     //allRectangles = allRectangles.appended(rect)
     index = index + 1
     ctx.fillRect(x, canvasElem.height - height, rectangleWidth, height)
+  def clear(): Unit =
+    val ctx = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+    index =0
+    ctx.clearRect(0, 0, canvasElem.width, canvasElem.height) 
 def colorRect(indexList: List[Int], color: String): Unit =
   val ctx = canvas.get.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
   indexList match

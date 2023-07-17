@@ -13,6 +13,7 @@
     "vite": "^4.1.0"
   },
   "dependencies": {
+    "jsdom": "^22.1.0",
     "source-map-support": "^0.5.21"
   }
 }
