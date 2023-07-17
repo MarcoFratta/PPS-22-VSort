@@ -22,9 +22,9 @@ object StepsVisualizer:
 
   private def stepFunction(step: Step): Seq[ElementInfo[Int]] => Seq[ElementInfo[Int]] = step match
     case Step.Swap(a: Int, b: Int) =>
-      seq => seq.updated(a, changeValue(seq(a), seq(b).value)).updated(b, changeValue(seq(b), seq(a).value))
+      seq => seq.updated(a, seq(a).changeValue(seq(b).value)).updated(b, seq(b).changeValue(seq(a).value))
     case Step.Selection(s: String, a: Int) => seq => stepFunction(Step.Deselection(s))(seq) match
-      case n if a >= 0 && a < n.size => n.updated(a, select(n(a), s))
+      case n if a >= 0 && a < n.size => n.updated(a, n(a).select(s))
       case n => n
     case Step.Deselection(s) => seq => seq.map(e => if e.label == Option(s) then deselect(e) else e)
     case Step.Comparison(a: Int, b: Int) => seq => seq.updated(a, compare(seq(a))).updated(b, compare(seq(b)))
