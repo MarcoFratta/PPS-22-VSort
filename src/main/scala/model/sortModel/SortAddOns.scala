@@ -79,7 +79,6 @@ object LoopOperation:
         override def flatMap(f: A => Monad[A]): Monad[A] =
           @tailrec
           def loop(c: A => Boolean)(sc: A): Monad[A] =
-            println(f"Looping on $sc")
             if cond(sc) then loop(c)(f(sc).get) else sc.!
 
           loop(cond)(s)
