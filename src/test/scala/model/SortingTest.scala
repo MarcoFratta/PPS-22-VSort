@@ -61,3 +61,4 @@ class SortingTest extends AnyFlatSpec with Matchers:
     print("Quick sort\n" + getString(steps, data))
     getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
+

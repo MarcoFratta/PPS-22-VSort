@@ -41,6 +41,9 @@ object StepsVisualizer:
 
   def getSeqList(steps: Seq[Step], seq: Seq[Int]): Seq[Seq[ElementInfo[Int]]] =
     getSeqList(steps, seq.map(i => newInfo(i)), Seq(seq.map(i => newInfo(i))))
+      .sliding(2).flatMap{
+        case Seq(a, b) if a == b => None
+        case Seq(a, _) => Some(a)}.toSeq
 
   @tailrec
   private def getSeqList(steps: Seq[Step],
