@@ -59,7 +59,33 @@ object SortingAlgorithms:
          l1 <- heapify(i.prev, seq.length, i.index)
     yield l1).get.steps
 
-  def mergeSort[T: Comparable](seq: Seq[T]): Seq[Step] = mergeSort(Loopable[T, String](seq), 0, seq.length - 1)._1.steps
+  def mergeSort[T: Comparable](seq: Seq[T]): Seq[Step] =
+    mergeSort(Loopable[T, String](seq), 0, seq.length - 1)._1.steps
+
+  def quickSort[T: Comparable](seq: Seq[T]): Seq[Step] =
+    quickSort(Loopable[T, String](seq), 0, seq.length -1).steps
+
+  private def quickSort[T: Comparable](seq: LoopableS[T, String], start: Int, end: Int): LoopableS[T, String] =
+    if start < end then (for a1 <- seq.divide(start, end).get.deselect("i")
+                             a2 <- partition(a1, start, end).!
+                             a3 <- quickSort(a2, start, a2 -> "i" - 1).!
+                             a4 <- quickSort(a3, a2 -> "i" + 1, end).!
+                             a5 <- a4.deselect("i").get.divide(start, end)
+                         yield a5).get else seq
+
+  private def partition[T: Comparable](seq: LoopableS[T, String], start: Int, end: Int): LoopableS[T, String] =
+    (for p1 <- seq.select("pi", end)
+         p2 <- p1.select("i", start - 1)
+         p3 <- for j <- p2.loopFor(start until end)
+                  l1 <- j.prev.compare(j.prev -> "pi", j.index)(x => for a1 <- x.select("i", x -> "i" + 1)
+                                                                         a2 <- a1.swap(a1 -> "i", j.index)
+                                                                     yield a2)(x => x)
+                yield l1
+         p4 <- p3.select("i", p3 -> "i" + 1)
+         p5 <- p4.swap(p4 -> "i", end)
+    yield p5).get
+
+
 
   private def heapify[T: Comparable](seq: LoopableS[T, String], n: Int, i: Int):
   LoopableS[T, String] =

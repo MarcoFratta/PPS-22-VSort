@@ -24,7 +24,7 @@ object StepsVisualizer:
     case Step.Swap(a: Int, b: Int) =>
       seq => seq.updated(a, changeValue(seq(a), seq(b).value)).updated(b, changeValue(seq(b), seq(a).value))
     case Step.Selection(s: String, a: Int) => seq => stepFunction(Step.Deselection(s))(seq) match
-      case n if a < n.size => n.updated(a, select(n(a), s))
+      case n if a >= 0 && a < n.size => n.updated(a, select(n(a), s))
       case n => n
     case Step.Deselection(s) => seq => seq.map(e => if e.label == Option(s) then deselect(e) else e)
     case Step.Comparison(a: Int, b: Int) => seq => seq.updated(a, compare(seq(a))).updated(b, compare(seq(b)))

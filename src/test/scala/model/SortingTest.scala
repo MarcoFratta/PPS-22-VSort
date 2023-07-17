@@ -54,6 +54,14 @@ class SortingTest extends AnyFlatSpec with Matchers:
     getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
+  "Quick Sort" should "work" in {
+    val data = Seq(20, 60, 10, 40, 50, 30)
+    val steps = quickSort(data)
+
+    print("Quick sort\n" + getString(steps, data))
+    getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
+  }
+
   "getSeqList" should "work" in {
     val data = Seq(20, 30, 10)
     val steps = bubbleSort(data)
