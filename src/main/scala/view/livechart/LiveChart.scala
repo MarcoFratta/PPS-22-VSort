@@ -58,7 +58,8 @@ object Main:
         //renderDataList(),
         //getRectangle(seq.toList, Var(seq.size)),
         //getAllStepsWithString(list),
-        div(className:= "div_canvas"),
+        div(canvasTag(
+          className := "canvas")),
 
         renderBottomBar(),
         sliderValue.signal --> (newV => println("main: "+ newV))

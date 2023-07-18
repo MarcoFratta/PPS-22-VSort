@@ -1,182 +1,148 @@
 package view.rectangles
-import com.raquo.laminar.api.L.{Owner, *}
+
+import com.raquo.laminar.api.L.*
+import model.ElementInfo
 import org.scalajs.dom
 import org.scalajs.dom.html
+import view.livechart.BottomBar.{changePlayIcon, changeStopIcon, disableNextButton, enableBackButton}
+import view.rectangles.GraphFunctions.showGraphSeparatedRect
+
+import java.util.{Timer, TimerTask}
 
 
-case class Rectangle(x: Double, y: Double, width: Double, height: Double)
-/*
-def RectangleComponent(rect: Rectangle): HtmlElement =
-  div(
-    position.absolute,
-    left := rect.x.toString,
-    top := rect.y.toString,
-    width := rect.width.toString,
-    height := rect.height.toString,
-    backgroundColor := rect.color
-  )
-
-def CanvasComponent(rect: Var[List[Rectangle]]): HtmlElement =
-  div(
-    children <-- rect.signal.map { ballList =>
-      ballList.map(ball => RectangleComponent(ball))
-    }
-  )
-*/
-//def drawAllRectangles(canvas: html.Canvas, list: List[Int]): Unit =
-
-var canvas: Option[html.Canvas] = None
-var allRectangles: List[Rectangle] = List()
 
 case class RectanglesVisualizer(nRect: Int, maxValue: Int):
-  val parent: dom.Element = dom.document.querySelector(".div_canvas")
-  render(parent, canvasTag(
-      className := "canvas"))
   val canvasElem: html.Canvas = dom.document.querySelector(".canvas").asInstanceOf[dom.html.Canvas]
   val rectangleWidth = canvasElem.width / (1.5 * nRect)
   var index = 0
   def drawSingleRectangle(value: Int, color: String): Unit =
     val ctx = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
-    //ctx.clearRect(0, 0, canvasElem.width, canvasElem.height)
     val x = index * (rectangleWidth + 0.5)
     ctx.fillStyle = color
     val height = (value * canvasElem.height) / maxValue
-    //val rect: Rectangle = Rectangle(x, canvas.height - height, rectangleWidth, height)
-    //allRectangles = allRectangles.appended(rect)
     index = index + 1
     ctx.fillRect(x, canvasElem.height - height, rectangleWidth, height)
   def clear(): Unit =
     val ctx = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
     index =0
     ctx.clearRect(0, 0, canvasElem.width, canvasElem.height) 
-def colorRect(indexList: List[Int], color: String): Unit =
-  val ctx = canvas.get.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
-  indexList match
-    case h::t => {ctx.clearRect(allRectangles(h).x, allRectangles(h).y, allRectangles(h).width, allRectangles(h).height)
-    ctx.fillStyle = color
-    ctx.fillRect(allRectangles(h).x, allRectangles(h).y, allRectangles(h).width, allRectangles(h).height)
-    colorRect(t, color)}
-    case Nil =>
-
-def decolorRect(indexList: List[Int]): Unit =
-  colorRect(indexList, "red")
-def drawRectangles(canvas: html.Canvas, list: List[Int]): Unit =
-  val ctx = canvas.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
-  val rectangleWidth = canvas.width / (1.5*list.size)
-  val max = list.max
-  drawSingleRectangle(list, 0)
-  def drawSingleRectangle(list: List[Int], index: Int): Unit =
-    list match
-      case h::t =>
-        val x = index * (rectangleWidth +0.5) // 10 is the spacing between rectangles
-          ctx.fillStyle = "red"
-          val height = (h * canvas.height) / max
-          val rect: Rectangle = Rectangle(x, canvas.height - height, rectangleWidth, height)
-          allRectangles = allRectangles.appended(rect)
-          ctx.fillRect(x, canvas.height - height, rectangleWidth, height)
-          drawSingleRectangle(t, index+1)
-      case Nil =>
 
 
-def convertToDouble[T](value: T): Double = value match {
-  case intValue: Int => intValue.toDouble
-  case longValue: Long => longValue.toDouble
-  case floatValue: Float => floatValue.toDouble
-  case doubleValue: Double => doubleValue
-  case stringValue: String => stringValue.toDouble
-  case _ => throw new IllegalArgumentException("Value cannot be converted to Double")
-}
-def convertSeqToDouble[T](seq:Seq[T])(using f: T => Double): Seq[Double] =
-  seq.map(a => f(a))
-def computeAndDraw(canvas: dom.html.Canvas, seq:List[Int], size: Int): Unit =
-  //println("sizeComputeAndDraw :" +size)
-  //val seq = normalDistribution(50,  15).take(size).shift(1, 200).doubleToInt
+object GraphFunctions:
+  var seqStep:Seq[Seq[ElementInfo[Int]]] = Seq()
+  var starterSeq = seqStep
+  var visualizer: RectanglesVisualizer = RectanglesVisualizer(0,0)
+  var index: Int = 0
+  var period: Int = 20
+  // val executor: ScheduledExecutorService = Executors.newScheduledThreadPool(1)
+  var timer = new Timer()
+  var isExecuting: Boolean = false
+  def setSeqList(seq: Seq[Seq[ElementInfo[Int]]]): Unit =
+    seqStep = seq
+    visualizer =  RectanglesVisualizer(seq(1).size, seq(1).map(a => a.value).max)
+    showGraphSeparatedRect()
+    //replay()
 
-  drawRectangles(canvas, seq)
-  // Esegui le operazioni desiderate sul canvas utilizzando il valore fornito
-  // ...
+  private def getColourFromProperties(elementInfo: ElementInfo[Int]): String =
+    elementInfo match
+      case _ if elementInfo.selected => "green"
+      case _ if elementInfo.compared => "blue"
+      case _ if elementInfo.hidden => "black"
+      case _ => "red"
 
-def drawGraphic(seq: List[Int], size: Var[Int]):Unit =
-  val parent: dom.Element = dom.document.querySelector(".div_canvas")
-  parent.innerHTML= ""
-  allRectangles = List()
-  render(parent, getRectangle(seq, size))
-def getRectangle[T](seq: List[Int], size: Var[Int]): Element =
+  private def showGraphSeparatedRect(): Unit =
+    val list1 = seqStep(index)
+    visualizer.clear()
+    def drawList(l: List[ElementInfo[Int]]): Unit =
+      l match
+        case h :: t =>
+          visualizer.drawSingleRectangle(h.value, getColourFromProperties(h))
+          drawList(t)
+        case _ =>
+    drawList(list1.toList)
 
-  canvasTag(
-    className := "canvas",
-    //width := s"${rectangleCount * (rectangleWidth + 10)}",
-    //height := s"${rectangleHeight}",
-    //size.signal--> (newValue => computeAndDraw(re , newValue)),
+  def play(): Unit =
+    println("play")
+    changePlayIcon()
+    //steps = bubbleSort(starterSeq)
+    timer = new Timer()
+    isExecuting = true
+    val task = new TimerTask() {
+      def run(): Unit = index match
+        case _ if index equals seqStep.size => end()
+        case _ => nextStep()
 
-    inContext(thisNode => size.signal--> (newValue =>  {
-      canvas = Some(thisNode.ref)
-      computeAndDraw(thisNode.ref,seq, newValue)
-    })),
-    onMountCallback(el =>
-      canvas = Some(el.thisNode.ref)
-      size.signal --> (newValue => computeAndDraw(el.thisNode.ref, seq, newValue))
-      computeAndDraw(el.thisNode.ref, seq, size.now())
-    )
-  )
-def getAllStepsWithString(list: List[List[(Int, String)]]): Element =
-  var i =0
-  canvasTag(
-    className := "canvas",
-    //width := s"${rectangleCount * (rectangleWidth + 10)}",
-    //height := s"${rectangleHeight}",
-    //size.signal--> (newValue => computeAndDraw(re , newValue)),
-    //inContext(thisNode => size.signal--> (newValue => computeAndDraw(thisNode.ref,seq, newValue))),
-    onMountCallback(el =>
-      val timerIdRef: Var[Option[Int]] = Var(None)
-      def updateCanvas(): Unit=
-        computeAndDraw(el.thisNode.ref, list(i).map((a,s) => a), list(i).size)
-        var listToColor: List[Int] = List()
-        print(list(i))
-        list(i).foreach(a => if a._2=="!" then listToColor = listToColor.appended(list(i).indexOf(a)))
-        i = i+1
-        if i equals(list.size) then
-          timerIdRef.now().foreach(dom.window.clearInterval)
-          timerIdRef.set(None)
+    }
+    timer.schedule(task, 0, period)
 
+  def nextStep(): Unit =
+    //println("next step")
+    //enableBackButton(true)
+    println("step size " + seqStep.size)
+    println("index " + index)
+    if index >= seqStep.size - 1
+    then
+      //disableNextButton(true)
+      println("index: " + index)
+      println("steps: " + seqStep.size)
+    if index equals seqStep.size
+    then end()
+    index = index + 1
+    showGraphSeparatedRect()
 
+  def backStep(): Unit =
+    println("back step")
+    if index equals 1 then
+      enableBackButton(false)
 
-      val timerId = dom.window.setInterval(() => updateCanvas(), 1000)
-      timerIdRef.set(Some(timerId))
-      /*onUnmountCallback { _ =>
-        dom.window.clearInterval(timerId)
-      }
-      */
-
-    )
-  )
-
-def getAllSteps[T](list: List[List[Int]]): Element =
-  var i =0
-  canvasTag(
-    //className := "canvas",
-    //width := s"${rectangleCount * (rectangleWidth + 10)}",
-    //height := s"${rectangleHeight}",
-    //size.signal--> (newValue => computeAndDraw(re , newValue)),
-    //inContext(thisNode => size.signal--> (newValue => computeAndDraw(thisNode.ref,seq, newValue))),
-    onMountCallback(el =>
-      val timerIdRef: Var[Option[Int]] = Var(None)
-      def updateCanvas(): Unit=
-        computeAndDraw(el.thisNode.ref, list(i), list(i).size)
-        i = i+1
-        if i equals(list.size) then
-          timerIdRef.now().foreach(dom.window.clearInterval)
-          timerIdRef.set(None)
+    index = index - 1
+    if index < seqStep.size then
+      disableNextButton(false)
+    showGraphSeparatedRect()
 
 
+  def stop(): Unit =
+    println("stop")
+    isExecuting = false
+    timer.cancel()
+    
+    changeStopIcon()
 
-      val timerId = dom.window.setInterval(() => updateCanvas(), 1000)
-      timerIdRef.set(Some(timerId))
-      /*onUnmountCallback { _ =>
-        dom.window.clearInterval(timerId)
-      }
-      */
+  def replay(): Unit =
+    index = 0
+    starterSeq = seqStep
 
-    )
-  )
+    enableBackButton(false)
+    disableNextButton(false)
+    println("replay")
+    stop()
+    isExecuting = false
+    showGraphSeparatedRect()
+
+  def end(): Unit =
+    println("size: " + seqStep.size)
+    println("index " + index)
+    println("ultimo step" + seqStep.last.toString)
+    println("fine")
+    isExecuting = false
+    timer.cancel()
+    disableNextButton(true)
+
+  def setSpeed(speed: Int): Unit =
+    println("setting speed")
+    timer.cancel()
+    timer = new Timer()
+    val task = new TimerTask() {
+      def run(): Unit = index match
+        case _ if index equals seqStep.size => end()
+        case _ => nextStep()
+
+    }
+    period = speed
+    if isExecuting
+    then timer.schedule(task, 0, speed)
+
+  def changeSize(size: Int): Unit =
+    
+    //seqStep = RangeGaussian().generateAll(0 to 175).toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
+    replay()

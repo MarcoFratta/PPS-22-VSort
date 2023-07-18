@@ -1,10 +1,10 @@
 package view.livechart
 
 import com.raquo.laminar.api.L.*
-import controller.{Graphic, SeqPropertiesController}
-import controller.Graphic.{changeSize, setSpeed}
+import controller.{StepController, SeqPropertiesController}
 import view.livechart.Main.sliderValue
 import org.scalajs.dom
+import view.rectangles.GraphFunctions.changeSize
 
 
   def renderTopBar(sliderValue: Var[Int]): Element =
@@ -20,12 +20,16 @@ import org.scalajs.dom
         button (
           i(
             className:="fa fa-check",
-            onClick --> (_ => Graphic.showGraphSeparatedRect())
+            onClick --> (_ =>
+              BottomBar.enableAllButton()
+              StepController.setSeqList())
 
           )
         )
       )
     )
+    
+  
   import controller.*
   def renderSlider(sliderValue: Var[Int]): Element =
     //val slidVal = Var(sliderValue.now())
