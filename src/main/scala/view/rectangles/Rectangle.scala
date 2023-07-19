@@ -5,7 +5,7 @@ import controller.StepController.SeqProp
 import model.ElementInfo
 import org.scalajs.dom
 import org.scalajs.dom.html
-import view.livechart.BottomBar.{changePlayIcon, changeStopIcon, disableNextButton, enableBackButton}
+import view.livechart.BottomBar.{changePlayIcon, changeStopIcon, disableNextButton, disableReplayButton, enableBackButton}
 import view.rectangles.GraphFunctions.showGraphSeparatedRect
 
 import java.util.{Timer, TimerTask}
@@ -73,7 +73,7 @@ object GraphFunctions:
     isExecuting = true
     val task = new TimerTask() {
       def run(): Unit = index match
-        case _ if index equals seqStep.size => end()
+        case _ if index equals seqStep.size-1 => end()
         case _ => nextStep()
 
     }
@@ -81,27 +81,26 @@ object GraphFunctions:
 
   def nextStep(): Unit =
     //println("next step")
-    //enableBackButton(true)
-    println("step size " + seqStep.size)
-    println("index " + index)
-    if index >= seqStep.size - 1
+    enableBackButton(true)
+    if index == seqStep.size - 1
     then
-      //disableNextButton(true)
+      disableNextButton(true)
+      end()
       println("index: " + index)
       println("steps: " + seqStep.size)
-    if index equals seqStep.size
-    then end()
-    index = index + 1
+    //if index equals seqStep.size then end()
+    else index = index + 1
     showGraphSeparatedRect()
 
   def backStep(): Unit =
     println("back step")
     if index equals 1 then
       enableBackButton(false)
-
     index = index - 1
     if index < seqStep.size then
       disableNextButton(false)
+
+      changeStopIcon()
     showGraphSeparatedRect()
 
 
@@ -124,12 +123,12 @@ object GraphFunctions:
     showGraphSeparatedRect()
 
   def end(): Unit =
+    isExecuting = false
+    timer.cancel()
     println("size: " + seqStep.size)
     println("index " + index)
     println("ultimo step" + seqStep.last.toString)
     println("fine")
-    isExecuting = false
-    timer.cancel()
     disableNextButton(true)
 
   def setSpeed(speed: Int): Unit =

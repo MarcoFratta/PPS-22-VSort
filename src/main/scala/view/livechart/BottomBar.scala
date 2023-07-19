@@ -30,13 +30,14 @@ class ButtonImpl(override val id:String, override val icon: String, override val
 object BottomBar:
   private val nextDisable = Var(true)
   private val backDisable = Var(true)
+  private val replayDisable = Var(true)
   private val controlButton = Var(new ButtonImpl("controlButton", "fa-play", _ => play(), nextDisable).getButton)
   private val playButton = new ButtonImpl("play", "fa-play", _ => play(), nextDisable)
   private val stopButton = new ButtonImpl("stop", "fa-stop", _ => stop(), nextDisable)
 
   def renderBottomBar() : Element =
     ul(
-      li(new ButtonImpl("replay", "fa-rotate-left", _ => replay(), nextDisable).getButton),
+      li(new ButtonImpl("replay", "fa-rotate-left", _ => replay(), replayDisable).getButton),
       li(new ButtonImpl("back", "fa-backward", _ => backStep(), backDisable).getButton),
       li(child <-- controlButton.signal),
       li(new ButtonImpl("next", "fa-forward", _ => nextStep(), nextDisable).getButton),
@@ -64,6 +65,7 @@ object BottomBar:
 
   def enableAllButton(): Unit =
     nextDisable.set(false)
+    replayDisable.set(false)
   
   def changePlayIcon(): Unit =
     controlButton.set(stopButton.getButton)
@@ -76,4 +78,5 @@ object BottomBar:
 
   def disableNextButton(disable: Boolean): Unit =
     nextDisable.set(disable)
+
 
