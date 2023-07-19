@@ -1,13 +1,14 @@
 package view.livechart
 
 import com.raquo.laminar.api.L.*
-import controller.{StepController, SeqPropertiesController}
-import view.livechart.Main.sliderValue
+import controller.{SeqPropertiesController, StepController}
 import org.scalajs.dom
 import view.rectangles.GraphFunctions.changeSize
 
+import scala.annotation.tailrec
 
-  def renderTopBar(sliderValue: Var[Int]): Element =
+
+  def renderTopBar(): Element =
     ul(
       li(renderSelectionAlg()),
       li(renderSelectionDistribution()),
@@ -15,7 +16,7 @@ import view.rectangles.GraphFunctions.changeSize
       li(renderArrayProperties("Min")),
       li(renderArrayProperties("Size")),
       li(renderArrayProperties("% valori duplicati")),
-      li(renderSlider(sliderValue)),
+      li(renderSlider(Var(50))),
       li(
         button (
           i(
@@ -23,17 +24,12 @@ import view.rectangles.GraphFunctions.changeSize
             onClick --> (_ =>
               BottomBar.enableAllButton()
               StepController.setSeqList())
-
           )
         )
       )
     )
-    
-  
-  import controller.*
-  def renderSlider(sliderValue: Var[Int]): Element =
-    //val slidVal = Var(sliderValue.now())
 
+  def renderSlider(sliderValue: Var[Int]): Element =
     div(
     input(
       className := "slider",
@@ -45,16 +41,16 @@ import view.rectangles.GraphFunctions.changeSize
       onInput.mapToValue.map(_.toInt) --> sliderValue
 
     ),
-
       child.text <-- sliderValue.signal.map(_.toString),
-
-
     )
 
+  /*@tailrec
   def setAlgNames(l: List[String]): Element = l match
     case h :: t =>
       dom.document.getElementById("algList").appendChild(option(h).ref)
       setAlgNames(t)
+    case _ =>
+  */
   def renderSelectionAlg(): Element =
     form(
     select(
