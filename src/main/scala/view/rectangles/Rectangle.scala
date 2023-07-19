@@ -41,7 +41,7 @@ object GraphFunctions:
   private var seqProp: Option[SeqProp] = None
 
   def setSeqList(seqProperties: SeqProp): Unit =
-    seqStep = seqProperties.getElements()
+    seqStep = seqProperties.getElements
     seqProp = Some(seqProperties)
     visualizer =  RectanglesVisualizer(seqStep(1).size, seqStep(1).map(a => a.value).max)
     showGraphic()

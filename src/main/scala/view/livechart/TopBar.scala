@@ -52,7 +52,7 @@ case class TopBar(prop: SeqPropertiesController):
     select(
       idAttr := "algList",
       placeholder("Algorithm"),
-      renderOption(prop.getAlgorithmList())
+      renderOption(prop.getAlgorithmList)
       )
     )
 
@@ -60,7 +60,7 @@ case class TopBar(prop: SeqPropertiesController):
     form(
       select(
         placeholder("Distribution"),
-        renderOption(prop.getDistributionList())
+        renderOption(prop.getDistributionList)
       )
     )
 
