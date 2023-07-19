@@ -7,7 +7,7 @@ import view.rectangles.GraphFunctions.changeSize
 
 import scala.annotation.tailrec
 
-
+case class TopBar(prop: SeqPropertiesController):
   def renderTopBar(): Element =
     ul(
       li(renderSelectionAlg()),
@@ -29,7 +29,7 @@ import scala.annotation.tailrec
       )
     )
 
-  def renderSlider(sliderValue: Var[Int]): Element =
+  private def renderSlider(sliderValue: Var[Int]): Element =
     div(
     input(
       className := "slider",
@@ -44,32 +44,27 @@ import scala.annotation.tailrec
       child.text <-- sliderValue.signal.map(_.toString),
     )
 
-  /*@tailrec
-  def setAlgNames(l: List[String]): Element = l match
-    case h :: t =>
-      dom.document.getElementById("algList").appendChild(option(h).ref)
-      setAlgNames(t)
-    case _ =>
-  */
-  def renderSelectionAlg(): Element =
+
+  private def renderOption(options: List[String]): List[Element] =
+    options.map(a => option(a))
+  private def renderSelectionAlg(): Element =
     form(
     select(
       idAttr := "algList",
       placeholder("Algorithm"),
-        //renderOption(n)
+      renderOption(prop.getAlgorithmList())
       )
     )
 
-  def renderSelectionDistribution(): Element =
+  private def renderSelectionDistribution(): Element =
     form(
       select(
         placeholder("Distribution"),
-        option("Random"),
-        option("Gaussian")
+        renderOption(prop.getDistributionList())
       )
     )
 
-  def renderArrayProperties(name: String): Element =
+  private def renderArrayProperties(name: String): Element =
     input(
       typ := "text",
       placeholder := name
