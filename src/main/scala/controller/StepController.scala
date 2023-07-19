@@ -2,9 +2,9 @@ package controller
 import com.raquo.laminar.api.L.Var
 import model.*
 import model.SeqProperties.*
+import model.SortingAlgorithms.mergeSort
 import model.Step.Swap
 import model.sortModel.SortOperations.*
-import model.SortingAlgorithms.*
 import view.rectangles.GraphFunctions
 
 
@@ -25,11 +25,14 @@ object StepController:
   var steps: Seq[Step] = mergeSort(seq)
   var example: Seq[Seq[ElementInfo[Int]]] = StepsVisualizer.getSeqList(steps, seq)
 
+  class SeqProp:
+    def getElements(): Seq[Seq[ElementInfo[Int]]] = example
+    def setSize(size: Int): Unit = changeSize(size)
   def setSeqList(): Unit =
-    GraphFunctions.setSeqList(example)
+    GraphFunctions.setSeqList(new SeqProp())
 
   def changeSize(size: Int) =
-    seq = RangeGaussian().generateAll(0 to size).toList.sortWith((a,b) => a._1 <= b._1).map(x => x._2)
+    seq = RangeGaussian().generateAll(0 until size).toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
     steps = mergeSort(seq)
     example = StepsVisualizer.getSeqList(steps, seq)
     setSeqList()

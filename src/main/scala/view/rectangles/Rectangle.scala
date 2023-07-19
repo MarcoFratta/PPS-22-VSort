@@ -1,6 +1,7 @@
 package view.rectangles
 
 import com.raquo.laminar.api.L.*
+import controller.StepController.SeqProp
 import model.ElementInfo
 import org.scalajs.dom
 import org.scalajs.dom.html
@@ -37,9 +38,12 @@ object GraphFunctions:
   // val executor: ScheduledExecutorService = Executors.newScheduledThreadPool(1)
   var timer = new Timer()
   var isExecuting: Boolean = false
-  def setSeqList(seq: Seq[Seq[ElementInfo[Int]]]): Unit =
-    seqStep = seq
-    visualizer =  RectanglesVisualizer(seq(1).size, seq(1).map(a => a.value).max)
+  var seqProp: SeqProp = null
+
+  def setSeqList(seqProperties: SeqProp): Unit =
+    seqStep = seqProperties.getElements()
+    seqProp = seqProperties
+    visualizer =  RectanglesVisualizer(seqStep(1).size, seqStep(1).map(a => a.value).max)
     showGraphSeparatedRect()
     //replay()
 
@@ -143,6 +147,6 @@ object GraphFunctions:
     then timer.schedule(task, 0, speed)
 
   def changeSize(size: Int): Unit =
-    
+    seqProp.setSize(size)
     //seqStep = RangeGaussian().generateAll(0 to 175).toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
     replay()
