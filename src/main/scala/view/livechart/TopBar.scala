@@ -1,14 +1,14 @@
 package view.livechart
 
 import com.raquo.laminar.api.L.*
-import controller.{MainController, SeqPropertiesController, StepController}
+import controller.{Controller, SeqPropertiesController, StepController}
 import model.InputType
 import org.scalajs.dom
 import view.rectangles.GraphFunctions.changeSize
 
 import scala.annotation.tailrec
 
-case class TopBar(prop: MainController):
+case class TopBar(prop: Controller):
   def renderTopBar(): Element =
     ul(
       prop.getInputList.map(a => li(renderInputType(a))),

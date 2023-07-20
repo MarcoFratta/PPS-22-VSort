@@ -1,19 +1,18 @@
 package view
 
 import com.raquo.laminar.api.L.{Element, canvasTag, className, div}
-import controller.{MainController, SeqPropertiesController, SeqPropertiesControllerImpl}
+import controller.{Controller, SeqPropertiesController, SeqPropertiesControllerImpl}
 import view.livechart.{BottomBar, TopBar}
 import view.livechart.BottomBar.renderBottomBar
 
 
-
-object MainView:
+trait View:
+  def getAppElement: Element
+case class ViewImpl(controller: Controller) extends View:
   import BottomBar.*
-
-  var seqProp: MainController = new MainController()
-  def appElement(): Element =
+  override def getAppElement: Element =
     div(
-        TopBar(seqProp).renderTopBar(),
+        TopBar(controller).renderTopBar(),
         div(canvasTag(
           className := "canvas")),
         renderBottomBar()
