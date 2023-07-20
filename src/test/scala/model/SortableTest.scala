@@ -106,9 +106,6 @@ class SortableTest extends AnyFlatSpec with Matchers:
 
 
   "Bubble sort with loop for" should "work" in {
-    import StepsVisualizer.*
-
-
     val s = Sortable[Int, String](Seq(9, 8, 7, 6, 5, 4, 3, 2, 1, 0))
     val y = for i <- s.loopFor(0 to s.data.length - 2)
                 j <- i.prev.loopFor(0 to i.prev.data.length - 2 - i.index)
