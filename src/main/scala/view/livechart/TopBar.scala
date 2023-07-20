@@ -11,7 +11,7 @@ import scala.annotation.tailrec
 case class TopBar(prop: MainController):
   def renderTopBar(): Element =
     ul(
-      prop.getInputList().map(a => li(renderInputType(a))),
+      prop.getInputList.map(a => li(renderInputType(a))),
       li(
         button (
           i(
