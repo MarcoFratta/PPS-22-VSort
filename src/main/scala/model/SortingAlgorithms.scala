@@ -68,7 +68,7 @@ object SortingAlgorithms:
   private def quickSort[T: Comparable](seq: LoopableS[T, String], start: Int, end: Int): LoopableS[T, String] =
     if start < end then (for a1 <- seq.divide(start, end).get.deselect("i")
                              a2 <- partition(a1, start, end).!
-                             a3 <- quickSort(a2, start, a2 -> "i" - 1).!
+                             a3 <- quickSort(a2, start, a2 -> "i" - 1)
                              a4 <- quickSort(a3, a2 -> "i" + 1, end).!
                              a5 <- a4.deselect("i").get.divide(start, end)
                          yield a5).get else seq
@@ -77,9 +77,10 @@ object SortingAlgorithms:
     (for p1 <- seq.select("pi", end)
          p2 <- p1.select("i", start - 1)
          p3 <- for j <- p2.loopFor(start until end)
-                  l1 <- j.prev.compare(j.prev -> "pi", j.index)(x => for a1 <- x.select("i", x -> "i" + 1)
-                                                                         a2 <- a1.swap(a1 -> "i", j.index)
-                                                                     yield a2)(x => x)
+                  l1 <- j.prev.compare(j.prev -> "pi", j.index)(x =>
+                    for a1 <- x.select("i", x -> "i" + 1)
+                        a2 <- a1.swap(a1 -> "i", j.index)
+                    yield a2)(x => x)
                 yield l1
          p4 <- p3.select("i", p3 -> "i" + 1)
          p5 <- p4.swap(p4 -> "i", end)

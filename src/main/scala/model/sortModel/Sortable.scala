@@ -47,6 +47,10 @@ object SortableOps:
 
   import Step.*
 
+  extension[A] (s: A) 
+    @targetName("Monad unit")
+    def ! : Monad[A] = unit(s)
+
   def unit[T](a: T): Monad[T] = new Monad[T]:
     override def get: T = a
 
@@ -64,18 +68,11 @@ object SortableOps:
      */
     def get: T
 
-
-  extension[T: Comparable, A] (s: A)
-    @targetName("unit")
-    def ! : Monad[A] = unit(s)
-
-
-
   extension[T: Comparable, A <: Steppable[A] with Data[T, A]] (s: A)
     def swap(a: Int, b: Int): Monad[A] =
       new Monad[A]:
         override def get: A =
-          if s.data.nonEmpty then s.ofData(swapElements(s.data)(a, b)).ofSteps(s.steps + Swap(a, b))
+          if s.data.nonEmpty then s.ofData(swapElements(s.data)(a, b)).ofSteps(s.steps :+ Swap(a, b))
           else s
 
         private def swapElements(data: Seq[T])(a: Int, b: Int): Seq[T] =
@@ -86,7 +83,7 @@ object SortableOps:
       new Monad[C | D]:
         override def get: C | D =
           if s.data.isDefinedAt(a) && s.data.isDefinedAt(b) then
-            checkBranch(s.ofSteps(s.steps + Comparison(a, b)))(a, b)(ifTrue)(ifFalse)
+            checkBranch(s.ofSteps(s.steps :+ Comparison(a, b)))(a, b)(ifTrue)(ifFalse)
           else throw new IllegalArgumentException(f"Invalid compare indexes ($a - $b)")
 
         private def checkBranch(d: A)(a: Int, b: Int)(ifTrue: A => Monad[C])(ifFalse: A => Monad[D]): C | D =
@@ -95,7 +92,7 @@ object SortableOps:
     def divide(a: Int, b: Int): Monad[A] =
       new Monad[A]:
         override def get: A = if s.data.isDefinedAt(a) && s.data.isDefinedAt(b) then
-          s.ofSteps(s.steps + Divide(a, b))
+          s.ofSteps(s.steps :+ Divide(a, b))
         else throw new IllegalArgumentException(f"Invalid divide indexes ($a - $b)")
 
 
@@ -103,12 +100,12 @@ object SortableOps:
     def select(k: K, i: V): Monad[A] =
       new Monad[A]:
         override def get: A =
-          s.ofSelections(s.selections.updated(k, i)).ofSteps(s.steps + Selection(k, i))
+          s.ofSelections(s.selections.updated(k, i)).ofSteps(s.steps :+ Selection(k, i))
   extension[T: Comparable, K, V, A <: Steppable[A] with Selections[K, V, A]] (s: A)
     def deselect(k: K): Monad[A] =
       new Monad[A]:
         override def get: A =
-          s.ofSelections(s.selections.removed(k)).ofSteps(s.steps + Deselection(k))
+          s.ofSelections(s.selections.removed(k)).ofSteps(s.steps :+ Deselection(k))
     def getSelection(k: K): Monad[Option[V]] =
       new Monad[Option[V]]:
         override def get: Option[V] = s.get(k)

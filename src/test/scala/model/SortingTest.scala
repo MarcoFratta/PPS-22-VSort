@@ -1,7 +1,7 @@
 package model
 
 import model.SortingAlgorithms.*
-import model.StepsVisualizer
+import model.StepsTransformer
 import model.sortModel.SortOperations.*
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
@@ -13,7 +13,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
 
   import model.sortModel.SortOperations.given
 
-  val visualizer = StepsVisualizer[Int]
+  private val visualizer = StepsTransformer[Int]
 
   "Bubble sort" should "work" in {
     val data = Seq(60, 20, 30, 40, 50, 10)
@@ -61,5 +61,14 @@ class SortingTest extends AnyFlatSpec with Matchers:
 
     print("Quick sort\n" + visualizer.getString(steps, data))
     visualizer.getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
+  }
+
+  "Quick Sort" should "work with string" in {
+    given Comparable[String] = (a,b) => a.compareTo(b) > 0
+
+    val data = Seq("a","z" ,"c", "b" , "e")
+    val steps = quickSort(data)
+
+    StepsTransformer[String]().getResult(steps, data) shouldBe Seq("a","b","c","e","z")
   }
 

@@ -27,9 +27,4 @@ class StepTest extends AnyFlatSpec with Matchers {
         val step = Step.Divide(0, 1)
     }
 
-    "A sequence of steps" should "exists" in {
-        val a = Seq(Step.Swap(0, 1), Step.Comparison(0, 1))
-        val b = Step.Comparison(0, 1)
-        val seq = a + b
-    }
 }

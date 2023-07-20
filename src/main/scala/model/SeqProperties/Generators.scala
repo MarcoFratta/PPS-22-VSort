@@ -20,7 +20,7 @@ trait Generator[T: Generable]:
 
   private def convert(a: Double): T = Generable.convert(a)
 
-private case class BasicGenerator[T: Generable](ff: Int => Double) extends Generator[T]:
+private class BasicGenerator[T: Generable](ff: Int => Double) extends Generator[T]:
   override def f(x: Int): Double = ff(x)
 
 trait HasRange(a: Int, b: Int):

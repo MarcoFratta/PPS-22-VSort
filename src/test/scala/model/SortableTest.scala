@@ -22,6 +22,13 @@ class SortableTest extends AnyFlatSpec with Matchers:
       yield p1.data shouldEqual Seq(6, 5, 7)
   }
 
+  "List " should "be lazy" in {
+    val s = Sortable[Int, String](Seq(5, 6, 7))
+    val p = for p1 <- s.swap(1, 0)
+      yield p1
+    println(p.get.steps)
+  }
+
   "A comparison " should "add one comparison step" in {
 
     val s = Sortable[Int, String](Seq(5, 6, 7))
@@ -113,6 +120,18 @@ class SortableTest extends AnyFlatSpec with Matchers:
     yield res
 
     y.get.data shouldEqual Seq(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+  }
+
+  "Bubble sort with string for" should "sort the sequence" in {
+
+    given Comparable[String] = (a,b) => a.compareTo(b) > 0
+    val s = Sortable[String, String](Seq("c","a","b","z","f","e"))
+    val y = for i <- s.loopFor(0 to s.data.length - 2)
+                j <- i.prev.loopFor(0 to i.prev.data.length - 2 - i.index)
+                res <- j.prev.compare(j.index, j.index + 1)(x => x.swap(j.index, j.index + 1))(x => x)
+    yield res
+
+    y.get.data shouldEqual Seq("a","b","c","e","f","z")
   }
 
 

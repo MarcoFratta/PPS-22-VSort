@@ -18,11 +18,12 @@ object SortOperations:
   export model.sortModel.Sortable
   export model.Step.*
 
+
   given comp: Comparable[Int] with
     override def compare(a: Int, b: Int): Boolean = a - b > 0
 
   given c1[T]: Conversion[T, Monad[T]] with
-    def apply(x: T): Monad[T] = x !
+    def apply(x: T): Monad[T] = x!
 
 
 

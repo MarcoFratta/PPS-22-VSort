@@ -1,5 +1,7 @@
 package model
 
+import scala.annotation.targetName
+
 enum Step:
     case Swap[K](a: K, b: K)
     case Selection[K, I](s: K, a: I)
@@ -7,8 +9,5 @@ enum Step:
     case Comparison[K](a: K, b: K)
     case Divide[K](start: K, stop: K)
 
-object Step:
 
-    extension (steps: Seq[Step])
-        def +(step: Step): Seq[Step] = steps :+ step
 

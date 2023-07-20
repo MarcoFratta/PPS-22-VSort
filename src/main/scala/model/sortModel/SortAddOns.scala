@@ -41,7 +41,8 @@ object SortAddOns:
     private[sortModel] def isStopped: Boolean = b
 
 
-  private case class IterationImpl[+T](override val index: Int, override val prev: T) extends Iteration[T]
+  private case class IterationImpl[+T](override val index: Int,
+                                       override val prev: T) extends Iteration[T]
 
   object Iteration:
     def apply[T](value: Int, prev: T): Iteration[T] =
@@ -93,7 +94,7 @@ object LoopOperation:
 
 object Loopable:
   def apply[T: Comparable, V](seq: Seq[T]):
-  LoopableS[T, V] = new LoopableS[T, V](seq, Seq.empty, Map.empty, false)
+  LoopableS[T, V] = new LoopableS[T, V](seq, List.empty, Map.empty, false)
 
   case class LoopableS[T, K](override val data: Seq[T], override val steps: Seq[Step],
                              override val selections: Map[K, Int], b: Boolean)
