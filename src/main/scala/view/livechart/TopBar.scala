@@ -27,8 +27,8 @@ case class TopBar(prop: MainController):
     inputType match
       case InputType.SelectList(l) => renderSelectList(l)
       case InputType.Text(text) => renderArrayProperties(text)
-      case InputType.Slider(min, max, name, defaultValue) => renderSlider(min, max, name, defaultValue)
-  private def renderSlider(min: Int, max: Int, name: String, defaultValue: Int): Element =
+      case InputType.Slider(min, max, name, defaultValue, f) => renderSlider(min, max, name, defaultValue, f)
+  private def renderSlider(min: Int, max: Int, name: String, defaultValue: Int, f: Int=> Unit): Element =
     val sliderValue = Var(defaultValue)
     div(
       label(name),
@@ -38,7 +38,7 @@ case class TopBar(prop: MainController):
         minAttr := min.toString,
         maxAttr := max.toString,
         value:= sliderValue.now().toString,
-        onInput --> (v => changeSize(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
+        onInput --> (v => f(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
         onInput.mapToValue.map(_.toInt) --> sliderValue
 
       ),
