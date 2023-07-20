@@ -1,7 +1,7 @@
 package model
 
 import model.SortingAlgorithms.heapify
-import model.StepsVisualizer.getResult
+import model.StepsVisualizer
 import model.sortModel.SortOperations.*
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
@@ -10,10 +10,12 @@ class HeapifyTest extends AnyFlatSpec with Matchers:
 
   import model.sortModel.SortOperations.given
 
+  val visualizer = StepsVisualizer[Int]
+
   "A sequence (4, 10, 3, 5, 1) " should "be (10, 5, 3, 4, 1) after heapify" in {
     val data = Seq(4,10,3,5,1)
     val steps = heapify(data)
-    val result = getResult(steps, data)
+    val result = visualizer.getResult(steps, data)
 
     result shouldBe Seq(10, 5, 3, 4, 1)
   }
@@ -21,7 +23,7 @@ class HeapifyTest extends AnyFlatSpec with Matchers:
   "A sequence (7, 6, 5, 4, 3, 2, 1) " should "be (7, 6, 5, 4, 3, 2, 1) after heapify" in {
     val data = Seq(7, 6, 5, 4, 3, 2, 1)
     val steps = heapify(data)
-    val result = getResult(steps, data)
+    val result = visualizer.getResult(steps, data)
 
     result shouldBe Seq(7, 6, 5, 4, 3, 2, 1)
   }
@@ -29,7 +31,7 @@ class HeapifyTest extends AnyFlatSpec with Matchers:
   "A sequence (5, 4, 3, 2, 1) " should "be (5, 4, 3, 2, 1) after heapify" in {
     val data = Seq(5, 4, 3, 2, 1)
     val steps = heapify(data)
-    val result = getResult(steps, data)
+    val result = visualizer.getResult(steps, data)
 
     result shouldBe Seq(5, 4, 3, 2, 1)
   }
@@ -37,7 +39,7 @@ class HeapifyTest extends AnyFlatSpec with Matchers:
   "A sequence (2, 8, 5, 3, 9, 1, 6) " should "be (9, 8, 6, 3, 2, 1, 5) after heapify" in {
     val data = Seq(2, 8, 5, 3, 9, 1, 6)
     val steps = heapify(data)
-    val result = getResult(steps, data)
+    val result = visualizer.getResult(steps, data)
 
     result shouldBe Seq(9, 8, 6, 3, 2, 1, 5)
   }

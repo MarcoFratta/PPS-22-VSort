@@ -9,7 +9,7 @@ trait ElementInfo[K]:
 
 object ElementInfo:
   extension [K](e: ElementInfo[K])
-    def changeValue(value: Int): ElementInfo[Int] =
+    def changeValue(value: K): ElementInfo[K] =
       ElementInfo(value, e.compared, e.selected, e.label, e.hidden)
     def select(string: String): ElementInfo[K] =
       ElementInfo(e.value, e.compared, true, Option(string), e.hidden)
