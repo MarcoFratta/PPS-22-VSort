@@ -29,28 +29,29 @@ case class TopBar(prop: MainController):
       case InputType.Text(text) => renderArrayProperties(text)
       case InputType.Slider(min, max, name, defaultValue) => renderSlider(min, max, name, defaultValue)
   private def renderSlider(min: Int, max: Int, name: String, defaultValue: Int): Element =
-    var sliderValue = Var(defaultValue)
+    val sliderValue = Var(defaultValue)
     div(
-    input(
-      className := "slider",
-      typ := "range",
-      minAttr := min.toString,
-      maxAttr := max.toString,
-      value:= sliderValue.now().toString,
-      onInput --> (v => changeSize(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
-      onInput.mapToValue.map(_.toInt) --> sliderValue
+      label(name),
+      input(
+        className := "slider",
+        typ := "range",
+        minAttr := min.toString,
+        maxAttr := max.toString,
+        value:= sliderValue.now().toString,
+        onInput --> (v => changeSize(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
+        onInput.mapToValue.map(_.toInt) --> sliderValue
 
-    ),
-      child.text <-- sliderValue.signal.map(_.toString),
-    )
+      ),
+        child.text <-- sliderValue.signal.map(_.toString),
+      )
 
 
   private def renderOption(options: List[String]): List[Element] =
     options.map(a => option(a))
-  private def renderSelectList(l: List[String]): Element =
+  private def renderSelectList[T](l: List[T]): Element =
     form(
     select(
-      renderOption(l)
+      renderOption(l.map(a => a.toString))
       )
     )
 

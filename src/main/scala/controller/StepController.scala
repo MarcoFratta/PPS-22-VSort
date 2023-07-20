@@ -23,7 +23,7 @@ object StepController:
   
   var seq: Seq[Int] = RangeGaussian().generateAll(0 to 100).toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
   var steps: Seq[Step] = mergeSort(seq)
-  private var example: Seq[Seq[ElementInfo[Int]]] = StepsVisualizer[Int].getSeqList(steps, seq)
+  private var example: Seq[Seq[ElementInfo[Int]]] = StepsTransformer[Int].getSeqList(steps, seq)
 
 
   class SeqProp:
@@ -35,6 +35,6 @@ object StepController:
   def changeSize(size: Int): Unit =
     seq = RangeGaussian().generateAll(0 until size).toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
     steps = mergeSort(seq)
-    example = StepsVisualizer[Int].getSeqList(steps, seq)
+    example = StepsTransformer[Int].getSeqList(steps, seq)
     setSeqList()
     
