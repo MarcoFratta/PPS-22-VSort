@@ -1,12 +1,11 @@
-package view.rectangles
+package view
 
 import com.raquo.laminar.api.L.*
-import controller.StepController.SeqProp
+import controller.Controller
 import model.ElementInfo
 import org.scalajs.dom
 import org.scalajs.dom.html
-import view.livechart.BottomBar.{changePlayIcon, changeStopIcon, disableNextButton, enableBackButton}
-import view.rectangles.GraphFunctions.showGraphic
+import view.BottomBar
 
 import java.util.{Timer, TimerTask}
 import scala.annotation.tailrec
@@ -27,25 +26,29 @@ case class RectanglesVisualizer(nRect: Int, maxValue: Int):
   def clear(): Unit =
     val ctx = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
     index =0
-    ctx.clearRect(0, 0, canvasElem.width, canvasElem.height) 
+    ctx.clearRect(0, 0, canvasElem.width, canvasElem.height)
 
 
-object GraphFunctions:
-  private var seqStep: Seq[Seq[ElementInfo[Int]]] = Seq()
+case class GraphFunctions(controller: Controller):
+  private val bottomBar = BottomBar(controller, this)
+  private val seqStep: Seq[Seq[ElementInfo[Int]]] = controller.getElements
   private var starterSeq = seqStep
-  private var visualizer: RectanglesVisualizer = RectanglesVisualizer(0,0)
+  private val visualizer: RectanglesVisualizer = RectanglesVisualizer(seqStep.head.size, seqStep.head.map(a => a.value).max)
   private var index: Int = 0
   private var period: Int = 20
   private var timer = new Timer()
   private var isExecuting: Boolean = false
-  private var seqProp: Option[SeqProp] = None
-
-  def setSeqList(seqProperties: SeqProp): Unit =
-    seqStep = seqProperties.getElements
-    seqProp = Some(seqProperties)
-    visualizer =  RectanglesVisualizer(seqStep(1).size, seqStep(1).map(a => a.value).max)
-    showGraphic()
+  showGraphic()
+  appendBottomBar()
     //replay()
+
+  private def appendBottomBar(): Unit =
+    if dom.document.querySelector(".bottomBar").innerHTML == "" then
+      render(dom.document.querySelector(".bottomBar"), bottomBar.renderBottomBar())
+    else
+      dom.document.querySelector(".bottomBar").innerHTML= ""
+      render(dom.document.querySelector(".bottomBar"), bottomBar.renderBottomBar())
+
 
   private def getColourFromProperties(elementInfo: ElementInfo[Int]): String =
     elementInfo match
@@ -67,7 +70,7 @@ object GraphFunctions:
     drawList(list1.toList)
 
   def play(): Unit =
-    changePlayIcon()
+    bottomBar.changePlayIcon()
     timer = new Timer()
     isExecuting = true
     val task = new TimerTask() {
@@ -78,34 +81,34 @@ object GraphFunctions:
     timer.schedule(task, 0, period)
 
   def nextStep(): Unit =
-    enableBackButton(true)
+    bottomBar.enableBackButton(true)
     if index == seqStep.size - 1
     then
-      disableNextButton(true)
+      bottomBar.disableNextButton(true)
       end()
     else index = index + 1
     showGraphic()
 
   def backStep(): Unit =
     if index equals 1 then
-      enableBackButton(false)
+      bottomBar.enableBackButton(false)
     index = index - 1
     if index < seqStep.size then
-      disableNextButton(false)
-      changeStopIcon()
+      bottomBar.disableNextButton(false)
+      bottomBar.changeStopIcon()
     showGraphic()
 
 
   def stop(): Unit =
     isExecuting = false
     timer.cancel()
-    changeStopIcon()
+    bottomBar.changeStopIcon()
 
   def replay(): Unit =
     index = 0
     starterSeq = seqStep
-    enableBackButton(false)
-    disableNextButton(false)
+    bottomBar.enableBackButton(false)
+    bottomBar.disableNextButton(false)
     stop()
     isExecuting = false
     showGraphic()
@@ -113,7 +116,7 @@ object GraphFunctions:
   def end(): Unit =
     isExecuting = false
     timer.cancel()
-    disableNextButton(true)
+    bottomBar.disableNextButton(true)
 
   def setSpeed(speed: Int): Unit =
     timer.cancel()
@@ -127,6 +130,7 @@ object GraphFunctions:
     if isExecuting
     then timer.schedule(task, 0, speed)
 
-  def changeSize(size: Int): Unit =
-    seqProp.get.setSize(size)
+  /*def changeSize(size: Int): Unit =
+    controller.setSeqSize(size)
     replay()
+  */
