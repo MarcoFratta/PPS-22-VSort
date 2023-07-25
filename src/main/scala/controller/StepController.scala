@@ -1,7 +1,7 @@
 package controller
 import com.raquo.laminar.api.L.Var
 import model.*
-import model.SeqProperties.*
+import model.seqProperties.*
 import model.SortingAlgorithms.mergeSort
 import model.Step.Swap
 import model.sortModel.SortOperations.*

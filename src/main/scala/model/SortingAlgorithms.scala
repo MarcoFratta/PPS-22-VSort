@@ -9,6 +9,7 @@ import scala.language.postfixOps
 object SortingAlgorithms:
 
   import model.sortModel.SortOperations.{*, given}
+  export model.sortModel.SortOperations.given
 
 
   def bubbleSort[T: Comparable](seq: Seq[T]): Seq[Step] =

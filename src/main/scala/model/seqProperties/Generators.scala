@@ -1,4 +1,4 @@
-package model.SeqProperties
+package model.seqProperties
 
 import ai.dragonfly.math.stats.probability.distributions.{Gaussian, Uniform}
 
