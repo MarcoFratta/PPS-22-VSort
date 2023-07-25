@@ -37,6 +37,7 @@ case class TopBar(controller: Controller):
         minAttr := min.toString,
         maxAttr := max.toString,
         value:= sliderValue.now().toString,
+        onInput --> (v => controller.addProperties(name ,v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
         //onInput --> (v => f(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
         onInput.mapToValue.map(_.toInt) --> sliderValue
 
@@ -57,6 +58,7 @@ case class TopBar(controller: Controller):
   private def renderArrayProperties(name: String): Element =
     input(
       typ := "text",
-      placeholder := name
+      placeholder := name,
+      onInput --> (v => controller.addProperties(name ,v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
     )
 
