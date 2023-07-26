@@ -6,6 +6,7 @@ import model.*
 import model.seqProperties.{GaussianGen, Generable}
 import model.seqProperties.*
 import model.seqProperties.Modifier.*
+import model.Params.*
 
 class ModelTest extends AnyFlatSpec with Matchers:
 
@@ -37,9 +38,10 @@ class ModelTest extends AnyFlatSpec with Matchers:
 
   "a distribution created with factory" must "give correct values" in {
     val model =  DistributionFactory[Int,Int](p =>
-      DistributionTest(p("mean"),p("std"),p("min"), p("max"),p("percentage")),
-      Set("mean","std","min","max","percentage"), "Gaussian")
+      given Conversion[Params, Int] = x => p(x)
+      DistributionTest(50,Std, Min, Max,DuplicatesPercentage),
+      Set(Std, Min, Max,DuplicatesPercentage), "Gaussian")
 
-    val g = model.generator(Map(("mean", 200),("std",15),("min",1),("max", 60),("percentage", 100)))
+    val g = model.generator(Map((Std,15),(Min,1),(Max, 60),(DuplicatesPercentage, 100)))
     g.generateAll(5 to 100 by 2).forall((x,y) => y >= 1 && y <= 60) mustBe true
   }
