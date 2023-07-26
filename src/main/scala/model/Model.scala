@@ -66,7 +66,7 @@ case class ModelImpl() extends IntModel with Algorithms with Distributions with 
 
   override def distributions: Set[Distribution[ParamsType,ArgType] with HasName] =
     given Generable[Int] = x => x.toInt
-    Set(DistributionFactory[Int,Int](p => GaussianDistribution(p("size") / 2, p("std"), 1,10000, p("percentage")),
+    Set(DistributionFactory(p => GaussianDistribution(p("size") / 2, p("std"), 1,10000, p("percentage")),
       Set("size","std","percentage"), "Gaussian"),
-    DistributionFactory[Int,Int](p => UniformDistribution(p("min"),p("max"),p("percentage")),
+    DistributionFactory(p => UniformDistribution(p("min"),p("max"),p("percentage")),
     Set("min","max","percentage"), "Uniform"))
