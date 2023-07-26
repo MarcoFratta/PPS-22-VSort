@@ -1,13 +1,12 @@
-package view.livechart
+package view
 
 import com.raquo.laminar.api.L
-import com.raquo.laminar.api.L.{onClick, *}
+import com.raquo.laminar.api.L.*
 import com.raquo.laminar.nodes.ReactiveHtmlElement
+import controller.Controller
 import jdk.jfr.Enabled
 import org.scalajs.dom
-import view.livechart.BottomBar
-import view.rectangles.GraphFunctions.*
-
+import view.GraphFunctions.*
 trait Button:
   def id: String
 
@@ -24,23 +23,24 @@ trait Button:
       disabled <-- buttonDisabled.signal
     )
 
-class ButtonImpl(override val id:String, override val icon: String, override val function: Any => Unit,
+case class ButtonImpl(override val id:String, override val icon: String, override val function: Any => Unit,
                  override val buttonDisabled: Var[Boolean]) extends Button
 
-object BottomBar:
-  private val nextDisable = Var(true)
+case class BottomBar(controller: Controller, graphFunctions: GraphFunctions):
+ // private val graphFunctions = GraphFunctions(controller)
+  private val nextDisable = Var(false)
   private val backDisable = Var(true)
-  private val replayDisable = Var(true)
-  private val controlButton = Var(new ButtonImpl("controlButton", "fa-play", _ => play(), nextDisable).getButton)
-  private val playButton = new ButtonImpl("play", "fa-play", _ => play(), nextDisable)
-  private val stopButton = new ButtonImpl("stop", "fa-stop", _ => stop(), nextDisable)
+  private val replayDisable = Var(false)
+  private val controlButton = Var( ButtonImpl("controlButton", "fa-play", _ => graphFunctions.play(), nextDisable).getButton)
+  private val playButton = ButtonImpl("play", "fa-play", _ => graphFunctions.play(), nextDisable)
+  private val stopButton = ButtonImpl("stop", "fa-stop", _ => graphFunctions.stop(), nextDisable)
 
   def renderBottomBar() : Element =
     ul(
-      li(new ButtonImpl("replay", "fa-rotate-left", _ => replay(), replayDisable).getButton),
-      li(new ButtonImpl("back", "fa-backward", _ => backStep(), backDisable).getButton),
+      li(ButtonImpl("replay", "fa-rotate-left", _ => graphFunctions.replay(), replayDisable).getButton),
+      li(ButtonImpl("back", "fa-backward", _ => graphFunctions.backStep(), backDisable).getButton),
       li(child <-- controlButton.signal),
-      li(new ButtonImpl("next", "fa-forward", _ => nextStep(), nextDisable).getButton),
+      li(ButtonImpl("next", "fa-forward", _ => graphFunctions.nextStep(), nextDisable).getButton),
       li(renderSpeedBar())
     )
 
@@ -57,15 +57,12 @@ object BottomBar:
         maxAttr := "1000",
         value := sliderValue.now().toString,
         onInput.mapToValue.map(_.toInt) --> sliderValue,
-        onInput --> (v => setSpeed(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt))
+        onInput --> (v => graphFunctions.setSpeed(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt))
 
       ),
       child.text <-- sliderValue.signal.map(_.toString),
     )
-
-  def enableAllButton(): Unit =
-    nextDisable.set(false)
-    replayDisable.set(false)
+  
   
   def changePlayIcon(): Unit =
     controlButton.set(stopButton.getButton)

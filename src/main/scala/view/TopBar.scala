@@ -1,24 +1,23 @@
-package view.livechart
+package view
 
 import com.raquo.laminar.api.L.*
-import controller.{MainController, SeqPropertiesController, StepController}
+import controller.Controller
 import model.InputType
 import org.scalajs.dom
-import view.rectangles.GraphFunctions.changeSize
+import view.BottomBar
 
 import scala.annotation.tailrec
 
-case class TopBar(prop: MainController):
+case class TopBar(controller: Controller):
   def renderTopBar(): Element =
     ul(
-      prop.getInputList.map(a => li(renderInputType(a))),
+      controller.getInputList.map(a => li(renderInputType(a))),
       li(
         button (
           i(
             className:="fa fa-check",
             onClick --> (_ =>
-              BottomBar.enableAllButton()
-              StepController.setSeqList())
+              controller.sendData())
           )
         )
       )
@@ -27,8 +26,8 @@ case class TopBar(prop: MainController):
     inputType match
       case InputType.SelectList(l) => renderSelectList(l)
       case InputType.Text(text) => renderArrayProperties(text)
-      case InputType.Slider(min, max, name, defaultValue, f) => renderSlider(min, max, name, defaultValue, f)
-  private def renderSlider(min: Int, max: Int, name: String, defaultValue: Int, f: Int=> Unit): Element =
+      case InputType.Slider(min, max, name, defaultValue) => renderSlider(min, max, name, defaultValue)
+  private def renderSlider(min: Int, max: Int, name: String, defaultValue: Int): Element =
     val sliderValue = Var(defaultValue)
     div(
       label(name),
@@ -38,7 +37,8 @@ case class TopBar(prop: MainController):
         minAttr := min.toString,
         maxAttr := max.toString,
         value:= sliderValue.now().toString,
-        onInput --> (v => f(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
+        onInput --> (v => controller.addProperties(name ,v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
+        //onInput --> (v => f(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
         onInput.mapToValue.map(_.toInt) --> sliderValue
 
       ),
@@ -51,13 +51,18 @@ case class TopBar(prop: MainController):
   private def renderSelectList[T](l: List[T]): Element =
     form(
     select(
-      renderOption(l.map(a => a.toString))
+      renderOption(l.map(a => a.toString)),
+      onChange --> (v =>
+        println("selected")
+        controller.setAlghorithm(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value)),
+
       )
     )
 
   private def renderArrayProperties(name: String): Element =
     input(
       typ := "text",
-      placeholder := name
+      placeholder := name,
+      onInput --> (v => controller.addProperties(name ,v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
     )
 

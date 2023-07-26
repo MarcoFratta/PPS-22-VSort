@@ -1,10 +1,13 @@
 import com.raquo.laminar.api.L.renderOnDomContentLoaded
+import controller.{Controller, ControllerImpl}
 import org.scalajs.dom
-import view.MainView
+import view.{View, ViewImpl}
 
 @main
 def Main(): Unit =
+  val controller: Controller = ControllerImpl()
+  val view: View = ViewImpl(controller)
   renderOnDomContentLoaded(
     dom.document.getElementById("app"),
-    MainView.appElement()
+    view.getAppElement
   )

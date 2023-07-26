@@ -1,7 +1,5 @@
 package model
 
-import scala.annotation.targetName
-
 enum Step:
     case Swap[K](a: K, b: K)
     case Selection[K, I](s: K, a: I)

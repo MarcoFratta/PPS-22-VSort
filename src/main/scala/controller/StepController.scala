@@ -1,40 +1,45 @@
 package controller
 import com.raquo.laminar.api.L.Var
+import controller.StepController.{seq, steps}
 import model.*
-import model.SeqProperties.*
+import model.seqProperties.*
 import model.SortingAlgorithms.mergeSort
 import model.Step.Swap
 import model.sortModel.SortOperations.*
-import view.rectangles.GraphFunctions
+import view.{GraphFunctions, View}
 
-
-
+import scala.collection.immutable.Map
 
 object StepController:
   
   given Generable[Int] = x => x.toInt
 
-  case class RangeGaussian[T: Generable]()
+  case class RangeGaussian[T: Generable](mi: Int, ma: Int)
     extends GaussianGen[T](75, 25)
-      with Shifted[T](1, 10000)
+      with Shifted[T](mi, ma)
 
   import model.sortModel.SortOperations.given
 
   
-  var seq: Seq[Int] = RangeGaussian().generateAll(0 to 100).toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
+  var seq: Seq[Int] = RangeGaussian(5,10).generateAll(0 to 100).toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
   var steps: Seq[Step] = mergeSort(seq)
-  private var example: Seq[Seq[ElementInfo[Int]]] = StepsTransformer[Int].getSeqList(steps, seq)
+  var example: Seq[Seq[ElementInfo[Int]]] = StepsTransformer[Int].getSeqList(steps, seq)
 
 
-  class SeqProp:
-    def getElements: Seq[Seq[ElementInfo[Int]]] = example
-    def setSize(size: Int): Unit = changeSize(size)
-  def setSeqList(): Unit =
-    GraphFunctions.setSeqList(new SeqProp())
+  trait SeqProp:
+    def getElements: Seq[Seq[ElementInfo[Int]]]
 
-  def changeSize(size: Int): Unit =
-    seq = RangeGaussian().generateAll(0 until size).toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
-    steps = mergeSort(seq)
-    example = StepsTransformer[Int].getSeqList(steps, seq)
-    setSeqList()
-    
+  case class SeqProperties(prop: Properties) extends SeqProp:
+    override def getElements: Seq[Seq[ElementInfo[Int]]] =
+      println("ottenuti elementi" )
+      println(prop)
+      var seq: Seq[Int] = prop.distribution.generator(prop.map).generateAll(0 to prop.map("size")).
+        toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
+      //var steps: Seq[Step] = prop.alg.execute(seq).map(a => a.get)
+      var example: Seq[Seq[ElementInfo[Int]]] = prop.alg.execute(seq).map(a => a.get)
+
+      example
+      //example
+
+      //view.setSeqList(example)
+
