@@ -8,11 +8,10 @@ trait Controller:
   def getInputList: List[InputType]
   def getElements: Seq[Seq[ElementInfo[Int]]]
   def setSeqSize(size: Int): GraphFunctions
-  def setSeqList(): GraphFunctions
   def addProperties(name: String, value: Int): Map[String, Int]
+  def sendData(): GraphFunctions
 class ControllerImpl() extends Controller:
   val view: View = new ViewImpl(this)
-  private val seqProp: SeqProp = SeqProperties(view)
   private var map: Map[String, Int] = Map()
   override def getInputList: List[InputType] =
     map = Map(("Max", -1), ("Min", -1), ("size", -1))
@@ -21,13 +20,17 @@ class ControllerImpl() extends Controller:
 
   override def getElements: Seq[Seq[ElementInfo[Int]]] =
     println("elements" )
-    seqProp.getElements
+    SeqProperties(map).getElements
 
-  override def setSeqSize(size: Int): GraphFunctions = seqProp.setSize(size)
+  override def setSeqSize(size: Int): GraphFunctions =
+    map = map.updated("size", size)
+    view.setSeqList(SeqProperties(map).getElements)  
 
-  override def setSeqList(): GraphFunctions = seqProp.setSeqList()
 
   override def addProperties(name: String, value: Int): Map[String, Int] =
     map = map.updated(name, value)
     println("aggiornata mappa: "+ map)
     map
+
+  override def sendData(): GraphFunctions =
+    view.setSeqList(SeqProperties(map).getElements)  
