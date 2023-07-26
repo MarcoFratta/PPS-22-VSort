@@ -17,7 +17,7 @@ case class TopBar(controller: Controller):
           i(
             className:="fa fa-check",
             onClick --> (_ =>
-              controller.setSeqList())
+              controller.sendData())
           )
         )
       )
