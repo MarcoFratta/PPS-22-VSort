@@ -51,7 +51,11 @@ case class TopBar(controller: Controller):
   private def renderSelectList[T](l: List[T]): Element =
     form(
     select(
-      renderOption(l.map(a => a.toString))
+      renderOption(l.map(a => a.toString)),
+      onChange --> (v =>
+        println("selected")
+        controller.setAlghorithm(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value)),
+
       )
     )
 
