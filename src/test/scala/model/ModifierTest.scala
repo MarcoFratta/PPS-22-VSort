@@ -105,4 +105,30 @@ class ModifierTest extends AnyFlatSpec with Matchers with PrivateMethodTester:
     } should have message "percentage must be between 0 and 1"
   }
 
+  "A gaussian distribution with 100 values and 100 % of duplicates" should "have 100 duplicates"in {
+    case class DistributionTest[T: Generable](mean: Int, std: Int, mi: Int, ma: Int, percentage: Int)
+      extends GaussianGen[T](mean, std)
+        with Shifted[T](mi, ma)
+       with Duplicated((percentage / 100).toDouble.floor)
+
+
+    val g = DistributionTest(0, 1, 1, 10000, 100)
+    val seq = g.generateAll(1 to 100)
+    countDuplicates(seq.values) shouldBe 100
+  }
+
+  "A gaussian distribution with 100 values and 50 % of duplicates" should "fail" in {
+    case class DistributionTest[T: Generable](mean: Int, std: Int, mi: Int, ma: Int, percentage: Int)
+      extends GaussianGen[T](mean, std)
+        with Shifted[T](mi, ma)
+        with Duplicated((percentage / 100).toDouble.floor)
+
+
+    the[IllegalArgumentException] thrownBy {
+      val g = DistributionTest(0, 1, 1, 10000, 50)
+      val seq = g.generateAll(1 to 100)
+      fail()
+    } should have message "The distribution cannot have less then 96 duplicates"
+  }
+
 

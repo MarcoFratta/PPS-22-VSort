@@ -10,8 +10,7 @@ object Modifier:
   import scala.util.Random.*
 
   def countDuplicates[T](s: Iterable[T]): Int = s.size match
-    case 0 => 0
-    case 1 => 1
+    case n if n <= 1 => n
     case _ => s.count(x => isDuplicated(s, x))
 
   def isDuplicated[T](l: Iterable[T], x: T): Boolean =
@@ -38,10 +37,16 @@ object Modifier:
     @tailrec
     private def duplicate(m: Map[Int, T])(n: Int): Map[Int, T] = countDuplicates(m.values) match
       case `n` => m
-      case d if d > n => duplicate(removeDuplicate(m))(n)
-      case d if n - d == 1 => duplicate(duplicatedIndex(m).fold(m)(x =>
+      case d if d > n =>
+        println(f"removing duplicated $d")
+        duplicate(removeDuplicate(m))(n)
+      case d if n - d == 1 =>
+        println(f"adding last duplicated $d")
+        duplicate(duplicatedIndex(m).fold(m)(x =>
         m.updated(nearestNonDuplicated(m, x).fold(x)(k => k), m(x))))(n)
-      case _ => duplicate(nonDuplicatedIndex(m).fold(m)(x =>
+      case x =>
+        println(f"adding duplicated $x")
+        duplicate(nonDuplicatedIndex(m).fold(m)(x =>
         m.updated(x, m(nearestX(m, x)))))(n)
 
     private def nearestNonDuplicated(m: Map[Int, T], x: Int): Option[Int] =
@@ -65,4 +70,9 @@ object Modifier:
 
     private def removeDuplicate(m: Map[Int, T]): Map[Int, T] =
       val s = m.filter((x, y) => y != super.generate(x) && !isDuplicated(m.values, super.generate(x)))
-      getRandomValue(s.keys).fold(m)(x => m.updated(x, super.generate(x)))
+      val removable = if s.isEmpty then m.filter((x, y) => isDuplicated(m.values, super.generate(x))) else s
+      println(f"removable $removable")
+      val res = getRandomValue(removable.keys).fold(m)(x => m.updated(x, super.generate(x)))
+      val oldDuplicated = countDuplicates(m.values)
+      if countDuplicates(res.values) < oldDuplicated then res
+      else throw new IllegalArgumentException(f"The distribution cannot have less then $oldDuplicated duplicates")
