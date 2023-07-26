@@ -1,16 +1,14 @@
 package model
 
 import model.sortModel.Loopable.LoopableS
-import model.sortModel.SortOperations.*
+import model.sortModel.SortOperations._
 
 import scala.language.postfixOps
-
 
 object SortingAlgorithms:
 
   import model.sortModel.SortOperations.{*, given}
   export model.sortModel.SortOperations.given
-
 
   def bubbleSort[T: Comparable](seq: Seq[T]): Seq[Step] =
 
@@ -50,7 +48,7 @@ object SortingAlgorithms:
          p2 <- for i <- p1.loopFor(p1.data.length - 1 to 0 by -1)
                    l1 <- i.prev.swap(i.index, 0)
                    l2 <- heapify(l1, i.index, 0).!
-                yield l2
+         yield l2
     yield p2).get.steps
 
   def heapify[T: Comparable](seq: Seq[T]): Seq[Step] = heapifyAll(seq).steps
@@ -59,7 +57,7 @@ object SortingAlgorithms:
     mergeSort(Loopable[T, String](seq), 0, seq.length - 1)._1.steps
 
   def quickSort[T: Comparable](seq: Seq[T]): Seq[Step] =
-    quickSort(Loopable[T, String](seq), 0, seq.length -1).steps
+    quickSort(Loopable[T, String](seq), 0, seq.length - 1).steps
 
   private def heapifyAll[T: Comparable](seq: Seq[T]): LoopableS[T, String] =
     (for i <- Loopable[T, String](seq).loopFor(seq.length / 2 - 1 to 0 by -1)
@@ -101,7 +99,7 @@ object SortingAlgorithms:
                           c2 <- c1.select("i", c1 -> "i" + 1)
                           c3 <- c2.select("j", c2 -> "j" + 1)
                       yield c3)
-                yield b2
+          yield b2
           a4 <- a3.deselect("i")
           a5 <- a4.deselect("j")
     yield a5).get, start, end)
