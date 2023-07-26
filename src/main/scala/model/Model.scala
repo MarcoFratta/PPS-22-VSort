@@ -4,7 +4,8 @@ import model.seqProperties.Generator
 import model.StepsTransformer
 import model.InputType
 import model.seqProperties.Generable
-import model.SortingAlgorithms.{*,given}
+import model.SortingAlgorithms.{*, given}
+import model.sortModel.Distributions.{GaussianDistribution, UniformDistribution}
 
 trait HasName:
   def name:String
@@ -57,6 +58,15 @@ case class ModelImpl() extends IntModel with Algorithms with Distributions with 
   import model.sortModel.SortOperations.comp
 
   override def algorithms: Set[Algorithm[Int, Seq[State[ElementInfo[Int]]]] with HasName] =
-    Set(AlgorithmFactory(bubbleSort,"Bubble sort"))
+    Set(AlgorithmFactory(bubbleSort,"Bubble sort"),
+      AlgorithmFactory(mergeSort,"Merge sort"),
+      AlgorithmFactory(insertionSort,"Insertion sort"),
+      AlgorithmFactory(quickSort,"Quicksort"),
+      AlgorithmFactory(heapSort,"Heap sort"))
 
-  override def distributions: Set[Distribution[ParamsType,ArgType] with HasName] = ???
+  override def distributions: Set[Distribution[ParamsType,ArgType] with HasName] =
+    given Generable[Int] = x => x.toInt
+    Set(DistributionFactory[Int,Int](p => GaussianDistribution(p("size") / 2, p("std"), 1,10000, p("percentage")),
+      Set("size","std","percentage"), "Gaussian"),
+    DistributionFactory[Int,Int](p => UniformDistribution(p("min"),p("max"),p("percentage")),
+    Set("min","max","percentage"), "Uniform"))

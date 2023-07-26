@@ -27,12 +27,12 @@ class ModelTest extends AnyFlatSpec with Matchers:
   case class DistributionTest[T: Generable](mean:Int, std:Int, mi:Int,ma:Int,percentage:Int)
     extends GaussianGen[T](mean, std)
       with Shifted[T](mi,ma)
-      //with Duplicated(percentage/100)
+      with Duplicated(percentage/100)
 
   "a Distribution with different modifiers" must "exists" in {
 
 
-    val model = DistributionFactory(p => DistributionTest(4,5,6,7,8), Set.empty, "Gaussian")
+    val model = DistributionFactory(p => DistributionTest(4,5,6,7,100), Set.empty, "Gaussian")
   }
 
   "a distribution created with factory" must "give correct values" in {
@@ -40,6 +40,6 @@ class ModelTest extends AnyFlatSpec with Matchers:
       DistributionTest(p("mean"),p("std"),p("min"), p("max"),p("percentage")),
       Set("mean","std","min","max","percentage"), "Gaussian")
 
-    val g = model.generator(Map(("mean", 200),("std",15),("min",1),("max", 60),("percentage", 5)))
+    val g = model.generator(Map(("mean", 200),("std",15),("min",1),("max", 60),("percentage", 100)))
     g.generateAll(5 to 100 by 2).forall((x,y) => y >= 1 && y <= 60) mustBe true
   }
