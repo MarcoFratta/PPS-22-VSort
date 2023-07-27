@@ -13,7 +13,10 @@ class ViewImpl(controller: Controller) extends View:
   import BottomBar.*
   override def getAppElement: Element =
     div(
-        TopBar(controller).renderTopBar(),
+        div(
+          className := "topBar",
+          TopBar(controller).renderTopBar(),
+        ),
         div(canvasTag(
           className := "canvas")),
         div(className:= "bottomBar")
