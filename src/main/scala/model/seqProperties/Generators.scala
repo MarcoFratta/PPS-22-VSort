@@ -1,6 +1,9 @@
 package model.seqProperties
 
 import ai.dragonfly.math.stats.probability.distributions.{Gaussian, Uniform}
+import model.Params.Max
+
+import scala.compiletime.ops.int.Min
 
 trait Generable[A]:
   def convert(x: Double): A
@@ -46,5 +49,6 @@ class GaussianGen[T: Generable](mean: Double, std: Double) extends Generator[T]
 
   override def f(x: Int): Double = d.p(x)
 
-class UniformGen[T: Generable](from: Int, to: Int) extends BasicGenerator[T](x => (x + from) % to)
-  with HasRange(from, to)
+class UniformGen[T: Generable](a:Int,b:Int) extends BasicGenerator[T](x =>
+  (math.min(a,b) + x) % math.max(a,b))
+  with HasRange(math.min(a,b), math.max(a,b))

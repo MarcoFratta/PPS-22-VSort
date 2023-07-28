@@ -32,7 +32,9 @@ class StepsTransformer[T]:
     case Step.Divide(a: Int, b: Int) => seq
       => seq.zipWithIndex.map((e, i) => if i < a || i > b then hide(e) else show(e))
 
-  def getString(steps: Seq[Step], seq: Seq[T]): String = this.getStepsString(steps, seq.map(i => newInfo(i)))
+  def getString(steps: Seq[Step], seq: Seq[T]): String =
+
+    this.getStepsString(steps, seq.map(i => newInfo(i)))
 
   private def getStepsString(steps: Seq[Step], map: State): String =
     steps.foldLeft("Array finale -> " + map) ((acc, step) =>

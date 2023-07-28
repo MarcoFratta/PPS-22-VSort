@@ -3,7 +3,7 @@ package model
 import model.SortingAlgorithms.{*, given}
 import model.{InputType, StepsTransformer}
 import model.seqProperties.{Generable, Generator}
-import model.sortModel.Distributions.{GaussianDistribution, UniformDistribution}
+import model.seqProperties.Distributions.{GaussianDistribution, UniformDistribution}
 
 trait HasName:
   def name: String

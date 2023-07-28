@@ -31,7 +31,7 @@ class ModifierTest extends AnyFlatSpec with Matchers with PrivateMethodTester:
   }
 
   class UniformWithDuplicates[T: Generable](min: Int, max: Int, @targetName("Rate") % : Double) extends
-    UniformGen[T](min, max) with Duplicated[T](%)
+    UniformGen[T](min,max) with Duplicated[T](%)
 
   "A sequence with 50% of duplicates" should
     "have 5 duplicated values" in {

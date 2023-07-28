@@ -28,10 +28,13 @@ object Modifier:
 
 
     def duplicated(l: Map[Int, T]): Map[Int, T] =
+      println(f"Duplicating")
       val n = (l.size * %).floor.toInt
+      println(f"Duplicated number $n")
       if l.size > 1 then duplicate(l)(if n > 1 then n else 0) else l
 
     override def generateAll(range: Range): Map[Int, T] =
+      println(f"Generating with duplicates ${this.%}")
       duplicated(super.generateAll(range))
 
     @tailrec

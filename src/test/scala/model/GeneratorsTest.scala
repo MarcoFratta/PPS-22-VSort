@@ -46,20 +46,19 @@ class GeneratorsTest extends AnyFlatSpec with Matchers:
 
 
   "a uniform generator" should "exists" in {
-    val g = UniformGen(0, 100)
+    val g = UniformGen(0,100)
   }
 
-  "a uniform generator in [5,50]" should "generate a value between 5 and 50" in {
-    val g = UniformGen(5, 50)
+  "a uniform generator" should "generate 0" in {
+    val g = UniformGen(0,100)
     val y = g.generate(0)
-    y should be >= 5
-    y should be <= 50
+    y shouldBe 0
   }
 
   "a uniform generator" should "generate a double value" in {
     given Generable[Double] = x => x
 
-    val g = UniformGen(4, 15)
+    val g = UniformGen(0,100)
     val y = g.generate(0)
     y shouldBe a[Double]
   }
@@ -67,18 +66,25 @@ class GeneratorsTest extends AnyFlatSpec with Matchers:
   "a uniform generator" should "generate a string value" in {
     given Generable[String] = x => x.toString
 
-    val g = UniformGen(4, 15)
+    val g = UniformGen(0,100)
     val y = g.generate(0)
     y shouldBe a[String]
   }
 
-  "a uniform generator [0,50]" should "generate multiple values between 0 and 50" in {
-    given Generable[Double] = x => x.toInt
+  "a uniform generation from 0 to 10" should "generate values from 0 to 10 " in {
+    given Generable[Int] = x => x.toInt
 
-    val g = UniformGen(0, 50)
-    val y = g.generateAll(0 to 100000 by 100)
-    y.foreach(println(_))
-    y.forall((x, y) => y >= 0 && y <= 50) shouldBe true
+    val g = UniformGen(0,100)
+    val y = g.generateAll(0 to 5)
+    y shouldEqual Map((0,0),(1,1),(2,2),(3,3),(4,4),(5,5))
+  }
+
+  "a uniform generator 0 to 100_000" should "generate multiple values between 0 and 100_000" in {
+    given Generable[Int] = x => x.toInt
+
+    val g = UniformGen(0,100)
+    val y = g.generateAll(0 to 100_000 by 100)
+    y.forall((x, y) => y >= 0 && y <= 100_000) shouldBe true
   }
 
 
