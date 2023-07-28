@@ -26,7 +26,7 @@ trait Button:
 case class ButtonImpl(override val id:String, override val icon: String, override val function: Any => Unit,
                  override val buttonDisabled: Var[Boolean]) extends Button
 
-case class BottomBar(controller: Controller, graphFunctions: GraphFunctions):
+case class BottomBar(graphFunctions: GraphFunctions):
  // private val graphFunctions = GraphFunctions(controller)
   private val nextDisable = Var(false)
   private val backDisable = Var(true)

@@ -23,4 +23,4 @@ class ViewImpl(controller: Controller) extends View:
        // BottomBar(controller).renderBottomBar()
     )
   override def setSeqList(seq: Seq[Seq[ElementInfo[Int]]]): GraphFunctions =
-    GraphFunctions(controller)
+    GraphFunctions(seq)

@@ -36,7 +36,7 @@ object StepController:
       println("ottenuti elementi" )
       println(prop)
       //0 to prop.map(findParamFromName("Size"))
-      var seq: Seq[Int] = prop.distribution.generator(prop.map).generateAll(0 to 50).
+      var seq: Seq[Int] = prop.distribution.generator(prop.map).generateAll(0 to prop.map(findParamFromName("Size"))).
         toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
       //var steps: Seq[Step] = prop.alg.execute(seq).map(a => a.get)
       var example: Seq[Seq[ElementInfo[Int]]] = prop.alg.execute(seq).map(a => a.get)

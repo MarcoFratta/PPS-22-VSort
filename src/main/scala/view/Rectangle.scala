@@ -29,9 +29,9 @@ case class RectanglesVisualizer(nRect: Int, maxValue: Int):
     ctx.clearRect(0, 0, canvasElem.width, canvasElem.height)
 
 
-case class GraphFunctions(controller: Controller):
-  private val bottomBar = BottomBar(controller, this)
-  private val seqStep: Seq[Seq[ElementInfo[Int]]] = controller.getElements
+case class GraphFunctions(seq: Seq[Seq[ElementInfo[Int]]]):
+  private val bottomBar = BottomBar(this)
+  private val seqStep: Seq[Seq[ElementInfo[Int]]] = seq
   private var starterSeq = seqStep
   private val visualizer: RectanglesVisualizer = RectanglesVisualizer(seqStep.head.size, seqStep.head.map(a => a.value).max)
   private var index: Int = 0
