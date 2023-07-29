@@ -1,17 +1,97 @@
+
 package view
 
+import com.raquo.laminar.api.L
+import model.HasName
+import model.{Algorithm, Algorithms, Distribution, ElementInfo, HasName, InputType, IntModelImpl, Params, State}
+
+import scala.collection.immutable.List
+import scala.collection.immutable.List
 import com.raquo.laminar.api.L.*
 import com.raquo.laminar.nodes.ReactiveElement
-import controller.{Controller, Properties, PropertiesImpl}
-import model.{Algorithms, Distribution, HasName, InputType, IntModelImpl, Params}
+import controller.{Controller, ControllerImpl, Properties, PropertiesImpl}
+import model.InputType.SelectList
 import org.scalajs.dom
 import view.BottomBar
 
 import scala.annotation.tailrec
 
-case class TopBar(controller: Controller):
-  var properties = PropertiesImpl(IntModelImpl().algorithms.toList.head,
-    IntModelImpl().distributions.toList.head, defaultMap)
+trait ViewElement:
+  def element:Element
+trait Inputs[X,Y]:
+  def get:Map[X,Y]
+
+case class MultipleList[X <: HasName, Y >: HasName](x:Set[X]) extends ViewElement with Inputs[X,Y]:
+  private var elemValue: X = x.toList.head
+  val map: Map[String, X] = x.map(a => (a.name, a)).toMap
+  def renderSelectList[T <: HasName](l: List[T]): Element =
+    form(
+      select(
+        l.map(a => option(a.name)).toList,
+        inContext(thisNode =>
+          onChange.mapToValue.map(_.toString) --> (b => elemValue = map(b)),
+        )
+      )
+    )
+  override def get: Map[X, Y] = Map(elemValue -> elemValue)
+  override def element: Element = renderSelectList(x.toList)
+
+case class SingleValue[X,Y >: Int](x:X) extends ViewElement with Inputs[X,Y]:
+  val sliderValue = Var(50)
+  def renderSlider[T](min: Int, max: Int, item: T): Element =
+    div(
+      label(item.toString),
+      input(
+        className := "slider",
+        typ := "range",
+        minAttr := min.toString,
+        maxAttr := max.toString,
+        value := sliderValue.now().toString,
+        //onInput --> (v => f(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
+        onInput.mapToValue.map(_.toInt) --> sliderValue,
+      ),
+      child.text <-- sliderValue.signal.map(_.toString),
+    )
+  override def get: Map[X, Y] = Map(x -> sliderValue.now())
+  override def element: Element = renderSlider(1, 200,  x)
+
+
+object MultipleListFactory:
+  def apply[X <: HasName, Y >: HasName](x: Set[X]):
+  MultipleList[X, Y] =
+    new MultipleList[X, Y](x)
+    
+object SingleValueFactory:
+  def apply[X, Y >: Int](x: X):
+  SingleValue[X, Y] =
+    new SingleValue[X, Y](x)
+
+  /*def renderParamsTopBar(list: Map[Params, Int]): Unit =
+  renderElement(li(list.map(a => renderSlider(0, 200, a._1.toString, a._2)).toList))
+*/
+  
+/*
+case class RenderElements(view: View):
+  val ulElement: Element = ul()
+  def renderElement(element: Element): Unit =
+    render(dom.document.getElementsByClassName("topBar").item(0), element)
+*/
+  /*def getAlgTopBar(list: List[Algorithm[Int, Seq[State[ElementInfo[Int]]]] with HasName] ) : Element =
+    //renderElement(li(renderSelectList("Algorithms", list)))
+    li(renderSelectList("Algorithms", list))
+
+  def getDisTopBar(list: List[Distribution[Int, Int] with HasName]): Element =
+    //renderElement(li(renderSelectList("Distribution", list)))
+    li(renderSelectList("Distribution", list))
+
+*/
+
+
+
+
+  /*var properties = PropertiesImpl(algorithmsList.head,
+    distributionList.head, defaultMap)
+  renderTopBar()
 
   private def defaultMap: Map[Params, Int] =
     Map(Params.Size -> 50)
@@ -31,20 +111,23 @@ case class TopBar(controller: Controller):
     render(dom.document.querySelector(".varInputList"), div(list.map(a => li(renderInputType(a)))))
 
 
-  def renderTopBar(): Element =
-    ul(
-
-      computeInputList.map(a => li(renderInputType(a))),
-      /*div(
-        className := "varInputList",
-        controller.getVariableInputList.map(a => li(renderInputType(a)))),
-      */
-      li(
-        button (
-          i(
-            className:="fa fa-check",
-            onClick --> (_ =>
-              controller.setProperties(properties))
+  private def renderTopBar(): Unit =
+    //if dom.document.querySelector(".topBar").innerHTML != "" then
+    //  dom.document.querySelector(".topBar").innerHTML = ""
+    render(dom.document.querySelector(".topBar"),
+      ul(
+        computeInputList.map(a => li(renderInputType(a))),
+        /*div(
+          className := "varInputList",
+          controller.getVariableInputList.map(a => li(renderInputType(a)))),
+        */
+        li(
+          button (
+            i(
+              className:="fa fa-check",
+              onClick --> (_ =>
+                controller.setProperties(properties))
+            )
           )
         )
       )
@@ -63,38 +146,12 @@ case class TopBar(controller: Controller):
   private def findParamFromName(name: String): Params =
     properties.map.filter(a => a._1.toString equals name).toList.head._1
 
-  private def renderSlider(min: Int, max: Int, name: String, defaultValue: Int): Element =
-    val sliderValue = Var(defaultValue)
-    div(
-      label(name),
-      input(
-        className := "slider",
-        typ := "range",
-        minAttr := min.toString,
-        maxAttr := max.toString,
-        value:= sliderValue.now().toString,
-        onInput --> (v =>
-          controller.setProperties(addProperties(name ,v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt))),
-        //onInput --> (v => f(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
-        onInput.mapToValue.map(_.toInt) --> sliderValue
 
-      ),
-        child.text <-- sliderValue.signal.map(_.toString),
-      )
 
-  private def renderSelectList[T <: HasName](name: String, l:  List[T]): Element =
-    form(
-      select(
-        label(name),
-          l.map(a => option(a.name)).toList,
-        onChange --> (v =>
-          println("selected")
-          controller.setProperties(addProperties(name, v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt))),
-      )
-    )
+
   private def renderOption(options: List[String]): List[Element] =
     options.map(a => option(a))
-  
+
 
   private def renderArrayProperties(name: String): Element =
     input(
@@ -103,4 +160,4 @@ case class TopBar(controller: Controller):
       onInput --> (v => controller.setProperties(addProperties(name ,v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement]
         .value.toInt))),
     )
-
+*/
