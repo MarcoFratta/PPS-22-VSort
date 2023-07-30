@@ -1,6 +1,6 @@
 package view
 
-import com.raquo.laminar.api.L.{Element, canvasTag, className, div, li, render, ul}
+import com.raquo.laminar.api.L.{Element, canvasTag, child, children, className, div, li, onMountCallback, render, ul}
 import controller.{Controller, ControllerImpl, Properties, PropertiesImpl}
 import model.{Algorithm, ElementInfo, HasName, Params, State}
 import model.InputType.*
@@ -22,8 +22,8 @@ class ViewImpl(controller: Controller) extends View:
     SingleValueFactory(a)).toList
 
 
-  
-    
+
+
   override def getAppElement: Element =
     div(
         div(
@@ -31,7 +31,15 @@ class ViewImpl(controller: Controller) extends View:
           ul(className := "topBar",
             li(algo.element),
             li(dis.element),
-            
+            div(
+              onMountCallback { divNode =>
+                // Aggiungi gli elementi li all'elemento div durante il montaggio
+                params.foreach { item =>
+                  divNode.thisNode.ref.appendChild(li(item.element).ref)
+                }
+              }
+            )
+            //div(params.map(a => a.element).map(a => li(a)))
 
           //AlgTopBar(controller).getElements,
           //RenderElements(this).ulElement
