@@ -1,6 +1,7 @@
 package view
 
-import com.raquo.laminar.api.L.{Element, canvasTag, child, children, className, div, li, onMountCallback, render, ul}
+import com.raquo.laminar.api.L.{Element, button, canvasTag, child, children, className, div, i, li, nodeSeqToModifier, onClick, onLoad, onMountBind, onMountCallback, onMountInsert, render, renderOnDomContentLoaded, ul, windowEvents}
+import com.raquo.laminar.api.eventPropToProcessor
 import controller.{Controller, ControllerImpl, Properties, PropertiesImpl}
 import model.{Algorithm, ElementInfo, HasName, Params, State}
 import model.InputType.*
@@ -8,36 +9,71 @@ import org.scalajs.dom
 
 trait View:
   def getAppElement: Element
-  def setSeqList(seq: Seq[Seq[ElementInfo[Int]]]): GraphFunctions
-  def setProperties[X, Y](map: (X,Y)): Unit
+  def setSeqList(): GraphFunctions
 
 class ViewImpl(controller: Controller) extends View:
  // val graphFunctions = GraphFunctions(controller)
   import BottomBar.*
+  val distributions = controller.getDistribution.toList
+  val algorithms = controller.getAlgorithms.toList
+  var properties = controller.getProperties
+  val algo = MultipleListFactory(algorithms.toSet, properties.alg)
+  val dis = MultipleListFactory(distributions.toSet, properties.distribution)
+  val params: List[SingleValue[Params, Int]] = properties.paramMap.map(a =>
+    SingleValueFactory(a._1, a._2)).toList
+  //replaceView
+  //setSeqList()
+  //dom.window.onload = _ => setSeqList()
+  dom.document.getElementById("app").innerHTML = ""
+  render(
+    dom.document.getElementById("app"),
+    getAppElement
+  )
+  replaceView
+  //windowEvents(_.onLoad).foreach {_ => setSeqList()}(unsafeWindowOwner)
 
-  var properties = PropertiesImpl(controller.getAlgorithms.head, controller.getDistribution.head, Map())
-  val algo = MultipleListFactory(controller.getAlgorithms)
-  val dis = MultipleListFactory(controller.getDistribution)
-  val params = controller.getDistribution.head.params.map(a =>
-    SingleValueFactory(a)).toList
+  def replaceView: Unit =
+    println("replacing view")
+    //dom.document.getElementById("app").innerHTML = ""
+    //render(dom.document.getElementById("app"), getAppElement)
 
+    dom.document.getElementById("app").addEventListener("onChange", _ =>  setSeqList())
 
 
 
   override def getAppElement: Element =
+    println("getappelem")
     div(
         div(
 
           ul(className := "topBar",
             li(algo.element),
             li(dis.element),
+            params.map(a => li(a.element)),
+            /*
             div(
-              onMountCallback { divNode =>
+              onMountBind { divNode =>
                 // Aggiungi gli elementi li all'elemento div durante il montaggio
-                params.foreach { item =>
+                params.map { item =>
                   divNode.thisNode.ref.appendChild(li(item.element).ref)
                 }
               }
+            ),
+            */
+            li(
+              button(
+                i(
+                  className := "fa fa-check",
+                  onClick --> (_ =>
+                    println("click")
+                    new ControllerImpl(new PropertiesImpl(alg = algo.get.head._1, distribution = dis.get.head._1,
+                      paramMap = params.map(a => a.get).toList.foldLeft(Map.empty[Params, Int]) { (acc, map) =>
+                        acc ++ map
+                      } ))
+
+                    )
+                )
+              )
             )
             //div(params.map(a => a.element).map(a => li(a)))
 
@@ -46,25 +82,22 @@ class ViewImpl(controller: Controller) extends View:
           //DistributionTopBar(controller).getElements,
           )
         ),
+        onMountCallback (_ => setSeqList()),
         div(canvasTag(
           className := "canvas")),
-        div(className:= "bottomBar")
+        div(className:= "bottomBar"),
        // BottomBar(controller).renderBottomBar()
+
     )
-  override def setSeqList(seq: Seq[Seq[ElementInfo[Int]]]): GraphFunctions =
-    GraphFunctions(seq)
+
+  def computeUl: Element =
+    div(params.map(a => li(a.element)))
+
+  override def setSeqList(): GraphFunctions =
+    println("setSeqList")
+    GraphFunctions(controller.getSeqElement)
 
   //private def findParamFromName(name: String): Params =
   //  properties.map.filter(a => a._1.toString equals name).toList.head._1
 
-  override def setProperties[X, Y](map: (X, Y)): Unit =
-    map match
-      case a if map._1 == "Algorithm" =>
-        properties.alg = controller.getAlgorithms.filter(a => a.name == map._2).head
-        controller.setProperties(properties)
-      case b if map._1 == "Distribution" =>
-        properties.distribution = controller.getDistribution.filter(a => a.name == map._2).head
-        controller.setProperties(properties)
-      case _ =>
-        //properties.map = properties.map.updated(map._1, map._2)
-        controller.setProperties(properties)
+

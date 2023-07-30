@@ -31,16 +31,16 @@ object StepController:
 
   case class SeqProperties(prop: Properties) extends SeqProp:
     private def findParamFromName(name: String): Params =
-      prop.map.filter(a => a._1.toString equals name).toList.head._1
+      prop.paramMap.filter(a => a._1.toString equals name).toList.head._1
     override def getElements: Seq[Seq[ElementInfo[Int]]] =
-      println("ottenuti elementi" )
-      println(prop)
+
       //0 to prop.map(findParamFromName("Size"))
-      var seq: Seq[Int] = prop.distribution.generator(prop.map).generateAll(0 to prop.map(findParamFromName("Size"))).
+      var seq: Seq[Int] = prop.distribution.generator(prop.paramMap).generateAll(0 to prop.paramMap(findParamFromName("Size"))).
         toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
+
       //var steps: Seq[Step] = prop.alg.execute(seq).map(a => a.get)
       var example: Seq[Seq[ElementInfo[Int]]] = prop.alg.execute(seq).map(a => a.get)
-
+      println("alg" + prop.alg.name)
       example
       //example
 

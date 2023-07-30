@@ -21,23 +21,24 @@ trait ViewElement:
 trait Inputs[X,Y]:
   def get:Map[X,Y]
 
-case class MultipleList[X <: HasName, Y >: HasName](x:Set[X]) extends ViewElement with Inputs[X,Y]:
-  private var elemValue: X = x.toList.head
+case class MultipleList[X <: HasName, Y >: HasName](x:Set[X], selected: X) extends ViewElement with Inputs[X,Y]:
+  private val selectedVar: Var[String] = Var(selected.name)
   val map: Map[String, X] = x.map(a => (a.name, a)).toMap
   def renderSelectList[T <: HasName](l: List[T]): Element =
     form(
       select(
+        value <-- selectedVar.signal,
         l.map(a => option(a.name)).toList,
         inContext(thisNode =>
-          onChange.mapToValue.map(_.toString) --> (b => elemValue = map(b)),
+          onChange.mapToValue --> selectedVar,
         )
       )
     )
-  override def get: Map[X, Y] = Map(elemValue -> elemValue)
+  override def get: Map[X, Y] = Map(map(selectedVar.now()) -> map(selectedVar.now()))
   override def element: Element = renderSelectList(x.toList)
 
-case class SingleValue[X,Y >: Int](x:X) extends ViewElement with Inputs[X,Y]:
-  val sliderValue = Var(50)
+case class SingleValue[X,Y >: Int](x:X, starterValue: Y) extends ViewElement with Inputs[X,Y]:
+  val sliderValue = Var(starterValue)
   def renderSlider[T](min: Int, max: Int, item: T): Element =
     div(
       label(item.toString),
@@ -47,7 +48,6 @@ case class SingleValue[X,Y >: Int](x:X) extends ViewElement with Inputs[X,Y]:
         minAttr := min.toString,
         maxAttr := max.toString,
         value := sliderValue.now().toString,
-        //onInput --> (v => f(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt)),
         onInput.mapToValue.map(_.toInt) --> sliderValue,
       ),
       child.text <-- sliderValue.signal.map(_.toString),
@@ -57,19 +57,19 @@ case class SingleValue[X,Y >: Int](x:X) extends ViewElement with Inputs[X,Y]:
 
 
 object MultipleListFactory:
-  def apply[X <: HasName, Y >: HasName](x: Set[X]):
+  def apply[X <: HasName, Y >: HasName](x: Set[X], selected: X):
   MultipleList[X, Y] =
-    new MultipleList[X, Y](x)
-    
+    new MultipleList[X, Y](x, selected)
+
 object SingleValueFactory:
-  def apply[X, Y >: Int](x: X):
+  def apply[X, Y >: Int](x: X, starterValue: Y):
   SingleValue[X, Y] =
-    new SingleValue[X, Y](x)
+    new SingleValue[X, Y](x, starterValue: Y)
 
   /*def renderParamsTopBar(list: Map[Params, Int]): Unit =
   renderElement(li(list.map(a => renderSlider(0, 200, a._1.toString, a._2)).toList))
 */
-  
+
 /*
 case class RenderElements(view: View):
   val ulElement: Element = ul()
