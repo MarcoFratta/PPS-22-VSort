@@ -1,33 +1,33 @@
-# VSort
+# VSort - Sorting Algorithms Visualizer
 
-VSORT is a tool that allows for actively visualizing the behavior of different sorting algorithms concerning distributions with various properties.
-Project for PPS course of the year 2022/2023.
+## Domain
 
-Implemented sorting algorithms:
-* Bubble Sort
-* Insertion Sort
-* Selection Sort
-* Heap Sort
-* Merge Sort
-* Quick Sort
+VSort is a sorting algorithms visualizer that allows you to interactively explore and compare different sorting algorithms' behaviors on various data distributions.
 
-### Requirements
+## Supported Sorting Algorithms
 
-To use the visualizer you need the following software installed:
+VSort currently supports the following sorting algorithms:
+- Bubble Sort
+- Insertion Sort
+- Selection Sort
+- Heap Sort
+- Merge Sort
+- Quick Sort
 
-* Scala version _
-* sbt version _
+## Functionality
 
-An IDE is not necessary because it's already provided the runnable jar.
+With VSort, you can:
+- Select a sorting algorithm to visualize
+- Observe real-time step-by-step execution of the algorithm
+- Control the algorithm's progress with step forward and step backward options
+- Choose the initial array size for sorting
+- View customized visualizations for each algorithm
+- Select the initial distribution of elements in the array
+- Adjust the visualization speed
 
-### Compilation process
-To compile the sources into a runnable jar you can simply run the `sbt assembly` command.
+## How to Use
 
-### Download
-Get the latest Jar from the GitHub releases page.
+1. Visit the VSort website: [marcofratta.github.io/VSort/](https://marcofratta.github.io/VSort/)
+2. Explore the interactive visualizations by selecting your preferred sorting algorithm and data distribution.
 
-### How to use
-
-**For Windows/Unix systems:**
-
-Start runnable Jar with this command: `java -jar /path/to/VSort.jar`
+Enjoy exploring the behaviors of different sorting algorithms in action!
