@@ -1,8 +1,7 @@
 package view
 
 import com.raquo.laminar.api.L.*
-import controller.Controller
-import model.ElementInfo
+import model.{ElementInfo, State}
 import org.scalajs.dom
 import org.scalajs.dom.html
 import view.BottomBar
@@ -29,11 +28,12 @@ case class RectanglesVisualizer(nRect: Int, maxValue: Int):
     ctx.clearRect(0, 0, canvasElem.width, canvasElem.height)
 
 
-case class GraphFunctions(seq: Seq[Seq[ElementInfo[Int]]]):
+case class GraphFunctions(seq: Seq[State[Int]]):
   private val bottomBar = BottomBar(this)
-  private val seqStep: Seq[Seq[ElementInfo[Int]]] = seq
+  private val seqStep: Seq[State[Int]] = seq
   private var starterSeq = seqStep
-  private val visualizer: RectanglesVisualizer = RectanglesVisualizer(seqStep.head.size, seqStep.head.map(a => a.value).max)
+  private val visualizer: RectanglesVisualizer = RectanglesVisualizer(seqStep.head.get.size,
+    seqStep.head.get.map(a => a.value).max)
   private var index: Int = 0
   private var period: Int = 20
   private var timer = new Timer()
@@ -67,7 +67,7 @@ case class GraphFunctions(seq: Seq[Seq[ElementInfo[Int]]]):
           visualizer.drawSingleRectangle(h.value, getColourFromProperties(h))
           drawList(t)
         case _ =>
-    drawList(list1.toList)
+    drawList(list1.get.toList)
 
   def play(): Unit =
     bottomBar.changePlayIcon()

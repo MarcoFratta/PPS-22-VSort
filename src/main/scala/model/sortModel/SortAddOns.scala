@@ -94,7 +94,7 @@ object LoopOperation:
 
 object Loopable:
   def apply[T: Comparable, V](seq: Seq[T]):
-  LoopableS[T, V] = new LoopableS[T, V](seq, List.empty, Map.empty, false)
+  LoopableS[T, V] = new LoopableS[T, V](seq.toVector, Vector.empty, Map.empty, false)
 
   case class LoopableS[T, K](override val data: Seq[T], override val steps: Seq[Step],
                              override val selections: Map[K, Int], b: Boolean)

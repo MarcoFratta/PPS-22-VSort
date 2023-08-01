@@ -6,14 +6,12 @@ import model.HasName
 import model.{Algorithm, Algorithms, Distribution, ElementInfo, HasName, InputType, IntModelImpl, Params, State}
 
 import scala.collection.immutable.List
-import scala.collection.immutable.List
 import com.raquo.laminar.api.L.*
 import com.raquo.laminar.nodes.ReactiveElement
-import controller.{Controller, ControllerImpl, Properties, PropertiesImpl}
+import controller.{Properties}
 import model.InputType.SelectList
 import org.scalajs.dom
 import view.BottomBar
-
 import scala.annotation.tailrec
 
 trait ViewElement:
@@ -24,7 +22,7 @@ trait Inputs[X,Y]:
 case class MultipleList[X <: HasName, Y >: HasName](x:Set[X], selected: X) extends ViewElement with Inputs[X,Y]:
   private val selectedVar: Var[String] = Var(selected.name)
   val map: Map[String, X] = x.map(a => (a.name, a)).toMap
-  def renderSelectList[T <: HasName](l: List[T]): Element =
+  private def renderSelectList[T <: HasName](l: List[T]): Element =
     form(
       select(
         value <-- selectedVar.signal,
@@ -37,7 +35,10 @@ case class MultipleList[X <: HasName, Y >: HasName](x:Set[X], selected: X) exten
   override def get: Map[X, Y] = Map(map(selectedVar.now()) -> map(selectedVar.now()))
   override def element: Element = renderSelectList(x.toList)
 
-case class SingleValue[X,Y >: Int](x:X, starterValue: Y) extends ViewElement with Inputs[X,Y]:
+trait IntConverter[T]:
+  def convert(x:T):Int
+
+case class SingleValue[X,Y >:Int](x:X, starterValue: Y) extends ViewElement with Inputs[X,Y]:
   val sliderValue = Var(starterValue)
   def renderSlider[T](min: Int, max: Int, item: T): Element =
     div(
@@ -62,9 +63,9 @@ object MultipleListFactory:
     new MultipleList[X, Y](x, selected)
 
 object SingleValueFactory:
-  def apply[X, Y >: Int](x: X, starterValue: Y):
-  SingleValue[X, Y] =
-    new SingleValue[X, Y](x, starterValue: Y)
+  def apply[X, Y](x: X, starterValue: Y)(using c:Conversion[Y,Int]):
+  SingleValue[X, Int] =
+    new SingleValue[X, Int](x, c.apply(starterValue))
 
   /*def renderParamsTopBar(list: Map[Params, Int]): Unit =
   renderElement(li(list.map(a => renderSlider(0, 200, a._1.toString, a._2)).toList))

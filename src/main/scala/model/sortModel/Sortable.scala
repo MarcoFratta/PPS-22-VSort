@@ -29,7 +29,7 @@ trait Selections[K, V, +C]:
 
 object Sortable:
   def apply[T: Comparable, V](seq: Seq[T]):
-  Sortable[T, V] = new Sortable[T, V](seq, Seq.empty, Map.empty)
+  Sortable[T, V] = new Sortable[T, V](seq.toVector, Vector.empty, Map.empty)
 
   case class Sortable[T, K](override val data: Seq[T], override val steps: Seq[Step],
                             override val selections: Map[K, Int])

@@ -15,7 +15,7 @@ class ModelTest extends AnyFlatSpec with Matchers:
 
 
   "an algorithm factory" must "exists" in {
-    val model = AlgorithmFactory[Int](bubbleSort, "bubble sort")
+    val model = AlgorithmFactory.intAlgorithm[Int](bubbleSort, "bubble sort")
   }
 
   "a Distribution factory" must "exists" in {

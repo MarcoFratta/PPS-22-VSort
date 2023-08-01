@@ -31,3 +31,9 @@ class DistributionsTest extends AnyFlatSpec with Matchers:
     (50.doubleValue / 100) shouldBe 0.5
     countDuplicates(seq.values) shouldBe 10
   }
+
+  "A uniform distribution with 80% of duplicates" should "have 80 duplicates" in {
+    val g = UniformDistribution(1, 100, 80)
+    val seq = g.generateAll(1 to 100)
+    countDuplicates(seq.values) shouldBe 80
+  }

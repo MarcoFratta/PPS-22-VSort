@@ -3,7 +3,6 @@ package view
 import com.raquo.laminar.api.L
 import com.raquo.laminar.api.L.*
 import com.raquo.laminar.nodes.ReactiveHtmlElement
-import controller.Controller
 import jdk.jfr.Enabled
 import org.scalajs.dom
 import view.GraphFunctions.*

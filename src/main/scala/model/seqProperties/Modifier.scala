@@ -62,12 +62,12 @@ object Modifier:
       getRandomValue(m.filter((x, y) => isDuplicated(m.values, y)).keys)
 
     private def nearest(m: Map[Int, T], x: Int)(f: Int => Boolean): Option[Int] =
-      val keys = m.keys.toList.sorted
+      val keys = m.keys.toVector.sorted
       val kx = keys.indexOf(x)
       keys.slice(0, kx).findLast(f).fold(keys.slice(kx, keys.size).find(f))(x => Some(x))
 
     private def nearestX(m: Map[Int, T], x: Int): Int =
-      val keys = m.keys.toList.sorted
+      val keys = m.keys.toVector.sorted
       val f = nearest(m, x)
       (if keys.indexOf(x) >= keys.size / 2 then f(_ <= keys.size / 2) else f(_ >= keys.size / 2)).get
 
