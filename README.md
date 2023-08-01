@@ -11,15 +11,6 @@ Implemented sorting algorithms:
 * Merge Sort
 * Quick Sort
 
-### Requirements
-
-To use the visualizer you need the following software installed:
-
-* Scala version 3.2.2
-* sbt version 1.13.1
-
-An IDE is not necessary because it's already provided the runnable jar.
-
-### How to use
+### How to run
 
 To use VSort, you can visit the following link: [marcofratta.github.io/VSort/](https://marcofratta.github.io/VSort/). This website provides an interactive visualizer that allows you to actively see the behavior of different sorting algorithms on distributions with various properties. Simply open the link in your web browser and start exploring the visualizations.
