@@ -1,16 +1,33 @@
-# VSort
+# VSort - Sorting Algorithms Visualizer
 
-VSORT is a tool that allows for actively visualizing the behavior of different sorting algorithms concerning distributions with various properties.
-Project for PPS course of the year 2022/2023.
+## Domain
 
-Implemented sorting algorithms:
-* Bubble Sort
-* Insertion Sort
-* Selection Sort
-* Heap Sort
-* Merge Sort
-* Quick Sort
+VSort is a sorting algorithms visualizer that allows you to interactively explore and compare different sorting algorithms' behaviors on various data distributions.
 
-### How to run
+## Supported Sorting Algorithms
 
-To use VSort, you can visit the following link: [marcofratta.github.io/VSort/](https://marcofratta.github.io/VSort/). This website provides an interactive visualizer that allows you to actively see the behavior of different sorting algorithms on distributions with various properties. Simply open the link in your web browser and start exploring the visualizations.
+VSort currently supports the following sorting algorithms:
+- Bubble Sort
+- Insertion Sort
+- Selection Sort
+- Heap Sort
+- Merge Sort
+- Quick Sort
+
+## Functionality
+
+With VSort, you can:
+- Select a sorting algorithm to visualize
+- Observe real-time step-by-step execution of the algorithm
+- Control the algorithm's progress with step forward and step backward options
+- Choose the initial array size for sorting
+- View customized visualizations for each algorithm
+- Select the initial distribution of elements in the array
+- Adjust the visualization speed
+
+## How to Use
+
+1. Visit the VSort website: [marcofratta.github.io/VSort/](https://marcofratta.github.io/VSort/)
+2. Explore the interactive visualizations by selecting your preferred sorting algorithm and data distribution.
+
+Enjoy exploring the behaviors of different sorting algorithms in action!
