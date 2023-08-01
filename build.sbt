@@ -5,7 +5,7 @@ lazy val livechart = project.in(file("."))
   .enablePlugins(ScalaJSPlugin) // Enable the Scala.js plugin in this project
   .settings(
     scalaVersion := "3.2.2",
-
+    //webpackBundlingMode := BundlingMode.LibraryAndApplication() and then a fastOptJS::webpack,
     // Tell Scala.js that this is an application with a main method
     scalaJSUseMainModuleInitializer := true,
 
