@@ -15,19 +15,11 @@ Implemented sorting algorithms:
 
 To use the visualizer you need the following software installed:
 
-* Scala version _
-* sbt version _
+* Scala version 3.2.2
+* sbt version 1.13.1
 
 An IDE is not necessary because it's already provided the runnable jar.
 
-### Compilation process
-To compile the sources into a runnable jar you can simply run the `sbt assembly` command.
-
-### Download
-Get the latest Jar from the GitHub releases page.
-
 ### How to use
 
-**For Windows/Unix systems:**
-
-Start runnable Jar with this command: `java -jar /path/to/VSort.jar`
+To use VSort, you can visit the following link: [marcofratta.github.io/VSort/](https://marcofratta.github.io/VSort/). This website provides an interactive visualizer that allows you to actively see the behavior of different sorting algorithms on distributions with various properties. Simply open the link in your web browser and start exploring the visualizations.
