@@ -1,17 +1,20 @@
 package model
 
+import model.*
+import model.Params.*
+import model.seqProperties.Modifier.*
+import model.seqProperties.*
+import model.sortModel.Comparable
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.must.Matchers
-import model.*
-import model.seqProperties.{GaussianGen, Generable}
-import model.seqProperties.*
-import model.seqProperties.Modifier.*
-import model.Params.*
 
 class ModelTest extends AnyFlatSpec with Matchers:
 
-  import SortingAlgorithms.{*,given}
+  import SortingAlgorithms.{*, given}
+
   given Generable[Int] = x => x.toInt
+
+  given c: Comparable[(Int, Int)] = IntOrderings.ascendingXOrder
 
 
   "an algorithm factory" must "exists" in {

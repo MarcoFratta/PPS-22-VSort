@@ -1,10 +1,11 @@
 package model
 
-import org.scalatest.flatspec.AnyFlatSpec
-import org.scalatest.matchers.should.Matchers
 import model.seqProperties.Distributions.*
 import model.seqProperties.Generable
 import model.seqProperties.Modifier.countDuplicates
+import model.sortModel.Comparable
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 
 
 class DistributionsTest extends AnyFlatSpec with Matchers:

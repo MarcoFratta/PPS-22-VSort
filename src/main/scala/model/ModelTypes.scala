@@ -1,10 +1,10 @@
 package model
 
 import model.SortingAlgorithms.{*, given}
-import model.{InputType, StepsTransformer}
-import model.seqProperties.{Generable, Generator}
 import model.seqProperties.Distributions.{GaussianDistribution, UniformDistribution}
+import model.seqProperties.{Generable, Generator}
 import model.sortModel.Comparable
+import model.{InputType, StepsTransformer}
 
 trait HasName:
   def name: String
@@ -13,7 +13,7 @@ trait State[T]:
   def get: Seq[ElementInfo[T]]
 
 
-trait Distribution[K, T: Generable]:
+trait Distribution[K, T: Generable] extends Comparable[(Int, T)]:
   def generator(params: Map[Params, K]): Generator[T]
 
   def params: Set[Params]
@@ -43,11 +43,26 @@ trait Model extends Algorithms with Distributions
 
 
 object DistributionFactory:
-  def apply[K, T: Generable](f: Map[Params, K] => Generator[T], p: Set[Params], n: String): Distribution[K, T] with HasName =
+  def apply[K, T: Generable](f: Map[Params, K] => Generator[T],
+                             p: Set[Params], n: String)(using c: Comparable[(Int, T)]): Distribution[K, T] with HasName =
     new Distribution[K, T] with HasName:
       override def generator(params: Map[Params, K]): Generator[T] = f(params)
 
       override def params: Set[Params] = p
+
+      override def compare(a: (Int, T), b: (Int, T)): Boolean = c.compare(a, b)
+
+      override def name: String = n
+
+  def apply[K, T: Generable](f: Map[Params, K] => Generator[T],
+                             p: Set[Params], n: String,
+                             c: Comparable[(Int, T)]): Distribution[K, T] with HasName =
+    new Distribution[K, T] with HasName:
+      override def generator(params: Map[Params, K]): Generator[T] = f(params)
+
+      override def params: Set[Params] = p
+
+      override def compare(a: (Int, T), b: (Int, T)): Boolean = c.compare(a, b)
 
       override def name: String = n
 
@@ -62,13 +77,3 @@ object AlgorithmFactory:
   object State:
     def apply[T](v: Seq[ElementInfo[T]]): State[T] = new State[T]:
       override def get: Seq[ElementInfo[T]] = v
-
-
-case class IntModelImpl() extends Model with IntTypes:
-  import model.Params.*
-  export model.Params.*
-  given Generable[Int] = x => x.toInt
-
-  override def algorithms: Set[Algorithm[ValType, ResultType] with HasName] = ???
-
-  override def distributions: Set[Distribution[ParamsType, ValType] with HasName] = ???

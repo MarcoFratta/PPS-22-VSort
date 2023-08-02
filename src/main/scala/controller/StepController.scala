@@ -1,11 +1,11 @@
 package controller
 import com.raquo.laminar.api.L.Var
 import model.*
-import model.seqProperties.*
 import model.SortingAlgorithms.mergeSort
 import model.Step.Swap
+import model.seqProperties.*
 import model.sortModel.SortOperations.*
-import view.{GraphFunctions}
+import view.GraphFunctions
 
 import scala.collection.immutable.Map
 
@@ -21,7 +21,7 @@ object StepController:
       println("Entering getElements")
 
       val seq = prop.distribution.generator(prop.params).generateAll(0 to
-        prop.params(findParamFromName("Size"))).toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
+        prop.params(findParamFromName("Size"))).toList.sortWith(prop.distribution.compare).map(x => x._2)
       println("seq" + seq)
       prop.algorithm.execute(seq)
 

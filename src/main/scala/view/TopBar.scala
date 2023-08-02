@@ -2,18 +2,16 @@
 package view
 
 import com.raquo.laminar.api.L
-import model.HasName
-import model.{Algorithm, Algorithms, Distribution, ElementInfo, HasName, InputType, IntModelImpl, Params, State}
-
-import scala.collection.immutable.List
 import com.raquo.laminar.api.L.*
 import com.raquo.laminar.nodes.ReactiveElement
 import controller.Properties
 import model.InputType.SelectList
+import model.*
 import org.scalajs.dom
 import view.BottomBar
 
 import scala.annotation.tailrec
+import scala.collection.immutable.List
 
 trait ViewElement:
   def element:Element
