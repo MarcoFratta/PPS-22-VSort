@@ -22,7 +22,7 @@ object ModelComponent:
         import model.Params.*
         import model.SortingAlgorithms.{*, given}
 
-        given Generable[Int] = x => x.toInt
+
 
         override def algorithms: Set[Algorithm[ValType, ResultType] with HasName] =
           Set(AlgorithmFactory.intAlgorithm(bubbleSort, "Bubble sort"),
@@ -32,17 +32,20 @@ object ModelComponent:
             AlgorithmFactory.intAlgorithm(heapSort, "Heap sort"))
 
         override def distributions: Set[Distribution[ParamsType, ValType] with HasName] =
+          given Generable[Int] = x => x.toInt + 1
 
           Set(DistributionFactory(p =>
             given Conversion[Params, Int] = x => p(x)
 
-            GaussianDistribution(Size / 2, Std, 1, 1000),
+            GaussianDistribution(Size / 2, Std, 1, 10000),
             Set(Size, Std), "Gaussian"),
+
             DistributionFactory(p =>
+
               given Conversion[Params, Int] = x => p(x)
 
-              UniformDistribution(Min, Max, DuplicatesPercentage, Size),
-              Set(Min, Max, DuplicatesPercentage, Size), "Uniform"))
+              UniformDistribution(1, Size + 1, DuplicatesPercentage, Size),
+              Set(DuplicatesPercentage, Size), "Uniform"))
 
 
     trait Interface extends Provider with Component
