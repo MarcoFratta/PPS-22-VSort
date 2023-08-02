@@ -8,6 +8,7 @@ lazy val livechart = project.in(file("."))
     //webpackBundlingMode := BundlingMode.LibraryAndApplication() and then a fastOptJS::webpack,
     // Tell Scala.js that this is an application with a main method
     scalaJSUseMainModuleInitializer := true,
+    //scalaJSLinkerOutputDirectory := baseDirectory.value / "js"
 
     /* Configure Scala.js to emit modules in the optimal way to
      * connect to Vite's incremental reload.

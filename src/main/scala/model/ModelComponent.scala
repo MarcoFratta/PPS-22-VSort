@@ -41,8 +41,8 @@ object ModelComponent:
             DistributionFactory(p =>
               given Conversion[Params, Int] = x => p(x)
 
-              UniformDistribution(Min, Max, DuplicatesPercentage),
-              Set(Min, Max, DuplicatesPercentage), "Uniform"))
+              UniformDistribution(Min, Max, DuplicatesPercentage, Size),
+              Set(Min, Max, DuplicatesPercentage, Size), "Uniform"))
 
 
     trait Interface extends Provider with Component

@@ -15,7 +15,7 @@ object Distributions:
     override def compare(a: (Int,T), b: (Int,T)): Boolean = a._1 - b._1 > 0
 
 
-  case class UniformDistribution[T: Generable](mi:Int,ma:Int, percentage: Int)
+  case class UniformDistribution[T: Generable](mi:Int,ma:Int, percentage: Int, size: Int)
     extends UniformGen[T](mi, ma)
       with Duplicated(percentage.toDouble / 100)
       with Comparable[(Int,T)]:

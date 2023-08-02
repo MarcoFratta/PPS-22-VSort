@@ -4,7 +4,7 @@ import com.raquo.laminar.api.L
 import controller.Properties
 import model.*
 import org.scalajs.dom
-import view.{BottomBar, GraphFunctions, MultipleListFactory, SingleValue, SingleValueFactory}
+import view.{BottomBar, GraphFunctions, MultipleListFactory, MultipleListWithFFactory, SingleValue, SingleValueFactory}
 import com.raquo.laminar.api.L.{Element, button, canvasTag, child, children, className, div, i, li, nodeSeqToModifier, onClick, onLoad, onMountBind, onMountCallback, onMountInsert, render, renderOnDomContentLoaded, ul, windowEvents}
 import com.raquo.laminar.api.eventPropToProcessor
 
@@ -38,8 +38,14 @@ object ViewComponent:
 
         println("Entering JsView")
         private val algo = MultipleListFactory(algorithms, p.algorithm)
-        private val dis = MultipleListFactory(distributions, p.distribution)
         private var selectedP = p
+        private val dis = MultipleListWithFFactory(distributions, p.distribution,
+          x =>
+            val paramMap = distributions.find(a => a equals x).get.params.map(a => a -> 10).toMap
+            selectedP = Properties(algo.get.head._1,x, paramMap)
+            copy(p = selectedP)
+        )
+
         given Conversion[c.model.ParamsType, Int] = x => x
         private val params = p.params.map(a => SingleValueFactory(a._1, a._2)).toList
 
