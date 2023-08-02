@@ -36,7 +36,7 @@ object ModelComponent:
           Set(DistributionFactory(p =>
             given Conversion[Params, Int] = x => p(x)
 
-            GaussianDistribution(Size / 2, Std, 1, 10000),
+            GaussianDistribution(Size / 2, Std, 1, 1000),
             Set(Size, Std), "Gaussian"),
             DistributionFactory(p =>
               given Conversion[Params, Int] = x => p(x)

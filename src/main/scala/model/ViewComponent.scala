@@ -66,15 +66,13 @@ object ViewComponent:
                 params.map(a => li(a.element)),
                 li(
                   button(
-                    i(
-                      className := "fa fa-check",
-                      onClick --> (_ =>
-                        println("click")
-                        val paramMap = params.map(a => a.get).foldLeft(Map.empty[Params, ParamsType])((param, map) => param ++ map)
-                        println(f"new map after click $paramMap")
-                        selectedP = Properties(algo.get.head._1, dis.get.head._1, paramMap)
-                        c.controller.update(selectedP)
-                       )
+                    className := "fa fa-check",
+                    onClick --> (_ =>
+                      println("click")
+                      val paramMap = params.map(a => a.get).foldLeft(Map.empty[Params, ParamsType])((param, map) => param ++ map)
+                      println(f"new map after click $paramMap")
+                      selectedP = Properties(algo.get.head._1, dis.get.head._1, paramMap)
+                      c.controller.update(selectedP)
                     )
                   )
                 )

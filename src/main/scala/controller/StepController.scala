@@ -19,7 +19,9 @@ object StepController:
 
     override def getElements: ResultType =
       println("Entering getElements")
+
       val seq = prop.distribution.generator(prop.params).generateAll(0 to
         prop.params(findParamFromName("Size"))).toList.sortWith((a, b) => a._1 <= b._1).map(x => x._2)
+      println("seq" + seq)
       prop.algorithm.execute(seq)
 
