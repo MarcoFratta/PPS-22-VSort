@@ -1103,11 +1103,11 @@ $c_LMain$package$.prototype.Main__V = (function() {
   var this$10 = $n($n($p_LMain$package$__MVC$1__sr_LazyRef__LMain$package$MVC$2$(this, MVC$lzy1)).LMain$package$MVC$2$__f_controller);
   var algorithm = $as_Lmodel_Algorithm($n($n($as_Lmodel_Algorithms($n($p_LMain$package$__MVC$1__sr_LazyRef__LMain$package$MVC$2$(this, MVC$lzy1)).LMain$package$MVC$2$__f_model)).algorithms__sci_Set()).head__O());
   var distribution = $as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($p_LMain$package$__MVC$1__sr_LazyRef__LMain$package$MVC$2$(this, MVC$lzy1)).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O());
-  var $$x1 = $n($as_sc_IterableOnceOps($n($n($as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($p_LMain$package$__MVC$1__sr_LazyRef__LMain$package$MVC$2$(this, MVC$lzy1)).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O())).Lmodel_DistributionFactory$$anon$1__f_p$2).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
-    var a$1 = $as_Lmodel_Params(a);
-    return new $c_T2(a$1, 10)
-  })))));
-  var this$7 = $m_s_$less$colon$less$();
+    var $$x1 = $n($as_sc_IterableOnceOps($n($n($as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($p_LMain$package$__MVC$1__sr_LazyRef__LMain$package$MVC$2$(this, MVC$lzy1)).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O())).Lmodel_DistributionFactory$$anon$2__f_p$4).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
+        var a$1 = $as_Lmodel_Params(a);
+        return new $c_T2(a$1, 10)
+    })))));
+    var this$7 = $m_s_$less$colon$less$();
   var params = $n($$x1).toMap__s_$less$colon$less__sci_Map(this$7.s_$less$colon$less$__f_singleton);
   var p = new $c_Lcontroller_Properties$PropertiesImpl(algorithm, distribution, params);
   this$10.update__Lcontroller_Properties__V(p)
@@ -5327,24 +5327,6 @@ function $isArrayOf_Lmodel_ControllerComponent$Provider(obj, depth) {
 function $asArrayOf_Lmodel_ControllerComponent$Provider(obj, depth) {
   return (($isArrayOf_Lmodel_ControllerComponent$Provider(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.ControllerComponent$Provider;", depth))
 }
-function $is_Lmodel_Distribution(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Distribution)))
-}
-function $as_Lmodel_Distribution(obj) {
-  return (($is_Lmodel_Distribution(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Distribution"))
-}
-function $isArrayOf_Lmodel_Distribution(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Distribution)))
-}
-function $asArrayOf_Lmodel_Distribution(obj, depth) {
-  return (($isArrayOf_Lmodel_Distribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.Distribution;", depth))
-}
-var $d_Lmodel_Distribution = new $TypeData().initClass({
-  Lmodel_Distribution: 0
-}, true, "model.Distribution", {
-  Lmodel_Distribution: 1,
-  O: 1
-});
 function $is_Lmodel_ElementInfo(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_ElementInfo)))
 }
@@ -5392,24 +5374,71 @@ function $m_Lmodel_ElementInfo$() {
 function $is_Lmodel_HasName(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_HasName)))
 }
+
 function $as_Lmodel_HasName(obj) {
-  return (($is_Lmodel_HasName(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.HasName"))
+    return (($is_Lmodel_HasName(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.HasName"))
 }
+
 function $isArrayOf_Lmodel_HasName(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_HasName)))
+    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_HasName)))
 }
+
 function $asArrayOf_Lmodel_HasName(obj, depth) {
-  return (($isArrayOf_Lmodel_HasName(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.HasName;", depth))
+    return (($isArrayOf_Lmodel_HasName(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.HasName;", depth))
 }
+
+/** @constructor */
+function $c_Lmodel_IntOrderings$() {
+    this.Lmodel_IntOrderings$__f_ascendingXOrder = null;
+    this.Lmodel_IntOrderings$__f_randomOrder = null;
+    this.Lmodel_IntOrderings$__f_ascendingYOrder = null;
+    this.Lmodel_IntOrderings$__f_descendingYOrder = null;
+    $n_Lmodel_IntOrderings$ = this;
+    this.Lmodel_IntOrderings$__f_ascendingXOrder = new $c_Lmodel_IntOrderings$$anon$1();
+    new $c_Lmodel_IntOrderings$$anon$2();
+    this.Lmodel_IntOrderings$__f_randomOrder = new $c_Lmodel_IntOrderings$$anon$3();
+    this.Lmodel_IntOrderings$__f_ascendingYOrder = new $c_Lmodel_IntOrderings$$anon$4();
+    this.Lmodel_IntOrderings$__f_descendingYOrder = new $c_Lmodel_IntOrderings$$anon$5()
+}
+
+$c_Lmodel_IntOrderings$.prototype = new $h_O();
+$c_Lmodel_IntOrderings$.prototype.constructor = $c_Lmodel_IntOrderings$;
+
+/** @constructor */
+function $h_Lmodel_IntOrderings$() {
+    /*<skip>*/
+}
+
+$h_Lmodel_IntOrderings$.prototype = $c_Lmodel_IntOrderings$.prototype;
+var $d_Lmodel_IntOrderings$ = new $TypeData().initClass({
+    Lmodel_IntOrderings$: 0
+}, false, "model.IntOrderings$", {
+    Lmodel_IntOrderings$: 1,
+    O: 1
+});
+$c_Lmodel_IntOrderings$.prototype.$classData = $d_Lmodel_IntOrderings$;
+var $n_Lmodel_IntOrderings$;
+
+function $m_Lmodel_IntOrderings$() {
+    if ((!$n_Lmodel_IntOrderings$)) {
+        $n_Lmodel_IntOrderings$ = new $c_Lmodel_IntOrderings$()
+    }
+    ;
+    return $n_Lmodel_IntOrderings$
+}
+
 function $is_Lmodel_ModelComponent$Model$Provider(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_ModelComponent$Model$Provider)))
+    return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_ModelComponent$Model$Provider)))
 }
+
 function $as_Lmodel_ModelComponent$Model$Provider(obj) {
-  return (($is_Lmodel_ModelComponent$Model$Provider(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.ModelComponent$Model$Provider"))
+    return (($is_Lmodel_ModelComponent$Model$Provider(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.ModelComponent$Model$Provider"))
 }
+
 function $isArrayOf_Lmodel_ModelComponent$Model$Provider(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_ModelComponent$Model$Provider)))
+    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_ModelComponent$Model$Provider)))
 }
+
 function $asArrayOf_Lmodel_ModelComponent$Model$Provider(obj, depth) {
   return (($isArrayOf_Lmodel_ModelComponent$Model$Provider(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.ModelComponent$Model$Provider;", depth))
 }
@@ -6271,35 +6300,27 @@ $c_Lmodel_StepsTransformer.prototype.$classData = $d_Lmodel_StepsTransformer;
 function $is_Lmodel_ViewComponent$Provider(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_ViewComponent$Provider)))
 }
-
 function $as_Lmodel_ViewComponent$Provider(obj) {
     return (($is_Lmodel_ViewComponent$Provider(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.ViewComponent$Provider"))
 }
-
 function $isArrayOf_Lmodel_ViewComponent$Provider(obj, depth) {
     return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_ViewComponent$Provider)))
 }
-
 function $asArrayOf_Lmodel_ViewComponent$Provider(obj, depth) {
     return (($isArrayOf_Lmodel_ViewComponent$Provider(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.ViewComponent$Provider;", depth))
 }
-
 function $is_Lmodel_seqProperties_Generable(obj) {
     return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_seqProperties_Generable)))
 }
-
 function $as_Lmodel_seqProperties_Generable(obj) {
     return (($is_Lmodel_seqProperties_Generable(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Generable"))
 }
-
 function $isArrayOf_Lmodel_seqProperties_Generable(obj, depth) {
     return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Generable)))
 }
-
 function $asArrayOf_Lmodel_seqProperties_Generable(obj, depth) {
     return (($isArrayOf_Lmodel_seqProperties_Generable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Generable;", depth))
 }
-
 function $f_Lmodel_seqProperties_Generator__generateAll__sci_Range__sci_Map($thiz, range) {
     var $$x1 = $n($m_s_Predef$().s_Predef$__f_Map);
     var this$2 = $n($m_s_package$().s_package$__f_Seq);
@@ -11170,7 +11191,10 @@ function $ct_jl_Throwable__T__jl_Throwable__Z__Z__($thiz, s, e, enableSuppressio
 class $c_jl_Throwable extends Error {
   constructor() {
       super();
-      this.jl_Throwable__f_s = null
+      this.jl_Throwable__f_s = null;
+      this.jl_Throwable__f_writableStackTrace = false;
+      this.jl_Throwable__f_jsErrorForStackTrace = null;
+      this.jl_Throwable__f_stackTrace = null
   };
   initCause__jl_Throwable__jl_Throwable(cause) {
     return this
@@ -11414,37 +11438,45 @@ var $d_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$ = new $TypeData().ini
 });
 $c_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$.prototype.$classData = $d_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$;
 var $n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$;
+
 function $m_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$() {
-  if ((!$n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$)) {
-    $n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$ = new $c_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$()
-  };
-  return $n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$
+    if ((!$n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$)) {
+        $n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$ = new $c_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$()
+    }
+    ;
+    return $n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$
 }
+
 /** @constructor */
-function $c_Lmodel_AlgorithmFactory$State$$anon$3(v$2) {
-  this.Lmodel_AlgorithmFactory$State$$anon$3__f_v$1 = null;
-  this.Lmodel_AlgorithmFactory$State$$anon$3__f_v$1 = v$2
+function $c_Lmodel_AlgorithmFactory$State$$anon$4(v$2) {
+    this.Lmodel_AlgorithmFactory$State$$anon$4__f_v$1 = null;
+    this.Lmodel_AlgorithmFactory$State$$anon$4__f_v$1 = v$2
 }
-$c_Lmodel_AlgorithmFactory$State$$anon$3.prototype = new $h_O();
-$c_Lmodel_AlgorithmFactory$State$$anon$3.prototype.constructor = $c_Lmodel_AlgorithmFactory$State$$anon$3;
+
+$c_Lmodel_AlgorithmFactory$State$$anon$4.prototype = new $h_O();
+$c_Lmodel_AlgorithmFactory$State$$anon$4.prototype.constructor = $c_Lmodel_AlgorithmFactory$State$$anon$4;
+
 /** @constructor */
-function $h_Lmodel_AlgorithmFactory$State$$anon$3() {
-  /*<skip>*/
+function $h_Lmodel_AlgorithmFactory$State$$anon$4() {
+    /*<skip>*/
 }
-$h_Lmodel_AlgorithmFactory$State$$anon$3.prototype = $c_Lmodel_AlgorithmFactory$State$$anon$3.prototype;
-var $d_Lmodel_AlgorithmFactory$State$$anon$3 = new $TypeData().initClass({
-  Lmodel_AlgorithmFactory$State$$anon$3: 0
-}, false, "model.AlgorithmFactory$State$$anon$3", {
-  Lmodel_AlgorithmFactory$State$$anon$3: 1,
-  O: 1,
-  Lmodel_State: 1
+
+$h_Lmodel_AlgorithmFactory$State$$anon$4.prototype = $c_Lmodel_AlgorithmFactory$State$$anon$4.prototype;
+var $d_Lmodel_AlgorithmFactory$State$$anon$4 = new $TypeData().initClass({
+    Lmodel_AlgorithmFactory$State$$anon$4: 0
+}, false, "model.AlgorithmFactory$State$$anon$4", {
+    Lmodel_AlgorithmFactory$State$$anon$4: 1,
+    O: 1,
+    Lmodel_State: 1
 });
-$c_Lmodel_AlgorithmFactory$State$$anon$3.prototype.$classData = $d_Lmodel_AlgorithmFactory$State$$anon$3;
+$c_Lmodel_AlgorithmFactory$State$$anon$4.prototype.$classData = $d_Lmodel_AlgorithmFactory$State$$anon$4;
+
 function $is_Lmodel_Algorithms(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Algorithms)))
+    return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Algorithms)))
 }
+
 function $as_Lmodel_Algorithms(obj) {
-  return (($is_Lmodel_Algorithms(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Algorithms"))
+    return (($is_Lmodel_Algorithms(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Algorithms"))
 }
 function $isArrayOf_Lmodel_Algorithms(obj, depth) {
   return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Algorithms)))
@@ -11487,33 +11519,210 @@ $c_Lmodel_ControllerComponent$Component$ControllerImpl.prototype.update__Lcontro
   }
 });
 var $d_Lmodel_ControllerComponent$Component$ControllerImpl = new $TypeData().initClass({
-  Lmodel_ControllerComponent$Component$ControllerImpl: 0
+    Lmodel_ControllerComponent$Component$ControllerImpl: 0
 }, false, "model.ControllerComponent$Component$ControllerImpl", {
-  Lmodel_ControllerComponent$Component$ControllerImpl: 1,
-  O: 1,
-  Lmodel_ControllerComponent$Controller: 1
+    Lmodel_ControllerComponent$Component$ControllerImpl: 1,
+    O: 1,
+    Lmodel_ControllerComponent$Controller: 1
 });
 $c_Lmodel_ControllerComponent$Component$ControllerImpl.prototype.$classData = $d_Lmodel_ControllerComponent$Component$ControllerImpl;
+
+function $is_Lmodel_Distribution(obj) {
+    return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Distribution)))
+}
+
+function $as_Lmodel_Distribution(obj) {
+    return (($is_Lmodel_Distribution(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Distribution"))
+}
+
+function $isArrayOf_Lmodel_Distribution(obj, depth) {
+    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Distribution)))
+}
+
+function $asArrayOf_Lmodel_Distribution(obj, depth) {
+    return (($isArrayOf_Lmodel_Distribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.Distribution;", depth))
+}
+
+var $d_Lmodel_Distribution = new $TypeData().initClass({
+    Lmodel_Distribution: 0
+}, true, "model.Distribution", {
+    Lmodel_Distribution: 1,
+    O: 1,
+    Lmodel_sortModel_Comparable: 1
+});
+
 function $is_Lmodel_Distributions(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Distributions)))
+    return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Distributions)))
 }
+
 function $as_Lmodel_Distributions(obj) {
-  return (($is_Lmodel_Distributions(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Distributions"))
+    return (($is_Lmodel_Distributions(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Distributions"))
 }
+
 function $isArrayOf_Lmodel_Distributions(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Distributions)))
+    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Distributions)))
 }
+
 function $asArrayOf_Lmodel_Distributions(obj, depth) {
-  return (($isArrayOf_Lmodel_Distributions(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.Distributions;", depth))
+    return (($isArrayOf_Lmodel_Distributions(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.Distributions;", depth))
 }
+
+/** @constructor */
+function $c_Lmodel_IntOrderings$$anon$1() {
+    /*<skip>*/
+}
+
+$c_Lmodel_IntOrderings$$anon$1.prototype = new $h_O();
+$c_Lmodel_IntOrderings$$anon$1.prototype.constructor = $c_Lmodel_IntOrderings$$anon$1;
+
+/** @constructor */
+function $h_Lmodel_IntOrderings$$anon$1() {
+    /*<skip>*/
+}
+
+$h_Lmodel_IntOrderings$$anon$1.prototype = $c_Lmodel_IntOrderings$$anon$1.prototype;
+$c_Lmodel_IntOrderings$$anon$1.prototype.compare__O__O__Z = (function (a, b) {
+    var a$1 = $as_T2(a);
+    var b$1 = $as_T2(b);
+    $m_Lmodel_IntOrderings$();
+    return ((($uI($n(a$1).T2__f__1) - $uI($n(b$1).T2__f__1)) | 0) > 0)
+});
+var $d_Lmodel_IntOrderings$$anon$1 = new $TypeData().initClass({
+    Lmodel_IntOrderings$$anon$1: 0
+}, false, "model.IntOrderings$$anon$1", {
+    Lmodel_IntOrderings$$anon$1: 1,
+    O: 1,
+    Lmodel_sortModel_Comparable: 1
+});
+$c_Lmodel_IntOrderings$$anon$1.prototype.$classData = $d_Lmodel_IntOrderings$$anon$1;
+
+/** @constructor */
+function $c_Lmodel_IntOrderings$$anon$2() {
+    /*<skip>*/
+}
+
+$c_Lmodel_IntOrderings$$anon$2.prototype = new $h_O();
+$c_Lmodel_IntOrderings$$anon$2.prototype.constructor = $c_Lmodel_IntOrderings$$anon$2;
+
+/** @constructor */
+function $h_Lmodel_IntOrderings$$anon$2() {
+    /*<skip>*/
+}
+
+$h_Lmodel_IntOrderings$$anon$2.prototype = $c_Lmodel_IntOrderings$$anon$2.prototype;
+$c_Lmodel_IntOrderings$$anon$2.prototype.compare__O__O__Z = (function (a, b) {
+    var a$1 = $as_T2(a);
+    var b$1 = $as_T2(b);
+    $m_Lmodel_IntOrderings$();
+    return ((($uI($n(b$1).T2__f__1) - $uI($n(a$1).T2__f__1)) | 0) > 0)
+});
+var $d_Lmodel_IntOrderings$$anon$2 = new $TypeData().initClass({
+    Lmodel_IntOrderings$$anon$2: 0
+}, false, "model.IntOrderings$$anon$2", {
+    Lmodel_IntOrderings$$anon$2: 1,
+    O: 1,
+    Lmodel_sortModel_Comparable: 1
+});
+$c_Lmodel_IntOrderings$$anon$2.prototype.$classData = $d_Lmodel_IntOrderings$$anon$2;
+
+/** @constructor */
+function $c_Lmodel_IntOrderings$$anon$3() {
+    /*<skip>*/
+}
+
+$c_Lmodel_IntOrderings$$anon$3.prototype = new $h_O();
+$c_Lmodel_IntOrderings$$anon$3.prototype.constructor = $c_Lmodel_IntOrderings$$anon$3;
+
+/** @constructor */
+function $h_Lmodel_IntOrderings$$anon$3() {
+    /*<skip>*/
+}
+
+$h_Lmodel_IntOrderings$$anon$3.prototype = $c_Lmodel_IntOrderings$$anon$3.prototype;
+$c_Lmodel_IntOrderings$$anon$3.prototype.compare__O__O__Z = (function (a, b) {
+    $as_T2(a);
+    $as_T2(b);
+    $m_Lmodel_IntOrderings$();
+    var this$2 = $m_s_util_Random$();
+    return $n(this$2.s_util_Random__f_self).nextBoolean__Z()
+});
+var $d_Lmodel_IntOrderings$$anon$3 = new $TypeData().initClass({
+    Lmodel_IntOrderings$$anon$3: 0
+}, false, "model.IntOrderings$$anon$3", {
+    Lmodel_IntOrderings$$anon$3: 1,
+    O: 1,
+    Lmodel_sortModel_Comparable: 1
+});
+$c_Lmodel_IntOrderings$$anon$3.prototype.$classData = $d_Lmodel_IntOrderings$$anon$3;
+
+/** @constructor */
+function $c_Lmodel_IntOrderings$$anon$4() {
+    /*<skip>*/
+}
+
+$c_Lmodel_IntOrderings$$anon$4.prototype = new $h_O();
+$c_Lmodel_IntOrderings$$anon$4.prototype.constructor = $c_Lmodel_IntOrderings$$anon$4;
+
+/** @constructor */
+function $h_Lmodel_IntOrderings$$anon$4() {
+    /*<skip>*/
+}
+
+$h_Lmodel_IntOrderings$$anon$4.prototype = $c_Lmodel_IntOrderings$$anon$4.prototype;
+$c_Lmodel_IntOrderings$$anon$4.prototype.compare__O__O__Z = (function (a, b) {
+    var a$1 = $as_T2(a);
+    var b$1 = $as_T2(b);
+    $m_Lmodel_IntOrderings$();
+    return ((($uI($n(b$1).T2__f__2) - $uI($n(a$1).T2__f__2)) | 0) > 0)
+});
+var $d_Lmodel_IntOrderings$$anon$4 = new $TypeData().initClass({
+    Lmodel_IntOrderings$$anon$4: 0
+}, false, "model.IntOrderings$$anon$4", {
+    Lmodel_IntOrderings$$anon$4: 1,
+    O: 1,
+    Lmodel_sortModel_Comparable: 1
+});
+$c_Lmodel_IntOrderings$$anon$4.prototype.$classData = $d_Lmodel_IntOrderings$$anon$4;
+
+/** @constructor */
+function $c_Lmodel_IntOrderings$$anon$5() {
+    /*<skip>*/
+}
+
+$c_Lmodel_IntOrderings$$anon$5.prototype = new $h_O();
+$c_Lmodel_IntOrderings$$anon$5.prototype.constructor = $c_Lmodel_IntOrderings$$anon$5;
+
+/** @constructor */
+function $h_Lmodel_IntOrderings$$anon$5() {
+    /*<skip>*/
+}
+
+$h_Lmodel_IntOrderings$$anon$5.prototype = $c_Lmodel_IntOrderings$$anon$5.prototype;
+$c_Lmodel_IntOrderings$$anon$5.prototype.compare__O__O__Z = (function (a, b) {
+    var a$1 = $as_T2(a);
+    var b$1 = $as_T2(b);
+    $m_Lmodel_IntOrderings$();
+    return ((($uI($n(a$1).T2__f__2) - $uI($n(b$1).T2__f__2)) | 0) > 0)
+});
+var $d_Lmodel_IntOrderings$$anon$5 = new $TypeData().initClass({
+    Lmodel_IntOrderings$$anon$5: 0
+}, false, "model.IntOrderings$$anon$5", {
+    Lmodel_IntOrderings$$anon$5: 1,
+    O: 1,
+    Lmodel_sortModel_Comparable: 1
+});
+$c_Lmodel_IntOrderings$$anon$5.prototype.$classData = $d_Lmodel_IntOrderings$$anon$5;
+
 /** @constructor */
 function $c_Lmodel_ModelComponent$$anon$1(outer) {
-  if ((outer === null)) {
-    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-  }
+    if ((outer === null)) {
+        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+    }
 }
+
 $c_Lmodel_ModelComponent$$anon$1.prototype = new $h_O();
 $c_Lmodel_ModelComponent$$anon$1.prototype.constructor = $c_Lmodel_ModelComponent$$anon$1;
+
 /** @constructor */
 function $h_Lmodel_ModelComponent$$anon$1() {
   /*<skip>*/
@@ -13575,79 +13784,53 @@ var $d_jl_Exception = new $TypeData().initClass({
   jl_Exception: 1,
   jl_Throwable: 1,
   O: 1,
-  Ljava_io_Serializable: 1
+    Ljava_io_Serializable: 1
 });
 $c_jl_Exception.prototype.$classData = $d_jl_Exception;
+
 /** @constructor */
-function $c_Lmodel_AlgorithmFactory$$anon$2(f$4, n$4) {
-  this.Lmodel_AlgorithmFactory$$anon$2__f_f$3 = null;
-  this.Lmodel_AlgorithmFactory$$anon$2__f_n$3 = null;
-  this.Lmodel_AlgorithmFactory$$anon$2__f_f$3 = f$4;
-  this.Lmodel_AlgorithmFactory$$anon$2__f_n$3 = n$4
+function $c_Lmodel_AlgorithmFactory$$anon$3(f$6, n$6) {
+    this.Lmodel_AlgorithmFactory$$anon$3__f_f$5 = null;
+    this.Lmodel_AlgorithmFactory$$anon$3__f_n$5 = null;
+    this.Lmodel_AlgorithmFactory$$anon$3__f_f$5 = f$6;
+    this.Lmodel_AlgorithmFactory$$anon$3__f_n$5 = n$6
 }
-$c_Lmodel_AlgorithmFactory$$anon$2.prototype = new $h_O();
-$c_Lmodel_AlgorithmFactory$$anon$2.prototype.constructor = $c_Lmodel_AlgorithmFactory$$anon$2;
+
+$c_Lmodel_AlgorithmFactory$$anon$3.prototype = new $h_O();
+$c_Lmodel_AlgorithmFactory$$anon$3.prototype.constructor = $c_Lmodel_AlgorithmFactory$$anon$3;
+
 /** @constructor */
-function $h_Lmodel_AlgorithmFactory$$anon$2() {
-  /*<skip>*/
+function $h_Lmodel_AlgorithmFactory$$anon$3() {
+    /*<skip>*/
 }
-$h_Lmodel_AlgorithmFactory$$anon$2.prototype = $c_Lmodel_AlgorithmFactory$$anon$2.prototype;
-$c_Lmodel_AlgorithmFactory$$anon$2.prototype.execute__sci_Seq__sci_Seq = (function(s) {
-  return $as_sci_Seq($n(new $c_Lmodel_StepsTransformer().getSeqList__sci_Seq__sci_Seq__sci_Seq($as_sci_Seq($n(this.Lmodel_AlgorithmFactory$$anon$2__f_f$3).apply__O__O(s)), s)).map__F1__O(new $c_sjsr_AnonFunction1(((s$2) => {
-    var s$1 = $as_sci_Seq(s$2);
-    return new $c_Lmodel_AlgorithmFactory$State$$anon$3(s$1)
-  }))))
+
+$h_Lmodel_AlgorithmFactory$$anon$3.prototype = $c_Lmodel_AlgorithmFactory$$anon$3.prototype;
+$c_Lmodel_AlgorithmFactory$$anon$3.prototype.execute__sci_Seq__sci_Seq = (function (s) {
+    return $as_sci_Seq($n(new $c_Lmodel_StepsTransformer().getSeqList__sci_Seq__sci_Seq__sci_Seq($as_sci_Seq($n(this.Lmodel_AlgorithmFactory$$anon$3__f_f$5).apply__O__O(s)), s)).map__F1__O(new $c_sjsr_AnonFunction1(((s$2) => {
+        var s$1 = $as_sci_Seq(s$2);
+        return new $c_Lmodel_AlgorithmFactory$State$$anon$4(s$1)
+    }))))
 });
-$c_Lmodel_AlgorithmFactory$$anon$2.prototype.name__T = (function() {
-  return this.Lmodel_AlgorithmFactory$$anon$2__f_n$3
+$c_Lmodel_AlgorithmFactory$$anon$3.prototype.name__T = (function () {
+    return this.Lmodel_AlgorithmFactory$$anon$3__f_n$5
 });
-var $d_Lmodel_AlgorithmFactory$$anon$2 = new $TypeData().initClass({
-  Lmodel_AlgorithmFactory$$anon$2: 0
-}, false, "model.AlgorithmFactory$$anon$2", {
-  Lmodel_AlgorithmFactory$$anon$2: 1,
-  O: 1,
-  Lmodel_Algorithm: 1,
-  Lmodel_HasName: 1
+var $d_Lmodel_AlgorithmFactory$$anon$3 = new $TypeData().initClass({
+    Lmodel_AlgorithmFactory$$anon$3: 0
+}, false, "model.AlgorithmFactory$$anon$3", {
+    Lmodel_AlgorithmFactory$$anon$3: 1,
+    O: 1,
+    Lmodel_Algorithm: 1,
+    Lmodel_HasName: 1
 });
-$c_Lmodel_AlgorithmFactory$$anon$2.prototype.$classData = $d_Lmodel_AlgorithmFactory$$anon$2;
+$c_Lmodel_AlgorithmFactory$$anon$3.prototype.$classData = $d_Lmodel_AlgorithmFactory$$anon$3;
+
 /** @constructor */
-function $c_Lmodel_DistributionFactory$$anon$1(f$1, p$1, n$1, evidence$3$1) {
-  this.Lmodel_DistributionFactory$$anon$1__f_f$2 = null;
-  this.Lmodel_DistributionFactory$$anon$1__f_p$2 = null;
-  this.Lmodel_DistributionFactory$$anon$1__f_n$2 = null;
-  this.Lmodel_DistributionFactory$$anon$1__f_f$2 = f$1;
-  this.Lmodel_DistributionFactory$$anon$1__f_p$2 = p$1;
-  this.Lmodel_DistributionFactory$$anon$1__f_n$2 = n$1
-}
-$c_Lmodel_DistributionFactory$$anon$1.prototype = new $h_O();
-$c_Lmodel_DistributionFactory$$anon$1.prototype.constructor = $c_Lmodel_DistributionFactory$$anon$1;
-/** @constructor */
-function $h_Lmodel_DistributionFactory$$anon$1() {
-  /*<skip>*/
-}
-$h_Lmodel_DistributionFactory$$anon$1.prototype = $c_Lmodel_DistributionFactory$$anon$1.prototype;
-$c_Lmodel_DistributionFactory$$anon$1.prototype.generator__sci_Map__Lmodel_seqProperties_Generator = (function(params) {
-  return $as_Lmodel_seqProperties_Generator($n(this.Lmodel_DistributionFactory$$anon$1__f_f$2).apply__O__O(params))
-});
-$c_Lmodel_DistributionFactory$$anon$1.prototype.name__T = (function() {
-  return this.Lmodel_DistributionFactory$$anon$1__f_n$2
-});
-var $d_Lmodel_DistributionFactory$$anon$1 = new $TypeData().initClass({
-  Lmodel_DistributionFactory$$anon$1: 0
-}, false, "model.DistributionFactory$$anon$1", {
-  Lmodel_DistributionFactory$$anon$1: 1,
-  O: 1,
-  Lmodel_Distribution: 1,
-  Lmodel_HasName: 1
-});
-$c_Lmodel_DistributionFactory$$anon$1.prototype.$classData = $d_Lmodel_DistributionFactory$$anon$1;
-/** @constructor */
-function $c_Lmodel_ModelComponent$$anon$2(p$9, outer) {
-  this.Lmodel_ModelComponent$$anon$2__f_p$7 = null;
-  this.Lmodel_ModelComponent$$anon$2__f_p$7 = p$9;
-  if ((outer === null)) {
-    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-  }
+function $c_Lmodel_ModelComponent$$anon$2(p$17, outer) {
+    this.Lmodel_ModelComponent$$anon$2__f_p$13 = null;
+    this.Lmodel_ModelComponent$$anon$2__f_p$13 = p$17;
+    if ((outer === null)) {
+        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+    }
 }
 $c_Lmodel_ModelComponent$$anon$2.prototype = new $h_s_Conversion();
 $c_Lmodel_ModelComponent$$anon$2.prototype.constructor = $c_Lmodel_ModelComponent$$anon$2;
@@ -13657,7 +13840,7 @@ function $h_Lmodel_ModelComponent$$anon$2() {
 }
 $h_Lmodel_ModelComponent$$anon$2.prototype = $c_Lmodel_ModelComponent$$anon$2.prototype;
 $c_Lmodel_ModelComponent$$anon$2.prototype.apply__Lmodel_Params__I = (function(x) {
-  var p$2 = this.Lmodel_ModelComponent$$anon$2__f_p$7;
+    var p$2 = this.Lmodel_ModelComponent$$anon$2__f_p$13;
   return $uI($n(p$2).apply__O__O(x))
 });
 $c_Lmodel_ModelComponent$$anon$2.prototype.apply__O__O = (function(x) {
@@ -13672,13 +13855,14 @@ var $d_Lmodel_ModelComponent$$anon$2 = new $TypeData().initClass({
   F1: 1
 });
 $c_Lmodel_ModelComponent$$anon$2.prototype.$classData = $d_Lmodel_ModelComponent$$anon$2;
+
 /** @constructor */
-function $c_Lmodel_ModelComponent$$anon$3(p$10, outer) {
-  this.Lmodel_ModelComponent$$anon$3__f_p$8 = null;
-  this.Lmodel_ModelComponent$$anon$3__f_p$8 = p$10;
-  if ((outer === null)) {
-    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-  }
+function $c_Lmodel_ModelComponent$$anon$3(p$18, outer) {
+    this.Lmodel_ModelComponent$$anon$3__f_p$14 = null;
+    this.Lmodel_ModelComponent$$anon$3__f_p$14 = p$18;
+    if ((outer === null)) {
+        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+    }
 }
 $c_Lmodel_ModelComponent$$anon$3.prototype = new $h_s_Conversion();
 $c_Lmodel_ModelComponent$$anon$3.prototype.constructor = $c_Lmodel_ModelComponent$$anon$3;
@@ -13688,31 +13872,104 @@ function $h_Lmodel_ModelComponent$$anon$3() {
 }
 $h_Lmodel_ModelComponent$$anon$3.prototype = $c_Lmodel_ModelComponent$$anon$3.prototype;
 $c_Lmodel_ModelComponent$$anon$3.prototype.apply__Lmodel_Params__I = (function(x) {
-  var p$5 = this.Lmodel_ModelComponent$$anon$3__f_p$8;
+    var p$5 = this.Lmodel_ModelComponent$$anon$3__f_p$14;
   return $uI($n(p$5).apply__O__O(x))
 });
 $c_Lmodel_ModelComponent$$anon$3.prototype.apply__O__O = (function(x) {
   return this.apply__Lmodel_Params__I($as_Lmodel_Params(x))
 });
 var $d_Lmodel_ModelComponent$$anon$3 = new $TypeData().initClass({
-  Lmodel_ModelComponent$$anon$3: 0
+    Lmodel_ModelComponent$$anon$3: 0
 }, false, "model.ModelComponent$$anon$3", {
-  Lmodel_ModelComponent$$anon$3: 1,
-  s_Conversion: 1,
-  O: 1,
-  F1: 1
+    Lmodel_ModelComponent$$anon$3: 1,
+    s_Conversion: 1,
+    O: 1,
+    F1: 1
 });
 $c_Lmodel_ModelComponent$$anon$3.prototype.$classData = $d_Lmodel_ModelComponent$$anon$3;
+
+/** @constructor */
+function $c_Lmodel_ModelComponent$$anon$4(p$19, outer) {
+    this.Lmodel_ModelComponent$$anon$4__f_p$15 = null;
+    this.Lmodel_ModelComponent$$anon$4__f_p$15 = p$19;
+    if ((outer === null)) {
+        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+    }
+}
+
+$c_Lmodel_ModelComponent$$anon$4.prototype = new $h_s_Conversion();
+$c_Lmodel_ModelComponent$$anon$4.prototype.constructor = $c_Lmodel_ModelComponent$$anon$4;
+
+/** @constructor */
+function $h_Lmodel_ModelComponent$$anon$4() {
+    /*<skip>*/
+}
+
+$h_Lmodel_ModelComponent$$anon$4.prototype = $c_Lmodel_ModelComponent$$anon$4.prototype;
+$c_Lmodel_ModelComponent$$anon$4.prototype.apply__Lmodel_Params__I = (function (x) {
+    var p$8 = this.Lmodel_ModelComponent$$anon$4__f_p$15;
+    return $uI($n(p$8).apply__O__O(x))
+});
+$c_Lmodel_ModelComponent$$anon$4.prototype.apply__O__O = (function (x) {
+    return this.apply__Lmodel_Params__I($as_Lmodel_Params(x))
+});
+var $d_Lmodel_ModelComponent$$anon$4 = new $TypeData().initClass({
+    Lmodel_ModelComponent$$anon$4: 0
+}, false, "model.ModelComponent$$anon$4", {
+    Lmodel_ModelComponent$$anon$4: 1,
+    s_Conversion: 1,
+    O: 1,
+    F1: 1
+});
+$c_Lmodel_ModelComponent$$anon$4.prototype.$classData = $d_Lmodel_ModelComponent$$anon$4;
+
+/** @constructor */
+function $c_Lmodel_ModelComponent$$anon$5(p$20, outer) {
+    this.Lmodel_ModelComponent$$anon$5__f_p$16 = null;
+    this.Lmodel_ModelComponent$$anon$5__f_p$16 = p$20;
+    if ((outer === null)) {
+        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+    }
+}
+
+$c_Lmodel_ModelComponent$$anon$5.prototype = new $h_s_Conversion();
+$c_Lmodel_ModelComponent$$anon$5.prototype.constructor = $c_Lmodel_ModelComponent$$anon$5;
+
+/** @constructor */
+function $h_Lmodel_ModelComponent$$anon$5() {
+    /*<skip>*/
+}
+
+$h_Lmodel_ModelComponent$$anon$5.prototype = $c_Lmodel_ModelComponent$$anon$5.prototype;
+$c_Lmodel_ModelComponent$$anon$5.prototype.apply__Lmodel_Params__I = (function (x) {
+    var p$11 = this.Lmodel_ModelComponent$$anon$5__f_p$16;
+    return $uI($n(p$11).apply__O__O(x))
+});
+$c_Lmodel_ModelComponent$$anon$5.prototype.apply__O__O = (function (x) {
+    return this.apply__Lmodel_Params__I($as_Lmodel_Params(x))
+});
+var $d_Lmodel_ModelComponent$$anon$5 = new $TypeData().initClass({
+    Lmodel_ModelComponent$$anon$5: 0
+}, false, "model.ModelComponent$$anon$5", {
+    Lmodel_ModelComponent$$anon$5: 1,
+    s_Conversion: 1,
+    O: 1,
+    F1: 1
+});
+$c_Lmodel_ModelComponent$$anon$5.prototype.$classData = $d_Lmodel_ModelComponent$$anon$5;
+
 function $s_Lmodel_Params$__Max__Lmodel_Params() {
-  $m_Lmodel_Params$();
-  return $t_Lmodel_Params$__Max
+    $m_Lmodel_Params$();
+    return $t_Lmodel_Params$__Max
 }
+
 function $s_Lmodel_Params$__Min__Lmodel_Params() {
-  $m_Lmodel_Params$();
-  return $t_Lmodel_Params$__Min
+    $m_Lmodel_Params$();
+    return $t_Lmodel_Params$__Min
 }
+
 function $s_Lmodel_Params$__Std__Lmodel_Params() {
-  $m_Lmodel_Params$();
+    $m_Lmodel_Params$();
   return $t_Lmodel_Params$__Std
 }
 function $s_Lmodel_Params$__Size__Lmodel_Params() {
@@ -16369,19 +16626,15 @@ function $m_s_util_Random$() {
   };
   return $n_s_util_Random$
 }
-
 function $as_s_util_control_ControlThrowable(obj) {
     return ((false || (obj === null)) ? obj : $throwClassCastException(obj, "scala.util.control.ControlThrowable"))
 }
-
 function $isArrayOf_s_util_control_ControlThrowable(obj, depth) {
     return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.s_util_control_ControlThrowable)))
 }
-
 function $asArrayOf_s_util_control_ControlThrowable(obj, depth) {
     return (($isArrayOf_s_util_control_ControlThrowable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.util.control.ControlThrowable;", depth))
 }
-
 function $f_Lview_MultipleList__$init$__V($thiz) {
     $thiz.view$MultipleList$_setter_$selectedVar_$eq__Lcom_raquo_airstream_state_Var__V($n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_Var).apply__O__Lcom_raquo_airstream_state_Var($n($thiz.view$MultipleList$$selected__Lmodel_HasName()).name__T()));
     var $$x1 = $as_sc_IterableOnceOps($n($thiz.view$MultipleList$$x__sci_Set()).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
@@ -16392,7 +16645,6 @@ function $f_Lview_MultipleList__$init$__V($thiz) {
     var this$2 = $m_s_$less$colon$less$();
     $thiz.view$MultipleList$_setter_$map_$eq__sci_Map__V($n($$x1).toMap__s_$less$colon$less__sci_Map(this$2.s_$less$colon$less$__f_singleton))
 }
-
 function $p_Lview_MultipleList__renderSelectList__sci_List__Lcom_raquo_laminar_nodes_ReactiveElement($thiz, l) {
     var $$x9 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).form__Lcom_raquo_laminar_tags_HtmlTag());
     var $$x8 = $m_sr_ScalaRunTime$();
@@ -16445,7 +16697,6 @@ function $p_Lview_MultipleList__renderSelectList__sci_List__Lcom_raquo_laminar_n
     }));
     return $n($$x9).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x8).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($$x7).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x6).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x5, $$x4, $f_Lcom_raquo_laminar_api_Laminar__inContext__F1__Lcom_raquo_laminar_modifiers_Modifier(this$8, makeModifier)])))])))
 }
-
 function $f_Lview_MultipleList__get__sci_Map($thiz) {
     var this$7 = $n($m_s_Predef$().s_Predef$__f_Map);
     var $$x3 = $m_sr_ScalaRunTime$();
@@ -16461,13 +16712,11 @@ function $f_Lview_MultipleList__get__sci_Map($thiz) {
     var elems = $n($$x3).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(ev$1, y)]));
     return this$7.from__sc_IterableOnce__sci_Map(elems)
 }
-
 function $f_Lview_MultipleList__element__Lcom_raquo_laminar_nodes_ReactiveElement($thiz) {
     var this$1 = $n($thiz.view$MultipleList$$x__sci_Set());
     $m_sci_List$();
     return $p_Lview_MultipleList__renderSelectList__sci_List__Lcom_raquo_laminar_nodes_ReactiveElement($thiz, $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1))
 }
-
 /** @constructor */
 function $c_Lai_dragonfly_math_interval_Domain(interval, \u03b4hash) {
     this.Lai_dragonfly_math_interval_Domain__f_interval = null;
@@ -16477,7 +16726,6 @@ function $c_Lai_dragonfly_math_interval_Domain(interval, \u03b4hash) {
     var this$2 = $n(\u03b4hash);
     this$2.fromInt__I__O(1)
 }
-
 $c_Lai_dragonfly_math_interval_Domain.prototype = new $h_O();
 $c_Lai_dragonfly_math_interval_Domain.prototype.constructor = $c_Lai_dragonfly_math_interval_Domain;
 /** @constructor */
@@ -18118,37 +18366,85 @@ var $d_ju_internal_GenericArrayOps$ShortArrayOps$ = new $TypeData().initClass({
   O: 1,
   ju_internal_GenericArrayOps$ArrayOps: 1,
   ju_internal_GenericArrayOps$ArrayCreateOps: 1,
-  ju_Comparator: 1
+    ju_Comparator: 1
 });
 $c_ju_internal_GenericArrayOps$ShortArrayOps$.prototype.$classData = $d_ju_internal_GenericArrayOps$ShortArrayOps$;
 var $n_ju_internal_GenericArrayOps$ShortArrayOps$;
+
 function $m_ju_internal_GenericArrayOps$ShortArrayOps$() {
-  if ((!$n_ju_internal_GenericArrayOps$ShortArrayOps$)) {
-    $n_ju_internal_GenericArrayOps$ShortArrayOps$ = new $c_ju_internal_GenericArrayOps$ShortArrayOps$()
-  };
-  return $n_ju_internal_GenericArrayOps$ShortArrayOps$
+    if ((!$n_ju_internal_GenericArrayOps$ShortArrayOps$)) {
+        $n_ju_internal_GenericArrayOps$ShortArrayOps$ = new $c_ju_internal_GenericArrayOps$ShortArrayOps$()
+    }
+    ;
+    return $n_ju_internal_GenericArrayOps$ShortArrayOps$
 }
+
+/** @constructor */
+function $c_Lmodel_DistributionFactory$$anon$2(f$3, p$3, n$3, c$3, evidence$4$1) {
+    this.Lmodel_DistributionFactory$$anon$2__f_f$4 = null;
+    this.Lmodel_DistributionFactory$$anon$2__f_p$4 = null;
+    this.Lmodel_DistributionFactory$$anon$2__f_n$4 = null;
+    this.Lmodel_DistributionFactory$$anon$2__f_c$4 = null;
+    this.Lmodel_DistributionFactory$$anon$2__f_f$4 = f$3;
+    this.Lmodel_DistributionFactory$$anon$2__f_p$4 = p$3;
+    this.Lmodel_DistributionFactory$$anon$2__f_n$4 = n$3;
+    this.Lmodel_DistributionFactory$$anon$2__f_c$4 = c$3
+}
+
+$c_Lmodel_DistributionFactory$$anon$2.prototype = new $h_O();
+$c_Lmodel_DistributionFactory$$anon$2.prototype.constructor = $c_Lmodel_DistributionFactory$$anon$2;
+
+/** @constructor */
+function $h_Lmodel_DistributionFactory$$anon$2() {
+    /*<skip>*/
+}
+
+$h_Lmodel_DistributionFactory$$anon$2.prototype = $c_Lmodel_DistributionFactory$$anon$2.prototype;
+$c_Lmodel_DistributionFactory$$anon$2.prototype.generator__sci_Map__Lmodel_seqProperties_Generator = (function (params) {
+    return $as_Lmodel_seqProperties_Generator($n(this.Lmodel_DistributionFactory$$anon$2__f_f$4).apply__O__O(params))
+});
+$c_Lmodel_DistributionFactory$$anon$2.prototype.compare__T2__T2__Z = (function (a, b) {
+    return $n(this.Lmodel_DistributionFactory$$anon$2__f_c$4).compare__O__O__Z(a, b)
+});
+$c_Lmodel_DistributionFactory$$anon$2.prototype.name__T = (function () {
+    return this.Lmodel_DistributionFactory$$anon$2__f_n$4
+});
+$c_Lmodel_DistributionFactory$$anon$2.prototype.compare__O__O__Z = (function (a, b) {
+    return this.compare__T2__T2__Z($as_T2(a), $as_T2(b))
+});
+var $d_Lmodel_DistributionFactory$$anon$2 = new $TypeData().initClass({
+    Lmodel_DistributionFactory$$anon$2: 0
+}, false, "model.DistributionFactory$$anon$2", {
+    Lmodel_DistributionFactory$$anon$2: 1,
+    O: 1,
+    Lmodel_sortModel_Comparable: 1,
+    Lmodel_Distribution: 1,
+    Lmodel_HasName: 1
+});
+$c_Lmodel_DistributionFactory$$anon$2.prototype.$classData = $d_Lmodel_DistributionFactory$$anon$2;
+
 /** @constructor */
 function $c_Lmodel_ViewComponent$Component$ViewImpl(outer) {
-  this.Lmodel_ViewComponent$Component$ViewImpl__f_gui = null;
-  this.Lmodel_ViewComponent$Component$ViewImpl__f_JsView$lzy1 = null;
-  this.Lmodel_ViewComponent$Component$ViewImpl__f_$outer = null;
-  if ((outer === null)) {
-    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-  };
-  this.Lmodel_ViewComponent$Component$ViewImpl__f_$outer = outer;
-  this.Lmodel_ViewComponent$Component$ViewImpl__f_JsView$lzy1 = new $c_Lmodel_ViewComponent$Component$ViewImpl$JsView$(this);
+    this.Lmodel_ViewComponent$Component$ViewImpl__f_gui = null;
+    this.Lmodel_ViewComponent$Component$ViewImpl__f_JsView$lzy1 = null;
+    this.Lmodel_ViewComponent$Component$ViewImpl__f_$outer = null;
+    if ((outer === null)) {
+        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+    }
+    ;
+    this.Lmodel_ViewComponent$Component$ViewImpl__f_$outer = outer;
+    this.Lmodel_ViewComponent$Component$ViewImpl__f_JsView$lzy1 = new $c_Lmodel_ViewComponent$Component$ViewImpl$JsView$(this);
   var $$x5 = this.Lmodel_ViewComponent$Component$ViewImpl__f_JsView$lzy1;
   var $$x4 = $as_sci_Seq($n($m_s_package$().s_package$__f_Seq).apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new ($d_sr_Nothing$.getArrayOf().constr)([]))));
   var $$x3 = $n($as_Lmodel_Algorithms($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).algorithms__sci_Set();
   var $$x2 = $n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set();
   var algorithm = $as_Lmodel_Algorithm($n($n($as_Lmodel_Algorithms($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).algorithms__sci_Set()).head__O());
-  var distribution = $as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O());
-  var $$x1 = $n($as_sc_IterableOnceOps($n($n($as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O())).Lmodel_DistributionFactory$$anon$1__f_p$2).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
-    var a$1 = $as_Lmodel_Params(a);
-    return new $c_T2(a$1, 10)
-  })))));
-  var this$3 = $m_s_$less$colon$less$();
+    var distribution = $as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O());
+    var $$x1 = $n($as_sc_IterableOnceOps($n($n($as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O())).Lmodel_DistributionFactory$$anon$2__f_p$4).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
+        var a$1 = $as_Lmodel_Params(a);
+        return new $c_T2(a$1, 10)
+    })))));
+    var this$3 = $m_s_$less$colon$less$();
   var params = $n($$x1).toMap__s_$less$colon$less__sci_Map(this$3.s_$less$colon$less$__f_singleton);
   this.Lmodel_ViewComponent$Component$ViewImpl__f_gui = $n($$x5).apply__sci_Seq__sci_Set__sci_Set__Lcontroller_Properties__Lmodel_ViewComponent$Component$ViewImpl$JsView($$x4, $$x3, $$x2, new $c_Lcontroller_Properties$PropertiesImpl(algorithm, distribution, params))
 }
@@ -18211,7 +18507,7 @@ function $c_Lmodel_ViewComponent$Component$ViewImpl$JsView(outer, data, algorith
             var a$1 = $as_Lmodel_Distribution(a);
             var this$7 = $n(a$1);
             return (this$7 === x$1)
-        })))).get__O())).Lmodel_DistributionFactory$$anon$1__f_p$2).map__F1__O(new $c_sjsr_AnonFunction1(((a$2) => {
+        })))).get__O())).Lmodel_DistributionFactory$$anon$2__f_p$4).map__F1__O(new $c_sjsr_AnonFunction1(((a$2) => {
             var a$3 = $as_Lmodel_Params(a$2);
             return new $c_T2(a$3, 10)
         })))));
@@ -18398,10 +18694,11 @@ $c_Lmodel_ViewComponent$Component$ViewImpl$JsView.prototype.getAppElement__Lcom_
                 var arg1$3 = $n(rest$1).head__O();
                 var nx$1 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
                 $n(t$1).sci_$colon$colon__f_next = nx$1;
-        t$1 = nx$1;
-        rest$1 = $as_sci_List($n(rest$1).tail__O())
-      };
-      var $$x2 = h$1
+                t$1 = nx$1;
+                rest$1 = $as_sci_List($n(rest$1).tail__O())
+            }
+            ;
+            var $$x2 = h$1
         }
         ;
         var this$14 = $n($$x2);
@@ -19399,8 +19696,8 @@ function $p_Lview_GraphFunctions__getColourFromProperties__Lmodel_ElementInfo__T
 }
 function $p_Lview_GraphFunctions__showGraphic__V($thiz) {
   var list1 = $as_Lmodel_State($n($thiz.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep).apply__I__O($thiz.Lview_GraphFunctions__f_view$GraphFunctions$$index));
-  $n($thiz.Lview_GraphFunctions__f_visualizer).clear__V();
-  $p_Lview_GraphFunctions__drawList$1__sci_List__V($thiz, $n($n(list1).Lmodel_AlgorithmFactory$State$$anon$3__f_v$1).toList__sci_List())
+    $n($thiz.Lview_GraphFunctions__f_visualizer).clear__V();
+    $p_Lview_GraphFunctions__drawList$1__sci_List__V($thiz, $n($n(list1).Lmodel_AlgorithmFactory$State$$anon$4__f_v$1).toList__sci_List())
 }
 function $p_Lview_GraphFunctions__drawList$1__sci_List__V($thiz, l) {
   var l$tailLocal1 = l;
@@ -19430,12 +19727,12 @@ function $c_Lview_GraphFunctions(seq) {
   this.Lview_GraphFunctions__f_seq = seq;
   this.Lview_GraphFunctions__f_bottomBar = new $c_Lview_BottomBar(this);
   this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep = seq;
-  var this$2 = $n($n($as_Lmodel_State($n(this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep).head__O())).Lmodel_AlgorithmFactory$State$$anon$3__f_v$1);
-  var nRect = this$2.length__I();
-  var maxValue = $uI($n($as_sc_IterableOnceOps($n($n($as_Lmodel_State($n(this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep).head__O())).Lmodel_AlgorithmFactory$State$$anon$3__f_v$1).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
-    var a$1 = $as_Lmodel_ElementInfo(a);
-    return $uI($n(a$1).Lmodel_ElementInfo$ElemInfo__f_value)
-  }))))).max__s_math_Ordering__O($m_s_math_Ordering$Int$()));
+    var this$2 = $n($n($as_Lmodel_State($n(this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep).head__O())).Lmodel_AlgorithmFactory$State$$anon$4__f_v$1);
+    var nRect = this$2.length__I();
+    var maxValue = $uI($n($as_sc_IterableOnceOps($n($n($as_Lmodel_State($n(this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep).head__O())).Lmodel_AlgorithmFactory$State$$anon$4__f_v$1).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
+        var a$1 = $as_Lmodel_ElementInfo(a);
+        return $uI($n(a$1).Lmodel_ElementInfo$ElemInfo__f_value)
+    }))))).max__s_math_Ordering__O($m_s_math_Ordering$Int$()));
   this.Lview_GraphFunctions__f_visualizer = new $c_Lview_RectanglesVisualizer(nRect, maxValue);
   this.Lview_GraphFunctions__f_view$GraphFunctions$$index = 0;
   this.Lview_GraphFunctions__f_period = 20;
@@ -28406,31 +28703,33 @@ $c_Lcontroller_StepController$SeqProperties.prototype.productElement__I__O = (fu
   throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
 });
 $c_Lcontroller_StepController$SeqProperties.prototype.getElements__sci_Seq = (function() {
-  var this$2 = $m_s_Console$();
-  var this$3 = $n(this$2.out__Ljava_io_PrintStream());
-  this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("Entering getElements\n");
-  var $$x1 = $n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_distribution).generator__sci_Map__Lmodel_seqProperties_Generator($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_params);
-  var end = $uI($n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_params).apply__O__O($p_Lcontroller_StepController$SeqProperties__findParamFromName__T__Lmodel_Params(this, "Size")));
-  var this$7 = $n($n($$x1).generateAll__sci_Range__sci_Map(new $c_sci_Range$Inclusive(0, end, 1)));
-  $m_sci_List$();
-  var this$10 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$7));
-  var lt = new $c_sjsr_AnonFunction2(((a, b) => {
-    var a$1 = $as_T2(a);
-    var b$1 = $as_T2(b);
-    return ($uI($n(a$1).T2__f__1) <= $uI($n(b$1).T2__f__1))
-  }));
-  var this$11 = $n($as_sci_List($f_sc_SeqOps__sortWith__F2__O(this$10, lt)));
+    var this$2 = $m_s_Console$();
+    var this$3 = $n(this$2.out__Ljava_io_PrintStream());
+    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("Entering getElements\n");
+    var $$x1 = $n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_distribution).generator__sci_Map__Lmodel_seqProperties_Generator($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_params);
+    var end = $uI($n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_params).apply__O__O($p_Lcontroller_StepController$SeqProperties__findParamFromName__T__Lmodel_Params(this, "Size")));
+    var this$7 = $n($n($$x1).generateAll__sci_Range__sci_Map(new $c_sci_Range$Inclusive(0, end, 1)));
+    $m_sci_List$();
+    var this$11 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$7));
+    var \u03b41$ = $n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_distribution;
+    var lt = new $c_sjsr_AnonFunction2(((a, b) => {
+        var a$1 = $as_T2(a);
+        var b$1 = $as_T2(b);
+        var this$10 = $n(\u03b41$);
+        return this$10.compare__T2__T2__Z(a$1, b$1)
+    }));
+    var this$12 = $n($as_sci_List($f_sc_SeqOps__sortWith__F2__O(this$11, lt)));
     var f = ((x) => {
         var x$1 = $as_T2(x);
         return $uI($n(x$1).T2__f__2)
     });
-    if ((this$11 === $m_sci_Nil$())) {
+    if ((this$12 === $m_sci_Nil$())) {
         var seq = $m_sci_Nil$()
     } else {
-        var arg1 = this$11.head__O();
+        var arg1 = this$12.head__O();
         var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
         var t = h;
-        var rest = $as_sci_List(this$11.tail__O());
+        var rest = $as_sci_List(this$12.tail__O());
         while ((rest !== $m_sci_Nil$())) {
             var arg1$1 = $n(rest).head__O();
             var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
@@ -28443,11 +28742,11 @@ $c_Lcontroller_StepController$SeqProperties.prototype.getElements__sci_Seq = (fu
     }
     ;
     var x$2 = ("seq" + seq);
-    var this$13 = $m_s_Console$();
-    var this$14 = $n(this$13.out__Ljava_io_PrintStream());
-    this$14.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$2 + "\n"));
-    var this$15 = $n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_algorithm);
-    return this$15.execute__sci_Seq__sci_Seq(seq)
+    var this$14 = $m_s_Console$();
+    var this$15 = $n(this$14.out__Ljava_io_PrintStream());
+    this$15.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$2 + "\n"));
+    var this$16 = $n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_algorithm);
+    return this$16.execute__sci_Seq__sci_Seq(seq)
 });
 function $as_Lcontroller_StepController$SeqProperties(obj) {
   return (((obj instanceof $c_Lcontroller_StepController$SeqProperties) || (obj === null)) ? obj : $throwClassCastException(obj, "controller.StepController$SeqProperties"))
@@ -29866,7 +30165,6 @@ var $d_sjs_js_JavaScriptException = new $TypeData().initClass({
     s_Equals: 1
 });
 $c_sjs_js_JavaScriptException.prototype.$classData = $d_sjs_js_JavaScriptException;
-
 /** @constructor */
 function $c_Lview_MultipleListImpl(x, selected) {
     this.Lview_MultipleListImpl__f_view$MultipleList$$x = null;
@@ -29881,10 +30179,8 @@ function $c_Lview_MultipleListImpl(x, selected) {
     this.Lview_MultipleListImpl__f_view$MultipleList$$selected = selected;
     $f_Lview_MultipleList__$init$__V(this)
 }
-
 $c_Lview_MultipleListImpl.prototype = new $h_O();
 $c_Lview_MultipleListImpl.prototype.constructor = $c_Lview_MultipleListImpl;
-
 /** @constructor */
 function $h_Lview_MultipleListImpl() {
     /*<skip>*/
@@ -29899,6 +30195,9 @@ $c_Lview_MultipleListImpl.prototype.view$MultipleList$$selected__Lmodel_HasName 
 });
 $c_Lview_MultipleListImpl.prototype.selectedVar__Lcom_raquo_airstream_state_Var = (function () {
     return this.Lview_MultipleListImpl__f_selectedVar
+});
+$c_Lview_MultipleListImpl.prototype.map__sci_Map = (function () {
+    return this.Lview_MultipleListImpl__f_map
 });
 $c_Lview_MultipleListImpl.prototype.view$MultipleList$_setter_$selectedVar_$eq__Lcom_raquo_airstream_state_Var__V = (function (x$0) {
     this.Lview_MultipleListImpl__f_selectedVar = x$0
@@ -29966,19 +30265,15 @@ $c_Lview_MultipleListImpl.prototype.productElement__I__O = (function (n) {
     ;
     throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
 });
-
 function $as_Lview_MultipleListImpl(obj) {
     return (((obj instanceof $c_Lview_MultipleListImpl) || (obj === null)) ? obj : $throwClassCastException(obj, "view.MultipleListImpl"))
 }
-
 function $isArrayOf_Lview_MultipleListImpl(obj, depth) {
     return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lview_MultipleListImpl)))
 }
-
 function $asArrayOf_Lview_MultipleListImpl(obj, depth) {
     return (($isArrayOf_Lview_MultipleListImpl(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lview.MultipleListImpl;", depth))
 }
-
 var $d_Lview_MultipleListImpl = new $TypeData().initClass({
     Lview_MultipleListImpl: 0
 }, false, "view.MultipleListImpl", {
@@ -29992,7 +30287,6 @@ var $d_Lview_MultipleListImpl = new $TypeData().initClass({
     Ljava_io_Serializable: 1
 });
 $c_Lview_MultipleListImpl.prototype.$classData = $d_Lview_MultipleListImpl;
-
 /** @constructor */
 function $c_Lview_MultipleListWithF(x, selected, f) {
     this.Lview_MultipleListWithF__f_view$MultipleList$$x = null;
@@ -30009,10 +30303,8 @@ function $c_Lview_MultipleListWithF(x, selected, f) {
     this.Lview_MultipleListWithF__f_view$MultipleList$$selected = selected;
     $f_Lview_MultipleList__$init$__V(this)
 }
-
 $c_Lview_MultipleListWithF.prototype = new $h_O();
 $c_Lview_MultipleListWithF.prototype.constructor = $c_Lview_MultipleListWithF;
-
 /** @constructor */
 function $h_Lview_MultipleListWithF() {
     /*<skip>*/
@@ -30027,6 +30319,9 @@ $c_Lview_MultipleListWithF.prototype.view$MultipleList$$selected__Lmodel_HasName
 });
 $c_Lview_MultipleListWithF.prototype.selectedVar__Lcom_raquo_airstream_state_Var = (function () {
     return this.Lview_MultipleListWithF__f_selectedVar
+});
+$c_Lview_MultipleListWithF.prototype.map__sci_Map = (function () {
+    return this.Lview_MultipleListWithF__f_map
 });
 $c_Lview_MultipleListWithF.prototype.view$MultipleList$_setter_$selectedVar_$eq__Lcom_raquo_airstream_state_Var__V = (function (x$0) {
     this.Lview_MultipleListWithF__f_selectedVar = x$0
@@ -30168,19 +30463,15 @@ $c_Lview_MultipleListWithF.prototype.element__Lcom_raquo_laminar_nodes_ReactiveE
     }));
     return $n($$x12).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x11).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($$x10).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x9).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x8, $$x7, $$x3, new $c_Lcom_raquo_laminar_modifiers_EventListener(this$13, onNext$1)])))])))
 });
-
 function $as_Lview_MultipleListWithF(obj) {
     return (((obj instanceof $c_Lview_MultipleListWithF) || (obj === null)) ? obj : $throwClassCastException(obj, "view.MultipleListWithF"))
 }
-
 function $isArrayOf_Lview_MultipleListWithF(obj, depth) {
     return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lview_MultipleListWithF)))
 }
-
 function $asArrayOf_Lview_MultipleListWithF(obj, depth) {
     return (($isArrayOf_Lview_MultipleListWithF(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lview.MultipleListWithF;", depth))
 }
-
 var $d_Lview_MultipleListWithF = new $TypeData().initClass({
     Lview_MultipleListWithF: 0
 }, false, "view.MultipleListWithF", {
@@ -30194,7 +30485,6 @@ var $d_Lview_MultipleListWithF = new $TypeData().initClass({
     Ljava_io_Serializable: 1
 });
 $c_Lview_MultipleListWithF.prototype.$classData = $d_Lview_MultipleListWithF;
-
 function $f_Lcom_raquo_airstream_core_WritableSignal__setCurrentValue__s_util_Try__Z__V($thiz, newValue, isInitial) {
     if ((!isInitial)) {
         $thiz._lastUpdateId_$eq__I__V($m_Lcom_raquo_airstream_core_Signal$().nextUpdateId__I())
@@ -30202,7 +30492,6 @@ function $f_Lcom_raquo_airstream_core_WritableSignal__setCurrentValue__s_util_Tr
     ;
     $thiz.maybeLastSeenCurrentValue_$eq__O__V(newValue)
 }
-
 function $f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try($thiz) {
     var x = $thiz.maybeLastSeenCurrentValue__O();
     if ((x === (void 0))) {
@@ -30334,26 +30623,153 @@ var $d_jl_JSConsoleBasedPrintStream = new $TypeData().initClass({
   jl_JSConsoleBasedPrintStream: 0
 }, false, "java.lang.JSConsoleBasedPrintStream", {
   jl_JSConsoleBasedPrintStream: 1,
-  Ljava_io_PrintStream: 1,
-  Ljava_io_FilterOutputStream: 1,
-  Ljava_io_OutputStream: 1,
-  O: 1,
-  Ljava_io_Closeable: 1,
-  jl_AutoCloseable: 1,
-  Ljava_io_Flushable: 1,
-  jl_Appendable: 1
+    Ljava_io_PrintStream: 1,
+    Ljava_io_FilterOutputStream: 1,
+    Ljava_io_OutputStream: 1,
+    O: 1,
+    Ljava_io_Closeable: 1,
+    jl_AutoCloseable: 1,
+    Ljava_io_Flushable: 1,
+    jl_Appendable: 1
 });
 $c_jl_JSConsoleBasedPrintStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream;
+
+/** @constructor */
+function $c_Lmodel_seqProperties_Distributions$GaussianDistribution(mean, std, mi, ma, evidence$1) {
+    this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$Generator$$evidence$1 = null;
+    this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$HasRange$$a = 0;
+    this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$HasRange$$b = 0;
+    this.Lmodel_seqProperties_GaussianGen__f_d = null;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$min = 0.0;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$max = 0.0;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean = 0;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std = 0;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi = 0;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma = 0;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean = mean;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std = std;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi = mi;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma = ma;
+    $ct_Lmodel_seqProperties_GaussianGen__D__D__Lmodel_seqProperties_Generable__(this, mean, std, evidence$1);
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$min = mi;
+    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$max = ma
+}
+
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype = new $h_Lmodel_seqProperties_GaussianGen();
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.constructor = $c_Lmodel_seqProperties_Distributions$GaussianDistribution;
+
+/** @constructor */
+function $h_Lmodel_seqProperties_Distributions$GaussianDistribution() {
+    /*<skip>*/
+}
+
+$h_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype = $c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype;
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.f__I__D = (function (x) {
+    return $f_Lmodel_seqProperties_Shifted__f__I__D(this, x)
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productIterator__sc_Iterator = (function () {
+    return new $c_s_Product$$anon$1(this)
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.hashCode__I = (function () {
+    var acc = (-889275714);
+    var hash = acc;
+    var data = $f_T__hashCode__I("GaussianDistribution");
+    acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+    var hash$1 = acc;
+    var data$1 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+    var hash$2 = acc;
+    var data$2 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$2);
+    var hash$3 = acc;
+    var data$3 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$3);
+    var hash$4 = acc;
+    var data$4 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$4, data$4);
+    var hash$5 = acc;
+    return $m_sr_Statics$().finalizeHash__I__I__I(hash$5, 4)
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.equals__O__Z = (function (x$0) {
+    if ((this === x$0)) {
+        return true
+    } else if ((x$0 instanceof $c_Lmodel_seqProperties_Distributions$GaussianDistribution)) {
+        var x$0$2 = $as_Lmodel_seqProperties_Distributions$GaussianDistribution(x$0);
+        return (((((this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_std)) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi)) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma)) && ($n(x$0$2), true))
+    } else {
+        return false
+    }
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.toString__T = (function () {
+    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productArity__I = (function () {
+    return 4
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productPrefix__T = (function () {
+    return "GaussianDistribution"
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productElement__I__O = (function (n) {
+    switch (n) {
+        case 0: {
+            return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean;
+            break
+        }
+        case 1: {
+            return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std;
+            break
+        }
+        case 2: {
+            return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi;
+            break
+        }
+        case 3: {
+            return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma;
+            break
+        }
+        default: {
+            throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+        }
+    }
+});
+
+function $as_Lmodel_seqProperties_Distributions$GaussianDistribution(obj) {
+    return (((obj instanceof $c_Lmodel_seqProperties_Distributions$GaussianDistribution) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Distributions$GaussianDistribution"))
+}
+
+function $isArrayOf_Lmodel_seqProperties_Distributions$GaussianDistribution(obj, depth) {
+    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Distributions$GaussianDistribution)))
+}
+
+function $asArrayOf_Lmodel_seqProperties_Distributions$GaussianDistribution(obj, depth) {
+    return (($isArrayOf_Lmodel_seqProperties_Distributions$GaussianDistribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Distributions$GaussianDistribution;", depth))
+}
+
+var $d_Lmodel_seqProperties_Distributions$GaussianDistribution = new $TypeData().initClass({
+    Lmodel_seqProperties_Distributions$GaussianDistribution: 0
+}, false, "model.seqProperties.Distributions$GaussianDistribution", {
+    Lmodel_seqProperties_Distributions$GaussianDistribution: 1,
+    Lmodel_seqProperties_GaussianGen: 1,
+    O: 1,
+    Lmodel_seqProperties_Generator: 1,
+    Lmodel_seqProperties_HasRange: 1,
+    Lmodel_seqProperties_Shifted: 1,
+    s_Equals: 1,
+    s_Product: 1,
+    Ljava_io_Serializable: 1
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.$classData = $d_Lmodel_seqProperties_Distributions$GaussianDistribution;
+
 /** @constructor */
 function $c_Lmodel_sortModel_Loopable$LoopableS(data, steps, selections, b) {
-  this.Lmodel_sortModel_Loopable$LoopableS__f_data = null;
-  this.Lmodel_sortModel_Loopable$LoopableS__f_steps = null;
-  this.Lmodel_sortModel_Loopable$LoopableS__f_selections = null;
-  this.Lmodel_sortModel_Loopable$LoopableS__f_b = false;
-  this.Lmodel_sortModel_Loopable$LoopableS__f_data = data;
-  this.Lmodel_sortModel_Loopable$LoopableS__f_steps = steps;
-  this.Lmodel_sortModel_Loopable$LoopableS__f_selections = selections;
-  this.Lmodel_sortModel_Loopable$LoopableS__f_b = b
+    this.Lmodel_sortModel_Loopable$LoopableS__f_data = null;
+    this.Lmodel_sortModel_Loopable$LoopableS__f_steps = null;
+    this.Lmodel_sortModel_Loopable$LoopableS__f_selections = null;
+    this.Lmodel_sortModel_Loopable$LoopableS__f_b = false;
+    this.Lmodel_sortModel_Loopable$LoopableS__f_data = data;
+    this.Lmodel_sortModel_Loopable$LoopableS__f_steps = steps;
+    this.Lmodel_sortModel_Loopable$LoopableS__f_selections = selections;
+    this.Lmodel_sortModel_Loopable$LoopableS__f_b = b
 }
 $c_Lmodel_sortModel_Loopable$LoopableS.prototype = new $h_O();
 $c_Lmodel_sortModel_Loopable$LoopableS.prototype.constructor = $c_Lmodel_sortModel_Loopable$LoopableS;
@@ -30800,7 +31216,6 @@ $c_s_reflect_ManifestFactory$UnitManifest.prototype.constructor = $c_s_reflect_M
 function $h_s_reflect_ManifestFactory$UnitManifest() {
     /*<skip>*/
 }
-
 $h_s_reflect_ManifestFactory$UnitManifest.prototype = $c_s_reflect_ManifestFactory$UnitManifest.prototype;
 $c_s_reflect_ManifestFactory$UnitManifest.prototype.runtimeClass__jl_Class = (function () {
     return $d_V.getClassOf()
@@ -30808,7 +31223,6 @@ $c_s_reflect_ManifestFactory$UnitManifest.prototype.runtimeClass__jl_Class = (fu
 $c_s_reflect_ManifestFactory$UnitManifest.prototype.newArray__I__O = (function (len) {
     return new ($d_jl_Void.getArrayOf().constr)(len)
 });
-
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$lzyINIT1$1__sr_LazyRef__Lmodel_seqProperties_Generable($thiz, given_Generable_Int$lzy1$1) {
     if ((given_Generable_Int$lzy1$1 === null)) {
         throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
@@ -30816,11 +31230,9 @@ function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int
     ;
     return $as_Lmodel_seqProperties_Generable(($n(given_Generable_Int$lzy1$1).sr_LazyRef__f__initialized ? $n(given_Generable_Int$lzy1$1).sr_LazyRef__f__value : $n(given_Generable_Int$lzy1$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$1($thiz))))
 }
-
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable($thiz, given_Generable_Int$lzy1$2) {
     return $as_Lmodel_seqProperties_Generable(($n(given_Generable_Int$lzy1$2).sr_LazyRef__f__initialized ? $n(given_Generable_Int$lzy1$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$lzyINIT1$1__sr_LazyRef__Lmodel_seqProperties_Generable($thiz, given_Generable_Int$lzy1$2)))
 }
-
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT1$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$1, given_Conversion_Params_Int$lzy1$1) {
     if ((given_Conversion_Params_Int$lzy1$1 === null)) {
         throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
@@ -30828,28 +31240,56 @@ function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Pa
     ;
     return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy1$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy1$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy1$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$2(p$1, $thiz))))
 }
-
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$3, given_Conversion_Params_Int$lzy1$2) {
     return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy1$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy1$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT1$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$3, given_Conversion_Params_Int$lzy1$2)))
 }
 
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT2$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$4, given_Conversion_Params_Int$lzy2$1) {
-  if ((given_Conversion_Params_Int$lzy2$1 === null)) {
-    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-  };
-  return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy2$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy2$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy2$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$3(p$4, $thiz))))
+    if ((given_Conversion_Params_Int$lzy2$1 === null)) {
+        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+    }
+    ;
+    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy2$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy2$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy2$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$3(p$4, $thiz))))
 }
+
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$2__sci_Map__sr_LazyRef__s_Conversion($thiz, p$6, given_Conversion_Params_Int$lzy2$2) {
-  return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy2$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy2$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT2$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$6, given_Conversion_Params_Int$lzy2$2)))
+    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy2$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy2$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT2$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$6, given_Conversion_Params_Int$lzy2$2)))
 }
+
+function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT3$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$7, given_Conversion_Params_Int$lzy3$1) {
+    if ((given_Conversion_Params_Int$lzy3$1 === null)) {
+        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+    }
+    ;
+    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy3$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy3$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy3$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$4(p$7, $thiz))))
+}
+
+function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$3__sci_Map__sr_LazyRef__s_Conversion($thiz, p$9, given_Conversion_Params_Int$lzy3$2) {
+    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy3$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy3$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT3$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$9, given_Conversion_Params_Int$lzy3$2)))
+}
+
+function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT4$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$10, given_Conversion_Params_Int$lzy4$1) {
+    if ((given_Conversion_Params_Int$lzy4$1 === null)) {
+        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+    }
+    ;
+    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy4$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy4$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy4$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$5(p$10, $thiz))))
+}
+
+function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$4__sci_Map__sr_LazyRef__s_Conversion($thiz, p$12, given_Conversion_Params_Int$lzy4$2) {
+    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy4$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy4$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT4$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$12, given_Conversion_Params_Int$lzy4$2)))
+}
+
 /** @constructor */
 function $c_Lmodel_ModelComponent$Model$Component$ModelImpl(outer) {
-  this.Lmodel_ModelComponent$Model$Component$ModelImpl__f_$outer = null;
-  if ((outer === null)) {
-    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-  };
-  this.Lmodel_ModelComponent$Model$Component$ModelImpl__f_$outer = outer
+    this.Lmodel_ModelComponent$Model$Component$ModelImpl__f_$outer = null;
+    if ((outer === null)) {
+        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+    }
+    ;
+    this.Lmodel_ModelComponent$Model$Component$ModelImpl__f_$outer = outer
 }
+
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype = new $h_O();
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.constructor = $c_Lmodel_ModelComponent$Model$Component$ModelImpl;
 /** @constructor */
@@ -30890,37 +31330,37 @@ $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.productElement__I__
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.algorithms__sci_Set = (function() {
   var this$16 = $n($m_s_Predef$().s_Predef$__f_Set);
   var $$x5 = $m_sr_ScalaRunTime$();
-  var f = new $c_sjsr_AnonFunction1(((seq) => {
-    var seq$1 = $as_sci_Seq(seq);
-    return $m_Lmodel_SortingAlgorithms$().bubbleSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$1, $m_Lmodel_sortModel_SortOperations$comp$())
-  }));
-  var $$x4 = new $c_Lmodel_AlgorithmFactory$$anon$2(f, "Bubble sort");
-  var f$1 = new $c_sjsr_AnonFunction1(((seq$2) => {
-    var seq$3 = $as_sci_Seq(seq$2);
-    return $m_Lmodel_SortingAlgorithms$().mergeSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$3, $m_Lmodel_sortModel_SortOperations$comp$())
-  }));
-  var $$x3 = new $c_Lmodel_AlgorithmFactory$$anon$2(f$1, "Merge sort");
-  var f$2 = new $c_sjsr_AnonFunction1(((seq$3$1) => {
-    var seq$4 = $as_sci_Seq(seq$3$1);
-    return $m_Lmodel_SortingAlgorithms$().insertionSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$4, $m_Lmodel_sortModel_SortOperations$comp$())
-  }));
-  var $$x2 = new $c_Lmodel_AlgorithmFactory$$anon$2(f$2, "Insertion sort");
-  var f$3 = new $c_sjsr_AnonFunction1(((seq$4$1) => {
-    var seq$5 = $as_sci_Seq(seq$4$1);
-    return $m_Lmodel_SortingAlgorithms$().quickSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$5, $m_Lmodel_sortModel_SortOperations$comp$())
-  }));
-  var $$x1 = new $c_Lmodel_AlgorithmFactory$$anon$2(f$3, "Quicksort");
-  var f$4 = new $c_sjsr_AnonFunction1(((seq$5$1) => {
-    var seq$6 = $as_sci_Seq(seq$5$1);
-    return $m_Lmodel_SortingAlgorithms$().heapSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$6, $m_Lmodel_sortModel_SortOperations$comp$())
-  }));
-  var elems = $n($$x5).genericWrapArray__O__sci_ArraySeq(new ($d_Lmodel_Algorithm.getArrayOf().constr)([$$x4, $$x3, $$x2, $$x1, new $c_Lmodel_AlgorithmFactory$$anon$2(f$4, "Heap sort")]));
+    var f = new $c_sjsr_AnonFunction1(((seq) => {
+        var seq$1 = $as_sci_Seq(seq);
+        return $m_Lmodel_SortingAlgorithms$().bubbleSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$1, $m_Lmodel_sortModel_SortOperations$comp$())
+    }));
+    var $$x4 = new $c_Lmodel_AlgorithmFactory$$anon$3(f, "Bubble sort");
+    var f$1 = new $c_sjsr_AnonFunction1(((seq$2) => {
+        var seq$3 = $as_sci_Seq(seq$2);
+        return $m_Lmodel_SortingAlgorithms$().mergeSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$3, $m_Lmodel_sortModel_SortOperations$comp$())
+    }));
+    var $$x3 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$1, "Merge sort");
+    var f$2 = new $c_sjsr_AnonFunction1(((seq$3$1) => {
+        var seq$4 = $as_sci_Seq(seq$3$1);
+        return $m_Lmodel_SortingAlgorithms$().insertionSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$4, $m_Lmodel_sortModel_SortOperations$comp$())
+    }));
+    var $$x2 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$2, "Insertion sort");
+    var f$3 = new $c_sjsr_AnonFunction1(((seq$4$1) => {
+        var seq$5 = $as_sci_Seq(seq$4$1);
+        return $m_Lmodel_SortingAlgorithms$().quickSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$5, $m_Lmodel_sortModel_SortOperations$comp$())
+    }));
+    var $$x1 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$3, "Quicksort");
+    var f$4 = new $c_sjsr_AnonFunction1(((seq$5$1) => {
+        var seq$6 = $as_sci_Seq(seq$5$1);
+        return $m_Lmodel_SortingAlgorithms$().heapSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$6, $m_Lmodel_sortModel_SortOperations$comp$())
+    }));
+    var elems = $n($$x5).genericWrapArray__O__sci_ArraySeq(new ($d_Lmodel_Algorithm.getArrayOf().constr)([$$x4, $$x3, $$x2, $$x1, new $c_Lmodel_AlgorithmFactory$$anon$3(f$4, "Heap sort")]));
   return this$16.from__sc_IterableOnce__sci_Set(elems)
 });
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.distributions__sci_Set = (function() {
     var given_Generable_Int$lzy1 = new $c_sr_LazyRef();
-    var this$8 = $n($m_s_Predef$().s_Predef$__f_Set);
-    var $$x2 = $m_sr_ScalaRunTime$();
+    var this$14 = $n($m_s_Predef$().s_Predef$__f_Set);
+    var $$x4 = $m_sr_ScalaRunTime$();
     var given_Generable_Int$lzy1$2$1 = given_Generable_Int$lzy1;
     var f = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$2) => ((p) => {
         var p$1 = $as_sci_Map(p);
@@ -30933,24 +31373,55 @@ $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.distributions__sci_
     var this$3 = $n($m_s_Predef$().s_Predef$__f_Set);
     var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__Size__Lmodel_Params(), $s_Lmodel_Params$__Std__Lmodel_Params()]));
     var p$2 = this$3.from__sc_IterableOnce__sci_Set(elems);
-    var evidence$3 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
-    var $$x1 = new $c_Lmodel_DistributionFactory$$anon$1(f, p$2, "Gaussian", evidence$3);
+    var c = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_ascendingXOrder;
+    var evidence$4 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
+    var $$x3 = new $c_Lmodel_DistributionFactory$$anon$2(f, p$2, "Gaussian", c, evidence$4);
     var given_Generable_Int$lzy1$3$1 = given_Generable_Int$lzy1;
     var f$1 = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$3) => ((p$2$1) => {
         var p$3 = $as_sci_Map(p$2$1);
         var given_Conversion_Params_Int$lzy2 = new $c_sr_LazyRef();
         var ma = ((1 + $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$2__sci_Map__sr_LazyRef__s_Conversion(this, p$3, given_Conversion_Params_Int$lzy2)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params()))) | 0);
         var percentage = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$2__sci_Map__sr_LazyRef__s_Conversion(this, p$3, given_Conversion_Params_Int$lzy2)).apply__O__O($s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params()));
-        var size = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$2__sci_Map__sr_LazyRef__s_Conversion(this, p$3, given_Conversion_Params_Int$lzy2)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params()));
         var evidence$2 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$3);
-        return new $c_Lmodel_seqProperties_Distributions$UniformDistribution(1, ma, percentage, size, evidence$2)
+        return new $c_Lmodel_seqProperties_Distributions$UniformDistribution(1, ma, percentage, evidence$2)
     }))(given_Generable_Int$lzy1$3$1));
     var this$6 = $n($m_s_Predef$().s_Predef$__f_Set);
     var elems$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params(), $s_Lmodel_Params$__Size__Lmodel_Params()]));
     var p$4 = this$6.from__sc_IterableOnce__sci_Set(elems$1);
-    var evidence$3$1 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
-    var elems$2 = $n($$x2).genericWrapArray__O__sci_ArraySeq(new ($d_Lmodel_Distribution.getArrayOf().constr)([$$x1, new $c_Lmodel_DistributionFactory$$anon$1(f$1, p$4, "Uniform", evidence$3$1)]));
-    return this$8.from__sc_IterableOnce__sci_Set(elems$2)
+    var c$1 = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_randomOrder;
+    var evidence$4$1 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
+    var $$x2 = new $c_Lmodel_DistributionFactory$$anon$2(f$1, p$4, "Uniform", c$1, evidence$4$1);
+    var given_Generable_Int$lzy1$4$1 = given_Generable_Int$lzy1;
+    var f$2 = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$4) => ((p$3$1) => {
+        var p$5 = $as_sci_Map(p$3$1);
+        var given_Conversion_Params_Int$lzy3 = new $c_sr_LazyRef();
+        var ma$1 = ((1 + $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$3__sci_Map__sr_LazyRef__s_Conversion(this, p$5, given_Conversion_Params_Int$lzy3)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params()))) | 0);
+        var percentage$1 = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$3__sci_Map__sr_LazyRef__s_Conversion(this, p$5, given_Conversion_Params_Int$lzy3)).apply__O__O($s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params()));
+        var evidence$2$1 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$4);
+        return new $c_Lmodel_seqProperties_Distributions$UniformDistribution(1, ma$1, percentage$1, evidence$2$1)
+    }))(given_Generable_Int$lzy1$4$1));
+    var this$9 = $n($m_s_Predef$().s_Predef$__f_Set);
+    var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params(), $s_Lmodel_Params$__Size__Lmodel_Params()]));
+    var p$6 = this$9.from__sc_IterableOnce__sci_Set(elems$2);
+    var c$2 = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_ascendingYOrder;
+    var evidence$4$2 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
+    var $$x1 = new $c_Lmodel_DistributionFactory$$anon$2(f$2, p$6, "Ascending order", c$2, evidence$4$2);
+    var given_Generable_Int$lzy1$5$1 = given_Generable_Int$lzy1;
+    var f$3 = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$5) => ((p$4$1) => {
+        var p$7 = $as_sci_Map(p$4$1);
+        var given_Conversion_Params_Int$lzy4 = new $c_sr_LazyRef();
+        var ma$2 = ((1 + $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$4__sci_Map__sr_LazyRef__s_Conversion(this, p$7, given_Conversion_Params_Int$lzy4)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params()))) | 0);
+        var percentage$2 = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$4__sci_Map__sr_LazyRef__s_Conversion(this, p$7, given_Conversion_Params_Int$lzy4)).apply__O__O($s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params()));
+        var evidence$2$2 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$5);
+        return new $c_Lmodel_seqProperties_Distributions$UniformDistribution(1, ma$2, percentage$2, evidence$2$2)
+    }))(given_Generable_Int$lzy1$5$1));
+    var this$12 = $n($m_s_Predef$().s_Predef$__f_Set);
+    var elems$3 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params(), $s_Lmodel_Params$__Size__Lmodel_Params()]));
+    var p$8 = this$12.from__sc_IterableOnce__sci_Set(elems$3);
+    var c$3 = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_descendingYOrder;
+    var evidence$4$3 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
+    var elems$4 = $n($$x4).genericWrapArray__O__sci_ArraySeq(new ($d_Lmodel_Distribution.getArrayOf().constr)([$$x3, $$x2, $$x1, new $c_Lmodel_DistributionFactory$$anon$2(f$3, p$8, "Descending order", c$3, evidence$4$3)]));
+    return this$14.from__sc_IterableOnce__sci_Set(elems$4)
 });
 function $as_Lmodel_ModelComponent$Model$Component$ModelImpl(obj) {
   return (((obj instanceof $c_Lmodel_ModelComponent$Model$Component$ModelImpl) || (obj === null)) ? obj : $throwClassCastException(obj, "model.ModelComponent$Model$Component$ModelImpl"))
@@ -30976,94 +31447,88 @@ var $d_Lmodel_ModelComponent$Model$Component$ModelImpl = new $TypeData().initCla
   Ljava_io_Serializable: 1
 });
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.$classData = $d_Lmodel_ModelComponent$Model$Component$ModelImpl;
+
 /** @constructor */
-function $c_Lmodel_seqProperties_Distributions$GaussianDistribution(mean, std, mi, ma, evidence$1) {
-  this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$Generator$$evidence$1 = null;
-  this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$HasRange$$a = 0;
-  this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$HasRange$$b = 0;
-  this.Lmodel_seqProperties_GaussianGen__f_d = null;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$min = 0.0;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$max = 0.0;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean = 0;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std = 0;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi = 0;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma = 0;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean = mean;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std = std;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi = mi;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma = ma;
-  $ct_Lmodel_seqProperties_GaussianGen__D__D__Lmodel_seqProperties_Generable__(this, mean, std, evidence$1);
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$min = mi;
-  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$max = ma
+function $c_Lmodel_seqProperties_Distributions$UniformDistribution(mi, ma, percentage, evidence$2) {
+    this.Lmodel_seqProperties_BasicGenerator__f_model$seqProperties$Generator$$evidence$1 = null;
+    this.Lmodel_seqProperties_BasicGenerator__f_ff = null;
+    this.Lmodel_seqProperties_UniformGen__f_model$seqProperties$HasRange$$a = 0;
+    this.Lmodel_seqProperties_UniformGen__f_model$seqProperties$HasRange$$b = 0;
+    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_model$seqProperties$Modifier$Duplicated$$$percent = 0.0;
+    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi = 0;
+    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma = 0;
+    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage = 0;
+    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi = mi;
+    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma = ma;
+    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage = percentage;
+    $ct_Lmodel_seqProperties_UniformGen__I__I__Lmodel_seqProperties_Generable__(this, mi, ma, evidence$2);
+    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_model$seqProperties$Modifier$Duplicated$$$percent = (percentage / 100.0);
+    $f_Lmodel_seqProperties_Modifier$Duplicated__$init$__V(this)
 }
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype = new $h_Lmodel_seqProperties_GaussianGen();
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.constructor = $c_Lmodel_seqProperties_Distributions$GaussianDistribution;
+
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype = new $h_Lmodel_seqProperties_UniformGen();
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.constructor = $c_Lmodel_seqProperties_Distributions$UniformDistribution;
+
 /** @constructor */
-function $h_Lmodel_seqProperties_Distributions$GaussianDistribution() {
-  /*<skip>*/
+function $h_Lmodel_seqProperties_Distributions$UniformDistribution() {
+    /*<skip>*/
 }
-$h_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype = $c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype;
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.f__I__D = (function(x) {
-  return $f_Lmodel_seqProperties_Shifted__f__I__D(this, x)
+
+$h_Lmodel_seqProperties_Distributions$UniformDistribution.prototype = $c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype;
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.generateAll__sci_Range__sci_Map = (function (range) {
+    return $f_Lmodel_seqProperties_Modifier$Duplicated__generateAll__sci_Range__sci_Map(this, range)
 });
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_s_Product$$anon$1(this)
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productIterator__sc_Iterator = (function () {
+    return new $c_s_Product$$anon$1(this)
 });
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.hashCode__I = (function() {
-  var acc = (-889275714);
-  var hash = acc;
-  var data = $f_T__hashCode__I("GaussianDistribution");
-  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
-  var hash$1 = acc;
-  var data$1 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean;
-  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
-  var hash$2 = acc;
-  var data$2 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std;
-  acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$2);
-  var hash$3 = acc;
-  var data$3 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi;
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.hashCode__I = (function () {
+    var acc = (-889275714);
+    var hash = acc;
+    var data = $f_T__hashCode__I("UniformDistribution");
+    acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+    var hash$1 = acc;
+    var data$1 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+    var hash$2 = acc;
+    var data$2 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma;
+    acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$2);
+    var hash$3 = acc;
+    var data$3 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage;
   acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$3);
   var hash$4 = acc;
-  var data$4 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma;
-  acc = $m_sr_Statics$().mix__I__I__I(hash$4, data$4);
-  var hash$5 = acc;
-  return $m_sr_Statics$().finalizeHash__I__I__I(hash$5, 4)
+    return $m_sr_Statics$().finalizeHash__I__I__I(hash$4, 3)
 });
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lmodel_seqProperties_Distributions$GaussianDistribution)) {
-    var x$0$2 = $as_Lmodel_seqProperties_Distributions$GaussianDistribution(x$0);
-    return (((((this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_std)) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi)) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma)) && ($n(x$0$2), true))
-  } else {
-    return false
-  }
-});
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productArity__I = (function() {
-  return 4
-});
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productPrefix__T = (function() {
-  return "GaussianDistribution"
-});
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productElement__I__O = (function(n) {
-  switch (n) {
-    case 0: {
-      return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean;
-      break
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.equals__O__Z = (function (x$0) {
+    if ((this === x$0)) {
+        return true
+    } else if ((x$0 instanceof $c_Lmodel_seqProperties_Distributions$UniformDistribution)) {
+        var x$0$2 = $as_Lmodel_seqProperties_Distributions$UniformDistribution(x$0);
+        return ((((this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_mi) && (this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_ma)) && (this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage)) && ($n(x$0$2), true))
+    } else {
+        return false
     }
-    case 1: {
-      return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std;
-      break
-    }
-    case 2: {
-      return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi;
-      break
-    }
-    case 3: {
-      return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma;
+});
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.toString__T = (function () {
+    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productArity__I = (function () {
+    return 3
+});
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productPrefix__T = (function () {
+    return "UniformDistribution"
+});
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productElement__I__O = (function (n) {
+    switch (n) {
+        case 0: {
+            return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi;
+            break
+        }
+        case 1: {
+            return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma;
+            break
+        }
+        case 2: {
+            return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage;
       break
     }
     default: {
@@ -31071,36 +31536,34 @@ $c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productElem
     }
   }
 });
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.compare__T2__T2__Z = (function(a, b) {
-  return ((($uI($n(a).T2__f__1) - $uI($n(b).T2__f__1)) | 0) > 0)
-});
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.compare__O__O__Z = (function(a, b) {
-  return this.compare__T2__T2__Z($as_T2(a), $as_T2(b))
-});
-function $as_Lmodel_seqProperties_Distributions$GaussianDistribution(obj) {
-  return (((obj instanceof $c_Lmodel_seqProperties_Distributions$GaussianDistribution) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Distributions$GaussianDistribution"))
+
+function $as_Lmodel_seqProperties_Distributions$UniformDistribution(obj) {
+    return (((obj instanceof $c_Lmodel_seqProperties_Distributions$UniformDistribution) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Distributions$UniformDistribution"))
 }
-function $isArrayOf_Lmodel_seqProperties_Distributions$GaussianDistribution(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Distributions$GaussianDistribution)))
+
+function $isArrayOf_Lmodel_seqProperties_Distributions$UniformDistribution(obj, depth) {
+    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Distributions$UniformDistribution)))
 }
-function $asArrayOf_Lmodel_seqProperties_Distributions$GaussianDistribution(obj, depth) {
-  return (($isArrayOf_Lmodel_seqProperties_Distributions$GaussianDistribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Distributions$GaussianDistribution;", depth))
+
+function $asArrayOf_Lmodel_seqProperties_Distributions$UniformDistribution(obj, depth) {
+    return (($isArrayOf_Lmodel_seqProperties_Distributions$UniformDistribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Distributions$UniformDistribution;", depth))
 }
-var $d_Lmodel_seqProperties_Distributions$GaussianDistribution = new $TypeData().initClass({
-  Lmodel_seqProperties_Distributions$GaussianDistribution: 0
-}, false, "model.seqProperties.Distributions$GaussianDistribution", {
-  Lmodel_seqProperties_Distributions$GaussianDistribution: 1,
-  Lmodel_seqProperties_GaussianGen: 1,
-  O: 1,
-  Lmodel_seqProperties_Generator: 1,
-  Lmodel_seqProperties_HasRange: 1,
-  Lmodel_seqProperties_Shifted: 1,
-  Lmodel_sortModel_Comparable: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1
+
+var $d_Lmodel_seqProperties_Distributions$UniformDistribution = new $TypeData().initClass({
+    Lmodel_seqProperties_Distributions$UniformDistribution: 0
+}, false, "model.seqProperties.Distributions$UniformDistribution", {
+    Lmodel_seqProperties_Distributions$UniformDistribution: 1,
+    Lmodel_seqProperties_UniformGen: 1,
+    Lmodel_seqProperties_BasicGenerator: 1,
+    O: 1,
+    Lmodel_seqProperties_Generator: 1,
+    Lmodel_seqProperties_HasRange: 1,
+    Lmodel_seqProperties_Modifier$Duplicated: 1,
+    s_Equals: 1,
+    s_Product: 1,
+    Ljava_io_Serializable: 1
 });
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.$classData = $d_Lmodel_seqProperties_Distributions$GaussianDistribution;
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.$classData = $d_Lmodel_seqProperties_Distributions$UniformDistribution;
 /** @constructor */
 function $c_sc_AbstractView() {
   /*<skip>*/
@@ -31882,132 +32345,6 @@ var $d_Lmodel_Params$$anon$1 = new $TypeData().initClass({
   s_deriving_Mirror$Singleton: 1
 });
 $c_Lmodel_Params$$anon$1.prototype.$classData = $d_Lmodel_Params$$anon$1;
-
-/** @constructor */
-function $c_Lmodel_seqProperties_Distributions$UniformDistribution(mi, ma, percentage, size, evidence$2) {
-    this.Lmodel_seqProperties_BasicGenerator__f_model$seqProperties$Generator$$evidence$1 = null;
-    this.Lmodel_seqProperties_BasicGenerator__f_ff = null;
-    this.Lmodel_seqProperties_UniformGen__f_model$seqProperties$HasRange$$a = 0;
-    this.Lmodel_seqProperties_UniformGen__f_model$seqProperties$HasRange$$b = 0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_model$seqProperties$Modifier$Duplicated$$$percent = 0.0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi = 0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma = 0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage = 0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_size = 0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi = mi;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma = ma;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage = percentage;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_size = size;
-    $ct_Lmodel_seqProperties_UniformGen__I__I__Lmodel_seqProperties_Generable__(this, mi, ma, evidence$2);
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_model$seqProperties$Modifier$Duplicated$$$percent = (percentage / 100.0);
-    $f_Lmodel_seqProperties_Modifier$Duplicated__$init$__V(this)
-}
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype = new $h_Lmodel_seqProperties_UniformGen();
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.constructor = $c_Lmodel_seqProperties_Distributions$UniformDistribution;
-/** @constructor */
-function $h_Lmodel_seqProperties_Distributions$UniformDistribution() {
-  /*<skip>*/
-}
-$h_Lmodel_seqProperties_Distributions$UniformDistribution.prototype = $c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype;
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.generateAll__sci_Range__sci_Map = (function(range) {
-  return $f_Lmodel_seqProperties_Modifier$Duplicated__generateAll__sci_Range__sci_Map(this, range)
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_s_Product$$anon$1(this)
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.hashCode__I = (function() {
-    var acc = (-889275714);
-    var hash = acc;
-    var data = $f_T__hashCode__I("UniformDistribution");
-    acc = $m_sr_Statics$().mix__I__I__I(hash, data);
-    var hash$1 = acc;
-    var data$1 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
-    var hash$2 = acc;
-    var data$2 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$2);
-    var hash$3 = acc;
-    var data$3 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$3);
-    var hash$4 = acc;
-    var data$4 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_size;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$4, data$4);
-    var hash$5 = acc;
-    return $m_sr_Statics$().finalizeHash__I__I__I(hash$5, 4)
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.equals__O__Z = (function(x$0) {
-  if ((this === x$0)) {
-    return true
-  } else if ((x$0 instanceof $c_Lmodel_seqProperties_Distributions$UniformDistribution)) {
-    var x$0$2 = $as_Lmodel_seqProperties_Distributions$UniformDistribution(x$0);
-      return (((((this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_mi) && (this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_ma)) && (this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage)) && (this.Lmodel_seqProperties_Distributions$UniformDistribution__f_size === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_size)) && ($n(x$0$2), true))
-  } else {
-    return false
-  }
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.toString__T = (function() {
-  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productArity__I = (function() {
-    return 4
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productPrefix__T = (function() {
-  return "UniformDistribution"
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productElement__I__O = (function(n) {
-    switch (n) {
-        case 0: {
-            return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi;
-            break
-        }
-        case 1: {
-            return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma;
-            break
-        }
-        case 2: {
-            return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage;
-            break
-        }
-        case 3: {
-            return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_size;
-            break
-        }
-        default: {
-            throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-        }
-    }
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.compare__O__O__Z = (function(a, b) {
-  $as_T2(a);
-  $as_T2(b);
-  var this$1 = $m_s_util_Random$();
-  return $n(this$1.s_util_Random__f_self).nextBoolean__Z()
-});
-function $as_Lmodel_seqProperties_Distributions$UniformDistribution(obj) {
-  return (((obj instanceof $c_Lmodel_seqProperties_Distributions$UniformDistribution) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Distributions$UniformDistribution"))
-}
-function $isArrayOf_Lmodel_seqProperties_Distributions$UniformDistribution(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Distributions$UniformDistribution)))
-}
-function $asArrayOf_Lmodel_seqProperties_Distributions$UniformDistribution(obj, depth) {
-  return (($isArrayOf_Lmodel_seqProperties_Distributions$UniformDistribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Distributions$UniformDistribution;", depth))
-}
-var $d_Lmodel_seqProperties_Distributions$UniformDistribution = new $TypeData().initClass({
-  Lmodel_seqProperties_Distributions$UniformDistribution: 0
-}, false, "model.seqProperties.Distributions$UniformDistribution", {
-  Lmodel_seqProperties_Distributions$UniformDistribution: 1,
-  Lmodel_seqProperties_UniformGen: 1,
-  Lmodel_seqProperties_BasicGenerator: 1,
-  O: 1,
-  Lmodel_seqProperties_Generator: 1,
-  Lmodel_seqProperties_HasRange: 1,
-  Lmodel_seqProperties_Modifier$Duplicated: 1,
-  Lmodel_sortModel_Comparable: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.$classData = $d_Lmodel_seqProperties_Distributions$UniformDistribution;
 function $f_sc_Seq__equals__O__Z($thiz, o) {
   if (($thiz === o)) {
     return true
@@ -34919,7 +35256,6 @@ $c_sci_Set$Set1.prototype.tail__O = (function () {
 $c_sci_Set$Set1.prototype.incl__O__sci_SetOps = (function (elem) {
     return this.incl__O__sci_Set(elem)
 });
-
 function $as_sci_Set$Set1(obj) {
     return (((obj instanceof $c_sci_Set$Set1) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Set$Set1"))
 }
@@ -34989,19 +35325,19 @@ $c_sci_Set$Set2.prototype.iterator__sc_Iterator = (function() {
   return new $c_sci_Set$Set2$$anon$1(this)
 });
 $c_sci_Set$Set2.prototype.scala$collection$immutable$Set$Set2$$getElem__I__O = (function(i) {
-  switch (i) {
-    case 0: {
-      return this.sci_Set$Set2__f_elem1;
-      break
+    switch (i) {
+        case 0: {
+            return this.sci_Set$Set2__f_elem1;
+            break
+        }
+        case 1: {
+            return this.sci_Set$Set2__f_elem2;
+            break
+        }
+        default: {
+            throw new $c_s_MatchError(i)
+        }
     }
-    case 1: {
-      return this.sci_Set$Set2__f_elem2;
-        break
-    }
-      default: {
-          throw new $c_s_MatchError(i)
-      }
-  }
 });
 $c_sci_Set$Set2.prototype.forall__F1__Z = (function (p) {
     return ($uZ($n(p).apply__O__O(this.sci_Set$Set2__f_elem1)) && $uZ($n(p).apply__O__O(this.sci_Set$Set2__f_elem2)))
@@ -35095,16 +35431,16 @@ $c_sci_Set$Set3.prototype.scala$collection$immutable$Set$Set3$$getElem__I__O = (
   switch (i) {
     case 0: {
       return this.sci_Set$Set3__f_elem1;
-      break
-    }
-    case 1: {
-      return this.sci_Set$Set3__f_elem2;
-      break
-    }
-    case 2: {
-      return this.sci_Set$Set3__f_elem3;
         break
     }
+      case 1: {
+          return this.sci_Set$Set3__f_elem2;
+          break
+      }
+      case 2: {
+          return this.sci_Set$Set3__f_elem3;
+          break
+      }
       default: {
           throw new $c_s_MatchError(i)
       }
@@ -35222,16 +35558,16 @@ $c_sci_Set$Set4.prototype.scala$collection$immutable$Set$Set4$$getElem__I__O = (
     }
     case 1: {
       return this.sci_Set$Set4__f_elem2;
-      break
-    }
-    case 2: {
-      return this.sci_Set$Set4__f_elem3;
-      break
-    }
-    case 3: {
-      return this.sci_Set$Set4__f_elem4;
         break
     }
+      case 2: {
+          return this.sci_Set$Set4__f_elem3;
+          break
+      }
+      case 3: {
+          return this.sci_Set$Set4__f_elem4;
+          break
+      }
       default: {
           throw new $c_s_MatchError(i)
       }
