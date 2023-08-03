@@ -42,7 +42,6 @@ object ViewComponent:
         println("selectedp " + selectedP.params)
         private val dis = MultipleListWithFFactory(distributions, p.distribution,
           x =>
-            println("sono nel dis")
             val parameterMap = distributions.find(a => a equals x).get.params.map(a => a -> 10).toMap
             selectedP = Properties(algo.get.head._1,x, parameterMap)
             c.controller.update(selectedP)
@@ -59,7 +58,6 @@ object ViewComponent:
           dom.document.getElementById("app").addEventListener("onChange", _ =>  updated(data))
 
         def getAppElement: Element =
-          println("getappelem")
           div(
             div(
               ul(className := "topBar",
@@ -70,21 +68,15 @@ object ViewComponent:
                   button(
                     className := "fa fa-check",
                     onClick --> (_ =>
-                      println("click")
                       val paramMap = params.map(a => a.get).foldLeft(Map.empty[Params, ParamsType])((param, map) => param ++ map)
-                      println(f"new map after click $paramMap")
                       selectedP = Properties(algo.get.head._1, dis.get.head._1, paramMap)
-                      println("selected p before controller update" + selectedP)
                       c.controller.update(selectedP)
-                      println("selected p after controller update" + selectedP.params)
-
                     )
                   )
                 )
               )
             ),
             onMountCallback (_ =>
-              println("Callback")
               if data.nonEmpty then GraphFunctions(data)),
             div(canvasTag(
               className := "canvas")),
@@ -95,7 +87,6 @@ object ViewComponent:
           div(params.map(a => li(a.element)))
 
         def updated(data: c.model.ResultType): JsView =
-          println("selected p in update" + selectedP)
           copy(data = data, p = selectedP)
 
   trait Interface extends Provider with Component:

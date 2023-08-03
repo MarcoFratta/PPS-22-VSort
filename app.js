@@ -1103,11 +1103,11 @@ $c_LMain$package$.prototype.Main__V = (function() {
   var this$10 = $n($n($p_LMain$package$__MVC$1__sr_LazyRef__LMain$package$MVC$2$(this, MVC$lzy1)).LMain$package$MVC$2$__f_controller);
   var algorithm = $as_Lmodel_Algorithm($n($n($as_Lmodel_Algorithms($n($p_LMain$package$__MVC$1__sr_LazyRef__LMain$package$MVC$2$(this, MVC$lzy1)).LMain$package$MVC$2$__f_model)).algorithms__sci_Set()).head__O());
   var distribution = $as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($p_LMain$package$__MVC$1__sr_LazyRef__LMain$package$MVC$2$(this, MVC$lzy1)).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O());
-    var $$x1 = $n($as_sc_IterableOnceOps($n($n($as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($p_LMain$package$__MVC$1__sr_LazyRef__LMain$package$MVC$2$(this, MVC$lzy1)).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O())).Lmodel_DistributionFactory$$anon$2__f_p$4).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
-        var a$1 = $as_Lmodel_Params(a);
-        return new $c_T2(a$1, 10)
-    })))));
-    var this$7 = $m_s_$less$colon$less$();
+  var $$x1 = $n($as_sc_IterableOnceOps($n($n($as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($p_LMain$package$__MVC$1__sr_LazyRef__LMain$package$MVC$2$(this, MVC$lzy1)).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O())).Lmodel_DistributionFactory$$anon$2__f_p$4).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
+    var a$1 = $as_Lmodel_Params(a);
+    return new $c_T2(a$1, 10)
+  })))));
+  var this$7 = $m_s_$less$colon$less$();
   var params = $n($$x1).toMap__s_$less$colon$less__sci_Map(this$7.s_$less$colon$less$__f_singleton);
   var p = new $c_Lcontroller_Properties$PropertiesImpl(algorithm, distribution, params);
   this$10.update__Lcontroller_Properties__V(p)
@@ -1420,51 +1420,6 @@ function $m_Lcom_raquo_airstream_core_ObserverList$() {
     $n_Lcom_raquo_airstream_core_ObserverList$ = new $c_Lcom_raquo_airstream_core_ObserverList$()
   };
   return $n_Lcom_raquo_airstream_core_ObserverList$
-}
-/** @constructor */
-function $c_Lcom_raquo_airstream_core_Protected() {
-  /*<skip>*/
-}
-$c_Lcom_raquo_airstream_core_Protected.prototype = new $h_O();
-$c_Lcom_raquo_airstream_core_Protected.prototype.constructor = $c_Lcom_raquo_airstream_core_Protected;
-/** @constructor */
-function $h_Lcom_raquo_airstream_core_Protected() {
-  /*<skip>*/
-}
-$h_Lcom_raquo_airstream_core_Protected.prototype = $c_Lcom_raquo_airstream_core_Protected.prototype;
-var $d_Lcom_raquo_airstream_core_Protected = new $TypeData().initClass({
-  Lcom_raquo_airstream_core_Protected: 0
-}, false, "com.raquo.airstream.core.Protected", {
-  Lcom_raquo_airstream_core_Protected: 1,
-  O: 1
-});
-$c_Lcom_raquo_airstream_core_Protected.prototype.$classData = $d_Lcom_raquo_airstream_core_Protected;
-/** @constructor */
-function $c_Lcom_raquo_airstream_core_Protected$() {
-  this.Lcom_raquo_airstream_core_Protected$__f_protectedAccessEvidence = null;
-  $n_Lcom_raquo_airstream_core_Protected$ = this;
-  this.Lcom_raquo_airstream_core_Protected$__f_protectedAccessEvidence = new $c_Lcom_raquo_airstream_core_Protected()
-}
-$c_Lcom_raquo_airstream_core_Protected$.prototype = new $h_O();
-$c_Lcom_raquo_airstream_core_Protected$.prototype.constructor = $c_Lcom_raquo_airstream_core_Protected$;
-/** @constructor */
-function $h_Lcom_raquo_airstream_core_Protected$() {
-  /*<skip>*/
-}
-$h_Lcom_raquo_airstream_core_Protected$.prototype = $c_Lcom_raquo_airstream_core_Protected$.prototype;
-var $d_Lcom_raquo_airstream_core_Protected$ = new $TypeData().initClass({
-  Lcom_raquo_airstream_core_Protected$: 0
-}, false, "com.raquo.airstream.core.Protected$", {
-  Lcom_raquo_airstream_core_Protected$: 1,
-  O: 1
-});
-$c_Lcom_raquo_airstream_core_Protected$.prototype.$classData = $d_Lcom_raquo_airstream_core_Protected$;
-var $n_Lcom_raquo_airstream_core_Protected$;
-function $m_Lcom_raquo_airstream_core_Protected$() {
-  if ((!$n_Lcom_raquo_airstream_core_Protected$)) {
-    $n_Lcom_raquo_airstream_core_Protected$ = new $c_Lcom_raquo_airstream_core_Protected$()
-  };
-  return $n_Lcom_raquo_airstream_core_Protected$
 }
 /** @constructor */
 function $c_Lcom_raquo_airstream_core_Signal$() {
@@ -2941,62 +2896,6 @@ function $m_Lcom_raquo_laminar_modifiers_ChildInserter$() {
   };
   return $n_Lcom_raquo_laminar_modifiers_ChildInserter$
 }
-/** @constructor */
-function $c_Lcom_raquo_laminar_modifiers_ChildTextInserter$() {
-  /*<skip>*/
-}
-$c_Lcom_raquo_laminar_modifiers_ChildTextInserter$.prototype = new $h_O();
-$c_Lcom_raquo_laminar_modifiers_ChildTextInserter$.prototype.constructor = $c_Lcom_raquo_laminar_modifiers_ChildTextInserter$;
-/** @constructor */
-function $h_Lcom_raquo_laminar_modifiers_ChildTextInserter$() {
-  /*<skip>*/
-}
-$h_Lcom_raquo_laminar_modifiers_ChildTextInserter$.prototype = $c_Lcom_raquo_laminar_modifiers_ChildTextInserter$.prototype;
-$c_Lcom_raquo_laminar_modifiers_ChildTextInserter$.prototype.apply__Lcom_raquo_airstream_core_Observable__Lcom_raquo_laminar_modifiers_RenderableText__Lcom_raquo_laminar_modifiers_Inserter = (function(textSource, renderable) {
-  return new $c_Lcom_raquo_laminar_modifiers_Inserter($m_s_None$(), false, new $c_sjsr_AnonFunction2(((ctx, owner) => {
-    var ctx$1 = $as_Lcom_raquo_laminar_lifecycle_InsertContext(ctx);
-    var owner$1 = $as_Lcom_raquo_airstream_ownership_Owner(owner);
-    var maybeTextNode = new $c_sr_ObjectRef((void 0));
-    var this$9 = $n(textSource);
-    var onNext = new $c_sjsr_AnonFunction1(((newValue) => {
-      var x = maybeTextNode.sr_ObjectRef__f_elem;
-      if ((x === (void 0))) {
-        var newTextNode = new $c_Lcom_raquo_laminar_nodes_TextNode($n(renderable).asString__O__T(newValue));
-        $m_Lcom_raquo_laminar_nodes_ParentNode$().replaceChild__Lcom_raquo_laminar_nodes_ParentNode__Lcom_raquo_laminar_nodes_ChildNode__Lcom_raquo_laminar_nodes_ChildNode__Z($n(ctx$1).Lcom_raquo_laminar_lifecycle_InsertContext__f_parentNode, $n(ctx$1).Lcom_raquo_laminar_lifecycle_InsertContext__f_sentinelNode, newTextNode);
-        var ev$2 = newTextNode;
-        maybeTextNode.sr_ObjectRef__f_elem = ev$2;
-        ev$2 = null;
-        $n(ctx$1).Lcom_raquo_laminar_lifecycle_InsertContext__f_sentinelNode = newTextNode;
-        if ($n(ctx$1).Lcom_raquo_laminar_lifecycle_InsertContext__f_strictMode) {
-          $n(ctx$1).Lcom_raquo_laminar_lifecycle_InsertContext__f_strictMode = false;
-          $n(ctx$1).removeOldChildNodesFromDOM__Lcom_raquo_laminar_nodes_ChildNode__V(newTextNode);
-          $n(ctx$1).Lcom_raquo_laminar_lifecycle_InsertContext__f_extraNodesMap.clear();
-          $n(ctx$1);
-          $m_s_package$();
-          $n(ctx$1).Lcom_raquo_laminar_lifecycle_InsertContext__f_extraNodeCount = 0
-        }
-      } else {
-        var textNode = $as_Lcom_raquo_laminar_nodes_TextNode(x);
-        $n(textNode).Lcom_raquo_laminar_nodes_TextNode__f_ref.textContent = $n(renderable).asString__O__T(newValue)
-      }
-    }));
-    return $f_Lcom_raquo_airstream_core_BaseObservable__foreach__F1__Lcom_raquo_airstream_ownership_Owner__Lcom_raquo_airstream_ownership_Subscription(this$9, onNext, owner$1)
-  })))
-});
-var $d_Lcom_raquo_laminar_modifiers_ChildTextInserter$ = new $TypeData().initClass({
-  Lcom_raquo_laminar_modifiers_ChildTextInserter$: 0
-}, false, "com.raquo.laminar.modifiers.ChildTextInserter$", {
-  Lcom_raquo_laminar_modifiers_ChildTextInserter$: 1,
-  O: 1
-});
-$c_Lcom_raquo_laminar_modifiers_ChildTextInserter$.prototype.$classData = $d_Lcom_raquo_laminar_modifiers_ChildTextInserter$;
-var $n_Lcom_raquo_laminar_modifiers_ChildTextInserter$;
-function $m_Lcom_raquo_laminar_modifiers_ChildTextInserter$() {
-  if ((!$n_Lcom_raquo_laminar_modifiers_ChildTextInserter$)) {
-    $n_Lcom_raquo_laminar_modifiers_ChildTextInserter$ = new $c_Lcom_raquo_laminar_modifiers_ChildTextInserter$()
-  };
-  return $n_Lcom_raquo_laminar_modifiers_ChildTextInserter$
-}
 function $is_Lcom_raquo_laminar_modifiers_Modifier(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcom_raquo_laminar_modifiers_Modifier)))
 }
@@ -3401,9 +3300,7 @@ function $m_Lcom_raquo_laminar_nodes_ReactiveElement$() {
 }
 /** @constructor */
 function $c_Lcom_raquo_laminar_receivers_ChildReceiver$() {
-  this.Lcom_raquo_laminar_receivers_ChildReceiver$__f_text = null;
-  $n_Lcom_raquo_laminar_receivers_ChildReceiver$ = this;
-  this.Lcom_raquo_laminar_receivers_ChildReceiver$__f_text = $m_Lcom_raquo_laminar_receivers_ChildTextReceiver$()
+  /*<skip>*/
 }
 $c_Lcom_raquo_laminar_receivers_ChildReceiver$.prototype = new $h_O();
 $c_Lcom_raquo_laminar_receivers_ChildReceiver$.prototype.constructor = $c_Lcom_raquo_laminar_receivers_ChildReceiver$;
@@ -3425,31 +3322,6 @@ function $m_Lcom_raquo_laminar_receivers_ChildReceiver$() {
     $n_Lcom_raquo_laminar_receivers_ChildReceiver$ = new $c_Lcom_raquo_laminar_receivers_ChildReceiver$()
   };
   return $n_Lcom_raquo_laminar_receivers_ChildReceiver$
-}
-/** @constructor */
-function $c_Lcom_raquo_laminar_receivers_ChildTextReceiver$() {
-  /*<skip>*/
-}
-$c_Lcom_raquo_laminar_receivers_ChildTextReceiver$.prototype = new $h_O();
-$c_Lcom_raquo_laminar_receivers_ChildTextReceiver$.prototype.constructor = $c_Lcom_raquo_laminar_receivers_ChildTextReceiver$;
-/** @constructor */
-function $h_Lcom_raquo_laminar_receivers_ChildTextReceiver$() {
-  /*<skip>*/
-}
-$h_Lcom_raquo_laminar_receivers_ChildTextReceiver$.prototype = $c_Lcom_raquo_laminar_receivers_ChildTextReceiver$.prototype;
-var $d_Lcom_raquo_laminar_receivers_ChildTextReceiver$ = new $TypeData().initClass({
-  Lcom_raquo_laminar_receivers_ChildTextReceiver$: 0
-}, false, "com.raquo.laminar.receivers.ChildTextReceiver$", {
-  Lcom_raquo_laminar_receivers_ChildTextReceiver$: 1,
-  O: 1
-});
-$c_Lcom_raquo_laminar_receivers_ChildTextReceiver$.prototype.$classData = $d_Lcom_raquo_laminar_receivers_ChildTextReceiver$;
-var $n_Lcom_raquo_laminar_receivers_ChildTextReceiver$;
-function $m_Lcom_raquo_laminar_receivers_ChildTextReceiver$() {
-  if ((!$n_Lcom_raquo_laminar_receivers_ChildTextReceiver$)) {
-    $n_Lcom_raquo_laminar_receivers_ChildTextReceiver$ = new $c_Lcom_raquo_laminar_receivers_ChildTextReceiver$()
-  };
-  return $n_Lcom_raquo_laminar_receivers_ChildTextReceiver$
 }
 /** @constructor */
 function $c_Lcom_raquo_laminar_receivers_ChildrenReceiver$() {
@@ -5374,71 +5246,58 @@ function $m_Lmodel_ElementInfo$() {
 function $is_Lmodel_HasName(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_HasName)))
 }
-
 function $as_Lmodel_HasName(obj) {
-    return (($is_Lmodel_HasName(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.HasName"))
+  return (($is_Lmodel_HasName(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.HasName"))
 }
-
 function $isArrayOf_Lmodel_HasName(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_HasName)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_HasName)))
 }
-
 function $asArrayOf_Lmodel_HasName(obj, depth) {
-    return (($isArrayOf_Lmodel_HasName(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.HasName;", depth))
+  return (($isArrayOf_Lmodel_HasName(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.HasName;", depth))
 }
-
 /** @constructor */
 function $c_Lmodel_IntOrderings$() {
-    this.Lmodel_IntOrderings$__f_ascendingXOrder = null;
-    this.Lmodel_IntOrderings$__f_randomOrder = null;
-    this.Lmodel_IntOrderings$__f_ascendingYOrder = null;
-    this.Lmodel_IntOrderings$__f_descendingYOrder = null;
-    $n_Lmodel_IntOrderings$ = this;
-    this.Lmodel_IntOrderings$__f_ascendingXOrder = new $c_Lmodel_IntOrderings$$anon$1();
-    new $c_Lmodel_IntOrderings$$anon$2();
-    this.Lmodel_IntOrderings$__f_randomOrder = new $c_Lmodel_IntOrderings$$anon$3();
-    this.Lmodel_IntOrderings$__f_ascendingYOrder = new $c_Lmodel_IntOrderings$$anon$4();
-    this.Lmodel_IntOrderings$__f_descendingYOrder = new $c_Lmodel_IntOrderings$$anon$5()
+  this.Lmodel_IntOrderings$__f_ascendingXOrder = null;
+  this.Lmodel_IntOrderings$__f_randomOrder = null;
+  this.Lmodel_IntOrderings$__f_ascendingYOrder = null;
+  this.Lmodel_IntOrderings$__f_descendingYOrder = null;
+  $n_Lmodel_IntOrderings$ = this;
+  this.Lmodel_IntOrderings$__f_ascendingXOrder = new $c_Lmodel_IntOrderings$$anon$1();
+  new $c_Lmodel_IntOrderings$$anon$2();
+  this.Lmodel_IntOrderings$__f_randomOrder = new $c_Lmodel_IntOrderings$$anon$3();
+  this.Lmodel_IntOrderings$__f_ascendingYOrder = new $c_Lmodel_IntOrderings$$anon$4();
+  this.Lmodel_IntOrderings$__f_descendingYOrder = new $c_Lmodel_IntOrderings$$anon$5()
 }
-
 $c_Lmodel_IntOrderings$.prototype = new $h_O();
 $c_Lmodel_IntOrderings$.prototype.constructor = $c_Lmodel_IntOrderings$;
-
 /** @constructor */
 function $h_Lmodel_IntOrderings$() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_IntOrderings$.prototype = $c_Lmodel_IntOrderings$.prototype;
 var $d_Lmodel_IntOrderings$ = new $TypeData().initClass({
-    Lmodel_IntOrderings$: 0
+  Lmodel_IntOrderings$: 0
 }, false, "model.IntOrderings$", {
-    Lmodel_IntOrderings$: 1,
-    O: 1
+  Lmodel_IntOrderings$: 1,
+  O: 1
 });
 $c_Lmodel_IntOrderings$.prototype.$classData = $d_Lmodel_IntOrderings$;
 var $n_Lmodel_IntOrderings$;
-
 function $m_Lmodel_IntOrderings$() {
-    if ((!$n_Lmodel_IntOrderings$)) {
-        $n_Lmodel_IntOrderings$ = new $c_Lmodel_IntOrderings$()
-    }
-    ;
-    return $n_Lmodel_IntOrderings$
+  if ((!$n_Lmodel_IntOrderings$)) {
+    $n_Lmodel_IntOrderings$ = new $c_Lmodel_IntOrderings$()
+  };
+  return $n_Lmodel_IntOrderings$
 }
-
 function $is_Lmodel_ModelComponent$Model$Provider(obj) {
-    return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_ModelComponent$Model$Provider)))
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_ModelComponent$Model$Provider)))
 }
-
 function $as_Lmodel_ModelComponent$Model$Provider(obj) {
-    return (($is_Lmodel_ModelComponent$Model$Provider(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.ModelComponent$Model$Provider"))
+  return (($is_Lmodel_ModelComponent$Model$Provider(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.ModelComponent$Model$Provider"))
 }
-
 function $isArrayOf_Lmodel_ModelComponent$Model$Provider(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_ModelComponent$Model$Provider)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_ModelComponent$Model$Provider)))
 }
-
 function $asArrayOf_Lmodel_ModelComponent$Model$Provider(obj, depth) {
   return (($isArrayOf_Lmodel_ModelComponent$Model$Provider(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.ModelComponent$Model$Provider;", depth))
 }
@@ -6301,47 +6160,47 @@ function $is_Lmodel_ViewComponent$Provider(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_ViewComponent$Provider)))
 }
 function $as_Lmodel_ViewComponent$Provider(obj) {
-    return (($is_Lmodel_ViewComponent$Provider(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.ViewComponent$Provider"))
+  return (($is_Lmodel_ViewComponent$Provider(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.ViewComponent$Provider"))
 }
 function $isArrayOf_Lmodel_ViewComponent$Provider(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_ViewComponent$Provider)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_ViewComponent$Provider)))
 }
 function $asArrayOf_Lmodel_ViewComponent$Provider(obj, depth) {
-    return (($isArrayOf_Lmodel_ViewComponent$Provider(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.ViewComponent$Provider;", depth))
+  return (($isArrayOf_Lmodel_ViewComponent$Provider(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.ViewComponent$Provider;", depth))
 }
 function $is_Lmodel_seqProperties_Generable(obj) {
-    return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_seqProperties_Generable)))
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_seqProperties_Generable)))
 }
 function $as_Lmodel_seqProperties_Generable(obj) {
-    return (($is_Lmodel_seqProperties_Generable(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Generable"))
+  return (($is_Lmodel_seqProperties_Generable(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Generable"))
 }
 function $isArrayOf_Lmodel_seqProperties_Generable(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Generable)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Generable)))
 }
 function $asArrayOf_Lmodel_seqProperties_Generable(obj, depth) {
-    return (($isArrayOf_Lmodel_seqProperties_Generable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Generable;", depth))
+  return (($isArrayOf_Lmodel_seqProperties_Generable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Generable;", depth))
 }
 function $f_Lmodel_seqProperties_Generator__generateAll__sci_Range__sci_Map($thiz, range) {
-    var $$x1 = $n($m_s_Predef$().s_Predef$__f_Map);
-    var this$2 = $n($m_s_package$().s_package$__f_Seq);
-    var start = $n(range).sci_Range__f_start;
-    var this$1 = $n(range);
-    var len = this$1.length__I();
-    var f = new $c_sjsr_AnonFunction1(((x) => {
-        var x$1 = $uI(x);
-        return ((x$1 + $n(range).sci_Range__f_step) | 0)
-    }));
-    return $n($$x1).from__sc_IterableOnce__sci_Map($as_sc_IterableOnce($n($as_sc_IterableOps($f_sc_IterableFactory__iterate__O__I__F1__O(this$2, start, len, f))).map__F1__O(new $c_sjsr_AnonFunction1(((x$2) => {
-        var x$3 = $uI(x$2);
-        var _2 = $f_Lmodel_seqProperties_Generator__generate__I__O($thiz, x$3);
-        return new $c_T2(x$3, _2)
-    })))))
+  var $$x1 = $n($m_s_Predef$().s_Predef$__f_Map);
+  var this$2 = $n($m_s_package$().s_package$__f_Seq);
+  var start = $n(range).sci_Range__f_start;
+  var this$1 = $n(range);
+  var len = this$1.length__I();
+  var f = new $c_sjsr_AnonFunction1(((x) => {
+    var x$1 = $uI(x);
+    return ((x$1 + $n(range).sci_Range__f_step) | 0)
+  }));
+  return $n($$x1).from__sc_IterableOnce__sci_Map($as_sc_IterableOnce($n($as_sc_IterableOps($f_sc_IterableFactory__iterate__O__I__F1__O(this$2, start, len, f))).map__F1__O(new $c_sjsr_AnonFunction1(((x$2) => {
+    var x$3 = $uI(x$2);
+    var _2 = $f_Lmodel_seqProperties_Generator__generate__I__O($thiz, x$3);
+    return new $c_T2(x$3, _2)
+  })))))
 }
 function $f_Lmodel_seqProperties_Generator__generate__I__O($thiz, x) {
   var a = $thiz.f__I__D(x);
   var evidence$6 = $thiz.model$seqProperties$Generator$$evidence$1__Lmodel_seqProperties_Generable();
   $n(evidence$6);
-    return ((1 + $doubleToInt(a)) | 0)
+  return ((1 + $doubleToInt(a)) | 0)
 }
 function $is_Lmodel_seqProperties_Generator(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_seqProperties_Generator)))
@@ -10225,8 +10084,8 @@ function $h_Lview_SingleValueFactory$() {
   /*<skip>*/
 }
 $h_Lview_SingleValueFactory$.prototype = $c_Lview_SingleValueFactory$.prototype;
-$c_Lview_SingleValueFactory$.prototype.apply__O__O__s_Conversion__Lview_SingleValue = (function(x, starterValue, c) {
-  return new $c_Lview_SingleValue(x, $n(c).apply__O__O(starterValue))
+$c_Lview_SingleValueFactory$.prototype.apply__O__O__O__O__s_Conversion__Lview_SingleValue = (function(x, starterValue, min, max, c) {
+  return new $c_Lview_SingleValue(x, $n(c).apply__O__O(starterValue), $n(c).apply__O__O(min), $n(c).apply__O__O(max))
 });
 var $d_Lview_SingleValueFactory$ = new $TypeData().initClass({
   Lview_SingleValueFactory$: 0
@@ -11190,11 +11049,11 @@ function $ct_jl_Throwable__T__jl_Throwable__Z__Z__($thiz, s, e, enableSuppressio
 }
 class $c_jl_Throwable extends Error {
   constructor() {
-      super();
-      this.jl_Throwable__f_s = null;
-      this.jl_Throwable__f_writableStackTrace = false;
-      this.jl_Throwable__f_jsErrorForStackTrace = null;
-      this.jl_Throwable__f_stackTrace = null
+    super();
+    this.jl_Throwable__f_s = null;
+    this.jl_Throwable__f_writableStackTrace = false;
+    this.jl_Throwable__f_jsErrorForStackTrace = null;
+    this.jl_Throwable__f_stackTrace = null
   };
   initCause__jl_Throwable__jl_Throwable(cause) {
     return this
@@ -11438,45 +11297,37 @@ var $d_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$ = new $TypeData().ini
 });
 $c_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$.prototype.$classData = $d_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$;
 var $n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$;
-
 function $m_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$() {
-    if ((!$n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$)) {
-        $n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$ = new $c_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$()
-    }
-    ;
-    return $n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$
+  if ((!$n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$)) {
+    $n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$ = new $c_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$()
+  };
+  return $n_ju_internal_GenericArrayOps$ReusableAnyRefArrayOps$
 }
-
 /** @constructor */
 function $c_Lmodel_AlgorithmFactory$State$$anon$4(v$2) {
-    this.Lmodel_AlgorithmFactory$State$$anon$4__f_v$1 = null;
-    this.Lmodel_AlgorithmFactory$State$$anon$4__f_v$1 = v$2
+  this.Lmodel_AlgorithmFactory$State$$anon$4__f_v$1 = null;
+  this.Lmodel_AlgorithmFactory$State$$anon$4__f_v$1 = v$2
 }
-
 $c_Lmodel_AlgorithmFactory$State$$anon$4.prototype = new $h_O();
 $c_Lmodel_AlgorithmFactory$State$$anon$4.prototype.constructor = $c_Lmodel_AlgorithmFactory$State$$anon$4;
-
 /** @constructor */
 function $h_Lmodel_AlgorithmFactory$State$$anon$4() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_AlgorithmFactory$State$$anon$4.prototype = $c_Lmodel_AlgorithmFactory$State$$anon$4.prototype;
 var $d_Lmodel_AlgorithmFactory$State$$anon$4 = new $TypeData().initClass({
-    Lmodel_AlgorithmFactory$State$$anon$4: 0
+  Lmodel_AlgorithmFactory$State$$anon$4: 0
 }, false, "model.AlgorithmFactory$State$$anon$4", {
-    Lmodel_AlgorithmFactory$State$$anon$4: 1,
-    O: 1,
-    Lmodel_State: 1
+  Lmodel_AlgorithmFactory$State$$anon$4: 1,
+  O: 1,
+  Lmodel_State: 1
 });
 $c_Lmodel_AlgorithmFactory$State$$anon$4.prototype.$classData = $d_Lmodel_AlgorithmFactory$State$$anon$4;
-
 function $is_Lmodel_Algorithms(obj) {
-    return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Algorithms)))
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Algorithms)))
 }
-
 function $as_Lmodel_Algorithms(obj) {
-    return (($is_Lmodel_Algorithms(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Algorithms"))
+  return (($is_Lmodel_Algorithms(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Algorithms"))
 }
 function $isArrayOf_Lmodel_Algorithms(obj, depth) {
   return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Algorithms)))
@@ -11509,220 +11360,184 @@ function $h_Lmodel_ControllerComponent$Component$ControllerImpl() {
 $h_Lmodel_ControllerComponent$Component$ControllerImpl.prototype = $c_Lmodel_ControllerComponent$Component$ControllerImpl.prototype;
 $c_Lmodel_ControllerComponent$Component$ControllerImpl.prototype.update__Lcontroller_Properties__V = (function(p) {
   var r = new $c_Lcontroller_StepController$SeqProperties(p).getElements__sci_Seq();
-  var x = $m_sc_StringOps$().format$extension__T__sci_Seq__T("res  %s", $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([r])));
-  var this$3 = $m_s_Console$();
-  var this$4 = $n(this$3.out__Ljava_io_PrintStream());
-  this$4.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
   if ($p_Lmodel_ControllerComponent$Component$ControllerImpl__checkField__Lcontroller_Properties__Z(this, p)) {
-    var this$5 = $n($as_Lmodel_ViewComponent$View($n($as_Lmodel_ViewComponent$Provider(this.Lmodel_ControllerComponent$Component$ControllerImpl__f_$outer)).LMain$package$MVC$2$__f_view));
-    this$5.update__sci_Seq__V(r)
+    var this$2 = $n($as_Lmodel_ViewComponent$View($n($as_Lmodel_ViewComponent$Provider(this.Lmodel_ControllerComponent$Component$ControllerImpl__f_$outer)).LMain$package$MVC$2$__f_view));
+    this$2.update__sci_Seq__V(r)
   }
 });
 var $d_Lmodel_ControllerComponent$Component$ControllerImpl = new $TypeData().initClass({
-    Lmodel_ControllerComponent$Component$ControllerImpl: 0
+  Lmodel_ControllerComponent$Component$ControllerImpl: 0
 }, false, "model.ControllerComponent$Component$ControllerImpl", {
-    Lmodel_ControllerComponent$Component$ControllerImpl: 1,
-    O: 1,
-    Lmodel_ControllerComponent$Controller: 1
+  Lmodel_ControllerComponent$Component$ControllerImpl: 1,
+  O: 1,
+  Lmodel_ControllerComponent$Controller: 1
 });
 $c_Lmodel_ControllerComponent$Component$ControllerImpl.prototype.$classData = $d_Lmodel_ControllerComponent$Component$ControllerImpl;
-
 function $is_Lmodel_Distribution(obj) {
-    return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Distribution)))
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Distribution)))
 }
-
 function $as_Lmodel_Distribution(obj) {
-    return (($is_Lmodel_Distribution(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Distribution"))
+  return (($is_Lmodel_Distribution(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Distribution"))
 }
-
 function $isArrayOf_Lmodel_Distribution(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Distribution)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Distribution)))
 }
-
 function $asArrayOf_Lmodel_Distribution(obj, depth) {
-    return (($isArrayOf_Lmodel_Distribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.Distribution;", depth))
+  return (($isArrayOf_Lmodel_Distribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.Distribution;", depth))
 }
-
 var $d_Lmodel_Distribution = new $TypeData().initClass({
-    Lmodel_Distribution: 0
+  Lmodel_Distribution: 0
 }, true, "model.Distribution", {
-    Lmodel_Distribution: 1,
-    O: 1,
-    Lmodel_sortModel_Comparable: 1
+  Lmodel_Distribution: 1,
+  O: 1,
+  Lmodel_sortModel_Comparable: 1
 });
-
 function $is_Lmodel_Distributions(obj) {
-    return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Distributions)))
+  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lmodel_Distributions)))
 }
-
 function $as_Lmodel_Distributions(obj) {
-    return (($is_Lmodel_Distributions(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Distributions"))
+  return (($is_Lmodel_Distributions(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Distributions"))
 }
-
 function $isArrayOf_Lmodel_Distributions(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Distributions)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Distributions)))
 }
-
 function $asArrayOf_Lmodel_Distributions(obj, depth) {
-    return (($isArrayOf_Lmodel_Distributions(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.Distributions;", depth))
+  return (($isArrayOf_Lmodel_Distributions(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.Distributions;", depth))
 }
-
 /** @constructor */
 function $c_Lmodel_IntOrderings$$anon$1() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $c_Lmodel_IntOrderings$$anon$1.prototype = new $h_O();
 $c_Lmodel_IntOrderings$$anon$1.prototype.constructor = $c_Lmodel_IntOrderings$$anon$1;
-
 /** @constructor */
 function $h_Lmodel_IntOrderings$$anon$1() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_IntOrderings$$anon$1.prototype = $c_Lmodel_IntOrderings$$anon$1.prototype;
-$c_Lmodel_IntOrderings$$anon$1.prototype.compare__O__O__Z = (function (a, b) {
-    var a$1 = $as_T2(a);
-    var b$1 = $as_T2(b);
-    $m_Lmodel_IntOrderings$();
-    return ((($uI($n(a$1).T2__f__1) - $uI($n(b$1).T2__f__1)) | 0) > 0)
+$c_Lmodel_IntOrderings$$anon$1.prototype.compare__O__O__Z = (function(a, b) {
+  var a$1 = $as_T2(a);
+  var b$1 = $as_T2(b);
+  $m_Lmodel_IntOrderings$();
+  return ((($uI($n(a$1).T2__f__1) - $uI($n(b$1).T2__f__1)) | 0) > 0)
 });
 var $d_Lmodel_IntOrderings$$anon$1 = new $TypeData().initClass({
-    Lmodel_IntOrderings$$anon$1: 0
+  Lmodel_IntOrderings$$anon$1: 0
 }, false, "model.IntOrderings$$anon$1", {
-    Lmodel_IntOrderings$$anon$1: 1,
-    O: 1,
-    Lmodel_sortModel_Comparable: 1
+  Lmodel_IntOrderings$$anon$1: 1,
+  O: 1,
+  Lmodel_sortModel_Comparable: 1
 });
 $c_Lmodel_IntOrderings$$anon$1.prototype.$classData = $d_Lmodel_IntOrderings$$anon$1;
-
 /** @constructor */
 function $c_Lmodel_IntOrderings$$anon$2() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $c_Lmodel_IntOrderings$$anon$2.prototype = new $h_O();
 $c_Lmodel_IntOrderings$$anon$2.prototype.constructor = $c_Lmodel_IntOrderings$$anon$2;
-
 /** @constructor */
 function $h_Lmodel_IntOrderings$$anon$2() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_IntOrderings$$anon$2.prototype = $c_Lmodel_IntOrderings$$anon$2.prototype;
-$c_Lmodel_IntOrderings$$anon$2.prototype.compare__O__O__Z = (function (a, b) {
-    var a$1 = $as_T2(a);
-    var b$1 = $as_T2(b);
-    $m_Lmodel_IntOrderings$();
-    return ((($uI($n(b$1).T2__f__1) - $uI($n(a$1).T2__f__1)) | 0) > 0)
+$c_Lmodel_IntOrderings$$anon$2.prototype.compare__O__O__Z = (function(a, b) {
+  var a$1 = $as_T2(a);
+  var b$1 = $as_T2(b);
+  $m_Lmodel_IntOrderings$();
+  return ((($uI($n(b$1).T2__f__1) - $uI($n(a$1).T2__f__1)) | 0) > 0)
 });
 var $d_Lmodel_IntOrderings$$anon$2 = new $TypeData().initClass({
-    Lmodel_IntOrderings$$anon$2: 0
+  Lmodel_IntOrderings$$anon$2: 0
 }, false, "model.IntOrderings$$anon$2", {
-    Lmodel_IntOrderings$$anon$2: 1,
-    O: 1,
-    Lmodel_sortModel_Comparable: 1
+  Lmodel_IntOrderings$$anon$2: 1,
+  O: 1,
+  Lmodel_sortModel_Comparable: 1
 });
 $c_Lmodel_IntOrderings$$anon$2.prototype.$classData = $d_Lmodel_IntOrderings$$anon$2;
-
 /** @constructor */
 function $c_Lmodel_IntOrderings$$anon$3() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $c_Lmodel_IntOrderings$$anon$3.prototype = new $h_O();
 $c_Lmodel_IntOrderings$$anon$3.prototype.constructor = $c_Lmodel_IntOrderings$$anon$3;
-
 /** @constructor */
 function $h_Lmodel_IntOrderings$$anon$3() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_IntOrderings$$anon$3.prototype = $c_Lmodel_IntOrderings$$anon$3.prototype;
-$c_Lmodel_IntOrderings$$anon$3.prototype.compare__O__O__Z = (function (a, b) {
-    $as_T2(a);
-    $as_T2(b);
-    $m_Lmodel_IntOrderings$();
-    var this$2 = $m_s_util_Random$();
-    return $n(this$2.s_util_Random__f_self).nextBoolean__Z()
+$c_Lmodel_IntOrderings$$anon$3.prototype.compare__O__O__Z = (function(a, b) {
+  $as_T2(a);
+  $as_T2(b);
+  $m_Lmodel_IntOrderings$();
+  var this$2 = $m_s_util_Random$();
+  return $n(this$2.s_util_Random__f_self).nextBoolean__Z()
 });
 var $d_Lmodel_IntOrderings$$anon$3 = new $TypeData().initClass({
-    Lmodel_IntOrderings$$anon$3: 0
+  Lmodel_IntOrderings$$anon$3: 0
 }, false, "model.IntOrderings$$anon$3", {
-    Lmodel_IntOrderings$$anon$3: 1,
-    O: 1,
-    Lmodel_sortModel_Comparable: 1
+  Lmodel_IntOrderings$$anon$3: 1,
+  O: 1,
+  Lmodel_sortModel_Comparable: 1
 });
 $c_Lmodel_IntOrderings$$anon$3.prototype.$classData = $d_Lmodel_IntOrderings$$anon$3;
-
 /** @constructor */
 function $c_Lmodel_IntOrderings$$anon$4() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $c_Lmodel_IntOrderings$$anon$4.prototype = new $h_O();
 $c_Lmodel_IntOrderings$$anon$4.prototype.constructor = $c_Lmodel_IntOrderings$$anon$4;
-
 /** @constructor */
 function $h_Lmodel_IntOrderings$$anon$4() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_IntOrderings$$anon$4.prototype = $c_Lmodel_IntOrderings$$anon$4.prototype;
-$c_Lmodel_IntOrderings$$anon$4.prototype.compare__O__O__Z = (function (a, b) {
-    var a$1 = $as_T2(a);
-    var b$1 = $as_T2(b);
-    $m_Lmodel_IntOrderings$();
-    return ((($uI($n(b$1).T2__f__2) - $uI($n(a$1).T2__f__2)) | 0) > 0)
+$c_Lmodel_IntOrderings$$anon$4.prototype.compare__O__O__Z = (function(a, b) {
+  var a$1 = $as_T2(a);
+  var b$1 = $as_T2(b);
+  $m_Lmodel_IntOrderings$();
+  return ((($uI($n(b$1).T2__f__2) - $uI($n(a$1).T2__f__2)) | 0) > 0)
 });
 var $d_Lmodel_IntOrderings$$anon$4 = new $TypeData().initClass({
-    Lmodel_IntOrderings$$anon$4: 0
+  Lmodel_IntOrderings$$anon$4: 0
 }, false, "model.IntOrderings$$anon$4", {
-    Lmodel_IntOrderings$$anon$4: 1,
-    O: 1,
-    Lmodel_sortModel_Comparable: 1
+  Lmodel_IntOrderings$$anon$4: 1,
+  O: 1,
+  Lmodel_sortModel_Comparable: 1
 });
 $c_Lmodel_IntOrderings$$anon$4.prototype.$classData = $d_Lmodel_IntOrderings$$anon$4;
-
 /** @constructor */
 function $c_Lmodel_IntOrderings$$anon$5() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $c_Lmodel_IntOrderings$$anon$5.prototype = new $h_O();
 $c_Lmodel_IntOrderings$$anon$5.prototype.constructor = $c_Lmodel_IntOrderings$$anon$5;
-
 /** @constructor */
 function $h_Lmodel_IntOrderings$$anon$5() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_IntOrderings$$anon$5.prototype = $c_Lmodel_IntOrderings$$anon$5.prototype;
-$c_Lmodel_IntOrderings$$anon$5.prototype.compare__O__O__Z = (function (a, b) {
-    var a$1 = $as_T2(a);
-    var b$1 = $as_T2(b);
-    $m_Lmodel_IntOrderings$();
-    return ((($uI($n(a$1).T2__f__2) - $uI($n(b$1).T2__f__2)) | 0) > 0)
+$c_Lmodel_IntOrderings$$anon$5.prototype.compare__O__O__Z = (function(a, b) {
+  var a$1 = $as_T2(a);
+  var b$1 = $as_T2(b);
+  $m_Lmodel_IntOrderings$();
+  return ((($uI($n(a$1).T2__f__2) - $uI($n(b$1).T2__f__2)) | 0) > 0)
 });
 var $d_Lmodel_IntOrderings$$anon$5 = new $TypeData().initClass({
-    Lmodel_IntOrderings$$anon$5: 0
+  Lmodel_IntOrderings$$anon$5: 0
 }, false, "model.IntOrderings$$anon$5", {
-    Lmodel_IntOrderings$$anon$5: 1,
-    O: 1,
-    Lmodel_sortModel_Comparable: 1
+  Lmodel_IntOrderings$$anon$5: 1,
+  O: 1,
+  Lmodel_sortModel_Comparable: 1
 });
 $c_Lmodel_IntOrderings$$anon$5.prototype.$classData = $d_Lmodel_IntOrderings$$anon$5;
-
 /** @constructor */
 function $c_Lmodel_ModelComponent$$anon$1(outer) {
-    if ((outer === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
+  if ((outer === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  }
 }
-
 $c_Lmodel_ModelComponent$$anon$1.prototype = new $h_O();
 $c_Lmodel_ModelComponent$$anon$1.prototype.constructor = $c_Lmodel_ModelComponent$$anon$1;
-
 /** @constructor */
 function $h_Lmodel_ModelComponent$$anon$1() {
   /*<skip>*/
@@ -12668,21 +12483,6 @@ function $m_s_Option$() {
   };
   return $n_s_Option$
 }
-function $f_s_PartialFunction__applyOrElse__O__F1__O($thiz, x, default$1) {
-  return ($thiz.isDefinedAt__O__Z(x) ? $thiz.apply__O__O(x) : $n(default$1).apply__O__O(x))
-}
-function $is_s_PartialFunction(obj) {
-  return (!(!((obj && obj.$classData) && obj.$classData.ancestors.s_PartialFunction)))
-}
-function $as_s_PartialFunction(obj) {
-  return (($is_s_PartialFunction(obj) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.PartialFunction"))
-}
-function $isArrayOf_s_PartialFunction(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.s_PartialFunction)))
-}
-function $asArrayOf_s_PartialFunction(obj, depth) {
-  return (($isArrayOf_s_PartialFunction(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.PartialFunction;", depth))
-}
 function $f_sc_IterableFactory__iterate__O__I__F1__O($thiz, start, len, f) {
   return $thiz.from__sc_IterableOnce__O(new $c_sc_View$Iterate(start, len, f))
 }
@@ -13211,13 +13011,6 @@ function $h_Lview_GraphFunctions$$anon$1() {
 $h_Lview_GraphFunctions$$anon$1.prototype = $c_Lview_GraphFunctions$$anon$1.prototype;
 $c_Lview_GraphFunctions$$anon$1.prototype.run__V = (function() {
   $n(this.Lview_GraphFunctions$$anon$1__f_$outer);
-  var this$2 = $n(this.Lview_GraphFunctions$$anon$1__f_$outer).Lview_GraphFunctions__f_view$GraphFunctions$$index;
-  var this$1 = $n($n(this.Lview_GraphFunctions$$anon$1__f_$outer).Lview_GraphFunctions__f_view$GraphFunctions$$seqStep);
-  var that = (((-1) + this$1.length__I()) | 0);
-  if ((this$2 === that)) {
-    $n(this.Lview_GraphFunctions$$anon$1__f_$outer).end__V();
-    return (void 0)
-  };
   $n(this.Lview_GraphFunctions$$anon$1__f_$outer).nextStep__V()
 });
 var $d_Lview_GraphFunctions$$anon$1 = new $TypeData().initClass({
@@ -13247,14 +13040,6 @@ function $h_Lview_GraphFunctions$$anon$2() {
 }
 $h_Lview_GraphFunctions$$anon$2.prototype = $c_Lview_GraphFunctions$$anon$2.prototype;
 $c_Lview_GraphFunctions$$anon$2.prototype.run__V = (function() {
-  $n(this.Lview_GraphFunctions$$anon$2__f_$outer);
-  var this$2 = $n(this.Lview_GraphFunctions$$anon$2__f_$outer).Lview_GraphFunctions__f_view$GraphFunctions$$index;
-  var this$1 = $n($n(this.Lview_GraphFunctions$$anon$2__f_$outer).Lview_GraphFunctions__f_view$GraphFunctions$$seqStep);
-  var that = (((-1) + this$1.length__I()) | 0);
-  if ((this$2 === that)) {
-    $n(this.Lview_GraphFunctions$$anon$2__f_$outer).end__V();
-    return (void 0)
-  };
   $n(this.Lview_GraphFunctions$$anon$2__f_$outer).nextStep__V()
 });
 var $d_Lview_GraphFunctions$$anon$2 = new $TypeData().initClass({
@@ -13384,8 +13169,8 @@ function $m_Lcom_raquo_airstream_core_AirstreamError$() {
   return $n_Lcom_raquo_airstream_core_AirstreamError$
 }
 function $f_Lcom_raquo_airstream_core_BaseObservable__$init$__V($thiz) {
-  $thiz.isSafeToRemoveObserver_$eq__Z__V(true);
-  $thiz.maybePendingObserverRemovals_$eq__O__V((void 0))
+  $thiz.Lcom_raquo_airstream_state_VarSignal__f_isSafeToRemoveObserver = true;
+  $thiz.Lcom_raquo_airstream_state_VarSignal__f_maybePendingObserverRemovals = (void 0)
 }
 function $f_Lcom_raquo_airstream_core_BaseObservable__foreach__F1__Lcom_raquo_airstream_ownership_Owner__Lcom_raquo_airstream_ownership_Subscription($thiz, onNext, owner) {
   var this$1 = $m_Lcom_raquo_airstream_core_Observer$();
@@ -13393,7 +13178,7 @@ function $f_Lcom_raquo_airstream_core_BaseObservable__foreach__F1__Lcom_raquo_ai
   return $f_Lcom_raquo_airstream_core_WritableObservable__addObserver__Lcom_raquo_airstream_core_Observer__Lcom_raquo_airstream_ownership_Owner__Lcom_raquo_airstream_ownership_Subscription($thiz, observer, owner)
 }
 function $f_Lcom_raquo_airstream_core_BaseObservable__removeExternalObserver__Lcom_raquo_airstream_core_Observer__V($thiz, observer) {
-  if ($thiz.isSafeToRemoveObserver__Z()) {
+  if ($thiz.Lcom_raquo_airstream_state_VarSignal__f_isSafeToRemoveObserver) {
     $f_Lcom_raquo_airstream_core_WritableObservable__removeExternalObserverNow__Lcom_raquo_airstream_core_Observer__V($thiz, observer)
   } else {
     $f_Lcom_raquo_airstream_core_BaseObservable__getOrCreatePendingObserverRemovals__Lcom_raquo_ew_JsArray($thiz).push(new $c_sjsr_AnonFunction0((() => {
@@ -13401,32 +13186,21 @@ function $f_Lcom_raquo_airstream_core_BaseObservable__removeExternalObserver__Lc
     })))
   }
 }
-function $f_Lcom_raquo_airstream_core_BaseObservable__removeInternalObserver__Lcom_raquo_airstream_core_InternalObserver__V($thiz, observer) {
-  if ($thiz.isSafeToRemoveObserver__Z()) {
-    $f_Lcom_raquo_airstream_core_WritableObservable__removeInternalObserverNow__Lcom_raquo_airstream_core_InternalObserver__V($thiz, observer)
-  } else {
-    $f_Lcom_raquo_airstream_core_BaseObservable__getOrCreatePendingObserverRemovals__Lcom_raquo_ew_JsArray($thiz).push(new $c_sjsr_AnonFunction0((() => {
-      $f_Lcom_raquo_airstream_core_WritableObservable__removeInternalObserverNow__Lcom_raquo_airstream_core_InternalObserver__V($thiz, observer)
-    })))
-  }
-}
 function $f_Lcom_raquo_airstream_core_BaseObservable__isStarted__Z($thiz) {
   return ($f_Lcom_raquo_airstream_core_WritableObservable__numAllObservers__I($thiz) > 0)
 }
 function $f_Lcom_raquo_airstream_core_BaseObservable__getOrCreatePendingObserverRemovals__Lcom_raquo_ew_JsArray($thiz) {
-  var x = $thiz.maybePendingObserverRemovals__O();
+  var x = $thiz.Lcom_raquo_airstream_state_VarSignal__f_maybePendingObserverRemovals;
   if ((x === (void 0))) {
     var newArray = $m_Lcom_raquo_ew_JsArray$().apply__sci_Seq__Lcom_raquo_ew_JsArray($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_F0.getArrayOf().constr)([])));
-    $thiz.maybePendingObserverRemovals_$eq__O__V(newArray);
+    $thiz.Lcom_raquo_airstream_state_VarSignal__f_maybePendingObserverRemovals = newArray;
     return newArray
   } else {
     return x
   }
 }
 function $f_Lcom_raquo_airstream_core_BaseObservable__maybeWillStart__V($thiz) {
-  if ((!$f_Lcom_raquo_airstream_core_BaseObservable__isStarted__Z($thiz))) {
-    $thiz.onWillStart__V()
-  }
+  $f_Lcom_raquo_airstream_core_BaseObservable__isStarted__Z($thiz)
 }
 function $is_Lcom_raquo_airstream_core_Observer(obj) {
   return (!(!((obj && obj.$classData) && obj.$classData.ancestors.Lcom_raquo_airstream_core_Observer)))
@@ -13784,53 +13558,48 @@ var $d_jl_Exception = new $TypeData().initClass({
   jl_Exception: 1,
   jl_Throwable: 1,
   O: 1,
-    Ljava_io_Serializable: 1
+  Ljava_io_Serializable: 1
 });
 $c_jl_Exception.prototype.$classData = $d_jl_Exception;
-
 /** @constructor */
 function $c_Lmodel_AlgorithmFactory$$anon$3(f$6, n$6) {
-    this.Lmodel_AlgorithmFactory$$anon$3__f_f$5 = null;
-    this.Lmodel_AlgorithmFactory$$anon$3__f_n$5 = null;
-    this.Lmodel_AlgorithmFactory$$anon$3__f_f$5 = f$6;
-    this.Lmodel_AlgorithmFactory$$anon$3__f_n$5 = n$6
+  this.Lmodel_AlgorithmFactory$$anon$3__f_f$5 = null;
+  this.Lmodel_AlgorithmFactory$$anon$3__f_n$5 = null;
+  this.Lmodel_AlgorithmFactory$$anon$3__f_f$5 = f$6;
+  this.Lmodel_AlgorithmFactory$$anon$3__f_n$5 = n$6
 }
-
 $c_Lmodel_AlgorithmFactory$$anon$3.prototype = new $h_O();
 $c_Lmodel_AlgorithmFactory$$anon$3.prototype.constructor = $c_Lmodel_AlgorithmFactory$$anon$3;
-
 /** @constructor */
 function $h_Lmodel_AlgorithmFactory$$anon$3() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_AlgorithmFactory$$anon$3.prototype = $c_Lmodel_AlgorithmFactory$$anon$3.prototype;
-$c_Lmodel_AlgorithmFactory$$anon$3.prototype.execute__sci_Seq__sci_Seq = (function (s) {
-    return $as_sci_Seq($n(new $c_Lmodel_StepsTransformer().getSeqList__sci_Seq__sci_Seq__sci_Seq($as_sci_Seq($n(this.Lmodel_AlgorithmFactory$$anon$3__f_f$5).apply__O__O(s)), s)).map__F1__O(new $c_sjsr_AnonFunction1(((s$2) => {
-        var s$1 = $as_sci_Seq(s$2);
-        return new $c_Lmodel_AlgorithmFactory$State$$anon$4(s$1)
-    }))))
+$c_Lmodel_AlgorithmFactory$$anon$3.prototype.execute__sci_Seq__sci_Seq = (function(s) {
+  return $as_sci_Seq($n(new $c_Lmodel_StepsTransformer().getSeqList__sci_Seq__sci_Seq__sci_Seq($as_sci_Seq($n(this.Lmodel_AlgorithmFactory$$anon$3__f_f$5).apply__O__O(s)), s)).map__F1__O(new $c_sjsr_AnonFunction1(((s$2) => {
+    var s$1 = $as_sci_Seq(s$2);
+    return new $c_Lmodel_AlgorithmFactory$State$$anon$4(s$1)
+  }))))
 });
-$c_Lmodel_AlgorithmFactory$$anon$3.prototype.name__T = (function () {
-    return this.Lmodel_AlgorithmFactory$$anon$3__f_n$5
+$c_Lmodel_AlgorithmFactory$$anon$3.prototype.name__T = (function() {
+  return this.Lmodel_AlgorithmFactory$$anon$3__f_n$5
 });
 var $d_Lmodel_AlgorithmFactory$$anon$3 = new $TypeData().initClass({
-    Lmodel_AlgorithmFactory$$anon$3: 0
+  Lmodel_AlgorithmFactory$$anon$3: 0
 }, false, "model.AlgorithmFactory$$anon$3", {
-    Lmodel_AlgorithmFactory$$anon$3: 1,
-    O: 1,
-    Lmodel_Algorithm: 1,
-    Lmodel_HasName: 1
+  Lmodel_AlgorithmFactory$$anon$3: 1,
+  O: 1,
+  Lmodel_Algorithm: 1,
+  Lmodel_HasName: 1
 });
 $c_Lmodel_AlgorithmFactory$$anon$3.prototype.$classData = $d_Lmodel_AlgorithmFactory$$anon$3;
-
 /** @constructor */
 function $c_Lmodel_ModelComponent$$anon$2(p$17, outer) {
-    this.Lmodel_ModelComponent$$anon$2__f_p$13 = null;
-    this.Lmodel_ModelComponent$$anon$2__f_p$13 = p$17;
-    if ((outer === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
+  this.Lmodel_ModelComponent$$anon$2__f_p$13 = null;
+  this.Lmodel_ModelComponent$$anon$2__f_p$13 = p$17;
+  if ((outer === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  }
 }
 $c_Lmodel_ModelComponent$$anon$2.prototype = new $h_s_Conversion();
 $c_Lmodel_ModelComponent$$anon$2.prototype.constructor = $c_Lmodel_ModelComponent$$anon$2;
@@ -13840,7 +13609,7 @@ function $h_Lmodel_ModelComponent$$anon$2() {
 }
 $h_Lmodel_ModelComponent$$anon$2.prototype = $c_Lmodel_ModelComponent$$anon$2.prototype;
 $c_Lmodel_ModelComponent$$anon$2.prototype.apply__Lmodel_Params__I = (function(x) {
-    var p$2 = this.Lmodel_ModelComponent$$anon$2__f_p$13;
+  var p$2 = this.Lmodel_ModelComponent$$anon$2__f_p$13;
   return $uI($n(p$2).apply__O__O(x))
 });
 $c_Lmodel_ModelComponent$$anon$2.prototype.apply__O__O = (function(x) {
@@ -13855,14 +13624,13 @@ var $d_Lmodel_ModelComponent$$anon$2 = new $TypeData().initClass({
   F1: 1
 });
 $c_Lmodel_ModelComponent$$anon$2.prototype.$classData = $d_Lmodel_ModelComponent$$anon$2;
-
 /** @constructor */
 function $c_Lmodel_ModelComponent$$anon$3(p$18, outer) {
-    this.Lmodel_ModelComponent$$anon$3__f_p$14 = null;
-    this.Lmodel_ModelComponent$$anon$3__f_p$14 = p$18;
-    if ((outer === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
+  this.Lmodel_ModelComponent$$anon$3__f_p$14 = null;
+  this.Lmodel_ModelComponent$$anon$3__f_p$14 = p$18;
+  if ((outer === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  }
 }
 $c_Lmodel_ModelComponent$$anon$3.prototype = new $h_s_Conversion();
 $c_Lmodel_ModelComponent$$anon$3.prototype.constructor = $c_Lmodel_ModelComponent$$anon$3;
@@ -13872,104 +13640,93 @@ function $h_Lmodel_ModelComponent$$anon$3() {
 }
 $h_Lmodel_ModelComponent$$anon$3.prototype = $c_Lmodel_ModelComponent$$anon$3.prototype;
 $c_Lmodel_ModelComponent$$anon$3.prototype.apply__Lmodel_Params__I = (function(x) {
-    var p$5 = this.Lmodel_ModelComponent$$anon$3__f_p$14;
+  var p$5 = this.Lmodel_ModelComponent$$anon$3__f_p$14;
   return $uI($n(p$5).apply__O__O(x))
 });
 $c_Lmodel_ModelComponent$$anon$3.prototype.apply__O__O = (function(x) {
   return this.apply__Lmodel_Params__I($as_Lmodel_Params(x))
 });
 var $d_Lmodel_ModelComponent$$anon$3 = new $TypeData().initClass({
-    Lmodel_ModelComponent$$anon$3: 0
+  Lmodel_ModelComponent$$anon$3: 0
 }, false, "model.ModelComponent$$anon$3", {
-    Lmodel_ModelComponent$$anon$3: 1,
-    s_Conversion: 1,
-    O: 1,
-    F1: 1
+  Lmodel_ModelComponent$$anon$3: 1,
+  s_Conversion: 1,
+  O: 1,
+  F1: 1
 });
 $c_Lmodel_ModelComponent$$anon$3.prototype.$classData = $d_Lmodel_ModelComponent$$anon$3;
-
 /** @constructor */
 function $c_Lmodel_ModelComponent$$anon$4(p$19, outer) {
-    this.Lmodel_ModelComponent$$anon$4__f_p$15 = null;
-    this.Lmodel_ModelComponent$$anon$4__f_p$15 = p$19;
-    if ((outer === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
+  this.Lmodel_ModelComponent$$anon$4__f_p$15 = null;
+  this.Lmodel_ModelComponent$$anon$4__f_p$15 = p$19;
+  if ((outer === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  }
 }
-
 $c_Lmodel_ModelComponent$$anon$4.prototype = new $h_s_Conversion();
 $c_Lmodel_ModelComponent$$anon$4.prototype.constructor = $c_Lmodel_ModelComponent$$anon$4;
-
 /** @constructor */
 function $h_Lmodel_ModelComponent$$anon$4() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_ModelComponent$$anon$4.prototype = $c_Lmodel_ModelComponent$$anon$4.prototype;
-$c_Lmodel_ModelComponent$$anon$4.prototype.apply__Lmodel_Params__I = (function (x) {
-    var p$8 = this.Lmodel_ModelComponent$$anon$4__f_p$15;
-    return $uI($n(p$8).apply__O__O(x))
+$c_Lmodel_ModelComponent$$anon$4.prototype.apply__Lmodel_Params__I = (function(x) {
+  var p$8 = this.Lmodel_ModelComponent$$anon$4__f_p$15;
+  return $uI($n(p$8).apply__O__O(x))
 });
-$c_Lmodel_ModelComponent$$anon$4.prototype.apply__O__O = (function (x) {
-    return this.apply__Lmodel_Params__I($as_Lmodel_Params(x))
+$c_Lmodel_ModelComponent$$anon$4.prototype.apply__O__O = (function(x) {
+  return this.apply__Lmodel_Params__I($as_Lmodel_Params(x))
 });
 var $d_Lmodel_ModelComponent$$anon$4 = new $TypeData().initClass({
-    Lmodel_ModelComponent$$anon$4: 0
+  Lmodel_ModelComponent$$anon$4: 0
 }, false, "model.ModelComponent$$anon$4", {
-    Lmodel_ModelComponent$$anon$4: 1,
-    s_Conversion: 1,
-    O: 1,
-    F1: 1
+  Lmodel_ModelComponent$$anon$4: 1,
+  s_Conversion: 1,
+  O: 1,
+  F1: 1
 });
 $c_Lmodel_ModelComponent$$anon$4.prototype.$classData = $d_Lmodel_ModelComponent$$anon$4;
-
 /** @constructor */
 function $c_Lmodel_ModelComponent$$anon$5(p$20, outer) {
-    this.Lmodel_ModelComponent$$anon$5__f_p$16 = null;
-    this.Lmodel_ModelComponent$$anon$5__f_p$16 = p$20;
-    if ((outer === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
+  this.Lmodel_ModelComponent$$anon$5__f_p$16 = null;
+  this.Lmodel_ModelComponent$$anon$5__f_p$16 = p$20;
+  if ((outer === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  }
 }
-
 $c_Lmodel_ModelComponent$$anon$5.prototype = new $h_s_Conversion();
 $c_Lmodel_ModelComponent$$anon$5.prototype.constructor = $c_Lmodel_ModelComponent$$anon$5;
-
 /** @constructor */
 function $h_Lmodel_ModelComponent$$anon$5() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_ModelComponent$$anon$5.prototype = $c_Lmodel_ModelComponent$$anon$5.prototype;
-$c_Lmodel_ModelComponent$$anon$5.prototype.apply__Lmodel_Params__I = (function (x) {
-    var p$11 = this.Lmodel_ModelComponent$$anon$5__f_p$16;
-    return $uI($n(p$11).apply__O__O(x))
+$c_Lmodel_ModelComponent$$anon$5.prototype.apply__Lmodel_Params__I = (function(x) {
+  var p$11 = this.Lmodel_ModelComponent$$anon$5__f_p$16;
+  return $uI($n(p$11).apply__O__O(x))
 });
-$c_Lmodel_ModelComponent$$anon$5.prototype.apply__O__O = (function (x) {
-    return this.apply__Lmodel_Params__I($as_Lmodel_Params(x))
+$c_Lmodel_ModelComponent$$anon$5.prototype.apply__O__O = (function(x) {
+  return this.apply__Lmodel_Params__I($as_Lmodel_Params(x))
 });
 var $d_Lmodel_ModelComponent$$anon$5 = new $TypeData().initClass({
-    Lmodel_ModelComponent$$anon$5: 0
+  Lmodel_ModelComponent$$anon$5: 0
 }, false, "model.ModelComponent$$anon$5", {
-    Lmodel_ModelComponent$$anon$5: 1,
-    s_Conversion: 1,
-    O: 1,
-    F1: 1
+  Lmodel_ModelComponent$$anon$5: 1,
+  s_Conversion: 1,
+  O: 1,
+  F1: 1
 });
 $c_Lmodel_ModelComponent$$anon$5.prototype.$classData = $d_Lmodel_ModelComponent$$anon$5;
-
 function $s_Lmodel_Params$__Max__Lmodel_Params() {
-    $m_Lmodel_Params$();
-    return $t_Lmodel_Params$__Max
+  $m_Lmodel_Params$();
+  return $t_Lmodel_Params$__Max
 }
-
 function $s_Lmodel_Params$__Min__Lmodel_Params() {
-    $m_Lmodel_Params$();
-    return $t_Lmodel_Params$__Min
+  $m_Lmodel_Params$();
+  return $t_Lmodel_Params$__Min
 }
-
 function $s_Lmodel_Params$__Std__Lmodel_Params() {
-    $m_Lmodel_Params$();
+  $m_Lmodel_Params$();
   return $t_Lmodel_Params$__Std
 }
 function $s_Lmodel_Params$__Size__Lmodel_Params() {
@@ -13983,11 +13740,11 @@ function $s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params() {
 /** @constructor */
 function $c_Lmodel_Params$() {
   $n_Lmodel_Params$ = this;
-  $t_Lmodel_Params$__Max = new $c_Lmodel_Params$$anon$1(0, "Max");
-  $t_Lmodel_Params$__Min = new $c_Lmodel_Params$$anon$1(1, "Min");
-  $t_Lmodel_Params$__Std = new $c_Lmodel_Params$$anon$1(2, "Std");
-  $t_Lmodel_Params$__Size = new $c_Lmodel_Params$$anon$1(3, "Size");
-  $t_Lmodel_Params$__DuplicatesPercentage = new $c_Lmodel_Params$$anon$1(4, "DuplicatesPercentage");
+  $t_Lmodel_Params$__Max = new $c_Lmodel_Params$$anon$1();
+  $t_Lmodel_Params$__Min = new $c_Lmodel_Params$$anon$2();
+  $t_Lmodel_Params$__Std = new $c_Lmodel_Params$$anon$3();
+  $t_Lmodel_Params$__Size = new $c_Lmodel_Params$$anon$4();
+  $t_Lmodel_Params$__DuplicatesPercentage = new $c_Lmodel_Params$$anon$5();
   $s_Lmodel_Params$__Max__Lmodel_Params();
   $s_Lmodel_Params$__Min__Lmodel_Params();
   $s_Lmodel_Params$__Std__Lmodel_Params();
@@ -14058,7 +13815,7 @@ function $h_Lmodel_ViewComponent$Component$ViewImpl$JsView$() {
   /*<skip>*/
 }
 $h_Lmodel_ViewComponent$Component$ViewImpl$JsView$.prototype = $c_Lmodel_ViewComponent$Component$ViewImpl$JsView$.prototype;
-$c_Lmodel_ViewComponent$Component$ViewImpl$JsView$.prototype.apply__sci_Seq__sci_Set__sci_Set__Lcontroller_Properties__Lmodel_ViewComponent$Component$ViewImpl$JsView = (function(data, algorithms, distributions, p) {
+$c_Lmodel_ViewComponent$Component$ViewImpl$JsView$.prototype.apply__sci_Seq__sci_List__sci_List__Lcontroller_Properties__Lmodel_ViewComponent$Component$ViewImpl$JsView = (function(data, algorithms, distributions, p) {
   return new $c_Lmodel_ViewComponent$Component$ViewImpl$JsView(this.Lmodel_ViewComponent$Component$ViewImpl$JsView$__f_$outer, data, algorithms, distributions, p)
 });
 $c_Lmodel_ViewComponent$Component$ViewImpl$JsView$.prototype.toString__T = (function() {
@@ -16627,104 +16384,118 @@ function $m_s_util_Random$() {
   return $n_s_util_Random$
 }
 function $as_s_util_control_ControlThrowable(obj) {
-    return ((false || (obj === null)) ? obj : $throwClassCastException(obj, "scala.util.control.ControlThrowable"))
+  return ((false || (obj === null)) ? obj : $throwClassCastException(obj, "scala.util.control.ControlThrowable"))
 }
 function $isArrayOf_s_util_control_ControlThrowable(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.s_util_control_ControlThrowable)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.s_util_control_ControlThrowable)))
 }
 function $asArrayOf_s_util_control_ControlThrowable(obj, depth) {
-    return (($isArrayOf_s_util_control_ControlThrowable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.util.control.ControlThrowable;", depth))
+  return (($isArrayOf_s_util_control_ControlThrowable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.util.control.ControlThrowable;", depth))
 }
 function $f_Lview_MultipleList__$init$__V($thiz) {
-    $thiz.view$MultipleList$_setter_$selectedVar_$eq__Lcom_raquo_airstream_state_Var__V($n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_Var).apply__O__Lcom_raquo_airstream_state_Var($n($thiz.view$MultipleList$$selected__Lmodel_HasName()).name__T()));
-    var $$x1 = $as_sc_IterableOnceOps($n($thiz.view$MultipleList$$x__sci_Set()).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
-        var a$1 = $as_Lmodel_HasName(a);
-        var _1 = $n(a$1).name__T();
-        return new $c_T2(_1, a$1)
-    }))));
-    var this$2 = $m_s_$less$colon$less$();
-    $thiz.view$MultipleList$_setter_$map_$eq__sci_Map__V($n($$x1).toMap__s_$less$colon$less__sci_Map(this$2.s_$less$colon$less$__f_singleton))
+  $thiz.view$MultipleList$_setter_$selectedVar_$eq__Lcom_raquo_airstream_state_Var__V($n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_Var).apply__O__Lcom_raquo_airstream_state_Var($n($thiz.view$MultipleList$$selected__Lmodel_HasName()).name__T()));
+  var this$2 = $n($thiz.view$MultipleList$$x__sci_List());
+  var f = ((a) => {
+    var a$1 = $as_Lmodel_HasName(a);
+    var _1 = $n(a$1).name__T();
+    return new $c_T2(_1, a$1)
+  });
+  if ((this$2 === $m_sci_Nil$())) {
+    var $$x1 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$2.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$2.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x1 = h
+  };
+  var this$4 = $n($$x1);
+  var this$3 = $m_s_$less$colon$less$();
+  $thiz.view$MultipleList$_setter_$map_$eq__sci_Map__V($m_sci_Map$().from__sc_IterableOnce__sci_Map(this$4))
 }
 function $p_Lview_MultipleList__renderSelectList__sci_List__Lcom_raquo_laminar_nodes_ReactiveElement($thiz, l) {
-    var $$x9 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).form__Lcom_raquo_laminar_tags_HtmlTag());
-    var $$x8 = $m_sr_ScalaRunTime$();
-    var $$x7 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).select__Lcom_raquo_laminar_tags_HtmlTag();
-    var $$x6 = $m_sr_ScalaRunTime$();
-    var $$x5 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).value__Lcom_raquo_laminar_keys_HtmlProp()).$less$minus$minus__Lcom_raquo_airstream_core_Source__Lcom_raquo_laminar_modifiers_KeyUpdater($n($thiz.selectedVar__Lcom_raquo_airstream_state_Var()).Lcom_raquo_airstream_state_SourceVar__f_signal);
-    var this$3 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-    var this$2 = $n(l);
-    var f = ((a) => {
-        var a$1 = $as_Lmodel_HasName(a);
-        var $$x2 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).option__Lcom_raquo_laminar_tags_HtmlTag());
-        var $$x1 = $m_sr_ScalaRunTime$();
-        var this$1 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-        var value = $n(a$1).name__T();
-        var renderable = $m_Lcom_raquo_laminar_modifiers_RenderableText$().Lcom_raquo_laminar_modifiers_RenderableText$__f_stringRenderable;
-        return $n($$x2).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x1).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$f_Lcom_raquo_laminar_Implicits__textToTextNode__O__Lcom_raquo_laminar_modifiers_RenderableText__Lcom_raquo_laminar_nodes_TextNode(this$1, value, renderable)])))
-    });
-    if ((this$2 === $m_sci_Nil$())) {
-        var $$x3 = $m_sci_Nil$()
-    } else {
-        var arg1 = this$2.head__O();
-        var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-        var t = h;
-        var rest = $as_sci_List(this$2.tail__O());
-        while ((rest !== $m_sci_Nil$())) {
-            var arg1$1 = $n(rest).head__O();
-            var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-            $n(t).sci_$colon$colon__f_next = nx;
-            t = nx;
-            rest = $as_sci_List($n(rest).tail__O())
-        }
-        ;
-        var $$x3 = h
-    }
-    ;
-    var nodes = $n($$x3);
-    var $$x4 = $f_Lcom_raquo_laminar_Implicits__nodeSeqToModifier__sc_Seq__Lcom_raquo_laminar_modifiers_Modifier(this$3, nodes);
-    var this$8 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-    var makeModifier = new $c_sjsr_AnonFunction1(((thisNode) => {
-        $as_Lcom_raquo_laminar_nodes_ReactiveHtmlElement(thisNode);
-        $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-        var eventProp = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onChange__Lcom_raquo_laminar_keys_EventProp();
-        var this$6 = $n($n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp, false)).mapToValue__Lcom_raquo_laminar_keys_EventProcessor());
-        var sink = $thiz.selectedVar__Lcom_raquo_airstream_state_Var();
-        var onNext = new $c_sjsr_AnonFunction1(((_$1) => {
-            var this$7 = $n(sink);
-            $n(this$7.Lcom_raquo_airstream_state_SourceVar__f_writer).onNext__O__V(_$1)
-        }));
-        return new $c_Lcom_raquo_laminar_modifiers_EventListener(this$6, onNext)
+  var $$x9 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).form__Lcom_raquo_laminar_tags_HtmlTag());
+  var $$x8 = $m_sr_ScalaRunTime$();
+  var $$x7 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).select__Lcom_raquo_laminar_tags_HtmlTag();
+  var $$x6 = $m_sr_ScalaRunTime$();
+  var $$x5 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).value__Lcom_raquo_laminar_keys_HtmlProp()).$less$minus$minus__Lcom_raquo_airstream_core_Source__Lcom_raquo_laminar_modifiers_KeyUpdater($n($thiz.selectedVar__Lcom_raquo_airstream_state_Var()).Lcom_raquo_airstream_state_SourceVar__f_signal);
+  var this$3 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+  var this$2 = $n(l);
+  var f = ((a) => {
+    var a$1 = $as_Lmodel_HasName(a);
+    var $$x2 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).option__Lcom_raquo_laminar_tags_HtmlTag());
+    var $$x1 = $m_sr_ScalaRunTime$();
+    var this$1 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+    var value = $n(a$1).name__T();
+    var renderable = $m_Lcom_raquo_laminar_modifiers_RenderableText$().Lcom_raquo_laminar_modifiers_RenderableText$__f_stringRenderable;
+    return $n($$x2).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x1).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$f_Lcom_raquo_laminar_Implicits__textToTextNode__O__Lcom_raquo_laminar_modifiers_RenderableText__Lcom_raquo_laminar_nodes_TextNode(this$1, value, renderable)])))
+  });
+  if ((this$2 === $m_sci_Nil$())) {
+    var $$x3 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$2.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$2.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x3 = h
+  };
+  var nodes = $n($$x3);
+  var $$x4 = $f_Lcom_raquo_laminar_Implicits__nodeSeqToModifier__sc_Seq__Lcom_raquo_laminar_modifiers_Modifier(this$3, nodes);
+  var this$8 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+  var makeModifier = new $c_sjsr_AnonFunction1(((thisNode) => {
+    $as_Lcom_raquo_laminar_nodes_ReactiveHtmlElement(thisNode);
+    $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+    var eventProp = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onChange__Lcom_raquo_laminar_keys_EventProp();
+    var this$6 = $n($n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp, false)).mapToValue__Lcom_raquo_laminar_keys_EventProcessor());
+    var sink = $thiz.selectedVar__Lcom_raquo_airstream_state_Var();
+    var onNext = new $c_sjsr_AnonFunction1(((_$1) => {
+      var this$7 = $n(sink);
+      $n(this$7.Lcom_raquo_airstream_state_SourceVar__f_writer).onNext__O__V(_$1)
     }));
-    return $n($$x9).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x8).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($$x7).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x6).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x5, $$x4, $f_Lcom_raquo_laminar_api_Laminar__inContext__F1__Lcom_raquo_laminar_modifiers_Modifier(this$8, makeModifier)])))])))
+    return new $c_Lcom_raquo_laminar_modifiers_EventListener(this$6, onNext)
+  }));
+  return $n($$x9).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x8).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($$x7).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x6).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x5, $$x4, $f_Lcom_raquo_laminar_api_Laminar__inContext__F1__Lcom_raquo_laminar_modifiers_Modifier(this$8, makeModifier)])))])))
 }
 function $f_Lview_MultipleList__get__sci_Map($thiz) {
-    var this$7 = $n($m_s_Predef$().s_Predef$__f_Map);
-    var $$x3 = $m_sr_ScalaRunTime$();
-    var $$x1 = $n($thiz.map__sci_Map());
-    var this$1 = $n($thiz.selectedVar__Lcom_raquo_airstream_state_Var());
-    var this$2 = $n(this$1.Lcom_raquo_airstream_state_SourceVar__f_signal);
-    var self = $n($$x1).apply__O__O($n($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this$2)).get__O());
-    var ev$1 = $as_Lmodel_HasName(self);
-    var $$x2 = $n($thiz.map__sci_Map());
-    var this$4 = $n($thiz.selectedVar__Lcom_raquo_airstream_state_Var());
-    var this$5 = $n(this$4.Lcom_raquo_airstream_state_SourceVar__f_signal);
-    var y = $n($$x2).apply__O__O($n($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this$5)).get__O());
-    var elems = $n($$x3).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(ev$1, y)]));
-    return this$7.from__sc_IterableOnce__sci_Map(elems)
+  var this$7 = $n($m_s_Predef$().s_Predef$__f_Map);
+  var $$x3 = $m_sr_ScalaRunTime$();
+  var $$x1 = $n($thiz.map__sci_Map());
+  var this$1 = $n($thiz.selectedVar__Lcom_raquo_airstream_state_Var());
+  var this$2 = $n(this$1.Lcom_raquo_airstream_state_SourceVar__f_signal);
+  var self = $n($$x1).apply__O__O($n($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this$2)).get__O());
+  var ev$1 = $as_Lmodel_HasName(self);
+  var $$x2 = $n($thiz.map__sci_Map());
+  var this$4 = $n($thiz.selectedVar__Lcom_raquo_airstream_state_Var());
+  var this$5 = $n(this$4.Lcom_raquo_airstream_state_SourceVar__f_signal);
+  var y = $n($$x2).apply__O__O($n($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this$5)).get__O());
+  var elems = $n($$x3).wrapRefArray__AO__sci_ArraySeq(new ($d_T2.getArrayOf().constr)([new $c_T2(ev$1, y)]));
+  return this$7.from__sc_IterableOnce__sci_Map(elems)
 }
 function $f_Lview_MultipleList__element__Lcom_raquo_laminar_nodes_ReactiveElement($thiz) {
-    var this$1 = $n($thiz.view$MultipleList$$x__sci_Set());
-    $m_sci_List$();
-    return $p_Lview_MultipleList__renderSelectList__sci_List__Lcom_raquo_laminar_nodes_ReactiveElement($thiz, $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1))
+  return $p_Lview_MultipleList__renderSelectList__sci_List__Lcom_raquo_laminar_nodes_ReactiveElement($thiz, $n($thiz.view$MultipleList$$x__sci_List()))
 }
 /** @constructor */
 function $c_Lai_dragonfly_math_interval_Domain(interval, \u03b4hash) {
-    this.Lai_dragonfly_math_interval_Domain__f_interval = null;
-    this.Lai_dragonfly_math_interval_Domain__f_interval = interval;
-    var this$1 = $n(\u03b4hash);
-    this$1.fromInt__I__O(0);
-    var this$2 = $n(\u03b4hash);
-    this$2.fromInt__I__O(1)
+  this.Lai_dragonfly_math_interval_Domain__f_interval = null;
+  this.Lai_dragonfly_math_interval_Domain__f_interval = interval;
+  var this$1 = $n(\u03b4hash);
+  this$1.fromInt__I__O(0);
+  var this$2 = $n(\u03b4hash);
+  this$2.fromInt__I__O(1)
 }
 $c_Lai_dragonfly_math_interval_Domain.prototype = new $h_O();
 $c_Lai_dragonfly_math_interval_Domain.prototype.constructor = $c_Lai_dragonfly_math_interval_Domain;
@@ -18366,87 +18137,89 @@ var $d_ju_internal_GenericArrayOps$ShortArrayOps$ = new $TypeData().initClass({
   O: 1,
   ju_internal_GenericArrayOps$ArrayOps: 1,
   ju_internal_GenericArrayOps$ArrayCreateOps: 1,
-    ju_Comparator: 1
+  ju_Comparator: 1
 });
 $c_ju_internal_GenericArrayOps$ShortArrayOps$.prototype.$classData = $d_ju_internal_GenericArrayOps$ShortArrayOps$;
 var $n_ju_internal_GenericArrayOps$ShortArrayOps$;
-
 function $m_ju_internal_GenericArrayOps$ShortArrayOps$() {
-    if ((!$n_ju_internal_GenericArrayOps$ShortArrayOps$)) {
-        $n_ju_internal_GenericArrayOps$ShortArrayOps$ = new $c_ju_internal_GenericArrayOps$ShortArrayOps$()
-    }
-    ;
-    return $n_ju_internal_GenericArrayOps$ShortArrayOps$
+  if ((!$n_ju_internal_GenericArrayOps$ShortArrayOps$)) {
+    $n_ju_internal_GenericArrayOps$ShortArrayOps$ = new $c_ju_internal_GenericArrayOps$ShortArrayOps$()
+  };
+  return $n_ju_internal_GenericArrayOps$ShortArrayOps$
 }
-
 /** @constructor */
 function $c_Lmodel_DistributionFactory$$anon$2(f$3, p$3, n$3, c$3, evidence$4$1) {
-    this.Lmodel_DistributionFactory$$anon$2__f_f$4 = null;
-    this.Lmodel_DistributionFactory$$anon$2__f_p$4 = null;
-    this.Lmodel_DistributionFactory$$anon$2__f_n$4 = null;
-    this.Lmodel_DistributionFactory$$anon$2__f_c$4 = null;
-    this.Lmodel_DistributionFactory$$anon$2__f_f$4 = f$3;
-    this.Lmodel_DistributionFactory$$anon$2__f_p$4 = p$3;
-    this.Lmodel_DistributionFactory$$anon$2__f_n$4 = n$3;
-    this.Lmodel_DistributionFactory$$anon$2__f_c$4 = c$3
+  this.Lmodel_DistributionFactory$$anon$2__f_f$4 = null;
+  this.Lmodel_DistributionFactory$$anon$2__f_p$4 = null;
+  this.Lmodel_DistributionFactory$$anon$2__f_n$4 = null;
+  this.Lmodel_DistributionFactory$$anon$2__f_c$4 = null;
+  this.Lmodel_DistributionFactory$$anon$2__f_f$4 = f$3;
+  this.Lmodel_DistributionFactory$$anon$2__f_p$4 = p$3;
+  this.Lmodel_DistributionFactory$$anon$2__f_n$4 = n$3;
+  this.Lmodel_DistributionFactory$$anon$2__f_c$4 = c$3
 }
-
 $c_Lmodel_DistributionFactory$$anon$2.prototype = new $h_O();
 $c_Lmodel_DistributionFactory$$anon$2.prototype.constructor = $c_Lmodel_DistributionFactory$$anon$2;
-
 /** @constructor */
 function $h_Lmodel_DistributionFactory$$anon$2() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_DistributionFactory$$anon$2.prototype = $c_Lmodel_DistributionFactory$$anon$2.prototype;
-$c_Lmodel_DistributionFactory$$anon$2.prototype.generator__sci_Map__Lmodel_seqProperties_Generator = (function (params) {
-    return $as_Lmodel_seqProperties_Generator($n(this.Lmodel_DistributionFactory$$anon$2__f_f$4).apply__O__O(params))
+$c_Lmodel_DistributionFactory$$anon$2.prototype.generator__sci_Map__Lmodel_seqProperties_Generator = (function(params) {
+  return $as_Lmodel_seqProperties_Generator($n(this.Lmodel_DistributionFactory$$anon$2__f_f$4).apply__O__O(params))
 });
-$c_Lmodel_DistributionFactory$$anon$2.prototype.compare__T2__T2__Z = (function (a, b) {
-    return $n(this.Lmodel_DistributionFactory$$anon$2__f_c$4).compare__O__O__Z(a, b)
+$c_Lmodel_DistributionFactory$$anon$2.prototype.compare__T2__T2__Z = (function(a, b) {
+  return $n(this.Lmodel_DistributionFactory$$anon$2__f_c$4).compare__O__O__Z(a, b)
 });
-$c_Lmodel_DistributionFactory$$anon$2.prototype.name__T = (function () {
-    return this.Lmodel_DistributionFactory$$anon$2__f_n$4
+$c_Lmodel_DistributionFactory$$anon$2.prototype.name__T = (function() {
+  return this.Lmodel_DistributionFactory$$anon$2__f_n$4
 });
-$c_Lmodel_DistributionFactory$$anon$2.prototype.compare__O__O__Z = (function (a, b) {
-    return this.compare__T2__T2__Z($as_T2(a), $as_T2(b))
+$c_Lmodel_DistributionFactory$$anon$2.prototype.compare__O__O__Z = (function(a, b) {
+  return this.compare__T2__T2__Z($as_T2(a), $as_T2(b))
 });
 var $d_Lmodel_DistributionFactory$$anon$2 = new $TypeData().initClass({
-    Lmodel_DistributionFactory$$anon$2: 0
+  Lmodel_DistributionFactory$$anon$2: 0
 }, false, "model.DistributionFactory$$anon$2", {
-    Lmodel_DistributionFactory$$anon$2: 1,
-    O: 1,
-    Lmodel_sortModel_Comparable: 1,
-    Lmodel_Distribution: 1,
-    Lmodel_HasName: 1
+  Lmodel_DistributionFactory$$anon$2: 1,
+  O: 1,
+  Lmodel_sortModel_Comparable: 1,
+  Lmodel_Distribution: 1,
+  Lmodel_HasName: 1
 });
 $c_Lmodel_DistributionFactory$$anon$2.prototype.$classData = $d_Lmodel_DistributionFactory$$anon$2;
-
 /** @constructor */
 function $c_Lmodel_ViewComponent$Component$ViewImpl(outer) {
-    this.Lmodel_ViewComponent$Component$ViewImpl__f_gui = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl__f_JsView$lzy1 = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl__f_$outer = null;
-    if ((outer === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
-    ;
-    this.Lmodel_ViewComponent$Component$ViewImpl__f_$outer = outer;
-    this.Lmodel_ViewComponent$Component$ViewImpl__f_JsView$lzy1 = new $c_Lmodel_ViewComponent$Component$ViewImpl$JsView$(this);
+  this.Lmodel_ViewComponent$Component$ViewImpl__f_gui = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl__f_JsView$lzy1 = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl__f_$outer = null;
+  if ((outer === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  };
+  this.Lmodel_ViewComponent$Component$ViewImpl__f_$outer = outer;
+  this.Lmodel_ViewComponent$Component$ViewImpl__f_JsView$lzy1 = new $c_Lmodel_ViewComponent$Component$ViewImpl$JsView$(this);
   var $$x5 = this.Lmodel_ViewComponent$Component$ViewImpl__f_JsView$lzy1;
   var $$x4 = $as_sci_Seq($n($m_s_package$().s_package$__f_Seq).apply__sci_Seq__sc_SeqOps($m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new ($d_sr_Nothing$.getArrayOf().constr)([]))));
-  var $$x3 = $n($as_Lmodel_Algorithms($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).algorithms__sci_Set();
-  var $$x2 = $n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set();
-  var algorithm = $as_Lmodel_Algorithm($n($n($as_Lmodel_Algorithms($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).algorithms__sci_Set()).head__O());
-    var distribution = $as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O());
-    var $$x1 = $n($as_sc_IterableOnceOps($n($n($as_Lmodel_Distribution($n($n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set()).head__O())).Lmodel_DistributionFactory$$anon$2__f_p$4).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
-        var a$1 = $as_Lmodel_Params(a);
-        return new $c_T2(a$1, 10)
-    })))));
-    var this$3 = $m_s_$less$colon$less$();
-  var params = $n($$x1).toMap__s_$less$colon$less__sci_Map(this$3.s_$less$colon$less$__f_singleton);
-  this.Lmodel_ViewComponent$Component$ViewImpl__f_gui = $n($$x5).apply__sci_Seq__sci_Set__sci_Set__Lcontroller_Properties__Lmodel_ViewComponent$Component$ViewImpl$JsView($$x4, $$x3, $$x2, new $c_Lcontroller_Properties$PropertiesImpl(algorithm, distribution, params))
+  var this$1 = $n($n($as_Lmodel_Algorithms($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).algorithms__sci_Set());
+  $m_sci_List$();
+  var $$x3 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1);
+  var this$3 = $n($n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set());
+  $m_sci_List$();
+  var $$x2 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$3);
+  var this$5 = $n($n($as_Lmodel_Algorithms($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).algorithms__sci_Set());
+  $m_sci_List$();
+  var algorithm = $as_Lmodel_Algorithm($n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$5)).head__O());
+  var this$7 = $n($n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set());
+  $m_sci_List$();
+  var distribution = $as_Lmodel_Distribution($n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$7)).head__O());
+  var this$9 = $n($n($as_Lmodel_Distributions($n($as_Lmodel_ModelComponent$Model$Provider($as_Lmodel_ControllerComponent$Provider(outer))).LMain$package$MVC$2$__f_model)).distributions__sci_Set());
+  $m_sci_List$();
+  var $$x1 = $n($as_sc_IterableOnceOps($n($n($as_Lmodel_Distribution($n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$9)).head__O())).Lmodel_DistributionFactory$$anon$2__f_p$4).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
+    var a$1 = $as_Lmodel_Params(a);
+    return new $c_T2(a$1, 10)
+  })))));
+  var this$13 = $m_s_$less$colon$less$();
+  var params = $n($$x1).toMap__s_$less$colon$less__sci_Map(this$13.s_$less$colon$less$__f_singleton);
+  this.Lmodel_ViewComponent$Component$ViewImpl__f_gui = $n($$x5).apply__sci_Seq__sci_List__sci_List__Lcontroller_Properties__Lmodel_ViewComponent$Component$ViewImpl$JsView($$x4, $$x3, $$x2, new $c_Lcontroller_Properties$PropertiesImpl(algorithm, distribution, params))
 }
 $c_Lmodel_ViewComponent$Component$ViewImpl.prototype = new $h_O();
 $c_Lmodel_ViewComponent$Component$ViewImpl.prototype.constructor = $c_Lmodel_ViewComponent$Component$ViewImpl;
@@ -18474,65 +18247,86 @@ function $p_Lmodel_ViewComponent$Component$ViewImpl$JsView__replaceView__V($thiz
 }
 /** @constructor */
 function $c_Lmodel_ViewComponent$Component$ViewImpl$JsView(outer, data, algorithms, distributions, p) {
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_data = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algorithms = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_distributions = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_p = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algo = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_dis = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_given_Conversion_ParamsType_Int$lzy1 = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_given_Conversion_ParamsType_Intbitmap$1 = false;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_params = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_$outer = null;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_data = data;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algorithms = algorithms;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_distributions = distributions;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_p = p;
-    if ((outer === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
-    ;
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_$outer = outer;
-    var this$2 = $m_s_Console$();
-    var this$3 = $n(this$2.out__Ljava_io_PrintStream());
-    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("Entering JsView\n");
-    var selected = $as_Lmodel_HasName($n(p).Lcontroller_Properties$PropertiesImpl__f_algorithm);
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algo = new $c_Lview_MultipleListImpl(algorithms, selected);
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP = p;
-    var selected$1 = $as_Lmodel_HasName($n(p).Lcontroller_Properties$PropertiesImpl__f_distribution);
-    var f = new $c_sjsr_AnonFunction1(((x) => {
-        var x$1 = $as_Lmodel_Distribution(x);
-        var $$x1 = $n($as_sc_IterableOnceOps($n($n($as_Lmodel_Distribution($n($n(distributions).find__F1__s_Option(new $c_sjsr_AnonFunction1(((a) => {
-            var a$1 = $as_Lmodel_Distribution(a);
-            var this$7 = $n(a$1);
-            return (this$7 === x$1)
-        })))).get__O())).Lmodel_DistributionFactory$$anon$2__f_p$4).map__F1__O(new $c_sjsr_AnonFunction1(((a$2) => {
-            var a$3 = $as_Lmodel_Params(a$2);
-            return new $c_T2(a$3, 10)
-        })))));
-        var this$10 = $m_s_$less$colon$less$();
-        var paramMap = $n($$x1).toMap__s_$less$colon$less__sci_Map(this$10.s_$less$colon$less$__f_singleton);
-        var this$11 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algo);
-        var algorithm = $as_Lmodel_Algorithm($n($as_T2($n($f_Lview_MultipleList__get__sci_Map(this$11)).head__O())).T2__f__1);
-        this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP = new $c_Lcontroller_Properties$PropertiesImpl(algorithm, x$1, paramMap);
-        var p$1 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP;
-        var data$1 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_data;
-        var algorithms$1 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algorithms;
-        var distributions$1 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_distributions;
-        this.copy__sci_Seq__sci_Set__sci_Set__Lcontroller_Properties__Lmodel_ViewComponent$Component$ViewImpl$JsView(data$1, algorithms$1, distributions$1, p$1)
-    }));
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_dis = new $c_Lview_MultipleListWithF(distributions, selected$1, f);
-    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_params = $n($as_sc_IterableOnceOps($n($n(p).Lcontroller_Properties$PropertiesImpl__f_params).map__F1__O(new $c_sjsr_AnonFunction1(((a$4) => {
-        var a$5 = $as_T2(a$4);
-        return $m_Lview_SingleValueFactory$().apply__O__O__s_Conversion__Lview_SingleValue($n(a$5).T2__f__1, $n(a$5).T2__f__2, this.given_Conversion_ParamsType_Int__s_Conversion())
-    }))))).toList__sci_List();
-    document.getElementById("app").innerHTML = "";
-    $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-    var container = document.getElementById("app");
-    var rootNode = this.getAppElement__Lcom_raquo_laminar_nodes_ReactiveElement();
-    new $c_Lcom_raquo_laminar_nodes_RootNode(container, rootNode);
-    $p_Lmodel_ViewComponent$Component$ViewImpl$JsView__replaceView__V(this)
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_data = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algorithms = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_distributions = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_p = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algo = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_dis = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_given_Conversion_ParamsType_Int$lzy1 = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_given_Conversion_ParamsType_Intbitmap$1 = false;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_params = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_$outer = null;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_data = data;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algorithms = algorithms;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_distributions = distributions;
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_p = p;
+  if ((outer === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  };
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_$outer = outer;
+  var this$2 = $m_s_Console$();
+  var this$3 = $n(this$2.out__Ljava_io_PrintStream());
+  this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("Entering JsView\n");
+  var selected = $as_Lmodel_HasName($n(p).Lcontroller_Properties$PropertiesImpl__f_algorithm);
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algo = new $c_Lview_MultipleListImpl(algorithms, selected);
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP = p;
+  var x = ("selectedp " + $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP).Lcontroller_Properties$PropertiesImpl__f_params);
+  var this$7 = $m_s_Console$();
+  var this$8 = $n(this$7.out__Ljava_io_PrintStream());
+  this$8.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
+  var selected$1 = $as_Lmodel_HasName($n(p).Lcontroller_Properties$PropertiesImpl__f_distribution);
+  var f = new $c_sjsr_AnonFunction1(((x$1) => {
+    var x$2 = $as_Lmodel_Distribution(x$1);
+    var this$10 = $n(distributions);
+    _return: {
+      var these = this$10;
+      while ((!$n(these).isEmpty__Z())) {
+        var arg1 = $n(these).head__O();
+        var a = $as_Lmodel_Distribution(arg1);
+        var this$11 = $n(a);
+        if ((this$11 === x$2)) {
+          var $$x2 = new $c_s_Some($n(these).head__O());
+          break _return
+        };
+        these = $as_sci_List($n(these).tail__O())
+      };
+      var $$x2 = $m_s_None$()
+    };
+    var $$x1 = $n($as_sc_IterableOnceOps($n($n($as_Lmodel_Distribution($$x2.get__O())).Lmodel_DistributionFactory$$anon$2__f_p$4).map__F1__O(new $c_sjsr_AnonFunction1(((a$2) => {
+      var a$1 = $as_Lmodel_Params(a$2);
+      return new $c_T2(a$1, 10)
+    })))));
+    var this$14 = $m_s_$less$colon$less$();
+    var parameterMap = $n($$x1).toMap__s_$less$colon$less__sci_Map(this$14.s_$less$colon$less$__f_singleton);
+    var this$15 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algo);
+    var algorithm = $as_Lmodel_Algorithm($n($as_T2($n($f_Lview_MultipleList__get__sci_Map(this$15)).head__O())).T2__f__1);
+    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP = new $c_Lcontroller_Properties$PropertiesImpl(algorithm, x$2, parameterMap);
+    var this$18 = $n($n($as_Lmodel_ControllerComponent$Provider($n(outer).Lmodel_ViewComponent$Component$ViewImpl__f_$outer)).LMain$package$MVC$2$__f_controller);
+    var p$1 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP;
+    this$18.update__Lcontroller_Properties__V(p$1)
+  }));
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_dis = new $c_Lview_MultipleListWithF(distributions, selected$1, f);
+  this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_params = $n($as_sc_IterableOnceOps($n($n(p).Lcontroller_Properties$PropertiesImpl__f_params).map__F1__O(new $c_sjsr_AnonFunction1(((a$3) => {
+    var a$4 = $as_T2(a$3);
+    var $$x5 = $m_Lview_SingleValueFactory$();
+    var $$x4 = $n(a$4).T2__f__1;
+    var $$x3 = $n(a$4).T2__f__2;
+    var this$21 = $n($as_Lmodel_Params($n(a$4).T2__f__1));
+    var x$3 = this$21.Lmodel_Params__f_model$seqProperties$HasRange$$a;
+    var y = this$21.Lmodel_Params__f_model$seqProperties$HasRange$$b;
+    var this$24 = $n($as_Lmodel_Params($n(a$4).T2__f__1));
+    var x$4 = this$24.Lmodel_Params__f_model$seqProperties$HasRange$$a;
+    var y$1 = this$24.Lmodel_Params__f_model$seqProperties$HasRange$$b;
+    return $n($$x5).apply__O__O__O__O__s_Conversion__Lview_SingleValue($$x4, $$x3, ((x$3 < y) ? x$3 : y), ((x$4 > y$1) ? x$4 : y$1), this.given_Conversion_ParamsType_Int__s_Conversion())
+  }))))).toList__sci_List();
+  document.getElementById("app").innerHTML = "";
+  $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+  var container = document.getElementById("app");
+  var rootNode = this.getAppElement__Lcom_raquo_laminar_nodes_ReactiveElement();
+  new $c_Lcom_raquo_laminar_nodes_RootNode(container, rootNode);
+  $p_Lmodel_ViewComponent$Component$ViewImpl$JsView__replaceView__V(this)
 }
 $c_Lmodel_ViewComponent$Component$ViewImpl$JsView.prototype = new $h_O();
 $c_Lmodel_ViewComponent$Component$ViewImpl$JsView.prototype.constructor = $c_Lmodel_ViewComponent$Component$ViewImpl$JsView;
@@ -18626,132 +18420,114 @@ $c_Lmodel_ViewComponent$Component$ViewImpl$JsView.prototype.given_Conversion_Par
   return this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_given_Conversion_ParamsType_Int$lzy1
 });
 $c_Lmodel_ViewComponent$Component$ViewImpl$JsView.prototype.getAppElement__Lcom_raquo_laminar_nodes_ReactiveElement = (function() {
-    var this$2 = $m_s_Console$();
-    var this$3 = $n(this$2.out__Ljava_io_PrintStream());
-    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("getappelem\n");
-    var $$x19 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag());
-    var $$x18 = $m_sr_ScalaRunTime$();
-    var $$x17 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag());
-    var $$x16 = $m_sr_ScalaRunTime$();
-    var $$x15 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).ul__Lcom_raquo_laminar_tags_HtmlTag();
-    var $$x14 = $m_sr_ScalaRunTime$();
-    var $$x13 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("topBar");
-    var $$x12 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).li__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algo).element__Lcom_raquo_laminar_nodes_ReactiveElement()])));
-    var $$x11 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).li__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_dis).element__Lcom_raquo_laminar_nodes_ReactiveElement()])));
-    var this$6 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-    var this$5 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_params);
-    var f = ((a) => {
-        var a$1 = $as_Lview_SingleValue(a);
-        var $$x9 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).li__Lcom_raquo_laminar_tags_HtmlTag());
-        var $$x8 = $m_sr_ScalaRunTime$();
-        var this$4 = $n(a$1);
-        return $n($$x9).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x8).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([this$4.renderSlider__I__I__O__Lcom_raquo_laminar_nodes_ReactiveElement(1, 200, this$4.Lview_SingleValue__f_x)])))
+  var $$x19 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag());
+  var $$x18 = $m_sr_ScalaRunTime$();
+  var $$x17 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag());
+  var $$x16 = $m_sr_ScalaRunTime$();
+  var $$x15 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).ul__Lcom_raquo_laminar_tags_HtmlTag();
+  var $$x14 = $m_sr_ScalaRunTime$();
+  var $$x13 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("topBar");
+  var $$x12 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).li__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algo).element__Lcom_raquo_laminar_nodes_ReactiveElement()])));
+  var $$x11 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).li__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_dis).element__Lcom_raquo_laminar_nodes_ReactiveElement()])));
+  var this$3 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+  var this$2 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_params);
+  var f = ((a) => {
+    var a$1 = $as_Lview_SingleValue(a);
+    var $$x9 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).li__Lcom_raquo_laminar_tags_HtmlTag());
+    var $$x8 = $m_sr_ScalaRunTime$();
+    var this$1 = $n(a$1);
+    return $n($$x9).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x8).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([this$1.renderSlider__O__Lcom_raquo_laminar_nodes_ReactiveElement(this$1.Lview_SingleValue__f_x)])))
+  });
+  if ((this$2 === $m_sci_Nil$())) {
+    var nodes = $m_sci_Nil$()
+  } else {
+    var arg1 = this$2.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$2.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var nodes = h
+  };
+  var $$x10 = $f_Lcom_raquo_laminar_Implicits__nodeSeqToModifier__sc_Seq__Lcom_raquo_laminar_modifiers_Modifier(this$3, nodes);
+  var $$x7 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).li__Lcom_raquo_laminar_tags_HtmlTag();
+  var $$x6 = $m_sr_ScalaRunTime$();
+  var $$x5 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).button__Lcom_raquo_laminar_tags_HtmlTag();
+  var $$x4 = $m_sr_ScalaRunTime$();
+  var $$x3 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("fa fa-check");
+  $m_Lcom_raquo_laminar_api_package$();
+  var eventProp = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onClick__Lcom_raquo_laminar_keys_EventProp();
+  var this$15 = $n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp, false));
+  var onNext = new $c_sjsr_AnonFunction1(((_$2) => {
+    var this$6 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_params);
+    var f$1 = ((a$2) => {
+      var a$3 = $as_Lview_SingleValue(a$2);
+      return $n(a$3).get__sci_Map()
     });
-    if ((this$5 === $m_sci_Nil$())) {
-        var nodes = $m_sci_Nil$()
+    if ((this$6 === $m_sci_Nil$())) {
+      var $$x2 = $m_sci_Nil$()
     } else {
-        var arg1 = this$5.head__O();
-        var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-        var t = h;
-        var rest = $as_sci_List(this$5.tail__O());
-        while ((rest !== $m_sci_Nil$())) {
-            var arg1$1 = $n(rest).head__O();
-            var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-            $n(t).sci_$colon$colon__f_next = nx;
-            t = nx;
-            rest = $as_sci_List($n(rest).tail__O())
-        }
-        ;
-        var nodes = h
+      var arg1$2 = this$6.head__O();
+      var h$1 = new $c_sci_$colon$colon(f$1(arg1$2), $m_sci_Nil$());
+      var t$1 = h$1;
+      var rest$1 = $as_sci_List(this$6.tail__O());
+      while ((rest$1 !== $m_sci_Nil$())) {
+        var arg1$3 = $n(rest$1).head__O();
+        var nx$1 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
+        $n(t$1).sci_$colon$colon__f_next = nx$1;
+        t$1 = nx$1;
+        rest$1 = $as_sci_List($n(rest$1).tail__O())
+      };
+      var $$x2 = h$1
+    };
+    var this$8 = $n($$x2);
+    $n($m_s_Predef$().s_Predef$__f_Map);
+    var z = $m_sci_Map$EmptyMap$();
+    var acc = z;
+    var these = this$8;
+    while ((!$n(these).isEmpty__Z())) {
+      var arg1$4 = acc;
+      var arg2 = $n(these).head__O();
+      var param = $as_sci_Map(arg1$4);
+      var map = $as_sci_Map(arg2);
+      var this$9 = $n(param);
+      acc = $as_sci_Map(this$9.concat__sc_IterableOnce__sc_IterableOps(map));
+      these = $as_sc_LinearSeq($n(these).tail__O())
+    };
+    var paramMap = $as_sci_Map(acc);
+    var this$10 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algo);
+    var algorithm = $as_Lmodel_Algorithm($n($as_T2($n($f_Lview_MultipleList__get__sci_Map(this$10)).head__O())).T2__f__1);
+    var this$11 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_dis);
+    var distribution = $as_Lmodel_Distribution($n($as_T2($n($f_Lview_MultipleList__get__sci_Map(this$11)).head__O())).T2__f__1);
+    this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP = new $c_Lcontroller_Properties$PropertiesImpl(algorithm, distribution, paramMap);
+    var this$14 = $n($n($as_Lmodel_ControllerComponent$Provider($n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_$outer).Lmodel_ViewComponent$Component$ViewImpl__f_$outer)).LMain$package$MVC$2$__f_controller);
+    var p = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP;
+    this$14.update__Lcontroller_Properties__V(p)
+  }));
+  var $$x1 = $n($$x17).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x16).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($$x15).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x14).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x13, $$x12, $$x11, $$x10, $n($$x7).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x6).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($$x5).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x4).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x3, new $c_Lcom_raquo_laminar_modifiers_EventListener(this$15, onNext)])))])))])))])));
+  var this$18 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+  var fn = new $c_sjsr_AnonFunction1(((_$3) => {
+    $as_Lcom_raquo_laminar_lifecycle_MountContext(_$3);
+    var this$16 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_data);
+    if ((!this$16.isEmpty__Z())) {
+      var seq = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_data;
+      new $c_Lview_GraphFunctions(seq)
     }
-    ;
-    var $$x10 = $f_Lcom_raquo_laminar_Implicits__nodeSeqToModifier__sc_Seq__Lcom_raquo_laminar_modifiers_Modifier(this$6, nodes);
-    var $$x7 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).li__Lcom_raquo_laminar_tags_HtmlTag();
-    var $$x6 = $m_sr_ScalaRunTime$();
-    var $$x5 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).button__Lcom_raquo_laminar_tags_HtmlTag();
-    var $$x4 = $m_sr_ScalaRunTime$();
-    var $$x3 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("fa fa-check");
-    $m_Lcom_raquo_laminar_api_package$();
-    var eventProp = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onClick__Lcom_raquo_laminar_keys_EventProp();
-    var this$24 = $n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp, false));
-    var onNext = new $c_sjsr_AnonFunction1(((_$2) => {
-        var this$10 = $m_s_Console$();
-        var this$11 = $n(this$10.out__Ljava_io_PrintStream());
-        this$11.java$lang$JSConsoleBasedPrintStream$$printString__T__V("click\n");
-        var this$12 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_params);
-        var f$1 = ((a$2) => {
-            var a$3 = $as_Lview_SingleValue(a$2);
-            return $n(a$3).get__sci_Map()
-        });
-        if ((this$12 === $m_sci_Nil$())) {
-            var $$x2 = $m_sci_Nil$()
-        } else {
-            var arg1$2 = this$12.head__O();
-            var h$1 = new $c_sci_$colon$colon(f$1(arg1$2), $m_sci_Nil$());
-            var t$1 = h$1;
-            var rest$1 = $as_sci_List(this$12.tail__O());
-            while ((rest$1 !== $m_sci_Nil$())) {
-                var arg1$3 = $n(rest$1).head__O();
-                var nx$1 = new $c_sci_$colon$colon(f$1(arg1$3), $m_sci_Nil$());
-                $n(t$1).sci_$colon$colon__f_next = nx$1;
-                t$1 = nx$1;
-                rest$1 = $as_sci_List($n(rest$1).tail__O())
-            }
-            ;
-            var $$x2 = h$1
-        }
-        ;
-        var this$14 = $n($$x2);
-        $n($m_s_Predef$().s_Predef$__f_Map);
-        var z = $m_sci_Map$EmptyMap$();
-        var acc = z;
-        var these = this$14;
-        while ((!$n(these).isEmpty__Z())) {
-            var arg1$4 = acc;
-            var arg2 = $n(these).head__O();
-            var param = $as_sci_Map(arg1$4);
-            var map = $as_sci_Map(arg2);
-            var this$15 = $n(param);
-            acc = $as_sci_Map(this$15.concat__sc_IterableOnce__sc_IterableOps(map));
-            these = $as_sc_LinearSeq($n(these).tail__O())
-        }
-        ;
-        var paramMap = $as_sci_Map(acc);
-        var x = $m_sc_StringOps$().format$extension__T__sci_Seq__T("new map after click %s", $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([paramMap])));
-        var this$17 = $m_s_Console$();
-        var this$18 = $n(this$17.out__Ljava_io_PrintStream());
-        this$18.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
-        var this$19 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algo);
-        var algorithm = $as_Lmodel_Algorithm($n($as_T2($n($f_Lview_MultipleList__get__sci_Map(this$19)).head__O())).T2__f__1);
-        var this$20 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_dis);
-        var distribution = $as_Lmodel_Distribution($n($as_T2($n($f_Lview_MultipleList__get__sci_Map(this$20)).head__O())).T2__f__1);
-        this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP = new $c_Lcontroller_Properties$PropertiesImpl(algorithm, distribution, paramMap);
-        var this$23 = $n($n($as_Lmodel_ControllerComponent$Provider($n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_$outer).Lmodel_ViewComponent$Component$ViewImpl__f_$outer)).LMain$package$MVC$2$__f_controller);
-        var p = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP;
-        this$23.update__Lcontroller_Properties__V(p)
-    }));
-    var $$x1 = $n($$x17).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x16).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($$x15).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x14).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x13, $$x12, $$x11, $$x10, $n($$x7).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x6).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($$x5).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x4).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x3, new $c_Lcom_raquo_laminar_modifiers_EventListener(this$24, onNext)])))])))])))])));
-    var this$30 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-    var fn = new $c_sjsr_AnonFunction1(((_$3) => {
-        $as_Lcom_raquo_laminar_lifecycle_MountContext(_$3);
-        var this$26 = $m_s_Console$();
-        var this$27 = $n(this$26.out__Ljava_io_PrintStream());
-        this$27.java$lang$JSConsoleBasedPrintStream$$printString__T__V("Callback\n");
-        var this$28 = $n(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_data);
-        if ((!this$28.isEmpty__Z())) {
-            var seq = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_data;
-            new $c_Lview_GraphFunctions(seq)
-        }
-    }));
-    return $n($$x19).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x18).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x1, $f_Lcom_raquo_laminar_api_Laminar__onMountCallback__F1__Lcom_raquo_laminar_modifiers_Modifier(this$30, fn), $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).canvasTag__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("canvas")])))]))), $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("bottomBar")])))])))
+  }));
+  return $n($$x19).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x18).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x1, $f_Lcom_raquo_laminar_api_Laminar__onMountCallback__F1__Lcom_raquo_laminar_modifiers_Modifier(this$18, fn), $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).canvasTag__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("canvas")])))]))), $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("bottomBar")])))])))
 });
 $c_Lmodel_ViewComponent$Component$ViewImpl$JsView.prototype.updated__sci_Seq__Lmodel_ViewComponent$Component$ViewImpl$JsView = (function(data) {
-    var p$2 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP;
-    var algorithms$2 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algorithms;
-    var distributions$2 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_distributions;
-    return this.copy__sci_Seq__sci_Set__sci_Set__Lcontroller_Properties__Lmodel_ViewComponent$Component$ViewImpl$JsView(data, algorithms$2, distributions$2, p$2)
+  var p$1 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_selectedP;
+  var algorithms$1 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_algorithms;
+  var distributions$1 = this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_distributions;
+  return this.copy__sci_Seq__sci_List__sci_List__Lcontroller_Properties__Lmodel_ViewComponent$Component$ViewImpl$JsView(data, algorithms$1, distributions$1, p$1)
 });
-$c_Lmodel_ViewComponent$Component$ViewImpl$JsView.prototype.copy__sci_Seq__sci_Set__sci_Set__Lcontroller_Properties__Lmodel_ViewComponent$Component$ViewImpl$JsView = (function(data, algorithms, distributions, p) {
+$c_Lmodel_ViewComponent$Component$ViewImpl$JsView.prototype.copy__sci_Seq__sci_List__sci_List__Lcontroller_Properties__Lmodel_ViewComponent$Component$ViewImpl$JsView = (function(data, algorithms, distributions, p) {
   return new $c_Lmodel_ViewComponent$Component$ViewImpl$JsView(this.Lmodel_ViewComponent$Component$ViewImpl$JsView__f_$outer, data, algorithms, distributions, p)
 });
 function $as_Lmodel_ViewComponent$Component$ViewImpl$JsView(obj) {
@@ -18822,9 +18598,6 @@ function $h_s_PartialFunction$$anon$1() {
   /*<skip>*/
 }
 $h_s_PartialFunction$$anon$1.prototype = $c_s_PartialFunction$$anon$1.prototype;
-$c_s_PartialFunction$$anon$1.prototype.applyOrElse__O__F1__O = (function(x, default$1) {
-  return $f_s_PartialFunction__applyOrElse__O__F1__O(this, x, default$1)
-});
 $c_s_PartialFunction$$anon$1.prototype.toString__T = (function() {
   return "<function1>"
 });
@@ -19478,22 +19251,22 @@ function $asArrayOf_s_util_Try(obj, depth) {
   return (($isArrayOf_s_util_Try(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.util.Try;", depth))
 }
 function $p_Lview_BottomBar__renderSpeedBar__Lcom_raquo_laminar_nodes_ReactiveElement($thiz) {
-  var sliderValue = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_Var).apply__O__Lcom_raquo_airstream_state_Var(100);
-  var $$x14 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag());
-  var $$x13 = $m_sr_ScalaRunTime$();
-  var $$x12 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).i__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("fa fa-tachometer-alt")])));
-  var $$x11 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).input__Lcom_raquo_laminar_tags_HtmlTag());
-  var $$x10 = $m_sr_ScalaRunTime$();
-  var $$x9 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("slider");
-  var $$x8 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).typ__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter("range");
-  var $$x7 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).minAttr__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter("1");
-  var $$x6 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).maxAttr__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter("1000");
-  var $$x5 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).value__Lcom_raquo_laminar_keys_HtmlProp());
+  var sliderValue = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_Var).apply__O__Lcom_raquo_airstream_state_Var(800);
+  var $$x13 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag());
+  var $$x12 = $m_sr_ScalaRunTime$();
+  var $$x11 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).i__Lcom_raquo_laminar_tags_HtmlTag()).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("fa fa-tachometer-alt")])));
+  var $$x10 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).input__Lcom_raquo_laminar_tags_HtmlTag();
+  var $$x9 = $m_sr_ScalaRunTime$();
+  var $$x8 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("slider");
+  var $$x7 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).typ__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter("range");
+  var $$x6 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).minAttr__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter("1");
+  var $$x5 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).maxAttr__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter("1000");
+  var $$x4 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).value__Lcom_raquo_laminar_keys_HtmlProp());
   var this$1 = $n(sliderValue);
   var this$2 = $n(this$1.Lcom_raquo_airstream_state_SourceVar__f_signal);
-  var $$x4 = $n($$x5).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter($dp_toString__T($n($n($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this$2)).get__O())));
+  var $$x3 = $n($$x4).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter($dp_toString__T($n($n($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this$2)).get__O())));
   $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-  var eventProp = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onInput__Lcom_raquo_laminar_keys_EventProp();
+  var eventProp = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onChange__Lcom_raquo_laminar_keys_EventProp();
   var this$7 = $n($n($n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp, false)).mapToValue__Lcom_raquo_laminar_keys_EventProcessor()).map__F1__Lcom_raquo_laminar_keys_EventProcessor(new $c_sjsr_AnonFunction1(((_$7) => {
     var _$7$1 = $as_T(_$7);
     $m_sc_StringOps$();
@@ -19504,26 +19277,18 @@ function $p_Lview_BottomBar__renderSpeedBar__Lcom_raquo_laminar_nodes_ReactiveEl
     var this$8 = $n(sliderValue);
     $n(this$8.Lcom_raquo_airstream_state_SourceVar__f_writer).onNext__O__V(_$1)
   }));
-  var $$x3 = new $c_Lcom_raquo_laminar_modifiers_EventListener(this$7, onNext);
+  var $$x2 = new $c_Lcom_raquo_laminar_modifiers_EventListener(this$7, onNext);
   $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-  var eventProp$1 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onInput__Lcom_raquo_laminar_keys_EventProp();
+  var eventProp$1 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onChange__Lcom_raquo_laminar_keys_EventProp();
   var this$14 = $n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp$1, false));
   var onNext$1 = new $c_sjsr_AnonFunction1(((v) => {
-    var $$x2 = $n($thiz.Lview_BottomBar__f_graphFunctions);
+    var $$x1 = $n($thiz.Lview_BottomBar__f_graphFunctions);
     $m_sc_StringOps$();
     var x = $as_T(v.target.value);
     var this$13 = $m_jl_Integer$();
-    $n($$x2).setSpeed__I__V(this$13.parseInt__T__I__I(x, 10))
+    $n($$x1).setSpeed__I__V(this$13.parseInt__T__I__I(x, 10))
   }));
-  var $$x1 = $n($$x11).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x10).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x9, $$x8, $$x7, $$x6, $$x4, $$x3, new $c_Lcom_raquo_laminar_modifiers_EventListener(this$14, onNext$1)])));
-  $n($n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_child).Lcom_raquo_laminar_receivers_ChildReceiver$__f_text);
-  var this$16 = $n($n(sliderValue).Lcom_raquo_airstream_state_SourceVar__f_signal);
-  var project = new $c_sjsr_AnonFunction1(((_$8) => {
-    var _$8$1 = $uI(_$8);
-    return ("" + _$8$1)
-  }));
-  var textSource = new $c_Lcom_raquo_airstream_misc_MapSignal(this$16, project, $m_s_None$());
-  return $n($$x14).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x13).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x12, $$x1, $m_Lcom_raquo_laminar_modifiers_ChildTextInserter$().apply__Lcom_raquo_airstream_core_Observable__Lcom_raquo_laminar_modifiers_RenderableText__Lcom_raquo_laminar_modifiers_Inserter(textSource, $m_Lcom_raquo_laminar_modifiers_RenderableText$().Lcom_raquo_laminar_modifiers_RenderableText$__f_stringRenderable)])))
+  return $n($$x13).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x12).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x11, $n($$x10).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x9).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x8, $$x7, $$x6, $$x5, $$x3, $$x2, new $c_Lcom_raquo_laminar_modifiers_EventListener(this$14, onNext$1)])))])))
 }
 /** @constructor */
 function $c_Lview_BottomBar(graphFunctions) {
@@ -19695,9 +19460,9 @@ function $p_Lview_GraphFunctions__getColourFromProperties__Lmodel_ElementInfo__T
   return ($n(elementInfo).Lmodel_ElementInfo$ElemInfo__f_selected ? "green" : ($n(elementInfo).Lmodel_ElementInfo$ElemInfo__f_compared ? "blue" : ($n(elementInfo).Lmodel_ElementInfo$ElemInfo__f_hidden ? "black" : "red")))
 }
 function $p_Lview_GraphFunctions__showGraphic__V($thiz) {
-  var list1 = $as_Lmodel_State($n($thiz.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep).apply__I__O($thiz.Lview_GraphFunctions__f_view$GraphFunctions$$index));
-    $n($thiz.Lview_GraphFunctions__f_visualizer).clear__V();
-    $p_Lview_GraphFunctions__drawList$1__sci_List__V($thiz, $n($n(list1).Lmodel_AlgorithmFactory$State$$anon$4__f_v$1).toList__sci_List())
+  var list1 = $as_Lmodel_State($n($thiz.Lview_GraphFunctions__f_seqStep).apply__I__O($thiz.Lview_GraphFunctions__f_view$GraphFunctions$$index));
+  $n($thiz.Lview_GraphFunctions__f_visualizer).clear__V();
+  $p_Lview_GraphFunctions__drawList$1__sci_List__V($thiz, $n($n(list1).Lmodel_AlgorithmFactory$State$$anon$4__f_v$1).toList__sci_List())
 }
 function $p_Lview_GraphFunctions__drawList$1__sci_List__V($thiz, l) {
   var l$tailLocal1 = l;
@@ -19718,7 +19483,7 @@ function $p_Lview_GraphFunctions__drawList$1__sci_List__V($thiz, l) {
 function $c_Lview_GraphFunctions(seq) {
   this.Lview_GraphFunctions__f_seq = null;
   this.Lview_GraphFunctions__f_bottomBar = null;
-  this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep = null;
+  this.Lview_GraphFunctions__f_seqStep = null;
   this.Lview_GraphFunctions__f_visualizer = null;
   this.Lview_GraphFunctions__f_view$GraphFunctions$$index = 0;
   this.Lview_GraphFunctions__f_period = 0;
@@ -19726,16 +19491,16 @@ function $c_Lview_GraphFunctions(seq) {
   this.Lview_GraphFunctions__f_isExecuting = false;
   this.Lview_GraphFunctions__f_seq = seq;
   this.Lview_GraphFunctions__f_bottomBar = new $c_Lview_BottomBar(this);
-  this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep = seq;
-    var this$2 = $n($n($as_Lmodel_State($n(this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep).head__O())).Lmodel_AlgorithmFactory$State$$anon$4__f_v$1);
-    var nRect = this$2.length__I();
-    var maxValue = $uI($n($as_sc_IterableOnceOps($n($n($as_Lmodel_State($n(this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep).head__O())).Lmodel_AlgorithmFactory$State$$anon$4__f_v$1).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
-        var a$1 = $as_Lmodel_ElementInfo(a);
-        return $uI($n(a$1).Lmodel_ElementInfo$ElemInfo__f_value)
-    }))))).max__s_math_Ordering__O($m_s_math_Ordering$Int$()));
+  this.Lview_GraphFunctions__f_seqStep = seq;
+  var this$2 = $n($n($as_Lmodel_State($n(this.Lview_GraphFunctions__f_seqStep).head__O())).Lmodel_AlgorithmFactory$State$$anon$4__f_v$1);
+  var nRect = this$2.length__I();
+  var maxValue = $uI($n($as_sc_IterableOnceOps($n($n($as_Lmodel_State($n(this.Lview_GraphFunctions__f_seqStep).head__O())).Lmodel_AlgorithmFactory$State$$anon$4__f_v$1).map__F1__O(new $c_sjsr_AnonFunction1(((a) => {
+    var a$1 = $as_Lmodel_ElementInfo(a);
+    return $uI($n(a$1).Lmodel_ElementInfo$ElemInfo__f_value)
+  }))))).max__s_math_Ordering__O($m_s_math_Ordering$Int$()));
   this.Lview_GraphFunctions__f_visualizer = new $c_Lview_RectanglesVisualizer(nRect, maxValue);
   this.Lview_GraphFunctions__f_view$GraphFunctions$$index = 0;
-  this.Lview_GraphFunctions__f_period = 20;
+  this.Lview_GraphFunctions__f_period = 100;
   this.Lview_GraphFunctions__f_timer = new $c_ju_Timer();
   this.Lview_GraphFunctions__f_isExecuting = false;
   $p_Lview_GraphFunctions__showGraphic__V(this);
@@ -19800,7 +19565,7 @@ $c_Lview_GraphFunctions.prototype.play__V = (function() {
 $c_Lview_GraphFunctions.prototype.nextStep__V = (function() {
   $n(this.Lview_GraphFunctions__f_bottomBar).enableBackButton__Z__V(true);
   var $$x1 = this.Lview_GraphFunctions__f_view$GraphFunctions$$index;
-  var this$1 = $n(this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep);
+  var this$1 = $n(this.Lview_GraphFunctions__f_seqStep);
   if (($$x1 === (((-1) + this$1.length__I()) | 0))) {
     $n(this.Lview_GraphFunctions__f_bottomBar).disableNextButton__Z__V(true);
     this.end__V()
@@ -19816,7 +19581,7 @@ $c_Lview_GraphFunctions.prototype.backStep__V = (function() {
   };
   this.Lview_GraphFunctions__f_view$GraphFunctions$$index = (((-1) + this.Lview_GraphFunctions__f_view$GraphFunctions$$index) | 0);
   var $$x1 = this.Lview_GraphFunctions__f_view$GraphFunctions$$index;
-  var this$2 = $n(this.Lview_GraphFunctions__f_view$GraphFunctions$$seqStep);
+  var this$2 = $n(this.Lview_GraphFunctions__f_seqStep);
   if (($$x1 < this$2.length__I())) {
     $n(this.Lview_GraphFunctions__f_bottomBar).disableNextButton__Z__V(false);
     $n(this.Lview_GraphFunctions__f_bottomBar).changeStopIcon__V()
@@ -19847,12 +19612,21 @@ $c_Lview_GraphFunctions.prototype.setSpeed__I__V = (function(speed) {
   var this$1 = $n(this.Lview_GraphFunctions__f_timer);
   this$1.ju_Timer__f_canceled = true;
   this.Lview_GraphFunctions__f_timer = new $c_ju_Timer();
+  var x = ("periodo prima " + this.Lview_GraphFunctions__f_period);
+  var this$3 = $m_s_Console$();
+  var this$4 = $n(this$3.out__Ljava_io_PrintStream());
+  this$4.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x + "\n"));
   var task = new $c_Lview_GraphFunctions$$anon$2(this);
-  this.Lview_GraphFunctions__f_period = speed;
+  this.Lview_GraphFunctions__f_period = ((1001 - speed) | 0);
+  var x$1 = ("period dopo " + this.Lview_GraphFunctions__f_period);
+  var this$6 = $m_s_Console$();
+  var this$7 = $n(this$6.out__Ljava_io_PrintStream());
+  this$7.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$1 + "\n"));
   if (this.Lview_GraphFunctions__f_isExecuting) {
     var $$x1 = $n(this.Lview_GraphFunctions__f_timer);
-    var hi = (speed >> 31);
-    $n($$x1).schedule__ju_TimerTask__J__J__V(task, $L0, new $c_RTLong(speed, hi))
+    var x$2 = this.Lview_GraphFunctions__f_period;
+    var hi = (x$2 >> 31);
+    $n($$x1).schedule__ju_TimerTask__J__J__V(task, $L0, new $c_RTLong(x$2, hi))
   }
 });
 function $as_Lview_GraphFunctions(obj) {
@@ -20102,8 +19876,8 @@ function $asArrayOf_Lcom_raquo_airstream_core_SyncObservable(obj, depth) {
   return (($isArrayOf_Lcom_raquo_airstream_core_SyncObservable(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcom.raquo.airstream.core.SyncObservable;", depth))
 }
 function $f_Lcom_raquo_airstream_core_WritableObservable__$init$__V($thiz) {
-  $thiz.com$raquo$airstream$core$WritableObservable$_setter_$externalObservers_$eq__Lcom_raquo_ew_JsArray__V($m_Lcom_raquo_ew_JsArray$().apply__sci_Seq__Lcom_raquo_ew_JsArray($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_airstream_core_Observer.getArrayOf().constr)([]))));
-  $thiz.com$raquo$airstream$core$WritableObservable$_setter_$internalObservers_$eq__Lcom_raquo_ew_JsArray__V($m_Lcom_raquo_ew_JsArray$().apply__sci_Seq__Lcom_raquo_ew_JsArray($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_airstream_core_InternalObserver.getArrayOf().constr)([]))))
+  $thiz.Lcom_raquo_airstream_state_VarSignal__f_externalObservers = $m_Lcom_raquo_ew_JsArray$().apply__sci_Seq__Lcom_raquo_ew_JsArray($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_airstream_core_Observer.getArrayOf().constr)([])));
+  $thiz.Lcom_raquo_airstream_state_VarSignal__f_internalObservers = $m_Lcom_raquo_ew_JsArray$().apply__sci_Seq__Lcom_raquo_ew_JsArray($m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_airstream_core_InternalObserver.getArrayOf().constr)([])))
 }
 function $f_Lcom_raquo_airstream_core_WritableObservable__addObserver__Lcom_raquo_airstream_core_Observer__Lcom_raquo_airstream_ownership_Owner__Lcom_raquo_airstream_ownership_Subscription($thiz, observer, owner) {
   var this$1 = $m_Lcom_raquo_airstream_core_Transaction$onStart$();
@@ -20111,7 +19885,7 @@ function $f_Lcom_raquo_airstream_core_WritableObservable__addObserver__Lcom_raqu
   try {
     $f_Lcom_raquo_airstream_core_BaseObservable__maybeWillStart__V($thiz);
     var subscription = $f_Lcom_raquo_airstream_core_WritableObservable__addExternalObserver__Lcom_raquo_airstream_core_Observer__Lcom_raquo_airstream_ownership_Owner__Lcom_raquo_airstream_ownership_Subscription($thiz, observer, owner);
-    $n(observer).onTry__s_util_Try__V($thiz.tryNow__s_util_Try());
+    $n(observer).onTry__s_util_Try__V($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try($thiz));
     $p_Lcom_raquo_airstream_core_WritableObservable__maybeStart__V($thiz);
     var result = subscription
   } finally {
@@ -20126,26 +19900,12 @@ function $f_Lcom_raquo_airstream_core_WritableObservable__addExternalObserver__L
   var subscription = new $c_Lcom_raquo_airstream_ownership_Subscription(owner, new $c_sjsr_AnonFunction0((() => {
     $f_Lcom_raquo_airstream_core_BaseObservable__removeExternalObserver__Lcom_raquo_airstream_core_Observer__V($thiz, observer)
   })));
-  var this$ = $thiz.externalObservers__Lcom_raquo_ew_JsArray();
+  var this$ = $thiz.Lcom_raquo_airstream_state_VarSignal__f_externalObservers;
   this$.push(observer);
   return subscription
 }
-function $f_Lcom_raquo_airstream_core_WritableObservable__addInternalObserver__Lcom_raquo_airstream_core_InternalObserver__Z__V($thiz, observer, shouldCallMaybeWillStart) {
-  if (((!$f_Lcom_raquo_airstream_core_BaseObservable__isStarted__Z($thiz)) && shouldCallMaybeWillStart)) {
-    $f_Lcom_raquo_airstream_core_BaseObservable__maybeWillStart__V($thiz)
-  };
-  var this$ = $thiz.internalObservers__Lcom_raquo_ew_JsArray();
-  this$.push(observer);
-  $p_Lcom_raquo_airstream_core_WritableObservable__maybeStart__V($thiz)
-}
-function $f_Lcom_raquo_airstream_core_WritableObservable__removeInternalObserverNow__Lcom_raquo_airstream_core_InternalObserver__V($thiz, observer) {
-  var removed = $m_Lcom_raquo_airstream_core_ObserverList$().removeObserverNow$extension__Lcom_raquo_ew_JsArray__O__Z($thiz.internalObservers__Lcom_raquo_ew_JsArray(), observer);
-  if (removed) {
-    $p_Lcom_raquo_airstream_core_WritableObservable__maybeStop__V($thiz)
-  }
-}
 function $f_Lcom_raquo_airstream_core_WritableObservable__removeExternalObserverNow__Lcom_raquo_airstream_core_Observer__V($thiz, observer) {
-  var removed = $m_Lcom_raquo_airstream_core_ObserverList$().removeObserverNow$extension__Lcom_raquo_ew_JsArray__O__Z($thiz.externalObservers__Lcom_raquo_ew_JsArray(), observer);
+  var removed = $m_Lcom_raquo_airstream_core_ObserverList$().removeObserverNow$extension__Lcom_raquo_ew_JsArray__O__Z($thiz.Lcom_raquo_airstream_state_VarSignal__f_externalObservers, observer);
   if (removed) {
     $p_Lcom_raquo_airstream_core_WritableObservable__maybeStop__V($thiz)
   }
@@ -20153,18 +19913,16 @@ function $f_Lcom_raquo_airstream_core_WritableObservable__removeExternalObserver
 function $p_Lcom_raquo_airstream_core_WritableObservable__maybeStart__V($thiz) {
   var isStarting = ($f_Lcom_raquo_airstream_core_WritableObservable__numAllObservers__I($thiz) === 1);
   if (isStarting) {
-    $thiz.onStart__V()
+    $f_Lcom_raquo_airstream_core_Signal__onStart__V($thiz)
   }
 }
 function $p_Lcom_raquo_airstream_core_WritableObservable__maybeStop__V($thiz) {
-  if ((!$f_Lcom_raquo_airstream_core_BaseObservable__isStarted__Z($thiz))) {
-    $thiz.onStop__V()
-  }
+  $f_Lcom_raquo_airstream_core_BaseObservable__isStarted__Z($thiz)
 }
 function $f_Lcom_raquo_airstream_core_WritableObservable__numAllObservers__I($thiz) {
-  var this$ = $thiz.externalObservers__Lcom_raquo_ew_JsArray();
+  var this$ = $thiz.Lcom_raquo_airstream_state_VarSignal__f_externalObservers;
   var $$x1 = $uI(this$.length);
-  var this$$1 = $thiz.internalObservers__Lcom_raquo_ew_JsArray();
+  var this$$1 = $thiz.Lcom_raquo_airstream_state_VarSignal__f_internalObservers;
   return (($$x1 + $uI(this$$1.length)) | 0)
 }
 function $f_Lcom_raquo_airstream_state_Var__$init$__V($thiz) {
@@ -21147,40 +20905,6 @@ var $d_Lmodel_ElementInfo$ElemInfo = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Lmodel_ElementInfo$ElemInfo.prototype.$classData = $d_Lmodel_ElementInfo$ElemInfo;
-/** @constructor */
-function $c_Lmodel_Params() {
-  /*<skip>*/
-}
-$c_Lmodel_Params.prototype = new $h_O();
-$c_Lmodel_Params.prototype.constructor = $c_Lmodel_Params;
-/** @constructor */
-function $h_Lmodel_Params() {
-  /*<skip>*/
-}
-$h_Lmodel_Params.prototype = $c_Lmodel_Params.prototype;
-$c_Lmodel_Params.prototype.productIterator__sc_Iterator = (function() {
-  return new $c_s_Product$$anon$1(this)
-});
-function $as_Lmodel_Params(obj) {
-  return (((obj instanceof $c_Lmodel_Params) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Params"))
-}
-function $isArrayOf_Lmodel_Params(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Params)))
-}
-function $asArrayOf_Lmodel_Params(obj, depth) {
-  return (($isArrayOf_Lmodel_Params(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.Params;", depth))
-}
-var $d_Lmodel_Params = new $TypeData().initClass({
-  Lmodel_Params: 0
-}, false, "model.Params", {
-  Lmodel_Params: 1,
-  O: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1
-});
-$c_Lmodel_Params.prototype.$classData = $d_Lmodel_Params;
 /** @constructor */
 function $c_Lmodel_Step() {
   /*<skip>*/
@@ -25540,9 +25264,6 @@ $c_s_util_Failure.prototype.get__O = (function() {
   var $$x1 = this.s_util_Failure__f_exception;
   throw (($$x1 instanceof $c_sjs_js_JavaScriptException) ? $$x1.sjs_js_JavaScriptException__f_exception : $n($$x1))
 });
-$c_s_util_Failure.prototype.map__F1__s_util_Try = (function(f) {
-  return this
-});
 $c_s_util_Failure.prototype.fold__F1__F1__O = (function(fa, fb) {
   return $n(fa).apply__O__O(this.s_util_Failure__f_exception)
 });
@@ -25617,19 +25338,6 @@ $c_s_util_Success.prototype.isSuccess__Z = (function() {
 });
 $c_s_util_Success.prototype.get__O = (function() {
   return this.s_util_Success__f_value
-});
-$c_s_util_Success.prototype.map__F1__s_util_Try = (function(f) {
-  try {
-    return new $c_s_util_Success($n(f).apply__O__O(this.s_util_Success__f_value))
-  } catch (e) {
-    var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
-    var o11 = $m_s_util_control_NonFatal$().unapply__jl_Throwable__s_Option(e$2);
-    if ((!$n(o11).isEmpty__Z())) {
-      var e$3 = $as_jl_Throwable($n(o11).get__O());
-      return new $c_s_util_Failure(e$3)
-    };
-    throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
-  }
 });
 $c_s_util_Success.prototype.fold__F1__F1__O = (function(fa, fb) {
   try {
@@ -25804,88 +25512,6 @@ var $d_Lview_ButtonImpl = new $TypeData().initClass({
   Ljava_io_Serializable: 1
 });
 $c_Lview_ButtonImpl.prototype.$classData = $d_Lview_ButtonImpl;
-class $c_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError extends $c_Lcom_raquo_airstream_core_AirstreamError {
-  constructor(error, cause) {
-    super();
-    this.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_error = null;
-    this.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_cause = null;
-    this.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_error = error;
-    this.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_cause = cause;
-    var message = ((("ErrorHandlingError: " + $n(error).getMessage__T()) + "; cause: ") + $n(cause).getMessage__T());
-    $ct_jl_Throwable__T__jl_Throwable__Z__Z__(this, message, null, true, true);
-    this.initCause__jl_Throwable__jl_Throwable(cause)
-  };
-  productIterator__sc_Iterator() {
-    return new $c_s_Product$$anon$1(this)
-  };
-  hashCode__I() {
-    var this$2 = $m_s_util_hashing_MurmurHash3$();
-    return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
-  };
-  equals__O__Z(x$0) {
-    if ((this === x$0)) {
-      return true
-    } else if ((x$0 instanceof $c_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError)) {
-      var x$0$2 = $as_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError(x$0);
-      var x = this.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_error;
-      var x$2 = $n(x$0$2).Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_error;
-      if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-        var x$3 = this.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_cause;
-        var x$4 = $n(x$0$2).Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_cause;
-        var $$x1 = ((x$3 === null) ? (x$4 === null) : $n(x$3).equals__O__Z(x$4))
-      } else {
-        var $$x1 = false
-      };
-      if ($$x1) {
-        $n(x$0$2);
-        return true
-      } else {
-        return false
-      }
-    } else {
-      return false
-    }
-  };
-  productArity__I() {
-    return 2
-  };
-  productPrefix__T() {
-    return "ErrorHandlingError"
-  };
-  productElement__I__O(n) {
-    if ((n === 0)) {
-      return this.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_error
-    };
-    if ((n === 1)) {
-      return this.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_cause
-    };
-    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-  };
-  toString__T() {
-    return ((("ErrorHandlingError: " + this.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_error) + "; cause: ") + this.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError__f_cause)
-  };
-}
-function $as_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError(obj) {
-  return (((obj instanceof $c_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError) || (obj === null)) ? obj : $throwClassCastException(obj, "com.raquo.airstream.core.AirstreamError$ErrorHandlingError"))
-}
-function $isArrayOf_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError(obj, depth) {
-  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError)))
-}
-function $asArrayOf_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError(obj, depth) {
-  return (($isArrayOf_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lcom.raquo.airstream.core.AirstreamError$ErrorHandlingError;", depth))
-}
-var $d_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError = new $TypeData().initClass({
-  Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError: 0
-}, false, "com.raquo.airstream.core.AirstreamError$ErrorHandlingError", {
-  Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError: 1,
-  Lcom_raquo_airstream_core_AirstreamError: 1,
-  jl_Throwable: 1,
-  O: 1,
-  Ljava_io_Serializable: 1,
-  s_Equals: 1,
-  s_Product: 1
-});
-$c_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError.prototype.$classData = $d_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError;
 class $c_Lcom_raquo_airstream_core_AirstreamError$ObserverError extends $c_Lcom_raquo_airstream_core_AirstreamError {
   constructor(error) {
     super();
@@ -26038,7 +25664,7 @@ var $d_Lcom_raquo_airstream_core_AirstreamError$ObserverErrorHandlingError = new
 });
 $c_Lcom_raquo_airstream_core_AirstreamError$ObserverErrorHandlingError.prototype.$classData = $d_Lcom_raquo_airstream_core_AirstreamError$ObserverErrorHandlingError;
 function $f_Lcom_raquo_airstream_core_Signal__onStart__V($thiz) {
-  $thiz.tryNow__s_util_Try()
+  $f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try($thiz)
 }
 /** @constructor */
 function $c_Lcom_raquo_airstream_state_SourceVar(initial) {
@@ -26488,6 +26114,47 @@ var $d_ju_FormatterClosedException = new $TypeData().initClass({
 $c_ju_FormatterClosedException.prototype.$classData = $d_ju_FormatterClosedException;
 class $c_ju_IllegalFormatException extends $c_jl_IllegalArgumentException {
 }
+function $ct_Lmodel_Params__I__I__($thiz, minV, maxV) {
+  $thiz.Lmodel_Params__f_model$seqProperties$HasRange$$a = minV;
+  $thiz.Lmodel_Params__f_model$seqProperties$HasRange$$b = maxV;
+  return $thiz
+}
+/** @constructor */
+function $c_Lmodel_Params() {
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$a = 0;
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$b = 0
+}
+$c_Lmodel_Params.prototype = new $h_O();
+$c_Lmodel_Params.prototype.constructor = $c_Lmodel_Params;
+/** @constructor */
+function $h_Lmodel_Params() {
+  /*<skip>*/
+}
+$h_Lmodel_Params.prototype = $c_Lmodel_Params.prototype;
+$c_Lmodel_Params.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_s_Product$$anon$1(this)
+});
+function $as_Lmodel_Params(obj) {
+  return (((obj instanceof $c_Lmodel_Params) || (obj === null)) ? obj : $throwClassCastException(obj, "model.Params"))
+}
+function $isArrayOf_Lmodel_Params(obj, depth) {
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_Params)))
+}
+function $asArrayOf_Lmodel_Params(obj, depth) {
+  return (($isArrayOf_Lmodel_Params(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.Params;", depth))
+}
+var $d_Lmodel_Params = new $TypeData().initClass({
+  Lmodel_Params: 0
+}, false, "model.Params", {
+  Lmodel_Params: 1,
+  O: 1,
+  Lmodel_seqProperties_HasRange: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1
+});
+$c_Lmodel_Params.prototype.$classData = $d_Lmodel_Params;
 /** @constructor */
 function $c_Lmodel_Step$Comparison(a, b) {
   this.Lmodel_Step$Comparison__f_a = null;
@@ -27021,29 +26688,26 @@ $c_sc_AbstractIterable.prototype.map__F1__O = (function(f) {
 $c_sc_AbstractIterable.prototype.zipWithIndex__O = (function() {
   return $f_sc_IterableOps__zipWithIndex__O(this)
 });
-$c_sc_AbstractIterable.prototype.foreach__F1__V = (function (f) {
-    $f_sc_IterableOnceOps__foreach__F1__V(this, f)
+$c_sc_AbstractIterable.prototype.foreach__F1__V = (function(f) {
+  $f_sc_IterableOnceOps__foreach__F1__V(this, f)
 });
-$c_sc_AbstractIterable.prototype.forall__F1__Z = (function (p) {
-    return $f_sc_IterableOnceOps__forall__F1__Z(this, p)
+$c_sc_AbstractIterable.prototype.forall__F1__Z = (function(p) {
+  return $f_sc_IterableOnceOps__forall__F1__Z(this, p)
 });
-$c_sc_AbstractIterable.prototype.exists__F1__Z = (function (p) {
-    return $f_sc_IterableOnceOps__exists__F1__Z(this, p)
+$c_sc_AbstractIterable.prototype.exists__F1__Z = (function(p) {
+  return $f_sc_IterableOnceOps__exists__F1__Z(this, p)
 });
-$c_sc_AbstractIterable.prototype.find__F1__s_Option = (function (p) {
-    return $f_sc_IterableOnceOps__find__F1__s_Option(this, p)
+$c_sc_AbstractIterable.prototype.foldLeft__O__F2__O = (function(z, op) {
+  return $f_sc_IterableOnceOps__foldLeft__O__F2__O(this, z, op)
 });
-$c_sc_AbstractIterable.prototype.foldLeft__O__F2__O = (function (z, op) {
-    return $f_sc_IterableOnceOps__foldLeft__O__F2__O(this, z, op)
+$c_sc_AbstractIterable.prototype.reduceLeft__F2__O = (function(op) {
+  return $f_sc_IterableOnceOps__reduceLeft__F2__O(this, op)
 });
-$c_sc_AbstractIterable.prototype.reduceLeft__F2__O = (function (op) {
-    return $f_sc_IterableOnceOps__reduceLeft__F2__O(this, op)
+$c_sc_AbstractIterable.prototype.isEmpty__Z = (function() {
+  return $f_sc_IterableOnceOps__isEmpty__Z(this)
 });
-$c_sc_AbstractIterable.prototype.isEmpty__Z = (function () {
-    return $f_sc_IterableOnceOps__isEmpty__Z(this)
-});
-$c_sc_AbstractIterable.prototype.size__I = (function () {
-    return $f_sc_IterableOnceOps__size__I(this)
+$c_sc_AbstractIterable.prototype.size__I = (function() {
+  return $f_sc_IterableOnceOps__size__I(this)
 });
 $c_sc_AbstractIterable.prototype.copyToArray__O__I__I__I = (function(xs, start, len) {
   return $f_sc_IterableOnceOps__copyToArray__O__I__I__I(this, xs, start, len)
@@ -27309,9 +26973,6 @@ var $d_sc_Iterator$$anon$21 = new $TypeData().initClass({
   scm_Clearable: 1
 });
 $c_sc_Iterator$$anon$21.prototype.$classData = $d_sc_Iterator$$anon$21;
-function $f_sc_MapOps__applyOrElse__O__F1__O($thiz, x, default$1) {
-  return $thiz.getOrElse__O__F0__O(x, new $c_sjsr_AnonFunction0((() => $n(default$1).apply__O__O(x))))
-}
 function $f_sc_MapOps__foreachEntry__F2__V($thiz, f) {
   var it = $thiz.iterator__sc_Iterator();
   while ($n(it).hasNext__Z()) {
@@ -28272,12 +27933,16 @@ var $d_s_reflect_ClassTag$GenericClassTag = new $TypeData().initClass({
 });
 $c_s_reflect_ClassTag$GenericClassTag.prototype.$classData = $d_s_reflect_ClassTag$GenericClassTag;
 /** @constructor */
-function $c_Lview_SingleValue(x, starterValue) {
+function $c_Lview_SingleValue(x, starterValue, min, max) {
   this.Lview_SingleValue__f_x = null;
   this.Lview_SingleValue__f_starterValue = null;
+  this.Lview_SingleValue__f_min = null;
+  this.Lview_SingleValue__f_max = null;
   this.Lview_SingleValue__f_sliderValue = null;
   this.Lview_SingleValue__f_x = x;
   this.Lview_SingleValue__f_starterValue = starterValue;
+  this.Lview_SingleValue__f_min = min;
+  this.Lview_SingleValue__f_max = max;
   this.Lview_SingleValue__f_sliderValue = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_Var).apply__O__Lcom_raquo_airstream_state_Var(starterValue)
 }
 $c_Lview_SingleValue.prototype = new $h_O();
@@ -28304,7 +27969,21 @@ $c_Lview_SingleValue.prototype.equals__O__Z = (function(x$0) {
     if ($m_sr_BoxesRunTime$().equals__O__O__Z(x, y)) {
       var x$1 = this.Lview_SingleValue__f_starterValue;
       var y$1 = $n(x$0$2).Lview_SingleValue__f_starterValue;
-      var $$x1 = $m_sr_BoxesRunTime$().equals__O__O__Z(x$1, y$1)
+      var $$x3 = $m_sr_BoxesRunTime$().equals__O__O__Z(x$1, y$1)
+    } else {
+      var $$x3 = false
+    };
+    if ($$x3) {
+      var x$2 = this.Lview_SingleValue__f_min;
+      var y$2 = $n(x$0$2).Lview_SingleValue__f_min;
+      var $$x2 = $m_sr_BoxesRunTime$().equals__O__O__Z(x$2, y$2)
+    } else {
+      var $$x2 = false
+    };
+    if ($$x2) {
+      var x$3 = this.Lview_SingleValue__f_max;
+      var y$3 = $n(x$0$2).Lview_SingleValue__f_max;
+      var $$x1 = $m_sr_BoxesRunTime$().equals__O__O__Z(x$3, y$3)
     } else {
       var $$x1 = false
     };
@@ -28322,58 +28001,67 @@ $c_Lview_SingleValue.prototype.toString__T = (function() {
   return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
 });
 $c_Lview_SingleValue.prototype.productArity__I = (function() {
-  return 2
+  return 4
 });
 $c_Lview_SingleValue.prototype.productPrefix__T = (function() {
   return "SingleValue"
 });
 $c_Lview_SingleValue.prototype.productElement__I__O = (function(n) {
-  if ((n === 0)) {
-    return this.Lview_SingleValue__f_x
-  };
-  if ((n === 1)) {
-    return this.Lview_SingleValue__f_starterValue
-  };
-  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+  switch (n) {
+    case 0: {
+      return this.Lview_SingleValue__f_x;
+      break
+    }
+    case 1: {
+      return this.Lview_SingleValue__f_starterValue;
+      break
+    }
+    case 2: {
+      return this.Lview_SingleValue__f_min;
+      break
+    }
+    case 3: {
+      return this.Lview_SingleValue__f_max;
+      break
+    }
+    default: {
+      throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+    }
+  }
 });
-$c_Lview_SingleValue.prototype.renderSlider__I__I__O__Lcom_raquo_laminar_nodes_ReactiveElement = (function(min, max, item) {
-  var $$x14 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag());
-  var $$x13 = $m_sr_ScalaRunTime$();
-  var $$x12 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).label__Lcom_raquo_laminar_tags_HtmlTag());
-  var $$x11 = $m_sr_ScalaRunTime$();
+$c_Lview_SingleValue.prototype.renderSlider__O__Lcom_raquo_laminar_nodes_ReactiveElement = (function(item) {
+  var $$x13 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).div__Lcom_raquo_laminar_tags_HtmlTag());
+  var $$x12 = $m_sr_ScalaRunTime$();
+  var $$x11 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).label__Lcom_raquo_laminar_tags_HtmlTag());
+  var $$x10 = $m_sr_ScalaRunTime$();
   var this$1 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
   var value = $dp_toString__T($n(item));
   var renderable = $m_Lcom_raquo_laminar_modifiers_RenderableText$().Lcom_raquo_laminar_modifiers_RenderableText$__f_stringRenderable;
-  var $$x10 = $n($$x12).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x11).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$f_Lcom_raquo_laminar_Implicits__textToTextNode__O__Lcom_raquo_laminar_modifiers_RenderableText__Lcom_raquo_laminar_nodes_TextNode(this$1, value, renderable)])));
-  var $$x9 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).input__Lcom_raquo_laminar_tags_HtmlTag());
-  var $$x8 = $m_sr_ScalaRunTime$();
-  var $$x7 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("slider");
-  var $$x6 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).typ__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter("range");
-  var $$x5 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).minAttr__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter(("" + min));
-  var $$x4 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).maxAttr__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter(("" + max));
-  var $$x3 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).value__Lcom_raquo_laminar_keys_HtmlProp());
-  var this$4 = $n(this.Lview_SingleValue__f_sliderValue);
-  var this$5 = $n(this$4.Lcom_raquo_airstream_state_SourceVar__f_signal);
-  var $$x2 = $n($$x3).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter($dp_toString__T($n($n($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this$5)).get__O())));
+  var $$x9 = $n($$x11).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x10).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$f_Lcom_raquo_laminar_Implicits__textToTextNode__O__Lcom_raquo_laminar_modifiers_RenderableText__Lcom_raquo_laminar_nodes_TextNode(this$1, value, renderable)])));
+  var $$x8 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).input__Lcom_raquo_laminar_tags_HtmlTag();
+  var $$x7 = $m_sr_ScalaRunTime$();
+  var $$x6 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_className).$colon$eq__T__Lcom_raquo_laminar_modifiers_CompositeKeySetter("slider");
+  var $$x5 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).typ__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter("range");
+  var $$x4 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).minAttr__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter($dp_toString__T($n(this.Lview_SingleValue__f_min)));
+  var $$x3 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).maxAttr__Lcom_raquo_laminar_keys_HtmlAttr()).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter($dp_toString__T($n(this.Lview_SingleValue__f_max)));
+  var $$x2 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).value__Lcom_raquo_laminar_keys_HtmlProp());
+  var this$2 = $n(this.Lview_SingleValue__f_sliderValue);
+  var this$3 = $n(this$2.Lcom_raquo_airstream_state_SourceVar__f_signal);
+  var $$x1 = $n($$x2).$colon$eq__O__Lcom_raquo_laminar_modifiers_KeySetter($dp_toString__T($n($n($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this$3)).get__O())));
   $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
   var eventProp = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onInput__Lcom_raquo_laminar_keys_EventProp();
-  var this$10 = $n($n($n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp, false)).mapToValue__Lcom_raquo_laminar_keys_EventProcessor()).map__F1__Lcom_raquo_laminar_keys_EventProcessor(new $c_sjsr_AnonFunction1(((_$1) => {
+  var this$8 = $n($n($n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp, false)).mapToValue__Lcom_raquo_laminar_keys_EventProcessor()).map__F1__Lcom_raquo_laminar_keys_EventProcessor(new $c_sjsr_AnonFunction1(((_$1) => {
     var _$1$1 = $as_T(_$1);
     $m_sc_StringOps$();
-    var this$9 = $m_jl_Integer$();
-    return this$9.parseInt__T__I__I(_$1$1, 10)
+    var this$7 = $m_jl_Integer$();
+    return this$7.parseInt__T__I__I(_$1$1, 10)
   }))));
   var sink = this.Lview_SingleValue__f_sliderValue;
   var onNext = new $c_sjsr_AnonFunction1(((_$1$2) => {
-    var this$11 = $n(sink);
-    $n(this$11.Lcom_raquo_airstream_state_SourceVar__f_writer).onNext__O__V(_$1$2)
+    var this$9 = $n(sink);
+    $n(this$9.Lcom_raquo_airstream_state_SourceVar__f_writer).onNext__O__V(_$1$2)
   }));
-  var $$x1 = $n($$x9).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x8).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x7, $$x6, $$x5, $$x4, $$x2, new $c_Lcom_raquo_laminar_modifiers_EventListener(this$10, onNext)])));
-  $n($n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).Lcom_raquo_laminar_api_package$$anon$1__f_child).Lcom_raquo_laminar_receivers_ChildReceiver$__f_text);
-  var this$12 = $n($n(this.Lview_SingleValue__f_sliderValue).Lcom_raquo_airstream_state_SourceVar__f_signal);
-  var project = new $c_sjsr_AnonFunction1(((_$2) => $dp_toString__T($n(_$2))));
-  var textSource = new $c_Lcom_raquo_airstream_misc_MapSignal(this$12, project, $m_s_None$());
-  return $n($$x14).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x13).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x10, $$x1, $m_Lcom_raquo_laminar_modifiers_ChildTextInserter$().apply__Lcom_raquo_airstream_core_Observable__Lcom_raquo_laminar_modifiers_RenderableText__Lcom_raquo_laminar_modifiers_Inserter(textSource, $m_Lcom_raquo_laminar_modifiers_RenderableText$().Lcom_raquo_laminar_modifiers_RenderableText$__f_stringRenderable)])))
+  return $n($$x13).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x12).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x9, $n($$x8).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x7).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x6, $$x5, $$x4, $$x3, $$x1, new $c_Lcom_raquo_laminar_modifiers_EventListener(this$8, onNext)])))])))
 });
 $c_Lview_SingleValue.prototype.get__sci_Map = (function() {
   var this$5 = $n($m_s_Predef$().s_Predef$__f_Map);
@@ -28703,50 +28391,48 @@ $c_Lcontroller_StepController$SeqProperties.prototype.productElement__I__O = (fu
   throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
 });
 $c_Lcontroller_StepController$SeqProperties.prototype.getElements__sci_Seq = (function() {
-    var this$2 = $m_s_Console$();
-    var this$3 = $n(this$2.out__Ljava_io_PrintStream());
-    this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("Entering getElements\n");
-    var $$x1 = $n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_distribution).generator__sci_Map__Lmodel_seqProperties_Generator($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_params);
-    var end = $uI($n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_params).apply__O__O($p_Lcontroller_StepController$SeqProperties__findParamFromName__T__Lmodel_Params(this, "Size")));
-    var this$7 = $n($n($$x1).generateAll__sci_Range__sci_Map(new $c_sci_Range$Inclusive(0, end, 1)));
-    $m_sci_List$();
-    var this$11 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$7));
-    var \u03b41$ = $n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_distribution;
-    var lt = new $c_sjsr_AnonFunction2(((a, b) => {
-        var a$1 = $as_T2(a);
-        var b$1 = $as_T2(b);
-        var this$10 = $n(\u03b41$);
-        return this$10.compare__T2__T2__Z(a$1, b$1)
-    }));
-    var this$12 = $n($as_sci_List($f_sc_SeqOps__sortWith__F2__O(this$11, lt)));
-    var f = ((x) => {
-        var x$1 = $as_T2(x);
-        return $uI($n(x$1).T2__f__2)
-    });
-    if ((this$12 === $m_sci_Nil$())) {
-        var seq = $m_sci_Nil$()
-    } else {
-        var arg1 = this$12.head__O();
-        var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-        var t = h;
-        var rest = $as_sci_List(this$12.tail__O());
-        while ((rest !== $m_sci_Nil$())) {
-            var arg1$1 = $n(rest).head__O();
-            var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-            $n(t).sci_$colon$colon__f_next = nx;
-            t = nx;
-            rest = $as_sci_List($n(rest).tail__O())
-        }
-        ;
-        var seq = h
-    }
-    ;
-    var x$2 = ("seq" + seq);
-    var this$14 = $m_s_Console$();
-    var this$15 = $n(this$14.out__Ljava_io_PrintStream());
-    this$15.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$2 + "\n"));
-    var this$16 = $n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_algorithm);
-    return this$16.execute__sci_Seq__sci_Seq(seq)
+  var this$2 = $m_s_Console$();
+  var this$3 = $n(this$2.out__Ljava_io_PrintStream());
+  this$3.java$lang$JSConsoleBasedPrintStream$$printString__T__V("Entering getElements\n");
+  var $$x1 = $n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_distribution).generator__sci_Map__Lmodel_seqProperties_Generator($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_params);
+  var end = $uI($n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_params).apply__O__O($p_Lcontroller_StepController$SeqProperties__findParamFromName__T__Lmodel_Params(this, "Size")));
+  var this$7 = $n($n($$x1).generateAll__sci_Range__sci_Map(new $c_sci_Range$Inclusive(0, end, 1)));
+  $m_sci_List$();
+  var this$11 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$7));
+  var \u03b41$ = $n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_distribution;
+  var lt = new $c_sjsr_AnonFunction2(((a, b) => {
+    var a$1 = $as_T2(a);
+    var b$1 = $as_T2(b);
+    var this$10 = $n(\u03b41$);
+    return this$10.compare__T2__T2__Z(a$1, b$1)
+  }));
+  var this$12 = $n($as_sci_List($f_sc_SeqOps__sortWith__F2__O(this$11, lt)));
+  var f = ((x) => {
+    var x$1 = $as_T2(x);
+    return $uI($n(x$1).T2__f__2)
+  });
+  if ((this$12 === $m_sci_Nil$())) {
+    var seq = $m_sci_Nil$()
+  } else {
+    var arg1 = this$12.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$12.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var seq = h
+  };
+  var x$2 = ("seq" + seq);
+  var this$14 = $m_s_Console$();
+  var this$15 = $n(this$14.out__Ljava_io_PrintStream());
+  this$15.java$lang$JSConsoleBasedPrintStream$$printString__T__V((x$2 + "\n"));
+  var this$16 = $n($n(this.Lcontroller_StepController$SeqProperties__f_prop).Lcontroller_Properties$PropertiesImpl__f_algorithm);
+  return this$16.execute__sci_Seq__sci_Seq(seq)
 });
 function $as_Lcontroller_StepController$SeqProperties(obj) {
   return (((obj instanceof $c_Lcontroller_StepController$SeqProperties) || (obj === null)) ? obj : $throwClassCastException(obj, "controller.StepController$SeqProperties"))
@@ -30155,371 +29841,350 @@ function $asArrayOf_sjs_js_JavaScriptException(obj, depth) {
 var $d_sjs_js_JavaScriptException = new $TypeData().initClass({
   sjs_js_JavaScriptException: 0
 }, false, "scala.scalajs.js.JavaScriptException", {
-    sjs_js_JavaScriptException: 1,
-    jl_RuntimeException: 1,
-    jl_Exception: 1,
-    jl_Throwable: 1,
-    O: 1,
-    Ljava_io_Serializable: 1,
-    s_Product: 1,
-    s_Equals: 1
+  sjs_js_JavaScriptException: 1,
+  jl_RuntimeException: 1,
+  jl_Exception: 1,
+  jl_Throwable: 1,
+  O: 1,
+  Ljava_io_Serializable: 1,
+  s_Product: 1,
+  s_Equals: 1
 });
 $c_sjs_js_JavaScriptException.prototype.$classData = $d_sjs_js_JavaScriptException;
 /** @constructor */
 function $c_Lview_MultipleListImpl(x, selected) {
-    this.Lview_MultipleListImpl__f_view$MultipleList$$x = null;
-    this.Lview_MultipleListImpl__f_view$MultipleList$$selected = null;
-    this.Lview_MultipleListImpl__f_selectedVar = null;
-    this.Lview_MultipleListImpl__f_map = null;
-    this.Lview_MultipleListImpl__f_x = null;
-    this.Lview_MultipleListImpl__f_selected = null;
-    this.Lview_MultipleListImpl__f_x = x;
-    this.Lview_MultipleListImpl__f_selected = selected;
-    this.Lview_MultipleListImpl__f_view$MultipleList$$x = x;
-    this.Lview_MultipleListImpl__f_view$MultipleList$$selected = selected;
-    $f_Lview_MultipleList__$init$__V(this)
+  this.Lview_MultipleListImpl__f_view$MultipleList$$x = null;
+  this.Lview_MultipleListImpl__f_view$MultipleList$$selected = null;
+  this.Lview_MultipleListImpl__f_selectedVar = null;
+  this.Lview_MultipleListImpl__f_map = null;
+  this.Lview_MultipleListImpl__f_x = null;
+  this.Lview_MultipleListImpl__f_selected = null;
+  this.Lview_MultipleListImpl__f_x = x;
+  this.Lview_MultipleListImpl__f_selected = selected;
+  this.Lview_MultipleListImpl__f_view$MultipleList$$x = x;
+  this.Lview_MultipleListImpl__f_view$MultipleList$$selected = selected;
+  $f_Lview_MultipleList__$init$__V(this)
 }
 $c_Lview_MultipleListImpl.prototype = new $h_O();
 $c_Lview_MultipleListImpl.prototype.constructor = $c_Lview_MultipleListImpl;
 /** @constructor */
 function $h_Lview_MultipleListImpl() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lview_MultipleListImpl.prototype = $c_Lview_MultipleListImpl.prototype;
-$c_Lview_MultipleListImpl.prototype.view$MultipleList$$x__sci_Set = (function () {
-    return this.Lview_MultipleListImpl__f_view$MultipleList$$x
+$c_Lview_MultipleListImpl.prototype.view$MultipleList$$x__sci_List = (function() {
+  return this.Lview_MultipleListImpl__f_view$MultipleList$$x
 });
-$c_Lview_MultipleListImpl.prototype.view$MultipleList$$selected__Lmodel_HasName = (function () {
-    return this.Lview_MultipleListImpl__f_view$MultipleList$$selected
+$c_Lview_MultipleListImpl.prototype.view$MultipleList$$selected__Lmodel_HasName = (function() {
+  return this.Lview_MultipleListImpl__f_view$MultipleList$$selected
 });
-$c_Lview_MultipleListImpl.prototype.selectedVar__Lcom_raquo_airstream_state_Var = (function () {
-    return this.Lview_MultipleListImpl__f_selectedVar
+$c_Lview_MultipleListImpl.prototype.selectedVar__Lcom_raquo_airstream_state_Var = (function() {
+  return this.Lview_MultipleListImpl__f_selectedVar
 });
-$c_Lview_MultipleListImpl.prototype.map__sci_Map = (function () {
-    return this.Lview_MultipleListImpl__f_map
+$c_Lview_MultipleListImpl.prototype.map__sci_Map = (function() {
+  return this.Lview_MultipleListImpl__f_map
 });
-$c_Lview_MultipleListImpl.prototype.view$MultipleList$_setter_$selectedVar_$eq__Lcom_raquo_airstream_state_Var__V = (function (x$0) {
-    this.Lview_MultipleListImpl__f_selectedVar = x$0
+$c_Lview_MultipleListImpl.prototype.view$MultipleList$_setter_$selectedVar_$eq__Lcom_raquo_airstream_state_Var__V = (function(x$0) {
+  this.Lview_MultipleListImpl__f_selectedVar = x$0
 });
-$c_Lview_MultipleListImpl.prototype.view$MultipleList$_setter_$map_$eq__sci_Map__V = (function (x$0) {
-    this.Lview_MultipleListImpl__f_map = x$0
+$c_Lview_MultipleListImpl.prototype.view$MultipleList$_setter_$map_$eq__sci_Map__V = (function(x$0) {
+  this.Lview_MultipleListImpl__f_map = x$0
 });
-$c_Lview_MultipleListImpl.prototype.element__Lcom_raquo_laminar_nodes_ReactiveElement = (function () {
-    return $f_Lview_MultipleList__element__Lcom_raquo_laminar_nodes_ReactiveElement(this)
+$c_Lview_MultipleListImpl.prototype.element__Lcom_raquo_laminar_nodes_ReactiveElement = (function() {
+  return $f_Lview_MultipleList__element__Lcom_raquo_laminar_nodes_ReactiveElement(this)
 });
-$c_Lview_MultipleListImpl.prototype.productIterator__sc_Iterator = (function () {
-    return new $c_s_Product$$anon$1(this)
+$c_Lview_MultipleListImpl.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_s_Product$$anon$1(this)
 });
-$c_Lview_MultipleListImpl.prototype.hashCode__I = (function () {
-    var this$2 = $m_s_util_hashing_MurmurHash3$();
-    return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+$c_Lview_MultipleListImpl.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
 });
-$c_Lview_MultipleListImpl.prototype.equals__O__Z = (function (x$0) {
-    if ((this === x$0)) {
-        return true
-    } else if ((x$0 instanceof $c_Lview_MultipleListImpl)) {
-        var x$0$2 = $as_Lview_MultipleListImpl(x$0);
-        var x = this.Lview_MultipleListImpl__f_x;
-        var x$2 = $n(x$0$2).Lview_MultipleListImpl__f_x;
-        if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-            var x$3 = this.Lview_MultipleListImpl__f_selected;
-            var x$4 = $n(x$0$2).Lview_MultipleListImpl__f_selected;
-            if ((x$3 === null)) {
-                var $$x1 = (x$4 === null)
-            } else {
-                var this$1 = $n(x$3);
-                var $$x1 = (this$1 === x$4)
-            }
-        } else {
-            var $$x1 = false
-        }
-        ;
-        if ($$x1) {
-            $n(x$0$2);
-            return true
-        } else {
-            return false
-        }
+$c_Lview_MultipleListImpl.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lview_MultipleListImpl)) {
+    var x$0$2 = $as_Lview_MultipleListImpl(x$0);
+    var x = this.Lview_MultipleListImpl__f_x;
+    var x$2 = $n(x$0$2).Lview_MultipleListImpl__f_x;
+    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
+      var x$3 = this.Lview_MultipleListImpl__f_selected;
+      var x$4 = $n(x$0$2).Lview_MultipleListImpl__f_selected;
+      if ((x$3 === null)) {
+        var $$x1 = (x$4 === null)
+      } else {
+        var this$1 = $n(x$3);
+        var $$x1 = (this$1 === x$4)
+      }
     } else {
-        return false
+      var $$x1 = false
+    };
+    if ($$x1) {
+      $n(x$0$2);
+      return true
+    } else {
+      return false
     }
+  } else {
+    return false
+  }
 });
-$c_Lview_MultipleListImpl.prototype.toString__T = (function () {
-    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+$c_Lview_MultipleListImpl.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
 });
-$c_Lview_MultipleListImpl.prototype.productArity__I = (function () {
-    return 2
+$c_Lview_MultipleListImpl.prototype.productArity__I = (function() {
+  return 2
 });
-$c_Lview_MultipleListImpl.prototype.productPrefix__T = (function () {
-    return "MultipleListImpl"
+$c_Lview_MultipleListImpl.prototype.productPrefix__T = (function() {
+  return "MultipleListImpl"
 });
-$c_Lview_MultipleListImpl.prototype.productElement__I__O = (function (n) {
-    if ((n === 0)) {
-        return this.Lview_MultipleListImpl__f_x
-    }
-    ;
-    if ((n === 1)) {
-        return this.Lview_MultipleListImpl__f_selected
-    }
-    ;
-    throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+$c_Lview_MultipleListImpl.prototype.productElement__I__O = (function(n) {
+  if ((n === 0)) {
+    return this.Lview_MultipleListImpl__f_x
+  };
+  if ((n === 1)) {
+    return this.Lview_MultipleListImpl__f_selected
+  };
+  throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
 });
 function $as_Lview_MultipleListImpl(obj) {
-    return (((obj instanceof $c_Lview_MultipleListImpl) || (obj === null)) ? obj : $throwClassCastException(obj, "view.MultipleListImpl"))
+  return (((obj instanceof $c_Lview_MultipleListImpl) || (obj === null)) ? obj : $throwClassCastException(obj, "view.MultipleListImpl"))
 }
 function $isArrayOf_Lview_MultipleListImpl(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lview_MultipleListImpl)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lview_MultipleListImpl)))
 }
 function $asArrayOf_Lview_MultipleListImpl(obj, depth) {
-    return (($isArrayOf_Lview_MultipleListImpl(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lview.MultipleListImpl;", depth))
+  return (($isArrayOf_Lview_MultipleListImpl(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lview.MultipleListImpl;", depth))
 }
 var $d_Lview_MultipleListImpl = new $TypeData().initClass({
-    Lview_MultipleListImpl: 0
+  Lview_MultipleListImpl: 0
 }, false, "view.MultipleListImpl", {
-    Lview_MultipleListImpl: 1,
-    O: 1,
-    Lview_ViewElement: 1,
-    Lview_Inputs: 1,
-    Lview_MultipleList: 1,
-    s_Equals: 1,
-    s_Product: 1,
-    Ljava_io_Serializable: 1
+  Lview_MultipleListImpl: 1,
+  O: 1,
+  Lview_ViewElement: 1,
+  Lview_Inputs: 1,
+  Lview_MultipleList: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1
 });
 $c_Lview_MultipleListImpl.prototype.$classData = $d_Lview_MultipleListImpl;
 /** @constructor */
 function $c_Lview_MultipleListWithF(x, selected, f) {
-    this.Lview_MultipleListWithF__f_view$MultipleList$$x = null;
-    this.Lview_MultipleListWithF__f_view$MultipleList$$selected = null;
-    this.Lview_MultipleListWithF__f_selectedVar = null;
-    this.Lview_MultipleListWithF__f_map = null;
-    this.Lview_MultipleListWithF__f_x = null;
-    this.Lview_MultipleListWithF__f_selected = null;
-    this.Lview_MultipleListWithF__f_f = null;
-    this.Lview_MultipleListWithF__f_x = x;
-    this.Lview_MultipleListWithF__f_selected = selected;
-    this.Lview_MultipleListWithF__f_f = f;
-    this.Lview_MultipleListWithF__f_view$MultipleList$$x = x;
-    this.Lview_MultipleListWithF__f_view$MultipleList$$selected = selected;
-    $f_Lview_MultipleList__$init$__V(this)
+  this.Lview_MultipleListWithF__f_view$MultipleList$$x = null;
+  this.Lview_MultipleListWithF__f_view$MultipleList$$selected = null;
+  this.Lview_MultipleListWithF__f_selectedVar = null;
+  this.Lview_MultipleListWithF__f_map = null;
+  this.Lview_MultipleListWithF__f_x = null;
+  this.Lview_MultipleListWithF__f_selected = null;
+  this.Lview_MultipleListWithF__f_f = null;
+  this.Lview_MultipleListWithF__f_x = x;
+  this.Lview_MultipleListWithF__f_selected = selected;
+  this.Lview_MultipleListWithF__f_f = f;
+  this.Lview_MultipleListWithF__f_view$MultipleList$$x = x;
+  this.Lview_MultipleListWithF__f_view$MultipleList$$selected = selected;
+  $f_Lview_MultipleList__$init$__V(this)
 }
 $c_Lview_MultipleListWithF.prototype = new $h_O();
 $c_Lview_MultipleListWithF.prototype.constructor = $c_Lview_MultipleListWithF;
 /** @constructor */
 function $h_Lview_MultipleListWithF() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lview_MultipleListWithF.prototype = $c_Lview_MultipleListWithF.prototype;
-$c_Lview_MultipleListWithF.prototype.view$MultipleList$$x__sci_Set = (function () {
-    return this.Lview_MultipleListWithF__f_view$MultipleList$$x
+$c_Lview_MultipleListWithF.prototype.view$MultipleList$$x__sci_List = (function() {
+  return this.Lview_MultipleListWithF__f_view$MultipleList$$x
 });
-$c_Lview_MultipleListWithF.prototype.view$MultipleList$$selected__Lmodel_HasName = (function () {
-    return this.Lview_MultipleListWithF__f_view$MultipleList$$selected
+$c_Lview_MultipleListWithF.prototype.view$MultipleList$$selected__Lmodel_HasName = (function() {
+  return this.Lview_MultipleListWithF__f_view$MultipleList$$selected
 });
-$c_Lview_MultipleListWithF.prototype.selectedVar__Lcom_raquo_airstream_state_Var = (function () {
-    return this.Lview_MultipleListWithF__f_selectedVar
+$c_Lview_MultipleListWithF.prototype.selectedVar__Lcom_raquo_airstream_state_Var = (function() {
+  return this.Lview_MultipleListWithF__f_selectedVar
 });
-$c_Lview_MultipleListWithF.prototype.map__sci_Map = (function () {
-    return this.Lview_MultipleListWithF__f_map
+$c_Lview_MultipleListWithF.prototype.map__sci_Map = (function() {
+  return this.Lview_MultipleListWithF__f_map
 });
-$c_Lview_MultipleListWithF.prototype.view$MultipleList$_setter_$selectedVar_$eq__Lcom_raquo_airstream_state_Var__V = (function (x$0) {
-    this.Lview_MultipleListWithF__f_selectedVar = x$0
+$c_Lview_MultipleListWithF.prototype.view$MultipleList$_setter_$selectedVar_$eq__Lcom_raquo_airstream_state_Var__V = (function(x$0) {
+  this.Lview_MultipleListWithF__f_selectedVar = x$0
 });
-$c_Lview_MultipleListWithF.prototype.view$MultipleList$_setter_$map_$eq__sci_Map__V = (function (x$0) {
-    this.Lview_MultipleListWithF__f_map = x$0
+$c_Lview_MultipleListWithF.prototype.view$MultipleList$_setter_$map_$eq__sci_Map__V = (function(x$0) {
+  this.Lview_MultipleListWithF__f_map = x$0
 });
-$c_Lview_MultipleListWithF.prototype.productIterator__sc_Iterator = (function () {
-    return new $c_s_Product$$anon$1(this)
+$c_Lview_MultipleListWithF.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_s_Product$$anon$1(this)
 });
-$c_Lview_MultipleListWithF.prototype.hashCode__I = (function () {
-    var this$2 = $m_s_util_hashing_MurmurHash3$();
-    return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
+$c_Lview_MultipleListWithF.prototype.hashCode__I = (function() {
+  var this$2 = $m_s_util_hashing_MurmurHash3$();
+  return this$2.productHash__s_Product__I__Z__I(this, (-889275714), false)
 });
-$c_Lview_MultipleListWithF.prototype.equals__O__Z = (function (x$0) {
-    if ((this === x$0)) {
-        return true
-    } else if ((x$0 instanceof $c_Lview_MultipleListWithF)) {
-        var x$0$2 = $as_Lview_MultipleListWithF(x$0);
-        var x = this.Lview_MultipleListWithF__f_x;
-        var x$2 = $n(x$0$2).Lview_MultipleListWithF__f_x;
-        if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
-            var x$3 = this.Lview_MultipleListWithF__f_selected;
-            var x$4 = $n(x$0$2).Lview_MultipleListWithF__f_selected;
-            if ((x$3 === null)) {
-                var $$x2 = (x$4 === null)
-            } else {
-                var this$1 = $n(x$3);
-                var $$x2 = (this$1 === x$4)
-            }
-        } else {
-            var $$x2 = false
-        }
-        ;
-        if ($$x2) {
-            var x$5 = this.Lview_MultipleListWithF__f_f;
-            var x$6 = $n(x$0$2).Lview_MultipleListWithF__f_f;
-            var $$x1 = ((x$5 === null) ? (x$6 === null) : $n(x$5).equals__O__Z(x$6))
-        } else {
-            var $$x1 = false
-        }
-        ;
-        if ($$x1) {
-            $n(x$0$2);
-            return true
-        } else {
-            return false
-        }
+$c_Lview_MultipleListWithF.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lview_MultipleListWithF)) {
+    var x$0$2 = $as_Lview_MultipleListWithF(x$0);
+    var x = this.Lview_MultipleListWithF__f_x;
+    var x$2 = $n(x$0$2).Lview_MultipleListWithF__f_x;
+    if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
+      var x$3 = this.Lview_MultipleListWithF__f_selected;
+      var x$4 = $n(x$0$2).Lview_MultipleListWithF__f_selected;
+      if ((x$3 === null)) {
+        var $$x2 = (x$4 === null)
+      } else {
+        var this$1 = $n(x$3);
+        var $$x2 = (this$1 === x$4)
+      }
     } else {
-        return false
-    }
-});
-$c_Lview_MultipleListWithF.prototype.toString__T = (function () {
-    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lview_MultipleListWithF.prototype.productArity__I = (function () {
-    return 3
-});
-$c_Lview_MultipleListWithF.prototype.productPrefix__T = (function () {
-    return "MultipleListWithF"
-});
-$c_Lview_MultipleListWithF.prototype.productElement__I__O = (function (n) {
-    switch (n) {
-        case 0: {
-            return this.Lview_MultipleListWithF__f_x;
-            break
-        }
-        case 1: {
-            return this.Lview_MultipleListWithF__f_selected;
-            break
-        }
-        case 2: {
-            return this.Lview_MultipleListWithF__f_f;
-            break
-        }
-        default: {
-            throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-        }
-    }
-});
-$c_Lview_MultipleListWithF.prototype.element__Lcom_raquo_laminar_nodes_ReactiveElement = (function () {
-    var $$x12 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).form__Lcom_raquo_laminar_tags_HtmlTag());
-    var $$x11 = $m_sr_ScalaRunTime$();
-    var $$x10 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).select__Lcom_raquo_laminar_tags_HtmlTag();
-    var $$x9 = $m_sr_ScalaRunTime$();
-    var $$x8 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).value__Lcom_raquo_laminar_keys_HtmlProp()).$less$minus$minus__Lcom_raquo_airstream_core_Source__Lcom_raquo_laminar_modifiers_KeyUpdater($n(this.Lview_MultipleListWithF__f_selectedVar).Lcom_raquo_airstream_state_SourceVar__f_signal);
-    var this$5 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-    var this$1 = $n(this.Lview_MultipleListWithF__f_x);
-    $m_sci_List$();
-    var this$4 = $n($m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$1));
-    var f = ((a) => {
-        var a$1 = $as_Lmodel_HasName(a);
-        var $$x5 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).option__Lcom_raquo_laminar_tags_HtmlTag());
-        var $$x4 = $m_sr_ScalaRunTime$();
-        var this$3 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-        var value = $n(a$1).name__T();
-        var renderable = $m_Lcom_raquo_laminar_modifiers_RenderableText$().Lcom_raquo_laminar_modifiers_RenderableText$__f_stringRenderable;
-        return $n($$x5).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x4).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$f_Lcom_raquo_laminar_Implicits__textToTextNode__O__Lcom_raquo_laminar_modifiers_RenderableText__Lcom_raquo_laminar_nodes_TextNode(this$3, value, renderable)])))
-    });
-    if ((this$4 === $m_sci_Nil$())) {
-        var $$x6 = $m_sci_Nil$()
+      var $$x2 = false
+    };
+    if ($$x2) {
+      var x$5 = this.Lview_MultipleListWithF__f_f;
+      var x$6 = $n(x$0$2).Lview_MultipleListWithF__f_f;
+      var $$x1 = ((x$5 === null) ? (x$6 === null) : $n(x$5).equals__O__Z(x$6))
     } else {
-        var arg1 = this$4.head__O();
-        var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
-        var t = h;
-        var rest = $as_sci_List(this$4.tail__O());
-        while ((rest !== $m_sci_Nil$())) {
-            var arg1$1 = $n(rest).head__O();
-            var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
-            $n(t).sci_$colon$colon__f_next = nx;
-            t = nx;
-            rest = $as_sci_List($n(rest).tail__O())
-        }
-        ;
-        var $$x6 = h
+      var $$x1 = false
+    };
+    if ($$x1) {
+      $n(x$0$2);
+      return true
+    } else {
+      return false
     }
-    ;
-    var nodes = $n($$x6);
-    var $$x7 = $f_Lcom_raquo_laminar_Implicits__nodeSeqToModifier__sc_Seq__Lcom_raquo_laminar_modifiers_Modifier(this$5, nodes);
-    $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-    var eventProp = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onChange__Lcom_raquo_laminar_keys_EventProp();
-    var this$7 = $n($n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp, false)).mapToValue__Lcom_raquo_laminar_keys_EventProcessor());
-    var sink = this.Lview_MultipleListWithF__f_selectedVar;
-    var onNext = new $c_sjsr_AnonFunction1(((_$1) => {
-        var this$8 = $n(sink);
-        $n(this$8.Lcom_raquo_airstream_state_SourceVar__f_writer).onNext__O__V(_$1)
-    }));
-    var $$x3 = new $c_Lcom_raquo_laminar_modifiers_EventListener(this$7, onNext);
-    $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
-    var eventProp$1 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onChange__Lcom_raquo_laminar_keys_EventProp();
-    var this$13 = $n($n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp$1, false)).mapToValue__Lcom_raquo_laminar_keys_EventProcessor());
-    var onNext$1 = new $c_sjsr_AnonFunction1(((a$2) => {
-        $as_T(a$2);
-        var $$x2 = $n(this.Lview_MultipleListWithF__f_f);
-        var $$x1 = this.Lview_MultipleListWithF__f_map;
-        var this$11 = $n(this.Lview_MultipleListWithF__f_selectedVar);
-        var this$12 = $n(this$11.Lcom_raquo_airstream_state_SourceVar__f_signal);
-        $n($$x2).apply__O__O($n($$x1).apply__O__O($n($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this$12)).get__O()))
-    }));
-    return $n($$x12).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x11).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($$x10).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x9).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x8, $$x7, $$x3, new $c_Lcom_raquo_laminar_modifiers_EventListener(this$13, onNext$1)])))])))
+  } else {
+    return false
+  }
+});
+$c_Lview_MultipleListWithF.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lview_MultipleListWithF.prototype.productArity__I = (function() {
+  return 3
+});
+$c_Lview_MultipleListWithF.prototype.productPrefix__T = (function() {
+  return "MultipleListWithF"
+});
+$c_Lview_MultipleListWithF.prototype.productElement__I__O = (function(n) {
+  switch (n) {
+    case 0: {
+      return this.Lview_MultipleListWithF__f_x;
+      break
+    }
+    case 1: {
+      return this.Lview_MultipleListWithF__f_selected;
+      break
+    }
+    case 2: {
+      return this.Lview_MultipleListWithF__f_f;
+      break
+    }
+    default: {
+      throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+    }
+  }
+});
+$c_Lview_MultipleListWithF.prototype.element__Lcom_raquo_laminar_nodes_ReactiveElement = (function() {
+  var $$x12 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).form__Lcom_raquo_laminar_tags_HtmlTag());
+  var $$x11 = $m_sr_ScalaRunTime$();
+  var $$x10 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).select__Lcom_raquo_laminar_tags_HtmlTag();
+  var $$x9 = $m_sr_ScalaRunTime$();
+  var $$x8 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).value__Lcom_raquo_laminar_keys_HtmlProp()).$less$minus$minus__Lcom_raquo_airstream_core_Source__Lcom_raquo_laminar_modifiers_KeyUpdater($n(this.Lview_MultipleListWithF__f_selectedVar).Lcom_raquo_airstream_state_SourceVar__f_signal);
+  var this$3 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+  var this$2 = $n(this.Lview_MultipleListWithF__f_x);
+  var f = ((a) => {
+    var a$1 = $as_Lmodel_HasName(a);
+    var $$x5 = $n($n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).option__Lcom_raquo_laminar_tags_HtmlTag());
+    var $$x4 = $m_sr_ScalaRunTime$();
+    var this$1 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+    var value = $n(a$1).name__T();
+    var renderable = $m_Lcom_raquo_laminar_modifiers_RenderableText$().Lcom_raquo_laminar_modifiers_RenderableText$__f_stringRenderable;
+    return $n($$x5).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x4).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$f_Lcom_raquo_laminar_Implicits__textToTextNode__O__Lcom_raquo_laminar_modifiers_RenderableText__Lcom_raquo_laminar_nodes_TextNode(this$1, value, renderable)])))
+  });
+  if ((this$2 === $m_sci_Nil$())) {
+    var $$x6 = $m_sci_Nil$()
+  } else {
+    var arg1 = this$2.head__O();
+    var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+    var t = h;
+    var rest = $as_sci_List(this$2.tail__O());
+    while ((rest !== $m_sci_Nil$())) {
+      var arg1$1 = $n(rest).head__O();
+      var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+      $n(t).sci_$colon$colon__f_next = nx;
+      t = nx;
+      rest = $as_sci_List($n(rest).tail__O())
+    };
+    var $$x6 = h
+  };
+  var nodes = $n($$x6);
+  var $$x7 = $f_Lcom_raquo_laminar_Implicits__nodeSeqToModifier__sc_Seq__Lcom_raquo_laminar_modifiers_Modifier(this$3, nodes);
+  $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+  var eventProp = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onChange__Lcom_raquo_laminar_keys_EventProp();
+  var this$5 = $n($n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp, false)).mapToValue__Lcom_raquo_laminar_keys_EventProcessor());
+  var sink = this.Lview_MultipleListWithF__f_selectedVar;
+  var onNext = new $c_sjsr_AnonFunction1(((_$1) => {
+    var this$6 = $n(sink);
+    $n(this$6.Lcom_raquo_airstream_state_SourceVar__f_writer).onNext__O__V(_$1)
+  }));
+  var $$x3 = new $c_Lcom_raquo_laminar_modifiers_EventListener(this$5, onNext);
+  $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L);
+  var eventProp$1 = $n($m_Lcom_raquo_laminar_api_package$().Lcom_raquo_laminar_api_package$__f_L).onChange__Lcom_raquo_laminar_keys_EventProp();
+  var this$11 = $n($n($m_Lcom_raquo_laminar_keys_EventProcessor$().empty__Lcom_raquo_laminar_keys_EventProp__Z__Lcom_raquo_laminar_keys_EventProcessor(eventProp$1, false)).mapToValue__Lcom_raquo_laminar_keys_EventProcessor());
+  var onNext$1 = new $c_sjsr_AnonFunction1(((a$2) => {
+    $as_T(a$2);
+    var $$x2 = $n(this.Lview_MultipleListWithF__f_f);
+    var $$x1 = this.Lview_MultipleListWithF__f_map;
+    var this$9 = $n(this.Lview_MultipleListWithF__f_selectedVar);
+    var this$10 = $n(this$9.Lcom_raquo_airstream_state_SourceVar__f_signal);
+    $n($$x2).apply__O__O($n($$x1).apply__O__O($n($f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this$10)).get__O()))
+  }));
+  return $n($$x12).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x11).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$n($$x10).apply__sci_Seq__Lcom_raquo_laminar_nodes_ReactiveHtmlElement($n($$x9).wrapRefArray__AO__sci_ArraySeq(new ($d_Lcom_raquo_laminar_modifiers_Modifier.getArrayOf().constr)([$$x8, $$x7, $$x3, new $c_Lcom_raquo_laminar_modifiers_EventListener(this$11, onNext$1)])))])))
 });
 function $as_Lview_MultipleListWithF(obj) {
-    return (((obj instanceof $c_Lview_MultipleListWithF) || (obj === null)) ? obj : $throwClassCastException(obj, "view.MultipleListWithF"))
+  return (((obj instanceof $c_Lview_MultipleListWithF) || (obj === null)) ? obj : $throwClassCastException(obj, "view.MultipleListWithF"))
 }
 function $isArrayOf_Lview_MultipleListWithF(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lview_MultipleListWithF)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lview_MultipleListWithF)))
 }
 function $asArrayOf_Lview_MultipleListWithF(obj, depth) {
-    return (($isArrayOf_Lview_MultipleListWithF(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lview.MultipleListWithF;", depth))
+  return (($isArrayOf_Lview_MultipleListWithF(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lview.MultipleListWithF;", depth))
 }
 var $d_Lview_MultipleListWithF = new $TypeData().initClass({
-    Lview_MultipleListWithF: 0
+  Lview_MultipleListWithF: 0
 }, false, "view.MultipleListWithF", {
-    Lview_MultipleListWithF: 1,
-    O: 1,
-    Lview_ViewElement: 1,
-    Lview_Inputs: 1,
-    Lview_MultipleList: 1,
-    s_Equals: 1,
-    s_Product: 1,
-    Ljava_io_Serializable: 1
+  Lview_MultipleListWithF: 1,
+  O: 1,
+  Lview_ViewElement: 1,
+  Lview_Inputs: 1,
+  Lview_MultipleList: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1
 });
 $c_Lview_MultipleListWithF.prototype.$classData = $d_Lview_MultipleListWithF;
 function $f_Lcom_raquo_airstream_core_WritableSignal__setCurrentValue__s_util_Try__Z__V($thiz, newValue, isInitial) {
-    if ((!isInitial)) {
-        $thiz._lastUpdateId_$eq__I__V($m_Lcom_raquo_airstream_core_Signal$().nextUpdateId__I())
-    }
-    ;
-    $thiz.maybeLastSeenCurrentValue_$eq__O__V(newValue)
+  if ((!isInitial)) {
+    $m_Lcom_raquo_airstream_core_Signal$().nextUpdateId__I()
+  };
+  $thiz.Lcom_raquo_airstream_state_VarSignal__f_maybeLastSeenCurrentValue = newValue
 }
 function $f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try($thiz) {
-    var x = $thiz.maybeLastSeenCurrentValue__O();
-    if ((x === (void 0))) {
-        $thiz._lastUpdateId_$eq__I__V($m_Lcom_raquo_airstream_core_Signal$().nextUpdateId__I());
-        var nextValue = $thiz.currentValueFromParent__s_util_Try();
-        $f_Lcom_raquo_airstream_core_WritableSignal__setCurrentValue__s_util_Try__Z__V($thiz, nextValue, true);
-        var $$x1 = nextValue
-    } else {
-        var $$x1 = x
-    }
-    ;
-    return $as_s_util_Try($$x1)
-}
-function $f_Lcom_raquo_airstream_core_WritableSignal__fireValue__O__Lcom_raquo_airstream_core_Transaction__V($thiz, nextValue, transaction) {
-  var nextValue$1 = new $c_s_util_Success(nextValue);
-  $f_Lcom_raquo_airstream_core_WritableSignal__fireTry__s_util_Try__Lcom_raquo_airstream_core_Transaction__V($thiz, nextValue$1, transaction)
-}
-function $f_Lcom_raquo_airstream_core_WritableSignal__fireError__jl_Throwable__Lcom_raquo_airstream_core_Transaction__V($thiz, nextError, transaction) {
-  var nextValue = new $c_s_util_Failure(nextError);
-  $f_Lcom_raquo_airstream_core_WritableSignal__fireTry__s_util_Try__Lcom_raquo_airstream_core_Transaction__V($thiz, nextValue, transaction)
+  var x = $thiz.Lcom_raquo_airstream_state_VarSignal__f_maybeLastSeenCurrentValue;
+  if ((x === (void 0))) {
+    $m_Lcom_raquo_airstream_core_Signal$().nextUpdateId__I();
+    var nextValue = $f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try($thiz);
+    $f_Lcom_raquo_airstream_core_WritableSignal__setCurrentValue__s_util_Try__Z__V($thiz, nextValue, true);
+    var $$x1 = nextValue
+  } else {
+    var $$x1 = x
+  };
+  return $as_s_util_Try($$x1)
 }
 function $f_Lcom_raquo_airstream_core_WritableSignal__fireTry__s_util_Try__Lcom_raquo_airstream_core_Transaction__V($thiz, nextValue, transaction) {
   $f_Lcom_raquo_airstream_core_WritableSignal__setCurrentValue__s_util_Try__Z__V($thiz, nextValue, false);
   var isError = $n(nextValue).isFailure__Z();
   var elem = false;
   elem = false;
-  $thiz.isSafeToRemoveObserver_$eq__Z__V(false);
-  var this$ = $thiz.externalObservers__Lcom_raquo_ew_JsArray();
+  $thiz.Lcom_raquo_airstream_state_VarSignal__f_isSafeToRemoveObserver = false;
+  var this$ = $thiz.Lcom_raquo_airstream_state_VarSignal__f_externalObservers;
   var index = 0;
   while ((index < $uI(this$.length))) {
     var observer = this$[index];
@@ -30531,7 +30196,7 @@ function $f_Lcom_raquo_airstream_core_WritableSignal__fireTry__s_util_Try__Lcom_
       elem = ev$4
     }
   };
-  var this$$1 = $thiz.internalObservers__Lcom_raquo_ew_JsArray();
+  var this$$1 = $thiz.Lcom_raquo_airstream_state_VarSignal__f_internalObservers;
   var index$1 = 0;
   while ((index$1 < $uI(this$$1.length))) {
     var observer$2 = this$$1[index$1];
@@ -30543,8 +30208,8 @@ function $f_Lcom_raquo_airstream_core_WritableSignal__fireTry__s_util_Try__Lcom_
       elem = ev$5
     }
   };
-  $thiz.isSafeToRemoveObserver_$eq__Z__V(true);
-  var x = $thiz.maybePendingObserverRemovals__O();
+  $thiz.Lcom_raquo_airstream_state_VarSignal__f_isSafeToRemoveObserver = true;
+  var x = $thiz.Lcom_raquo_airstream_state_VarSignal__f_maybePendingObserverRemovals;
   if ((x !== (void 0))) {
     var i = 0;
     var len = $uI(x.length);
@@ -30623,153 +30288,144 @@ var $d_jl_JSConsoleBasedPrintStream = new $TypeData().initClass({
   jl_JSConsoleBasedPrintStream: 0
 }, false, "java.lang.JSConsoleBasedPrintStream", {
   jl_JSConsoleBasedPrintStream: 1,
-    Ljava_io_PrintStream: 1,
-    Ljava_io_FilterOutputStream: 1,
-    Ljava_io_OutputStream: 1,
-    O: 1,
-    Ljava_io_Closeable: 1,
-    jl_AutoCloseable: 1,
-    Ljava_io_Flushable: 1,
-    jl_Appendable: 1
+  Ljava_io_PrintStream: 1,
+  Ljava_io_FilterOutputStream: 1,
+  Ljava_io_OutputStream: 1,
+  O: 1,
+  Ljava_io_Closeable: 1,
+  jl_AutoCloseable: 1,
+  Ljava_io_Flushable: 1,
+  jl_Appendable: 1
 });
 $c_jl_JSConsoleBasedPrintStream.prototype.$classData = $d_jl_JSConsoleBasedPrintStream;
-
 /** @constructor */
 function $c_Lmodel_seqProperties_Distributions$GaussianDistribution(mean, std, mi, ma, evidence$1) {
-    this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$Generator$$evidence$1 = null;
-    this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$HasRange$$a = 0;
-    this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$HasRange$$b = 0;
-    this.Lmodel_seqProperties_GaussianGen__f_d = null;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$min = 0.0;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$max = 0.0;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean = 0;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std = 0;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi = 0;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma = 0;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean = mean;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std = std;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi = mi;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma = ma;
-    $ct_Lmodel_seqProperties_GaussianGen__D__D__Lmodel_seqProperties_Generable__(this, mean, std, evidence$1);
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$min = mi;
-    this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$max = ma
+  this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$Generator$$evidence$1 = null;
+  this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$HasRange$$a = 0;
+  this.Lmodel_seqProperties_GaussianGen__f_model$seqProperties$HasRange$$b = 0;
+  this.Lmodel_seqProperties_GaussianGen__f_d = null;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$min = 0.0;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$max = 0.0;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean = 0;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std = 0;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi = 0;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma = 0;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean = mean;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std = std;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi = mi;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma = ma;
+  $ct_Lmodel_seqProperties_GaussianGen__D__D__Lmodel_seqProperties_Generable__(this, mean, std, evidence$1);
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$min = mi;
+  this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_model$seqProperties$Shifted$$max = ma
 }
-
 $c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype = new $h_Lmodel_seqProperties_GaussianGen();
 $c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.constructor = $c_Lmodel_seqProperties_Distributions$GaussianDistribution;
-
 /** @constructor */
 function $h_Lmodel_seqProperties_Distributions$GaussianDistribution() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype = $c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype;
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.f__I__D = (function (x) {
-    return $f_Lmodel_seqProperties_Shifted__f__I__D(this, x)
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.f__I__D = (function(x) {
+  return $f_Lmodel_seqProperties_Shifted__f__I__D(this, x)
 });
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productIterator__sc_Iterator = (function () {
-    return new $c_s_Product$$anon$1(this)
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_s_Product$$anon$1(this)
 });
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.hashCode__I = (function () {
-    var acc = (-889275714);
-    var hash = acc;
-    var data = $f_T__hashCode__I("GaussianDistribution");
-    acc = $m_sr_Statics$().mix__I__I__I(hash, data);
-    var hash$1 = acc;
-    var data$1 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
-    var hash$2 = acc;
-    var data$2 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$2);
-    var hash$3 = acc;
-    var data$3 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$3);
-    var hash$4 = acc;
-    var data$4 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$4, data$4);
-    var hash$5 = acc;
-    return $m_sr_Statics$().finalizeHash__I__I__I(hash$5, 4)
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  var hash = acc;
+  var data = $f_T__hashCode__I("GaussianDistribution");
+  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  var hash$1 = acc;
+  var data$1 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var hash$2 = acc;
+  var data$2 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$2);
+  var hash$3 = acc;
+  var data$3 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$3);
+  var hash$4 = acc;
+  var data$4 = this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$4, data$4);
+  var hash$5 = acc;
+  return $m_sr_Statics$().finalizeHash__I__I__I(hash$5, 4)
 });
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.equals__O__Z = (function (x$0) {
-    if ((this === x$0)) {
-        return true
-    } else if ((x$0 instanceof $c_Lmodel_seqProperties_Distributions$GaussianDistribution)) {
-        var x$0$2 = $as_Lmodel_seqProperties_Distributions$GaussianDistribution(x$0);
-        return (((((this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_std)) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi)) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma)) && ($n(x$0$2), true))
-    } else {
-        return false
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lmodel_seqProperties_Distributions$GaussianDistribution)) {
+    var x$0$2 = $as_Lmodel_seqProperties_Distributions$GaussianDistribution(x$0);
+    return (((((this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_std)) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi)) && (this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma === $n(x$0$2).Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma)) && ($n(x$0$2), true))
+  } else {
+    return false
+  }
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productArity__I = (function() {
+  return 4
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productPrefix__T = (function() {
+  return "GaussianDistribution"
+});
+$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productElement__I__O = (function(n) {
+  switch (n) {
+    case 0: {
+      return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean;
+      break
     }
-});
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.toString__T = (function () {
-    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productArity__I = (function () {
-    return 4
-});
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productPrefix__T = (function () {
-    return "GaussianDistribution"
-});
-$c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.productElement__I__O = (function (n) {
-    switch (n) {
-        case 0: {
-            return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mean;
-            break
-        }
-        case 1: {
-            return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std;
-            break
-        }
-        case 2: {
-            return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi;
-            break
-        }
-        case 3: {
-            return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma;
-            break
-        }
-        default: {
-            throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
-        }
+    case 1: {
+      return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_std;
+      break
     }
+    case 2: {
+      return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_mi;
+      break
+    }
+    case 3: {
+      return this.Lmodel_seqProperties_Distributions$GaussianDistribution__f_ma;
+      break
+    }
+    default: {
+      throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
+    }
+  }
 });
-
 function $as_Lmodel_seqProperties_Distributions$GaussianDistribution(obj) {
-    return (((obj instanceof $c_Lmodel_seqProperties_Distributions$GaussianDistribution) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Distributions$GaussianDistribution"))
+  return (((obj instanceof $c_Lmodel_seqProperties_Distributions$GaussianDistribution) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Distributions$GaussianDistribution"))
 }
-
 function $isArrayOf_Lmodel_seqProperties_Distributions$GaussianDistribution(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Distributions$GaussianDistribution)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Distributions$GaussianDistribution)))
 }
-
 function $asArrayOf_Lmodel_seqProperties_Distributions$GaussianDistribution(obj, depth) {
-    return (($isArrayOf_Lmodel_seqProperties_Distributions$GaussianDistribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Distributions$GaussianDistribution;", depth))
+  return (($isArrayOf_Lmodel_seqProperties_Distributions$GaussianDistribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Distributions$GaussianDistribution;", depth))
 }
-
 var $d_Lmodel_seqProperties_Distributions$GaussianDistribution = new $TypeData().initClass({
-    Lmodel_seqProperties_Distributions$GaussianDistribution: 0
+  Lmodel_seqProperties_Distributions$GaussianDistribution: 0
 }, false, "model.seqProperties.Distributions$GaussianDistribution", {
-    Lmodel_seqProperties_Distributions$GaussianDistribution: 1,
-    Lmodel_seqProperties_GaussianGen: 1,
-    O: 1,
-    Lmodel_seqProperties_Generator: 1,
-    Lmodel_seqProperties_HasRange: 1,
-    Lmodel_seqProperties_Shifted: 1,
-    s_Equals: 1,
-    s_Product: 1,
-    Ljava_io_Serializable: 1
+  Lmodel_seqProperties_Distributions$GaussianDistribution: 1,
+  Lmodel_seqProperties_GaussianGen: 1,
+  O: 1,
+  Lmodel_seqProperties_Generator: 1,
+  Lmodel_seqProperties_HasRange: 1,
+  Lmodel_seqProperties_Shifted: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1
 });
 $c_Lmodel_seqProperties_Distributions$GaussianDistribution.prototype.$classData = $d_Lmodel_seqProperties_Distributions$GaussianDistribution;
-
 /** @constructor */
 function $c_Lmodel_sortModel_Loopable$LoopableS(data, steps, selections, b) {
-    this.Lmodel_sortModel_Loopable$LoopableS__f_data = null;
-    this.Lmodel_sortModel_Loopable$LoopableS__f_steps = null;
-    this.Lmodel_sortModel_Loopable$LoopableS__f_selections = null;
-    this.Lmodel_sortModel_Loopable$LoopableS__f_b = false;
-    this.Lmodel_sortModel_Loopable$LoopableS__f_data = data;
-    this.Lmodel_sortModel_Loopable$LoopableS__f_steps = steps;
-    this.Lmodel_sortModel_Loopable$LoopableS__f_selections = selections;
-    this.Lmodel_sortModel_Loopable$LoopableS__f_b = b
+  this.Lmodel_sortModel_Loopable$LoopableS__f_data = null;
+  this.Lmodel_sortModel_Loopable$LoopableS__f_steps = null;
+  this.Lmodel_sortModel_Loopable$LoopableS__f_selections = null;
+  this.Lmodel_sortModel_Loopable$LoopableS__f_b = false;
+  this.Lmodel_sortModel_Loopable$LoopableS__f_data = data;
+  this.Lmodel_sortModel_Loopable$LoopableS__f_steps = steps;
+  this.Lmodel_sortModel_Loopable$LoopableS__f_selections = selections;
+  this.Lmodel_sortModel_Loopable$LoopableS__f_b = b
 }
 $c_Lmodel_sortModel_Loopable$LoopableS.prototype = new $h_O();
 $c_Lmodel_sortModel_Loopable$LoopableS.prototype.constructor = $c_Lmodel_sortModel_Loopable$LoopableS;
@@ -31214,82 +30870,68 @@ $c_s_reflect_ManifestFactory$UnitManifest.prototype = new $h_s_reflect_AnyValMan
 $c_s_reflect_ManifestFactory$UnitManifest.prototype.constructor = $c_s_reflect_ManifestFactory$UnitManifest;
 /** @constructor */
 function $h_s_reflect_ManifestFactory$UnitManifest() {
-    /*<skip>*/
+  /*<skip>*/
 }
 $h_s_reflect_ManifestFactory$UnitManifest.prototype = $c_s_reflect_ManifestFactory$UnitManifest.prototype;
-$c_s_reflect_ManifestFactory$UnitManifest.prototype.runtimeClass__jl_Class = (function () {
-    return $d_V.getClassOf()
+$c_s_reflect_ManifestFactory$UnitManifest.prototype.runtimeClass__jl_Class = (function() {
+  return $d_V.getClassOf()
 });
-$c_s_reflect_ManifestFactory$UnitManifest.prototype.newArray__I__O = (function (len) {
-    return new ($d_jl_Void.getArrayOf().constr)(len)
+$c_s_reflect_ManifestFactory$UnitManifest.prototype.newArray__I__O = (function(len) {
+  return new ($d_jl_Void.getArrayOf().constr)(len)
 });
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$lzyINIT1$1__sr_LazyRef__Lmodel_seqProperties_Generable($thiz, given_Generable_Int$lzy1$1) {
-    if ((given_Generable_Int$lzy1$1 === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
-    ;
-    return $as_Lmodel_seqProperties_Generable(($n(given_Generable_Int$lzy1$1).sr_LazyRef__f__initialized ? $n(given_Generable_Int$lzy1$1).sr_LazyRef__f__value : $n(given_Generable_Int$lzy1$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$1($thiz))))
+  if ((given_Generable_Int$lzy1$1 === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  };
+  return $as_Lmodel_seqProperties_Generable(($n(given_Generable_Int$lzy1$1).sr_LazyRef__f__initialized ? $n(given_Generable_Int$lzy1$1).sr_LazyRef__f__value : $n(given_Generable_Int$lzy1$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$1($thiz))))
 }
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable($thiz, given_Generable_Int$lzy1$2) {
-    return $as_Lmodel_seqProperties_Generable(($n(given_Generable_Int$lzy1$2).sr_LazyRef__f__initialized ? $n(given_Generable_Int$lzy1$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$lzyINIT1$1__sr_LazyRef__Lmodel_seqProperties_Generable($thiz, given_Generable_Int$lzy1$2)))
+  return $as_Lmodel_seqProperties_Generable(($n(given_Generable_Int$lzy1$2).sr_LazyRef__f__initialized ? $n(given_Generable_Int$lzy1$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$lzyINIT1$1__sr_LazyRef__Lmodel_seqProperties_Generable($thiz, given_Generable_Int$lzy1$2)))
 }
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT1$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$1, given_Conversion_Params_Int$lzy1$1) {
-    if ((given_Conversion_Params_Int$lzy1$1 === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
-    ;
-    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy1$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy1$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy1$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$2(p$1, $thiz))))
+  if ((given_Conversion_Params_Int$lzy1$1 === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  };
+  return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy1$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy1$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy1$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$2(p$1, $thiz))))
 }
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$3, given_Conversion_Params_Int$lzy1$2) {
-    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy1$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy1$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT1$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$3, given_Conversion_Params_Int$lzy1$2)))
+  return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy1$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy1$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT1$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$3, given_Conversion_Params_Int$lzy1$2)))
 }
-
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT2$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$4, given_Conversion_Params_Int$lzy2$1) {
-    if ((given_Conversion_Params_Int$lzy2$1 === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
-    ;
-    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy2$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy2$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy2$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$3(p$4, $thiz))))
+  if ((given_Conversion_Params_Int$lzy2$1 === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  };
+  return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy2$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy2$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy2$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$3(p$4, $thiz))))
 }
-
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$2__sci_Map__sr_LazyRef__s_Conversion($thiz, p$6, given_Conversion_Params_Int$lzy2$2) {
-    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy2$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy2$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT2$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$6, given_Conversion_Params_Int$lzy2$2)))
+  return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy2$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy2$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT2$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$6, given_Conversion_Params_Int$lzy2$2)))
 }
-
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT3$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$7, given_Conversion_Params_Int$lzy3$1) {
-    if ((given_Conversion_Params_Int$lzy3$1 === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
-    ;
-    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy3$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy3$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy3$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$4(p$7, $thiz))))
+  if ((given_Conversion_Params_Int$lzy3$1 === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  };
+  return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy3$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy3$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy3$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$4(p$7, $thiz))))
 }
-
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$3__sci_Map__sr_LazyRef__s_Conversion($thiz, p$9, given_Conversion_Params_Int$lzy3$2) {
-    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy3$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy3$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT3$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$9, given_Conversion_Params_Int$lzy3$2)))
+  return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy3$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy3$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT3$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$9, given_Conversion_Params_Int$lzy3$2)))
 }
-
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT4$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$10, given_Conversion_Params_Int$lzy4$1) {
-    if ((given_Conversion_Params_Int$lzy4$1 === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
-    ;
-    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy4$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy4$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy4$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$5(p$10, $thiz))))
+  if ((given_Conversion_Params_Int$lzy4$1 === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  };
+  return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy4$1).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy4$1).sr_LazyRef__f__value : $n(given_Conversion_Params_Int$lzy4$1).initialize__O__O(new $c_Lmodel_ModelComponent$$anon$5(p$10, $thiz))))
 }
-
 function $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$4__sci_Map__sr_LazyRef__s_Conversion($thiz, p$12, given_Conversion_Params_Int$lzy4$2) {
-    return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy4$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy4$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT4$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$12, given_Conversion_Params_Int$lzy4$2)))
+  return $as_s_Conversion(($n(given_Conversion_Params_Int$lzy4$2).sr_LazyRef__f__initialized ? $n(given_Conversion_Params_Int$lzy4$2).sr_LazyRef__f__value : $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$lzyINIT4$1__sci_Map__sr_LazyRef__s_Conversion($thiz, p$12, given_Conversion_Params_Int$lzy4$2)))
 }
-
 /** @constructor */
 function $c_Lmodel_ModelComponent$Model$Component$ModelImpl(outer) {
-    this.Lmodel_ModelComponent$Model$Component$ModelImpl__f_$outer = null;
-    if ((outer === null)) {
-        throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
-    }
-    ;
-    this.Lmodel_ModelComponent$Model$Component$ModelImpl__f_$outer = outer
+  this.Lmodel_ModelComponent$Model$Component$ModelImpl__f_$outer = null;
+  if ((outer === null)) {
+    throw $ct_jl_NullPointerException__(new $c_jl_NullPointerException())
+  };
+  this.Lmodel_ModelComponent$Model$Component$ModelImpl__f_$outer = outer
 }
-
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype = new $h_O();
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.constructor = $c_Lmodel_ModelComponent$Model$Component$ModelImpl;
 /** @constructor */
@@ -31330,98 +30972,98 @@ $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.productElement__I__
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.algorithms__sci_Set = (function() {
   var this$16 = $n($m_s_Predef$().s_Predef$__f_Set);
   var $$x5 = $m_sr_ScalaRunTime$();
-    var f = new $c_sjsr_AnonFunction1(((seq) => {
-        var seq$1 = $as_sci_Seq(seq);
-        return $m_Lmodel_SortingAlgorithms$().bubbleSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$1, $m_Lmodel_sortModel_SortOperations$comp$())
-    }));
-    var $$x4 = new $c_Lmodel_AlgorithmFactory$$anon$3(f, "Bubble sort");
-    var f$1 = new $c_sjsr_AnonFunction1(((seq$2) => {
-        var seq$3 = $as_sci_Seq(seq$2);
-        return $m_Lmodel_SortingAlgorithms$().mergeSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$3, $m_Lmodel_sortModel_SortOperations$comp$())
-    }));
-    var $$x3 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$1, "Merge sort");
-    var f$2 = new $c_sjsr_AnonFunction1(((seq$3$1) => {
-        var seq$4 = $as_sci_Seq(seq$3$1);
-        return $m_Lmodel_SortingAlgorithms$().insertionSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$4, $m_Lmodel_sortModel_SortOperations$comp$())
-    }));
-    var $$x2 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$2, "Insertion sort");
-    var f$3 = new $c_sjsr_AnonFunction1(((seq$4$1) => {
-        var seq$5 = $as_sci_Seq(seq$4$1);
-        return $m_Lmodel_SortingAlgorithms$().quickSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$5, $m_Lmodel_sortModel_SortOperations$comp$())
-    }));
-    var $$x1 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$3, "Quicksort");
-    var f$4 = new $c_sjsr_AnonFunction1(((seq$5$1) => {
-        var seq$6 = $as_sci_Seq(seq$5$1);
-        return $m_Lmodel_SortingAlgorithms$().heapSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$6, $m_Lmodel_sortModel_SortOperations$comp$())
-    }));
-    var elems = $n($$x5).genericWrapArray__O__sci_ArraySeq(new ($d_Lmodel_Algorithm.getArrayOf().constr)([$$x4, $$x3, $$x2, $$x1, new $c_Lmodel_AlgorithmFactory$$anon$3(f$4, "Heap sort")]));
+  var f = new $c_sjsr_AnonFunction1(((seq) => {
+    var seq$1 = $as_sci_Seq(seq);
+    return $m_Lmodel_SortingAlgorithms$().bubbleSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$1, $m_Lmodel_sortModel_SortOperations$comp$())
+  }));
+  var $$x4 = new $c_Lmodel_AlgorithmFactory$$anon$3(f, "Bubble sort");
+  var f$1 = new $c_sjsr_AnonFunction1(((seq$2) => {
+    var seq$3 = $as_sci_Seq(seq$2);
+    return $m_Lmodel_SortingAlgorithms$().mergeSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$3, $m_Lmodel_sortModel_SortOperations$comp$())
+  }));
+  var $$x3 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$1, "Merge sort");
+  var f$2 = new $c_sjsr_AnonFunction1(((seq$3$1) => {
+    var seq$4 = $as_sci_Seq(seq$3$1);
+    return $m_Lmodel_SortingAlgorithms$().insertionSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$4, $m_Lmodel_sortModel_SortOperations$comp$())
+  }));
+  var $$x2 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$2, "Insertion sort");
+  var f$3 = new $c_sjsr_AnonFunction1(((seq$4$1) => {
+    var seq$5 = $as_sci_Seq(seq$4$1);
+    return $m_Lmodel_SortingAlgorithms$().quickSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$5, $m_Lmodel_sortModel_SortOperations$comp$())
+  }));
+  var $$x1 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$3, "Quicksort");
+  var f$4 = new $c_sjsr_AnonFunction1(((seq$5$1) => {
+    var seq$6 = $as_sci_Seq(seq$5$1);
+    return $m_Lmodel_SortingAlgorithms$().heapSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$6, $m_Lmodel_sortModel_SortOperations$comp$())
+  }));
+  var elems = $n($$x5).genericWrapArray__O__sci_ArraySeq(new ($d_Lmodel_Algorithm.getArrayOf().constr)([$$x4, $$x3, $$x2, $$x1, new $c_Lmodel_AlgorithmFactory$$anon$3(f$4, "Heap sort")]));
   return this$16.from__sc_IterableOnce__sci_Set(elems)
 });
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.distributions__sci_Set = (function() {
-    var given_Generable_Int$lzy1 = new $c_sr_LazyRef();
-    var this$14 = $n($m_s_Predef$().s_Predef$__f_Set);
-    var $$x4 = $m_sr_ScalaRunTime$();
-    var given_Generable_Int$lzy1$2$1 = given_Generable_Int$lzy1;
-    var f = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$2) => ((p) => {
-        var p$1 = $as_sci_Map(p);
-        var given_Conversion_Params_Int$lzy1 = new $c_sr_LazyRef();
-        var mean = (($uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$1__sci_Map__sr_LazyRef__s_Conversion(this, p$1, given_Conversion_Params_Int$lzy1)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params())) / 2) | 0);
-        var std = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$1__sci_Map__sr_LazyRef__s_Conversion(this, p$1, given_Conversion_Params_Int$lzy1)).apply__O__O($s_Lmodel_Params$__Std__Lmodel_Params()));
-        var evidence$1 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$2);
-        return new $c_Lmodel_seqProperties_Distributions$GaussianDistribution(mean, std, 1, 10000, evidence$1)
-    }))(given_Generable_Int$lzy1$2$1));
-    var this$3 = $n($m_s_Predef$().s_Predef$__f_Set);
-    var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__Size__Lmodel_Params(), $s_Lmodel_Params$__Std__Lmodel_Params()]));
-    var p$2 = this$3.from__sc_IterableOnce__sci_Set(elems);
-    var c = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_ascendingXOrder;
-    var evidence$4 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
-    var $$x3 = new $c_Lmodel_DistributionFactory$$anon$2(f, p$2, "Gaussian", c, evidence$4);
-    var given_Generable_Int$lzy1$3$1 = given_Generable_Int$lzy1;
-    var f$1 = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$3) => ((p$2$1) => {
-        var p$3 = $as_sci_Map(p$2$1);
-        var given_Conversion_Params_Int$lzy2 = new $c_sr_LazyRef();
-        var ma = ((1 + $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$2__sci_Map__sr_LazyRef__s_Conversion(this, p$3, given_Conversion_Params_Int$lzy2)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params()))) | 0);
-        var percentage = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$2__sci_Map__sr_LazyRef__s_Conversion(this, p$3, given_Conversion_Params_Int$lzy2)).apply__O__O($s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params()));
-        var evidence$2 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$3);
-        return new $c_Lmodel_seqProperties_Distributions$UniformDistribution(1, ma, percentage, evidence$2)
-    }))(given_Generable_Int$lzy1$3$1));
-    var this$6 = $n($m_s_Predef$().s_Predef$__f_Set);
-    var elems$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params(), $s_Lmodel_Params$__Size__Lmodel_Params()]));
-    var p$4 = this$6.from__sc_IterableOnce__sci_Set(elems$1);
-    var c$1 = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_randomOrder;
-    var evidence$4$1 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
-    var $$x2 = new $c_Lmodel_DistributionFactory$$anon$2(f$1, p$4, "Uniform", c$1, evidence$4$1);
-    var given_Generable_Int$lzy1$4$1 = given_Generable_Int$lzy1;
-    var f$2 = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$4) => ((p$3$1) => {
-        var p$5 = $as_sci_Map(p$3$1);
-        var given_Conversion_Params_Int$lzy3 = new $c_sr_LazyRef();
-        var ma$1 = ((1 + $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$3__sci_Map__sr_LazyRef__s_Conversion(this, p$5, given_Conversion_Params_Int$lzy3)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params()))) | 0);
-        var percentage$1 = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$3__sci_Map__sr_LazyRef__s_Conversion(this, p$5, given_Conversion_Params_Int$lzy3)).apply__O__O($s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params()));
-        var evidence$2$1 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$4);
-        return new $c_Lmodel_seqProperties_Distributions$UniformDistribution(1, ma$1, percentage$1, evidence$2$1)
-    }))(given_Generable_Int$lzy1$4$1));
-    var this$9 = $n($m_s_Predef$().s_Predef$__f_Set);
-    var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params(), $s_Lmodel_Params$__Size__Lmodel_Params()]));
-    var p$6 = this$9.from__sc_IterableOnce__sci_Set(elems$2);
-    var c$2 = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_ascendingYOrder;
-    var evidence$4$2 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
-    var $$x1 = new $c_Lmodel_DistributionFactory$$anon$2(f$2, p$6, "Ascending order", c$2, evidence$4$2);
-    var given_Generable_Int$lzy1$5$1 = given_Generable_Int$lzy1;
-    var f$3 = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$5) => ((p$4$1) => {
-        var p$7 = $as_sci_Map(p$4$1);
-        var given_Conversion_Params_Int$lzy4 = new $c_sr_LazyRef();
-        var ma$2 = ((1 + $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$4__sci_Map__sr_LazyRef__s_Conversion(this, p$7, given_Conversion_Params_Int$lzy4)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params()))) | 0);
-        var percentage$2 = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$4__sci_Map__sr_LazyRef__s_Conversion(this, p$7, given_Conversion_Params_Int$lzy4)).apply__O__O($s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params()));
-        var evidence$2$2 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$5);
-        return new $c_Lmodel_seqProperties_Distributions$UniformDistribution(1, ma$2, percentage$2, evidence$2$2)
-    }))(given_Generable_Int$lzy1$5$1));
-    var this$12 = $n($m_s_Predef$().s_Predef$__f_Set);
-    var elems$3 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params(), $s_Lmodel_Params$__Size__Lmodel_Params()]));
-    var p$8 = this$12.from__sc_IterableOnce__sci_Set(elems$3);
-    var c$3 = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_descendingYOrder;
-    var evidence$4$3 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
-    var elems$4 = $n($$x4).genericWrapArray__O__sci_ArraySeq(new ($d_Lmodel_Distribution.getArrayOf().constr)([$$x3, $$x2, $$x1, new $c_Lmodel_DistributionFactory$$anon$2(f$3, p$8, "Descending order", c$3, evidence$4$3)]));
-    return this$14.from__sc_IterableOnce__sci_Set(elems$4)
+  var given_Generable_Int$lzy1 = new $c_sr_LazyRef();
+  var this$14 = $n($m_s_Predef$().s_Predef$__f_Set);
+  var $$x4 = $m_sr_ScalaRunTime$();
+  var given_Generable_Int$lzy1$2$1 = given_Generable_Int$lzy1;
+  var f = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$2) => ((p) => {
+    var p$1 = $as_sci_Map(p);
+    var given_Conversion_Params_Int$lzy1 = new $c_sr_LazyRef();
+    var mean = (($uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$1__sci_Map__sr_LazyRef__s_Conversion(this, p$1, given_Conversion_Params_Int$lzy1)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params())) / 2) | 0);
+    var std = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$1__sci_Map__sr_LazyRef__s_Conversion(this, p$1, given_Conversion_Params_Int$lzy1)).apply__O__O($s_Lmodel_Params$__Std__Lmodel_Params()));
+    var evidence$1 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$2);
+    return new $c_Lmodel_seqProperties_Distributions$GaussianDistribution(mean, std, 1, 10000, evidence$1)
+  }))(given_Generable_Int$lzy1$2$1));
+  var this$3 = $n($m_s_Predef$().s_Predef$__f_Set);
+  var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__Size__Lmodel_Params(), $s_Lmodel_Params$__Std__Lmodel_Params()]));
+  var p$2 = this$3.from__sc_IterableOnce__sci_Set(elems);
+  var c = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_ascendingXOrder;
+  var evidence$4 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
+  var $$x3 = new $c_Lmodel_DistributionFactory$$anon$2(f, p$2, "Gaussian", c, evidence$4);
+  var given_Generable_Int$lzy1$3$1 = given_Generable_Int$lzy1;
+  var f$1 = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$3) => ((p$2$1) => {
+    var p$3 = $as_sci_Map(p$2$1);
+    var given_Conversion_Params_Int$lzy2 = new $c_sr_LazyRef();
+    var ma = ((1 + $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$2__sci_Map__sr_LazyRef__s_Conversion(this, p$3, given_Conversion_Params_Int$lzy2)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params()))) | 0);
+    var percentage = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$2__sci_Map__sr_LazyRef__s_Conversion(this, p$3, given_Conversion_Params_Int$lzy2)).apply__O__O($s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params()));
+    var evidence$2 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$3);
+    return new $c_Lmodel_seqProperties_Distributions$UniformDistribution(1, ma, percentage, evidence$2)
+  }))(given_Generable_Int$lzy1$3$1));
+  var this$6 = $n($m_s_Predef$().s_Predef$__f_Set);
+  var elems$1 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params(), $s_Lmodel_Params$__Size__Lmodel_Params()]));
+  var p$4 = this$6.from__sc_IterableOnce__sci_Set(elems$1);
+  var c$1 = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_randomOrder;
+  var evidence$4$1 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
+  var $$x2 = new $c_Lmodel_DistributionFactory$$anon$2(f$1, p$4, "Uniform", c$1, evidence$4$1);
+  var given_Generable_Int$lzy1$4$1 = given_Generable_Int$lzy1;
+  var f$2 = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$4) => ((p$3$1) => {
+    var p$5 = $as_sci_Map(p$3$1);
+    var given_Conversion_Params_Int$lzy3 = new $c_sr_LazyRef();
+    var ma$1 = ((1 + $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$3__sci_Map__sr_LazyRef__s_Conversion(this, p$5, given_Conversion_Params_Int$lzy3)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params()))) | 0);
+    var percentage$1 = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$3__sci_Map__sr_LazyRef__s_Conversion(this, p$5, given_Conversion_Params_Int$lzy3)).apply__O__O($s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params()));
+    var evidence$2$1 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$4);
+    return new $c_Lmodel_seqProperties_Distributions$UniformDistribution(1, ma$1, percentage$1, evidence$2$1)
+  }))(given_Generable_Int$lzy1$4$1));
+  var this$9 = $n($m_s_Predef$().s_Predef$__f_Set);
+  var elems$2 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params(), $s_Lmodel_Params$__Size__Lmodel_Params()]));
+  var p$6 = this$9.from__sc_IterableOnce__sci_Set(elems$2);
+  var c$2 = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_ascendingYOrder;
+  var evidence$4$2 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
+  var $$x1 = new $c_Lmodel_DistributionFactory$$anon$2(f$2, p$6, "Ascending order", c$2, evidence$4$2);
+  var given_Generable_Int$lzy1$5$1 = given_Generable_Int$lzy1;
+  var f$3 = new $c_sjsr_AnonFunction1(((given_Generable_Int$lzy1$5) => ((p$4$1) => {
+    var p$7 = $as_sci_Map(p$4$1);
+    var given_Conversion_Params_Int$lzy4 = new $c_sr_LazyRef();
+    var ma$2 = ((1 + $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$4__sci_Map__sr_LazyRef__s_Conversion(this, p$7, given_Conversion_Params_Int$lzy4)).apply__O__O($s_Lmodel_Params$__Size__Lmodel_Params()))) | 0);
+    var percentage$2 = $uI($n($p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Conversion_Params_Int$4__sci_Map__sr_LazyRef__s_Conversion(this, p$7, given_Conversion_Params_Int$lzy4)).apply__O__O($s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params()));
+    var evidence$2$2 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1$5);
+    return new $c_Lmodel_seqProperties_Distributions$UniformDistribution(1, ma$2, percentage$2, evidence$2$2)
+  }))(given_Generable_Int$lzy1$5$1));
+  var this$12 = $n($m_s_Predef$().s_Predef$__f_Set);
+  var elems$3 = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lmodel_Params.getArrayOf().constr)([$s_Lmodel_Params$__DuplicatesPercentage__Lmodel_Params(), $s_Lmodel_Params$__Size__Lmodel_Params()]));
+  var p$8 = this$12.from__sc_IterableOnce__sci_Set(elems$3);
+  var c$3 = $m_Lmodel_IntOrderings$().Lmodel_IntOrderings$__f_descendingYOrder;
+  var evidence$4$3 = $p_Lmodel_ModelComponent$Model$Component$ModelImpl__given_Generable_Int$1__sr_LazyRef__Lmodel_seqProperties_Generable(this, given_Generable_Int$lzy1);
+  var elems$4 = $n($$x4).genericWrapArray__O__sci_ArraySeq(new ($d_Lmodel_Distribution.getArrayOf().constr)([$$x3, $$x2, $$x1, new $c_Lmodel_DistributionFactory$$anon$2(f$3, p$8, "Descending order", c$3, evidence$4$3)]));
+  return this$14.from__sc_IterableOnce__sci_Set(elems$4)
 });
 function $as_Lmodel_ModelComponent$Model$Component$ModelImpl(obj) {
   return (((obj instanceof $c_Lmodel_ModelComponent$Model$Component$ModelImpl) || (obj === null)) ? obj : $throwClassCastException(obj, "model.ModelComponent$Model$Component$ModelImpl"))
@@ -31447,88 +31089,84 @@ var $d_Lmodel_ModelComponent$Model$Component$ModelImpl = new $TypeData().initCla
   Ljava_io_Serializable: 1
 });
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.$classData = $d_Lmodel_ModelComponent$Model$Component$ModelImpl;
-
 /** @constructor */
 function $c_Lmodel_seqProperties_Distributions$UniformDistribution(mi, ma, percentage, evidence$2) {
-    this.Lmodel_seqProperties_BasicGenerator__f_model$seqProperties$Generator$$evidence$1 = null;
-    this.Lmodel_seqProperties_BasicGenerator__f_ff = null;
-    this.Lmodel_seqProperties_UniformGen__f_model$seqProperties$HasRange$$a = 0;
-    this.Lmodel_seqProperties_UniformGen__f_model$seqProperties$HasRange$$b = 0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_model$seqProperties$Modifier$Duplicated$$$percent = 0.0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi = 0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma = 0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage = 0;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi = mi;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma = ma;
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage = percentage;
-    $ct_Lmodel_seqProperties_UniformGen__I__I__Lmodel_seqProperties_Generable__(this, mi, ma, evidence$2);
-    this.Lmodel_seqProperties_Distributions$UniformDistribution__f_model$seqProperties$Modifier$Duplicated$$$percent = (percentage / 100.0);
-    $f_Lmodel_seqProperties_Modifier$Duplicated__$init$__V(this)
+  this.Lmodel_seqProperties_BasicGenerator__f_model$seqProperties$Generator$$evidence$1 = null;
+  this.Lmodel_seqProperties_BasicGenerator__f_ff = null;
+  this.Lmodel_seqProperties_UniformGen__f_model$seqProperties$HasRange$$a = 0;
+  this.Lmodel_seqProperties_UniformGen__f_model$seqProperties$HasRange$$b = 0;
+  this.Lmodel_seqProperties_Distributions$UniformDistribution__f_model$seqProperties$Modifier$Duplicated$$$percent = 0.0;
+  this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi = 0;
+  this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma = 0;
+  this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage = 0;
+  this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi = mi;
+  this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma = ma;
+  this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage = percentage;
+  $ct_Lmodel_seqProperties_UniformGen__I__I__Lmodel_seqProperties_Generable__(this, mi, ma, evidence$2);
+  this.Lmodel_seqProperties_Distributions$UniformDistribution__f_model$seqProperties$Modifier$Duplicated$$$percent = (percentage / 100.0);
+  $f_Lmodel_seqProperties_Modifier$Duplicated__$init$__V(this)
 }
-
 $c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype = new $h_Lmodel_seqProperties_UniformGen();
 $c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.constructor = $c_Lmodel_seqProperties_Distributions$UniformDistribution;
-
 /** @constructor */
 function $h_Lmodel_seqProperties_Distributions$UniformDistribution() {
-    /*<skip>*/
+  /*<skip>*/
 }
-
 $h_Lmodel_seqProperties_Distributions$UniformDistribution.prototype = $c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype;
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.generateAll__sci_Range__sci_Map = (function (range) {
-    return $f_Lmodel_seqProperties_Modifier$Duplicated__generateAll__sci_Range__sci_Map(this, range)
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.generateAll__sci_Range__sci_Map = (function(range) {
+  return $f_Lmodel_seqProperties_Modifier$Duplicated__generateAll__sci_Range__sci_Map(this, range)
 });
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productIterator__sc_Iterator = (function () {
-    return new $c_s_Product$$anon$1(this)
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productIterator__sc_Iterator = (function() {
+  return new $c_s_Product$$anon$1(this)
 });
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.hashCode__I = (function () {
-    var acc = (-889275714);
-    var hash = acc;
-    var data = $f_T__hashCode__I("UniformDistribution");
-    acc = $m_sr_Statics$().mix__I__I__I(hash, data);
-    var hash$1 = acc;
-    var data$1 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
-    var hash$2 = acc;
-    var data$2 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma;
-    acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$2);
-    var hash$3 = acc;
-    var data$3 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage;
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.hashCode__I = (function() {
+  var acc = (-889275714);
+  var hash = acc;
+  var data = $f_T__hashCode__I("UniformDistribution");
+  acc = $m_sr_Statics$().mix__I__I__I(hash, data);
+  var hash$1 = acc;
+  var data$1 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$1, data$1);
+  var hash$2 = acc;
+  var data$2 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma;
+  acc = $m_sr_Statics$().mix__I__I__I(hash$2, data$2);
+  var hash$3 = acc;
+  var data$3 = this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage;
   acc = $m_sr_Statics$().mix__I__I__I(hash$3, data$3);
   var hash$4 = acc;
-    return $m_sr_Statics$().finalizeHash__I__I__I(hash$4, 3)
+  return $m_sr_Statics$().finalizeHash__I__I__I(hash$4, 3)
 });
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.equals__O__Z = (function (x$0) {
-    if ((this === x$0)) {
-        return true
-    } else if ((x$0 instanceof $c_Lmodel_seqProperties_Distributions$UniformDistribution)) {
-        var x$0$2 = $as_Lmodel_seqProperties_Distributions$UniformDistribution(x$0);
-        return ((((this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_mi) && (this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_ma)) && (this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage)) && ($n(x$0$2), true))
-    } else {
-        return false
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.equals__O__Z = (function(x$0) {
+  if ((this === x$0)) {
+    return true
+  } else if ((x$0 instanceof $c_Lmodel_seqProperties_Distributions$UniformDistribution)) {
+    var x$0$2 = $as_Lmodel_seqProperties_Distributions$UniformDistribution(x$0);
+    return ((((this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_mi) && (this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_ma)) && (this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage === $n(x$0$2).Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage)) && ($n(x$0$2), true))
+  } else {
+    return false
+  }
+});
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.toString__T = (function() {
+  return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
+});
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productArity__I = (function() {
+  return 3
+});
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productPrefix__T = (function() {
+  return "UniformDistribution"
+});
+$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productElement__I__O = (function(n) {
+  switch (n) {
+    case 0: {
+      return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi;
+      break
     }
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.toString__T = (function () {
-    return $m_sr_ScalaRunTime$()._toString__s_Product__T(this)
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productArity__I = (function () {
-    return 3
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productPrefix__T = (function () {
-    return "UniformDistribution"
-});
-$c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productElement__I__O = (function (n) {
-    switch (n) {
-        case 0: {
-            return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_mi;
-            break
-        }
-        case 1: {
-            return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma;
-            break
-        }
-        case 2: {
-            return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage;
+    case 1: {
+      return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_ma;
+      break
+    }
+    case 2: {
+      return this.Lmodel_seqProperties_Distributions$UniformDistribution__f_percentage;
       break
     }
     default: {
@@ -31536,32 +31174,28 @@ $c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.productEleme
     }
   }
 });
-
 function $as_Lmodel_seqProperties_Distributions$UniformDistribution(obj) {
-    return (((obj instanceof $c_Lmodel_seqProperties_Distributions$UniformDistribution) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Distributions$UniformDistribution"))
+  return (((obj instanceof $c_Lmodel_seqProperties_Distributions$UniformDistribution) || (obj === null)) ? obj : $throwClassCastException(obj, "model.seqProperties.Distributions$UniformDistribution"))
 }
-
 function $isArrayOf_Lmodel_seqProperties_Distributions$UniformDistribution(obj, depth) {
-    return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Distributions$UniformDistribution)))
+  return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.Lmodel_seqProperties_Distributions$UniformDistribution)))
 }
-
 function $asArrayOf_Lmodel_seqProperties_Distributions$UniformDistribution(obj, depth) {
-    return (($isArrayOf_Lmodel_seqProperties_Distributions$UniformDistribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Distributions$UniformDistribution;", depth))
+  return (($isArrayOf_Lmodel_seqProperties_Distributions$UniformDistribution(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.seqProperties.Distributions$UniformDistribution;", depth))
 }
-
 var $d_Lmodel_seqProperties_Distributions$UniformDistribution = new $TypeData().initClass({
-    Lmodel_seqProperties_Distributions$UniformDistribution: 0
+  Lmodel_seqProperties_Distributions$UniformDistribution: 0
 }, false, "model.seqProperties.Distributions$UniformDistribution", {
-    Lmodel_seqProperties_Distributions$UniformDistribution: 1,
-    Lmodel_seqProperties_UniformGen: 1,
-    Lmodel_seqProperties_BasicGenerator: 1,
-    O: 1,
-    Lmodel_seqProperties_Generator: 1,
-    Lmodel_seqProperties_HasRange: 1,
-    Lmodel_seqProperties_Modifier$Duplicated: 1,
-    s_Equals: 1,
-    s_Product: 1,
-    Ljava_io_Serializable: 1
+  Lmodel_seqProperties_Distributions$UniformDistribution: 1,
+  Lmodel_seqProperties_UniformGen: 1,
+  Lmodel_seqProperties_BasicGenerator: 1,
+  O: 1,
+  Lmodel_seqProperties_Generator: 1,
+  Lmodel_seqProperties_HasRange: 1,
+  Lmodel_seqProperties_Modifier$Duplicated: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1
 });
 $c_Lmodel_seqProperties_Distributions$UniformDistribution.prototype.$classData = $d_Lmodel_seqProperties_Distributions$UniformDistribution;
 /** @constructor */
@@ -32200,17 +31834,13 @@ function $c_Lcom_raquo_airstream_state_VarSignal(initial) {
   this.Lcom_raquo_airstream_state_VarSignal__f_maybeDisplayName = null;
   this.Lcom_raquo_airstream_state_VarSignal__f_isSafeToRemoveObserver = false;
   this.Lcom_raquo_airstream_state_VarSignal__f_maybePendingObserverRemovals = null;
-  this.Lcom_raquo_airstream_state_VarSignal__f__lastUpdateId = 0;
   this.Lcom_raquo_airstream_state_VarSignal__f_externalObservers = null;
   this.Lcom_raquo_airstream_state_VarSignal__f_internalObservers = null;
   this.Lcom_raquo_airstream_state_VarSignal__f_maybeLastSeenCurrentValue = null;
-  this.Lcom_raquo_airstream_state_VarSignal__f_topoRank = 0;
   this.Lcom_raquo_airstream_state_VarSignal__f_maybeDisplayName = (void 0);
   $f_Lcom_raquo_airstream_core_BaseObservable__$init$__V(this);
-  this.Lcom_raquo_airstream_state_VarSignal__f__lastUpdateId = 0;
   $f_Lcom_raquo_airstream_core_WritableObservable__$init$__V(this);
   this.Lcom_raquo_airstream_state_VarSignal__f_maybeLastSeenCurrentValue = (void 0);
-  this.Lcom_raquo_airstream_state_VarSignal__f_topoRank = 1;
   $f_Lcom_raquo_airstream_core_WritableSignal__setCurrentValue__s_util_Try__Z__V(this, initial, true)
 }
 $c_Lcom_raquo_airstream_state_VarSignal.prototype = new $h_O();
@@ -32226,68 +31856,14 @@ $c_Lcom_raquo_airstream_state_VarSignal.prototype.maybeDisplayName__O = (functio
 $c_Lcom_raquo_airstream_state_VarSignal.prototype.toString__T = (function() {
   return $f_Lcom_raquo_airstream_core_Named__displayName__T(this)
 });
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.isSafeToRemoveObserver__Z = (function() {
-  return this.Lcom_raquo_airstream_state_VarSignal__f_isSafeToRemoveObserver
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.maybePendingObserverRemovals__O = (function() {
-  return this.Lcom_raquo_airstream_state_VarSignal__f_maybePendingObserverRemovals
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.isSafeToRemoveObserver_$eq__Z__V = (function(x$1) {
-  this.Lcom_raquo_airstream_state_VarSignal__f_isSafeToRemoveObserver = x$1
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.maybePendingObserverRemovals_$eq__O__V = (function(x$1) {
-  this.Lcom_raquo_airstream_state_VarSignal__f_maybePendingObserverRemovals = x$1
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.onStop__V = (function() {
-  /*<skip>*/
-});
 $c_Lcom_raquo_airstream_state_VarSignal.prototype.equals__O__Z = (function(obj) {
   return (this === obj)
 });
 $c_Lcom_raquo_airstream_state_VarSignal.prototype.hashCode__I = (function() {
   return $systemIdentityHashCode(this)
 });
-$c_Lcom_raquo_airstream_state_VarSignal.prototype._lastUpdateId__I = (function() {
-  return this.Lcom_raquo_airstream_state_VarSignal__f__lastUpdateId
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype._lastUpdateId_$eq__I__V = (function(x$1) {
-  this.Lcom_raquo_airstream_state_VarSignal__f__lastUpdateId = x$1
-});
 $c_Lcom_raquo_airstream_state_VarSignal.prototype.toObservable__Lcom_raquo_airstream_core_Signal = (function() {
   return this
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.onStart__V = (function() {
-  $f_Lcom_raquo_airstream_core_Signal__onStart__V(this)
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.externalObservers__Lcom_raquo_ew_JsArray = (function() {
-  return this.Lcom_raquo_airstream_state_VarSignal__f_externalObservers
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.internalObservers__Lcom_raquo_ew_JsArray = (function() {
-  return this.Lcom_raquo_airstream_state_VarSignal__f_internalObservers
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.com$raquo$airstream$core$WritableObservable$_setter_$externalObservers_$eq__Lcom_raquo_ew_JsArray__V = (function(x$0) {
-  this.Lcom_raquo_airstream_state_VarSignal__f_externalObservers = x$0
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.com$raquo$airstream$core$WritableObservable$_setter_$internalObservers_$eq__Lcom_raquo_ew_JsArray__V = (function(x$0) {
-  this.Lcom_raquo_airstream_state_VarSignal__f_internalObservers = x$0
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.maybeLastSeenCurrentValue__O = (function() {
-  return this.Lcom_raquo_airstream_state_VarSignal__f_maybeLastSeenCurrentValue
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.maybeLastSeenCurrentValue_$eq__O__V = (function(x$1) {
-  this.Lcom_raquo_airstream_state_VarSignal__f_maybeLastSeenCurrentValue = x$1
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.tryNow__s_util_Try = (function() {
-  return $f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this)
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.topoRank__I = (function() {
-  return this.Lcom_raquo_airstream_state_VarSignal__f_topoRank
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.currentValueFromParent__s_util_Try = (function() {
-  return $f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this)
-});
-$c_Lcom_raquo_airstream_state_VarSignal.prototype.onWillStart__V = (function() {
-  /*<skip>*/
 });
 var $d_Lcom_raquo_airstream_state_VarSignal = new $TypeData().initClass({
   Lcom_raquo_airstream_state_VarSignal: 0
@@ -32305,46 +31881,6 @@ var $d_Lcom_raquo_airstream_state_VarSignal = new $TypeData().initClass({
   Lcom_raquo_airstream_state_StrictSignal: 1
 });
 $c_Lcom_raquo_airstream_state_VarSignal.prototype.$classData = $d_Lcom_raquo_airstream_state_VarSignal;
-/** @constructor */
-function $c_Lmodel_Params$$anon$1(_$ordinal$2, \u03b4name$2) {
-  this.Lmodel_Params$$anon$1__f_$name$1 = null;
-  this.Lmodel_Params$$anon$1__f_$name$1 = \u03b4name$2
-}
-$c_Lmodel_Params$$anon$1.prototype = new $h_Lmodel_Params();
-$c_Lmodel_Params$$anon$1.prototype.constructor = $c_Lmodel_Params$$anon$1;
-/** @constructor */
-function $h_Lmodel_Params$$anon$1() {
-  /*<skip>*/
-}
-$h_Lmodel_Params$$anon$1.prototype = $c_Lmodel_Params$$anon$1.prototype;
-$c_Lmodel_Params$$anon$1.prototype.productArity__I = (function() {
-  return 0
-});
-$c_Lmodel_Params$$anon$1.prototype.productElement__I__O = (function(n) {
-  return $f_sr_EnumValue__productElement__I__O(this, n)
-});
-$c_Lmodel_Params$$anon$1.prototype.productPrefix__T = (function() {
-  return this.Lmodel_Params$$anon$1__f_$name$1
-});
-$c_Lmodel_Params$$anon$1.prototype.toString__T = (function() {
-  return this.Lmodel_Params$$anon$1__f_$name$1
-});
-var $d_Lmodel_Params$$anon$1 = new $TypeData().initClass({
-  Lmodel_Params$$anon$1: 0
-}, false, "model.Params$$anon$1", {
-  Lmodel_Params$$anon$1: 1,
-  Lmodel_Params: 1,
-  O: 1,
-  s_Equals: 1,
-  s_Product: 1,
-  Ljava_io_Serializable: 1,
-  s_reflect_Enum: 1,
-  sr_EnumValue: 1,
-  s_deriving_Mirror: 1,
-  s_deriving_Mirror$Product: 1,
-  s_deriving_Mirror$Singleton: 1
-});
-$c_Lmodel_Params$$anon$1.prototype.$classData = $d_Lmodel_Params$$anon$1;
 function $f_sc_Seq__equals__O__Z($thiz, o) {
   if (($thiz === o)) {
     return true
@@ -33403,49 +32939,6 @@ function $m_s_math_Numeric$LongIsIntegral$() {
   };
   return $n_s_math_Numeric$LongIsIntegral$
 }
-function $f_Lcom_raquo_airstream_common_SingleParentSignal__$init$__V($thiz) {
-  $thiz.Lcom_raquo_airstream_misc_MapSignal__f_parentIsSignal = ($thiz.Lcom_raquo_airstream_misc_MapSignal__f_parent !== null);
-  $thiz.Lcom_raquo_airstream_misc_MapSignal__f__parentLastUpdateId = 0
-}
-function $f_Lcom_raquo_airstream_common_SingleParentSignal__onWillStart__V($thiz) {
-  $m_Lcom_raquo_airstream_core_Protected$();
-  var observable = $thiz.Lcom_raquo_airstream_misc_MapSignal__f_parent;
-  var this$3 = $n(observable);
-  $f_Lcom_raquo_airstream_core_BaseObservable__maybeWillStart__V(this$3);
-  if ($thiz.Lcom_raquo_airstream_misc_MapSignal__f_parentIsSignal) {
-    $m_Lcom_raquo_airstream_core_Protected$();
-    var signal = $thiz.Lcom_raquo_airstream_misc_MapSignal__f_parent;
-    $m_Lcom_raquo_airstream_core_Protected$();
-    var this$5 = $n(signal);
-    var newParentLastUpdateId = this$5._lastUpdateId__I();
-    if ((newParentLastUpdateId !== $thiz.Lcom_raquo_airstream_misc_MapSignal__f__parentLastUpdateId)) {
-      $f_Lcom_raquo_airstream_common_SingleParentSignal__updateCurrentValueFromParent__V($thiz)
-    };
-    $thiz.Lcom_raquo_airstream_misc_MapSignal__f__parentLastUpdateId = newParentLastUpdateId
-  }
-}
-function $f_Lcom_raquo_airstream_common_SingleParentSignal__updateCurrentValueFromParent__V($thiz) {
-  var nextValue = $thiz.currentValueFromParent__s_util_Try();
-  $f_Lcom_raquo_airstream_core_WritableSignal__setCurrentValue__s_util_Try__Z__V($thiz, nextValue, false)
-}
-function $f_Lcom_raquo_airstream_common_SingleParentSignal__onTry__s_util_Try__Lcom_raquo_airstream_core_Transaction__V($thiz, nextParentValue, transaction) {
-  if ($thiz.Lcom_raquo_airstream_misc_MapSignal__f_parentIsSignal) {
-    $m_Lcom_raquo_airstream_core_Protected$();
-    var signal = $thiz.Lcom_raquo_airstream_misc_MapSignal__f_parent;
-    $m_Lcom_raquo_airstream_core_Protected$();
-    var this$2 = $n(signal);
-    $thiz.Lcom_raquo_airstream_misc_MapSignal__f__parentLastUpdateId = this$2._lastUpdateId__I()
-  }
-}
-function $f_Lcom_raquo_airstream_common_SingleParentSignal__onStart__V($thiz) {
-  var this$1 = $n($thiz.Lcom_raquo_airstream_misc_MapSignal__f_parent);
-  $f_Lcom_raquo_airstream_core_WritableObservable__addInternalObserver__Lcom_raquo_airstream_core_InternalObserver__Z__V(this$1, $thiz, false);
-  $f_Lcom_raquo_airstream_core_Signal__onStart__V($thiz)
-}
-function $f_Lcom_raquo_airstream_common_SingleParentSignal__onStop__V($thiz) {
-  var this$1 = $n($thiz.Lcom_raquo_airstream_misc_MapSignal__f_parent);
-  $f_Lcom_raquo_airstream_core_BaseObservable__removeInternalObserver__Lcom_raquo_airstream_core_InternalObserver__V(this$1, $thiz)
-}
 function $f_Lcom_raquo_laminar_api_Laminar__$init$__V($thiz) {
   new $c_Lcom_raquo_laminar_api_Laminar$$anon$1();
   new $c_Lcom_raquo_laminar_api_Laminar$$anon$2();
@@ -33492,6 +32985,216 @@ function $f_Lcom_raquo_laminar_api_Laminar__inContext__F1__Lcom_raquo_laminar_mo
   }));
   return new $c_Lcom_raquo_laminar_modifiers_Modifier$$anon$2(f)
 }
+/** @constructor */
+function $c_Lmodel_Params$$anon$1() {
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$a = 0;
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$b = 0;
+  $ct_Lmodel_Params__I__I__(this, 0, 100)
+}
+$c_Lmodel_Params$$anon$1.prototype = new $h_Lmodel_Params();
+$c_Lmodel_Params$$anon$1.prototype.constructor = $c_Lmodel_Params$$anon$1;
+/** @constructor */
+function $h_Lmodel_Params$$anon$1() {
+  /*<skip>*/
+}
+$h_Lmodel_Params$$anon$1.prototype = $c_Lmodel_Params$$anon$1.prototype;
+$c_Lmodel_Params$$anon$1.prototype.productArity__I = (function() {
+  return 0
+});
+$c_Lmodel_Params$$anon$1.prototype.productElement__I__O = (function(n) {
+  return $f_sr_EnumValue__productElement__I__O(this, n)
+});
+$c_Lmodel_Params$$anon$1.prototype.productPrefix__T = (function() {
+  return "Max"
+});
+$c_Lmodel_Params$$anon$1.prototype.toString__T = (function() {
+  return "Max"
+});
+var $d_Lmodel_Params$$anon$1 = new $TypeData().initClass({
+  Lmodel_Params$$anon$1: 0
+}, false, "model.Params$$anon$1", {
+  Lmodel_Params$$anon$1: 1,
+  Lmodel_Params: 1,
+  O: 1,
+  Lmodel_seqProperties_HasRange: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1,
+  sr_EnumValue: 1,
+  s_deriving_Mirror: 1,
+  s_deriving_Mirror$Product: 1,
+  s_deriving_Mirror$Singleton: 1
+});
+$c_Lmodel_Params$$anon$1.prototype.$classData = $d_Lmodel_Params$$anon$1;
+/** @constructor */
+function $c_Lmodel_Params$$anon$2() {
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$a = 0;
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$b = 0;
+  $ct_Lmodel_Params__I__I__(this, 0, 100)
+}
+$c_Lmodel_Params$$anon$2.prototype = new $h_Lmodel_Params();
+$c_Lmodel_Params$$anon$2.prototype.constructor = $c_Lmodel_Params$$anon$2;
+/** @constructor */
+function $h_Lmodel_Params$$anon$2() {
+  /*<skip>*/
+}
+$h_Lmodel_Params$$anon$2.prototype = $c_Lmodel_Params$$anon$2.prototype;
+$c_Lmodel_Params$$anon$2.prototype.productArity__I = (function() {
+  return 0
+});
+$c_Lmodel_Params$$anon$2.prototype.productElement__I__O = (function(n) {
+  return $f_sr_EnumValue__productElement__I__O(this, n)
+});
+$c_Lmodel_Params$$anon$2.prototype.productPrefix__T = (function() {
+  return "Min"
+});
+$c_Lmodel_Params$$anon$2.prototype.toString__T = (function() {
+  return "Min"
+});
+var $d_Lmodel_Params$$anon$2 = new $TypeData().initClass({
+  Lmodel_Params$$anon$2: 0
+}, false, "model.Params$$anon$2", {
+  Lmodel_Params$$anon$2: 1,
+  Lmodel_Params: 1,
+  O: 1,
+  Lmodel_seqProperties_HasRange: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1,
+  sr_EnumValue: 1,
+  s_deriving_Mirror: 1,
+  s_deriving_Mirror$Product: 1,
+  s_deriving_Mirror$Singleton: 1
+});
+$c_Lmodel_Params$$anon$2.prototype.$classData = $d_Lmodel_Params$$anon$2;
+/** @constructor */
+function $c_Lmodel_Params$$anon$3() {
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$a = 0;
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$b = 0;
+  $ct_Lmodel_Params__I__I__(this, 0, 100)
+}
+$c_Lmodel_Params$$anon$3.prototype = new $h_Lmodel_Params();
+$c_Lmodel_Params$$anon$3.prototype.constructor = $c_Lmodel_Params$$anon$3;
+/** @constructor */
+function $h_Lmodel_Params$$anon$3() {
+  /*<skip>*/
+}
+$h_Lmodel_Params$$anon$3.prototype = $c_Lmodel_Params$$anon$3.prototype;
+$c_Lmodel_Params$$anon$3.prototype.productArity__I = (function() {
+  return 0
+});
+$c_Lmodel_Params$$anon$3.prototype.productElement__I__O = (function(n) {
+  return $f_sr_EnumValue__productElement__I__O(this, n)
+});
+$c_Lmodel_Params$$anon$3.prototype.productPrefix__T = (function() {
+  return "Std"
+});
+$c_Lmodel_Params$$anon$3.prototype.toString__T = (function() {
+  return "Std"
+});
+var $d_Lmodel_Params$$anon$3 = new $TypeData().initClass({
+  Lmodel_Params$$anon$3: 0
+}, false, "model.Params$$anon$3", {
+  Lmodel_Params$$anon$3: 1,
+  Lmodel_Params: 1,
+  O: 1,
+  Lmodel_seqProperties_HasRange: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1,
+  sr_EnumValue: 1,
+  s_deriving_Mirror: 1,
+  s_deriving_Mirror$Product: 1,
+  s_deriving_Mirror$Singleton: 1
+});
+$c_Lmodel_Params$$anon$3.prototype.$classData = $d_Lmodel_Params$$anon$3;
+/** @constructor */
+function $c_Lmodel_Params$$anon$4() {
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$a = 0;
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$b = 0;
+  $ct_Lmodel_Params__I__I__(this, 0, 150)
+}
+$c_Lmodel_Params$$anon$4.prototype = new $h_Lmodel_Params();
+$c_Lmodel_Params$$anon$4.prototype.constructor = $c_Lmodel_Params$$anon$4;
+/** @constructor */
+function $h_Lmodel_Params$$anon$4() {
+  /*<skip>*/
+}
+$h_Lmodel_Params$$anon$4.prototype = $c_Lmodel_Params$$anon$4.prototype;
+$c_Lmodel_Params$$anon$4.prototype.productArity__I = (function() {
+  return 0
+});
+$c_Lmodel_Params$$anon$4.prototype.productElement__I__O = (function(n) {
+  return $f_sr_EnumValue__productElement__I__O(this, n)
+});
+$c_Lmodel_Params$$anon$4.prototype.productPrefix__T = (function() {
+  return "Size"
+});
+$c_Lmodel_Params$$anon$4.prototype.toString__T = (function() {
+  return "Size"
+});
+var $d_Lmodel_Params$$anon$4 = new $TypeData().initClass({
+  Lmodel_Params$$anon$4: 0
+}, false, "model.Params$$anon$4", {
+  Lmodel_Params$$anon$4: 1,
+  Lmodel_Params: 1,
+  O: 1,
+  Lmodel_seqProperties_HasRange: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1,
+  sr_EnumValue: 1,
+  s_deriving_Mirror: 1,
+  s_deriving_Mirror$Product: 1,
+  s_deriving_Mirror$Singleton: 1
+});
+$c_Lmodel_Params$$anon$4.prototype.$classData = $d_Lmodel_Params$$anon$4;
+/** @constructor */
+function $c_Lmodel_Params$$anon$5() {
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$a = 0;
+  this.Lmodel_Params__f_model$seqProperties$HasRange$$b = 0;
+  $ct_Lmodel_Params__I__I__(this, 0, 100)
+}
+$c_Lmodel_Params$$anon$5.prototype = new $h_Lmodel_Params();
+$c_Lmodel_Params$$anon$5.prototype.constructor = $c_Lmodel_Params$$anon$5;
+/** @constructor */
+function $h_Lmodel_Params$$anon$5() {
+  /*<skip>*/
+}
+$h_Lmodel_Params$$anon$5.prototype = $c_Lmodel_Params$$anon$5.prototype;
+$c_Lmodel_Params$$anon$5.prototype.productArity__I = (function() {
+  return 0
+});
+$c_Lmodel_Params$$anon$5.prototype.productElement__I__O = (function(n) {
+  return $f_sr_EnumValue__productElement__I__O(this, n)
+});
+$c_Lmodel_Params$$anon$5.prototype.productPrefix__T = (function() {
+  return "DuplicatesPercentage"
+});
+$c_Lmodel_Params$$anon$5.prototype.toString__T = (function() {
+  return "DuplicatesPercentage"
+});
+var $d_Lmodel_Params$$anon$5 = new $TypeData().initClass({
+  Lmodel_Params$$anon$5: 0
+}, false, "model.Params$$anon$5", {
+  Lmodel_Params$$anon$5: 1,
+  Lmodel_Params: 1,
+  O: 1,
+  Lmodel_seqProperties_HasRange: 1,
+  s_Equals: 1,
+  s_Product: 1,
+  Ljava_io_Serializable: 1,
+  s_reflect_Enum: 1,
+  sr_EnumValue: 1,
+  s_deriving_Mirror: 1,
+  s_deriving_Mirror$Product: 1,
+  s_deriving_Mirror$Singleton: 1
+});
+$c_Lmodel_Params$$anon$5.prototype.$classData = $d_Lmodel_Params$$anon$5;
 /** @constructor */
 function $c_sc_AbstractSet() {
   /*<skip>*/
@@ -33562,224 +33265,6 @@ function $isArrayOf_sc_Map(obj, depth) {
 function $asArrayOf_sc_Map(obj, depth) {
   return (($isArrayOf_sc_Map(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lscala.collection.Map;", depth))
 }
-/** @constructor */
-function $c_Lcom_raquo_airstream_misc_MapSignal(parent, project, recover) {
-  this.Lcom_raquo_airstream_misc_MapSignal__f_maybeDisplayName = null;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_isSafeToRemoveObserver = false;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_maybePendingObserverRemovals = null;
-  this.Lcom_raquo_airstream_misc_MapSignal__f__lastUpdateId = 0;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_externalObservers = null;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_internalObservers = null;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_maybeLastSeenCurrentValue = null;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_parentIsSignal = false;
-  this.Lcom_raquo_airstream_misc_MapSignal__f__parentLastUpdateId = 0;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_parent = null;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_project = null;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_recover = null;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_topoRank = 0;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_parent = parent;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_project = project;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_recover = recover;
-  this.Lcom_raquo_airstream_misc_MapSignal__f_maybeDisplayName = (void 0);
-  $f_Lcom_raquo_airstream_core_BaseObservable__$init$__V(this);
-  this.Lcom_raquo_airstream_misc_MapSignal__f__lastUpdateId = 0;
-  $f_Lcom_raquo_airstream_core_WritableObservable__$init$__V(this);
-  this.Lcom_raquo_airstream_misc_MapSignal__f_maybeLastSeenCurrentValue = (void 0);
-  $f_Lcom_raquo_airstream_common_SingleParentSignal__$init$__V(this);
-  this.Lcom_raquo_airstream_misc_MapSignal__f_topoRank = ((1 + ($m_Lcom_raquo_airstream_core_Protected$(), $n(parent).topoRank__I())) | 0)
-}
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype = new $h_O();
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.constructor = $c_Lcom_raquo_airstream_misc_MapSignal;
-/** @constructor */
-function $h_Lcom_raquo_airstream_misc_MapSignal() {
-  /*<skip>*/
-}
-$h_Lcom_raquo_airstream_misc_MapSignal.prototype = $c_Lcom_raquo_airstream_misc_MapSignal.prototype;
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.maybeDisplayName__O = (function() {
-  return this.Lcom_raquo_airstream_misc_MapSignal__f_maybeDisplayName
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.toString__T = (function() {
-  return $f_Lcom_raquo_airstream_core_Named__displayName__T(this)
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.isSafeToRemoveObserver__Z = (function() {
-  return this.Lcom_raquo_airstream_misc_MapSignal__f_isSafeToRemoveObserver
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.maybePendingObserverRemovals__O = (function() {
-  return this.Lcom_raquo_airstream_misc_MapSignal__f_maybePendingObserverRemovals
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.isSafeToRemoveObserver_$eq__Z__V = (function(x$1) {
-  this.Lcom_raquo_airstream_misc_MapSignal__f_isSafeToRemoveObserver = x$1
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.maybePendingObserverRemovals_$eq__O__V = (function(x$1) {
-  this.Lcom_raquo_airstream_misc_MapSignal__f_maybePendingObserverRemovals = x$1
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.equals__O__Z = (function(obj) {
-  return (this === obj)
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.hashCode__I = (function() {
-  return $systemIdentityHashCode(this)
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype._lastUpdateId__I = (function() {
-  return this.Lcom_raquo_airstream_misc_MapSignal__f__lastUpdateId
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype._lastUpdateId_$eq__I__V = (function(x$1) {
-  this.Lcom_raquo_airstream_misc_MapSignal__f__lastUpdateId = x$1
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.toObservable__Lcom_raquo_airstream_core_Signal = (function() {
-  return this
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.externalObservers__Lcom_raquo_ew_JsArray = (function() {
-  return this.Lcom_raquo_airstream_misc_MapSignal__f_externalObservers
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.internalObservers__Lcom_raquo_ew_JsArray = (function() {
-  return this.Lcom_raquo_airstream_misc_MapSignal__f_internalObservers
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.com$raquo$airstream$core$WritableObservable$_setter_$externalObservers_$eq__Lcom_raquo_ew_JsArray__V = (function(x$0) {
-  this.Lcom_raquo_airstream_misc_MapSignal__f_externalObservers = x$0
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.com$raquo$airstream$core$WritableObservable$_setter_$internalObservers_$eq__Lcom_raquo_ew_JsArray__V = (function(x$0) {
-  this.Lcom_raquo_airstream_misc_MapSignal__f_internalObservers = x$0
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.maybeLastSeenCurrentValue__O = (function() {
-  return this.Lcom_raquo_airstream_misc_MapSignal__f_maybeLastSeenCurrentValue
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.maybeLastSeenCurrentValue_$eq__O__V = (function(x$1) {
-  this.Lcom_raquo_airstream_misc_MapSignal__f_maybeLastSeenCurrentValue = x$1
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.tryNow__s_util_Try = (function() {
-  return $f_Lcom_raquo_airstream_core_WritableSignal__tryNow__s_util_Try(this)
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.onWillStart__V = (function() {
-  $f_Lcom_raquo_airstream_common_SingleParentSignal__onWillStart__V(this)
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.onStart__V = (function() {
-  $f_Lcom_raquo_airstream_common_SingleParentSignal__onStart__V(this)
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.onStop__V = (function() {
-  $f_Lcom_raquo_airstream_common_SingleParentSignal__onStop__V(this)
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.topoRank__I = (function() {
-  return this.Lcom_raquo_airstream_misc_MapSignal__f_topoRank
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.onTry__s_util_Try__Lcom_raquo_airstream_core_Transaction__V = (function(nextParentValue, transaction) {
-  $f_Lcom_raquo_airstream_common_SingleParentSignal__onTry__s_util_Try__Lcom_raquo_airstream_core_Transaction__V(this, nextParentValue, transaction);
-  $n(nextParentValue).fold__F1__F1__O(new $c_sjsr_AnonFunction1(((nextError) => {
-    var nextError$1 = $as_jl_Throwable(nextError);
-    var this$2 = $n(this.Lcom_raquo_airstream_misc_MapSignal__f_recover);
-    if (this$2.isEmpty__Z()) {
-      $f_Lcom_raquo_airstream_core_WritableSignal__fireError__jl_Throwable__Lcom_raquo_airstream_core_Transaction__V(this, nextError$1, transaction)
-    } else {
-      var arg1 = this$2.get__O();
-      var pf = $as_s_PartialFunction(arg1);
-      try {
-        var $$x1 = new $c_s_util_Success($as_s_Option($n(pf).applyOrElse__O__F1__O(nextError$1, new $c_sjsr_AnonFunction1(((_$1) => {
-          $as_jl_Throwable(_$1);
-          return null
-        })))))
-      } catch (e) {
-        var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
-        matchEnd8: {
-          var $$x1;
-          var o11 = $m_s_util_control_NonFatal$().unapply__jl_Throwable__s_Option(e$2);
-          if ((!$n(o11).isEmpty__Z())) {
-            var e$3 = $as_jl_Throwable($n(o11).get__O());
-            var $$x1 = new $c_s_util_Failure(e$3);
-            break matchEnd8
-          };
-          throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
-        }
-      };
-      $n($$x1).fold__F1__F1__O(new $c_sjsr_AnonFunction1(((tryError) => {
-        var tryError$1 = $as_jl_Throwable(tryError);
-        var nextError$2 = new $c_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError(tryError$1, nextError$1);
-        $f_Lcom_raquo_airstream_core_WritableSignal__fireError__jl_Throwable__Lcom_raquo_airstream_core_Transaction__V(this, nextError$2, transaction)
-      })), new $c_sjsr_AnonFunction1(((nextValue) => {
-        var nextValue$1 = $as_s_Option(nextValue);
-        if ((nextValue$1 === null)) {
-          $f_Lcom_raquo_airstream_core_WritableSignal__fireError__jl_Throwable__Lcom_raquo_airstream_core_Transaction__V(this, nextError$1, transaction)
-        } else {
-          var this$5 = $n(nextValue$1);
-          if ((!this$5.isEmpty__Z())) {
-            var arg1$1 = this$5.get__O();
-            $f_Lcom_raquo_airstream_core_WritableSignal__fireValue__O__Lcom_raquo_airstream_core_Transaction__V(this, arg1$1, transaction)
-          }
-        }
-      })))
-    }
-  })), new $c_sjsr_AnonFunction1(((_$3) => {
-    var nextValue$2 = $n(nextParentValue).map__F1__s_util_Try(this.Lcom_raquo_airstream_misc_MapSignal__f_project);
-    $f_Lcom_raquo_airstream_core_WritableSignal__fireTry__s_util_Try__Lcom_raquo_airstream_core_Transaction__V(this, nextValue$2, transaction)
-  })))
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.currentValueFromParent__s_util_Try = (function() {
-  var originalValue = $n($n(this.Lcom_raquo_airstream_misc_MapSignal__f_parent).tryNow__s_util_Try()).map__F1__s_util_Try(this.Lcom_raquo_airstream_misc_MapSignal__f_project);
-  return $as_s_util_Try($n(originalValue).fold__F1__F1__O(new $c_sjsr_AnonFunction1(((nextError) => {
-    var nextError$1 = $as_jl_Throwable(nextError);
-    var this$2 = $n(this.Lcom_raquo_airstream_misc_MapSignal__f_recover);
-    if (this$2.isEmpty__Z()) {
-      return originalValue
-    } else {
-      var arg1 = this$2.get__O();
-      var pf = $as_s_PartialFunction(arg1);
-      try {
-        var $$x1 = new $c_s_util_Success($as_s_Option($n(pf).applyOrElse__O__F1__O(nextError$1, new $c_sjsr_AnonFunction1(((_$4) => {
-          $as_jl_Throwable(_$4);
-          return null
-        })))))
-      } catch (e) {
-        var e$2 = ((e instanceof $c_jl_Throwable) ? e : new $c_sjs_js_JavaScriptException(e));
-        matchEnd8: {
-          var $$x1;
-          var o11 = $m_s_util_control_NonFatal$().unapply__jl_Throwable__s_Option(e$2);
-          if ((!$n(o11).isEmpty__Z())) {
-            var e$3 = $as_jl_Throwable($n(o11).get__O());
-            var $$x1 = new $c_s_util_Failure(e$3);
-            break matchEnd8
-          };
-          throw ((e$2 instanceof $c_sjs_js_JavaScriptException) ? e$2.sjs_js_JavaScriptException__f_exception : $n(e$2))
-        }
-      };
-      return $as_s_util_Try($n($$x1).fold__F1__F1__O(new $c_sjsr_AnonFunction1(((tryError) => {
-        var tryError$1 = $as_jl_Throwable(tryError);
-        var exception = new $c_Lcom_raquo_airstream_core_AirstreamError$ErrorHandlingError(tryError$1, nextError$1);
-        return new $c_s_util_Failure(exception)
-      })), new $c_sjsr_AnonFunction1(((nextValue) => {
-        var nextValue$1 = $as_s_Option(nextValue);
-        if ((nextValue$1 === null)) {
-          return originalValue
-        } else {
-          var this$6 = $n(nextValue$1);
-          if (this$6.isEmpty__Z()) {
-            var $$x2 = $m_s_None$()
-          } else {
-            var arg1$1 = this$6.get__O();
-            var $$x2 = new $c_s_Some(new $c_s_util_Success(arg1$1))
-          };
-          var this$8 = $n($$x2);
-          return $as_s_util_Try((this$8.isEmpty__Z() ? originalValue : this$8.get__O()))
-        }
-      }))))
-    }
-  })), new $c_sjsr_AnonFunction1(((_$6) => originalValue))))
-});
-var $d_Lcom_raquo_airstream_misc_MapSignal = new $TypeData().initClass({
-  Lcom_raquo_airstream_misc_MapSignal: 0
-}, false, "com.raquo.airstream.misc.MapSignal", {
-  Lcom_raquo_airstream_misc_MapSignal: 1,
-  O: 1,
-  Lcom_raquo_airstream_core_Source: 1,
-  Lcom_raquo_airstream_core_Named: 1,
-  Lcom_raquo_airstream_core_BaseObservable: 1,
-  Lcom_raquo_airstream_core_Observable: 1,
-  Lcom_raquo_airstream_core_Source$SignalSource: 1,
-  Lcom_raquo_airstream_core_Signal: 1,
-  Lcom_raquo_airstream_core_WritableObservable: 1,
-  Lcom_raquo_airstream_core_WritableSignal: 1,
-  Lcom_raquo_airstream_core_InternalObserver: 1,
-  Lcom_raquo_airstream_common_InternalTryObserver: 1,
-  Lcom_raquo_airstream_common_SingleParentSignal: 1
-});
-$c_Lcom_raquo_airstream_misc_MapSignal.prototype.$classData = $d_Lcom_raquo_airstream_misc_MapSignal;
 /** @constructor */
 function $c_Lcom_raquo_laminar_api_package$$anon$1() {
   this.Lcom_raquo_laminar_api_package$$anon$1__f_Var = null;
@@ -34085,9 +33570,6 @@ $c_sc_AbstractSeq.prototype.sameElements__sc_IterableOnce__Z = (function(that) {
 $c_sc_AbstractSeq.prototype.updated__I__O__O = (function(index, elem) {
   return $f_sc_SeqOps__updated__I__O__O(this, index, elem)
 });
-$c_sc_AbstractSeq.prototype.applyOrElse__O__F1__O = (function(x, default$1) {
-  return $f_s_PartialFunction__applyOrElse__O__F1__O(this, x, default$1)
-});
 $c_sc_AbstractSeq.prototype.isDefinedAt__O__Z = (function(x) {
   return this.isDefinedAt__I__Z($uI(x))
 });
@@ -34203,9 +33685,6 @@ $c_sc_AbstractMap.prototype.toString__T = (function() {
 });
 $c_sc_AbstractMap.prototype.fromSpecific__sc_IterableOnce__sc_IterableOps = (function(coll) {
   return $as_sc_IterableOps($n(this.mapFactory__sc_MapFactory()).from__sc_IterableOnce__O(coll))
-});
-$c_sc_AbstractMap.prototype.applyOrElse__O__F1__O = (function(x, default$1) {
-  return $f_sc_MapOps__applyOrElse__O__F1__O(this, x, default$1)
 });
 $c_sc_AbstractMap.prototype.foreachEntry__F2__V = (function(f) {
   $f_sc_MapOps__foreachEntry__F2__V(this, f)
@@ -35234,30 +34713,27 @@ $c_sci_Set$Set1.prototype.contains__O__Z = (function(elem) {
   return $m_sr_BoxesRunTime$().equals__O__O__Z(elem, this.sci_Set$Set1__f_elem1)
 });
 $c_sci_Set$Set1.prototype.incl__O__sci_Set = (function(elem) {
-    return (this.contains__O__Z(elem) ? this : new $c_sci_Set$Set2(this.sci_Set$Set1__f_elem1, elem))
+  return (this.contains__O__Z(elem) ? this : new $c_sci_Set$Set2(this.sci_Set$Set1__f_elem1, elem))
 });
-$c_sci_Set$Set1.prototype.iterator__sc_Iterator = (function () {
-    $m_sc_Iterator$();
-    var a = this.sci_Set$Set1__f_elem1;
-    return new $c_sc_Iterator$$anon$20(a)
+$c_sci_Set$Set1.prototype.iterator__sc_Iterator = (function() {
+  $m_sc_Iterator$();
+  var a = this.sci_Set$Set1__f_elem1;
+  return new $c_sc_Iterator$$anon$20(a)
 });
-$c_sci_Set$Set1.prototype.forall__F1__Z = (function (p) {
-    return $uZ($n(p).apply__O__O(this.sci_Set$Set1__f_elem1))
+$c_sci_Set$Set1.prototype.forall__F1__Z = (function(p) {
+  return $uZ($n(p).apply__O__O(this.sci_Set$Set1__f_elem1))
 });
-$c_sci_Set$Set1.prototype.find__F1__s_Option = (function (p) {
-    return ($uZ($n(p).apply__O__O(this.sci_Set$Set1__f_elem1)) ? new $c_s_Some(this.sci_Set$Set1__f_elem1) : $m_s_None$())
+$c_sci_Set$Set1.prototype.head__O = (function() {
+  return this.sci_Set$Set1__f_elem1
 });
-$c_sci_Set$Set1.prototype.head__O = (function () {
-    return this.sci_Set$Set1__f_elem1
+$c_sci_Set$Set1.prototype.tail__O = (function() {
+  return $m_sci_Set$EmptySet$()
 });
-$c_sci_Set$Set1.prototype.tail__O = (function () {
-    return $m_sci_Set$EmptySet$()
-});
-$c_sci_Set$Set1.prototype.incl__O__sci_SetOps = (function (elem) {
-    return this.incl__O__sci_Set(elem)
+$c_sci_Set$Set1.prototype.incl__O__sci_SetOps = (function(elem) {
+  return this.incl__O__sci_Set(elem)
 });
 function $as_sci_Set$Set1(obj) {
-    return (((obj instanceof $c_sci_Set$Set1) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Set$Set1"))
+  return (((obj instanceof $c_sci_Set$Set1) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Set$Set1"))
 }
 function $isArrayOf_sci_Set$Set1(obj, depth) {
   return (!(!(((obj && obj.$classData) && (obj.$classData.arrayDepth === depth)) && obj.$classData.arrayBase.ancestors.sci_Set$Set1)))
@@ -35325,37 +34801,34 @@ $c_sci_Set$Set2.prototype.iterator__sc_Iterator = (function() {
   return new $c_sci_Set$Set2$$anon$1(this)
 });
 $c_sci_Set$Set2.prototype.scala$collection$immutable$Set$Set2$$getElem__I__O = (function(i) {
-    switch (i) {
-        case 0: {
-            return this.sci_Set$Set2__f_elem1;
-            break
-        }
-        case 1: {
-            return this.sci_Set$Set2__f_elem2;
-            break
-        }
-        default: {
-            throw new $c_s_MatchError(i)
-        }
+  switch (i) {
+    case 0: {
+      return this.sci_Set$Set2__f_elem1;
+      break
     }
+    case 1: {
+      return this.sci_Set$Set2__f_elem2;
+      break
+    }
+    default: {
+      throw new $c_s_MatchError(i)
+    }
+  }
 });
-$c_sci_Set$Set2.prototype.forall__F1__Z = (function (p) {
-    return ($uZ($n(p).apply__O__O(this.sci_Set$Set2__f_elem1)) && $uZ($n(p).apply__O__O(this.sci_Set$Set2__f_elem2)))
+$c_sci_Set$Set2.prototype.forall__F1__Z = (function(p) {
+  return ($uZ($n(p).apply__O__O(this.sci_Set$Set2__f_elem1)) && $uZ($n(p).apply__O__O(this.sci_Set$Set2__f_elem2)))
 });
-$c_sci_Set$Set2.prototype.find__F1__s_Option = (function (p) {
-    return ($uZ($n(p).apply__O__O(this.sci_Set$Set2__f_elem1)) ? new $c_s_Some(this.sci_Set$Set2__f_elem1) : ($uZ($n(p).apply__O__O(this.sci_Set$Set2__f_elem2)) ? new $c_s_Some(this.sci_Set$Set2__f_elem2) : $m_s_None$()))
+$c_sci_Set$Set2.prototype.head__O = (function() {
+  return this.sci_Set$Set2__f_elem1
 });
-$c_sci_Set$Set2.prototype.head__O = (function () {
-    return this.sci_Set$Set2__f_elem1
+$c_sci_Set$Set2.prototype.tail__sci_Set = (function() {
+  return new $c_sci_Set$Set1(this.sci_Set$Set2__f_elem2)
 });
-$c_sci_Set$Set2.prototype.tail__sci_Set = (function () {
-    return new $c_sci_Set$Set1(this.sci_Set$Set2__f_elem2)
+$c_sci_Set$Set2.prototype.tail__O = (function() {
+  return this.tail__sci_Set()
 });
-$c_sci_Set$Set2.prototype.tail__O = (function () {
-    return this.tail__sci_Set()
-});
-$c_sci_Set$Set2.prototype.incl__O__sci_SetOps = (function (elem) {
-    return this.incl__O__sci_Set(elem)
+$c_sci_Set$Set2.prototype.incl__O__sci_SetOps = (function(elem) {
+  return this.incl__O__sci_Set(elem)
 });
 function $as_sci_Set$Set2(obj) {
   return (((obj instanceof $c_sci_Set$Set2) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Set$Set2"))
@@ -35431,38 +34904,35 @@ $c_sci_Set$Set3.prototype.scala$collection$immutable$Set$Set3$$getElem__I__O = (
   switch (i) {
     case 0: {
       return this.sci_Set$Set3__f_elem1;
-        break
+      break
     }
-      case 1: {
-          return this.sci_Set$Set3__f_elem2;
-          break
-      }
-      case 2: {
-          return this.sci_Set$Set3__f_elem3;
-          break
-      }
-      default: {
-          throw new $c_s_MatchError(i)
-      }
+    case 1: {
+      return this.sci_Set$Set3__f_elem2;
+      break
+    }
+    case 2: {
+      return this.sci_Set$Set3__f_elem3;
+      break
+    }
+    default: {
+      throw new $c_s_MatchError(i)
+    }
   }
 });
-$c_sci_Set$Set3.prototype.forall__F1__Z = (function (p) {
-    return (($uZ($n(p).apply__O__O(this.sci_Set$Set3__f_elem1)) && $uZ($n(p).apply__O__O(this.sci_Set$Set3__f_elem2))) && $uZ($n(p).apply__O__O(this.sci_Set$Set3__f_elem3)))
+$c_sci_Set$Set3.prototype.forall__F1__Z = (function(p) {
+  return (($uZ($n(p).apply__O__O(this.sci_Set$Set3__f_elem1)) && $uZ($n(p).apply__O__O(this.sci_Set$Set3__f_elem2))) && $uZ($n(p).apply__O__O(this.sci_Set$Set3__f_elem3)))
 });
-$c_sci_Set$Set3.prototype.find__F1__s_Option = (function (p) {
-    return ($uZ($n(p).apply__O__O(this.sci_Set$Set3__f_elem1)) ? new $c_s_Some(this.sci_Set$Set3__f_elem1) : ($uZ($n(p).apply__O__O(this.sci_Set$Set3__f_elem2)) ? new $c_s_Some(this.sci_Set$Set3__f_elem2) : ($uZ($n(p).apply__O__O(this.sci_Set$Set3__f_elem3)) ? new $c_s_Some(this.sci_Set$Set3__f_elem3) : $m_s_None$())))
+$c_sci_Set$Set3.prototype.head__O = (function() {
+  return this.sci_Set$Set3__f_elem1
 });
-$c_sci_Set$Set3.prototype.head__O = (function () {
-    return this.sci_Set$Set3__f_elem1
+$c_sci_Set$Set3.prototype.tail__sci_Set = (function() {
+  return new $c_sci_Set$Set2(this.sci_Set$Set3__f_elem2, this.sci_Set$Set3__f_elem3)
 });
-$c_sci_Set$Set3.prototype.tail__sci_Set = (function () {
-    return new $c_sci_Set$Set2(this.sci_Set$Set3__f_elem2, this.sci_Set$Set3__f_elem3)
+$c_sci_Set$Set3.prototype.tail__O = (function() {
+  return this.tail__sci_Set()
 });
-$c_sci_Set$Set3.prototype.tail__O = (function () {
-    return this.tail__sci_Set()
-});
-$c_sci_Set$Set3.prototype.incl__O__sci_SetOps = (function (elem) {
-    return this.incl__O__sci_Set(elem)
+$c_sci_Set$Set3.prototype.incl__O__sci_SetOps = (function(elem) {
+  return this.incl__O__sci_Set(elem)
 });
 function $as_sci_Set$Set3(obj) {
   return (((obj instanceof $c_sci_Set$Set3) || (obj === null)) ? obj : $throwClassCastException(obj, "scala.collection.immutable.Set$Set3"))
@@ -35558,38 +35028,35 @@ $c_sci_Set$Set4.prototype.scala$collection$immutable$Set$Set4$$getElem__I__O = (
     }
     case 1: {
       return this.sci_Set$Set4__f_elem2;
-        break
+      break
     }
-      case 2: {
-          return this.sci_Set$Set4__f_elem3;
-          break
-      }
-      case 3: {
-          return this.sci_Set$Set4__f_elem4;
-          break
-      }
-      default: {
-          throw new $c_s_MatchError(i)
-      }
+    case 2: {
+      return this.sci_Set$Set4__f_elem3;
+      break
+    }
+    case 3: {
+      return this.sci_Set$Set4__f_elem4;
+      break
+    }
+    default: {
+      throw new $c_s_MatchError(i)
+    }
   }
 });
-$c_sci_Set$Set4.prototype.forall__F1__Z = (function (p) {
-    return ((($uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem1)) && $uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem2))) && $uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem3))) && $uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem4)))
+$c_sci_Set$Set4.prototype.forall__F1__Z = (function(p) {
+  return ((($uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem1)) && $uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem2))) && $uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem3))) && $uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem4)))
 });
-$c_sci_Set$Set4.prototype.find__F1__s_Option = (function (p) {
-    return ($uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem1)) ? new $c_s_Some(this.sci_Set$Set4__f_elem1) : ($uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem2)) ? new $c_s_Some(this.sci_Set$Set4__f_elem2) : ($uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem3)) ? new $c_s_Some(this.sci_Set$Set4__f_elem3) : ($uZ($n(p).apply__O__O(this.sci_Set$Set4__f_elem4)) ? new $c_s_Some(this.sci_Set$Set4__f_elem4) : $m_s_None$()))))
+$c_sci_Set$Set4.prototype.head__O = (function() {
+  return this.sci_Set$Set4__f_elem1
 });
-$c_sci_Set$Set4.prototype.head__O = (function () {
-    return this.sci_Set$Set4__f_elem1
+$c_sci_Set$Set4.prototype.tail__sci_Set = (function() {
+  return new $c_sci_Set$Set3(this.sci_Set$Set4__f_elem2, this.sci_Set$Set4__f_elem3, this.sci_Set$Set4__f_elem4)
 });
-$c_sci_Set$Set4.prototype.tail__sci_Set = (function () {
-    return new $c_sci_Set$Set3(this.sci_Set$Set4__f_elem2, this.sci_Set$Set4__f_elem3, this.sci_Set$Set4__f_elem4)
+$c_sci_Set$Set4.prototype.buildTo__scm_Builder__scm_Builder = (function(builder) {
+  return $as_scm_Builder($n($n($n($n(builder).addOne__O__scm_Growable(this.sci_Set$Set4__f_elem1)).addOne__O__scm_Growable(this.sci_Set$Set4__f_elem2)).addOne__O__scm_Growable(this.sci_Set$Set4__f_elem3)).addOne__O__scm_Growable(this.sci_Set$Set4__f_elem4))
 });
-$c_sci_Set$Set4.prototype.buildTo__scm_Builder__scm_Builder = (function (builder) {
-    return $as_scm_Builder($n($n($n($n(builder).addOne__O__scm_Growable(this.sci_Set$Set4__f_elem1)).addOne__O__scm_Growable(this.sci_Set$Set4__f_elem2)).addOne__O__scm_Growable(this.sci_Set$Set4__f_elem3)).addOne__O__scm_Growable(this.sci_Set$Set4__f_elem4))
-});
-$c_sci_Set$Set4.prototype.tail__O = (function () {
-    return this.tail__sci_Set()
+$c_sci_Set$Set4.prototype.tail__O = (function() {
+  return this.tail__sci_Set()
 });
 $c_sci_Set$Set4.prototype.incl__O__sci_SetOps = (function(elem) {
   return this.incl__O__sci_Set(elem)
@@ -37552,9 +37019,6 @@ $c_sjsr_WrappedVarArgs.prototype.indexWhere__F1__I__I = (function(p, from) {
 });
 $c_sjsr_WrappedVarArgs.prototype.isEmpty__Z = (function() {
   return $f_sc_SeqOps__isEmpty__Z(this)
-});
-$c_sjsr_WrappedVarArgs.prototype.applyOrElse__O__F1__O = (function(x, default$1) {
-  return $f_s_PartialFunction__applyOrElse__O__F1__O(this, x, default$1)
 });
 $c_sjsr_WrappedVarArgs.prototype.newSpecificBuilder__scm_Builder = (function() {
   return $m_sjsr_WrappedVarArgs$().newBuilder__scm_Builder()
