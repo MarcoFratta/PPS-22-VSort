@@ -49,7 +49,7 @@ object ViewComponent:
         )
 
         given Conversion[c.model.ParamsType, Int] = x => x
-        private val params = p.params.map(a => SingleValueFactory(a._1, a._2, )).toList
+        private val params = p.params.map(a => SingleValueFactory(a._1, a._2, a._1.min, a._1.max)).toList
 
         dom.document.getElementById("app").innerHTML = ""
         render(dom.document.getElementById("app"), getAppElement)

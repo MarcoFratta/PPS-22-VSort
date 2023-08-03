@@ -51,9 +51,9 @@ case class MultipleListWithF[X <: HasName, Y >: HasName](x:List[X], selected: X,
 trait IntConverter[T]:
   def convert(x:T):Int
 
-case class SingleValue[X,Y >:Int](x:X, starterValue: Y) extends ViewElement with Inputs[X,Y]:
+case class SingleValue[X,Y >:Int](x:X, starterValue: Y, min: Y, max: Y) extends ViewElement with Inputs[X,Y]:
   val sliderValue = Var(starterValue)
-  def renderSlider[T](min: Int, max: Int, item: T): Element =
+  def renderSlider[T](item: T): Element =
     div(
       label(item.toString),
       input(
@@ -66,7 +66,7 @@ case class SingleValue[X,Y >:Int](x:X, starterValue: Y) extends ViewElement with
       ),
     )
   override def get: Map[X, Y] = Map(x -> sliderValue.now())
-  override def element: Element = renderSlider(1, 200,  x)
+  override def element: Element = renderSlider(x)
 
 
 object MultipleListFactory:
@@ -78,6 +78,6 @@ object MultipleListWithFFactory:
   MultipleListWithF[X, Y] = MultipleListWithF[X, Y](x, selected, f)
 
 object SingleValueFactory:
-  def apply[X, Y](x: X, starterValue: Y)(using c:Conversion[Y,Int]):
+  def apply[X, Y](x: X, starterValue: Y, min: Y, max: Y)(using c:Conversion[Y,Int]):
   SingleValue[X, Int] =
-    new SingleValue[X, Int](x, c.apply(starterValue))
+    new SingleValue[X, Int](x, c.apply(starterValue), min, max)

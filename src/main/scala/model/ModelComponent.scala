@@ -8,6 +8,8 @@ import model.seqProperties.Distributions.*
 import model.sortModel.Comparable
 import view.*
 
+import javax.print.attribute.HashPrintRequestAttributeSet
+
 
 object ModelComponent:
 
