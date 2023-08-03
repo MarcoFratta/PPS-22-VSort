@@ -35,7 +35,7 @@ case class GraphFunctions(seq: Seq[State[Int]]):
   private val visualizer: RectanglesVisualizer = RectanglesVisualizer(seqStep.head.get.size,
     seqStep.head.get.map(a => a.value).max)
   private var index: Int = 0
-  private var period: Int = 20
+  private var period: Int = 100
   private var timer = new Timer()
   private var isExecuting: Boolean = false
   showGraphic()
@@ -122,14 +122,16 @@ case class GraphFunctions(seq: Seq[State[Int]]):
   def setSpeed(speed: Int): Unit =
     timer.cancel()
     timer = new Timer()
+    println("periodo prima "+ period)
     val task = new TimerTask() {
       def run(): Unit = index match
         case _ if index equals seqStep.size-1 => end()
         case _ => nextStep()
     }
-    period = speed
+    period = 1001 - speed
+    println("period dopo " + period)
     if isExecuting
-    then timer.schedule(task, 0, speed)
+    then timer.schedule(task, 0, period)
 
   /*def changeSize(size: Int): Unit =
     controller.setSeqSize(size)

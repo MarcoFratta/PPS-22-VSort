@@ -44,7 +44,7 @@ case class BottomBar(graphFunctions: GraphFunctions):
     )
 
   private def renderSpeedBar(): Element =
-    val sliderValue: Var[Int] = Var(100)
+    val sliderValue: Var[Int] = Var(800)
     div(
       i(
         className := "fa fa-tachometer-alt"
