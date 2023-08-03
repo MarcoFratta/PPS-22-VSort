@@ -45,7 +45,7 @@ object ViewComponent:
             println("sono nel dis")
             val parameterMap = distributions.find(a => a equals x).get.params.map(a => a -> 10).toMap
             selectedP = Properties(algo.get.head._1,x, parameterMap)
-            copy(p = selectedP)
+            c.controller.update(selectedP)
         )
 
         given Conversion[c.model.ParamsType, Int] = x => x
