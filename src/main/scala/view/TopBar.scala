@@ -64,7 +64,6 @@ case class SingleValue[X,Y >:Int](x:X, starterValue: Y) extends ViewElement with
         value := sliderValue.now().toString,
         onInput.mapToValue.map(_.toInt) --> sliderValue,
       ),
-      child.text <-- sliderValue.signal.map(_.toString),
     )
   override def get: Map[X, Y] = Map(x -> sliderValue.now())
   override def element: Element = renderSlider(1, 200,  x)

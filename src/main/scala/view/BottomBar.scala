@@ -59,7 +59,6 @@ case class BottomBar(graphFunctions: GraphFunctions):
         onInput --> (v => graphFunctions.setSpeed(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt))
 
       ),
-      child.text <-- sliderValue.signal.map(_.toString),
     )
   
   
