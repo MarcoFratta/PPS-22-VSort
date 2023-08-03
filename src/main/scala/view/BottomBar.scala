@@ -55,8 +55,8 @@ case class BottomBar(graphFunctions: GraphFunctions):
         minAttr := "1",
         maxAttr := "1000",
         value := sliderValue.now().toString,
-        onInput.mapToValue.map(_.toInt) --> sliderValue,
-        onInput --> (v => graphFunctions.setSpeed(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt))
+        onChange.mapToValue.map(_.toInt) --> sliderValue,
+        onChange --> (v => graphFunctions.setSpeed(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt))
 
       ),
     )
