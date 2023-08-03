@@ -22,7 +22,7 @@ object ControllerComponent:
 
       override def update(p: Properties with IntTypes): Unit =
         val r = SeqProperties(p).getElements
-        println(f"res  $r")
+        //println(f"res  $r")
         if checkField(p) then c.view.update(r)
 
 

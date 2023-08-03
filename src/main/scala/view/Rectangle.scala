@@ -124,9 +124,7 @@ case class GraphFunctions(seq: Seq[State[Int]]):
     timer = new Timer()
     println("periodo prima "+ period)
     val task = new TimerTask() {
-      def run(): Unit = index match
-        case _ if index equals seqStep.size-1 => end()
-        case _ => nextStep()
+      def run(): Unit = nextStep()
     }
     period = 1001 - speed
     println("period dopo " + period)

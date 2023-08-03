@@ -39,15 +39,17 @@ object ViewComponent:
         println("Entering JsView")
         private val algo = MultipleListFactory(algorithms, p.algorithm)
         private var selectedP = p
+        println("selectedp " + selectedP.params)
         private val dis = MultipleListWithFFactory(distributions, p.distribution,
           x =>
-            val paramMap = distributions.find(a => a equals x).get.params.map(a => a -> 10).toMap
-            selectedP = Properties(algo.get.head._1,x, paramMap)
+            println("sono nel dis")
+            val parameterMap = distributions.find(a => a equals x).get.params.map(a => a -> 10).toMap
+            selectedP = Properties(algo.get.head._1,x, parameterMap)
             copy(p = selectedP)
         )
 
         given Conversion[c.model.ParamsType, Int] = x => x
-        private val params = p.params.map(a => SingleValueFactory(a._1, a._2)).toList
+        private val params = p.params.map(a => SingleValueFactory(a._1, a._2, )).toList
 
         dom.document.getElementById("app").innerHTML = ""
         render(dom.document.getElementById("app"), getAppElement)
@@ -72,7 +74,10 @@ object ViewComponent:
                       val paramMap = params.map(a => a.get).foldLeft(Map.empty[Params, ParamsType])((param, map) => param ++ map)
                       println(f"new map after click $paramMap")
                       selectedP = Properties(algo.get.head._1, dis.get.head._1, paramMap)
+                      println("selected p before controller update" + selectedP)
                       c.controller.update(selectedP)
+                      println("selected p after controller update" + selectedP.params)
+
                     )
                   )
                 )
@@ -89,7 +94,9 @@ object ViewComponent:
         def computeUl: Element =
           div(params.map(a => li(a.element)))
 
-        def updated(data: c.model.ResultType): JsView = copy(data = data, p = selectedP)
+        def updated(data: c.model.ResultType): JsView =
+          println("selected p in update" + selectedP)
+          copy(data = data, p = selectedP)
 
   trait Interface extends Provider with Component:
     self: Requirements =>
