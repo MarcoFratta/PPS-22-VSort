@@ -18,7 +18,7 @@ trait ViewElement:
 trait Inputs[X,Y]:
   def get:Map[X,Y]
 
-trait MultipleList[X <: HasName, Y >: HasName](x:Set[X], selected: X) extends ViewElement with Inputs[X,Y]:
+trait MultipleList[X <: HasName, Y >: HasName](x:List[X], selected: X) extends ViewElement with Inputs[X,Y]:
 
   val selectedVar: Var[String] = Var(selected.name)
   val map: Map[String, X] = x.map(a => (a.name, a)).toMap
@@ -35,8 +35,8 @@ trait MultipleList[X <: HasName, Y >: HasName](x:Set[X], selected: X) extends Vi
   override def get: Map[X, Y] = Map(map(selectedVar.now()) -> map(selectedVar.now()))
   override def element: Element = renderSelectList(x.toList)
 
-case class MultipleListImpl[X <: HasName, Y >: HasName](x:Set[X], selected: X) extends MultipleList[X,Y](x, selected)
-case class MultipleListWithF[X <: HasName, Y >: HasName](x:Set[X], selected: X, f: X => Unit)
+case class MultipleListImpl[X <: HasName, Y >: HasName](x:List[X], selected: X) extends MultipleList[X,Y](x, selected)
+case class MultipleListWithF[X <: HasName, Y >: HasName](x:List[X], selected: X, f: X => Unit)
   extends MultipleList[X,Y](x, selected):
   override def element: L.Element =
     form(
@@ -70,11 +70,11 @@ case class SingleValue[X,Y >:Int](x:X, starterValue: Y) extends ViewElement with
 
 
 object MultipleListFactory:
-  def apply[X <: HasName, Y >: HasName](x: Set[X], selected: X):
+  def apply[X <: HasName, Y >: HasName](x: List[X], selected: X):
   MultipleList[X, Y] = MultipleListImpl[X, Y](x, selected)
 
 object MultipleListWithFFactory:
-  def apply[X <: HasName, Y >: HasName](x: Set[X], selected: X, f: X => Unit):
+  def apply[X <: HasName, Y >: HasName](x: List[X], selected: X, f: X => Unit):
   MultipleListWithF[X, Y] = MultipleListWithF[X, Y](x, selected, f)
 
 object SingleValueFactory:

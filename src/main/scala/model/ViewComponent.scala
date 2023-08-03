@@ -24,15 +24,15 @@ object ViewComponent:
 
     class ViewImpl extends View with IntTypes:
 
-      private var gui:JsView = JsView(Seq(), c.model.algorithms,c.model.distributions,
-        Properties(c.model.algorithms.head, c.model.distributions.head,
-          c.model.distributions.head.params.map(a => a -> 10).toMap))
+      private var gui:JsView = JsView(Seq(), c.model.algorithms.toList,c.model.distributions.toList,
+        Properties(c.model.algorithms.toList.head, c.model.distributions.toList.head,
+          c.model.distributions.toList.head.params.map(a => a -> 10).toMap))
       override def getAppElement: L.Element = gui.getAppElement
 
       override def update(data: c.model.ResultType): Unit = gui = gui.updated(data)
       private case class JsView(data:c.model.ResultType,
-                                algorithms:Set[Algorithm[c.model.ValType,c.model.ResultType] with HasName],
-                                distributions:Set[Distribution[c.model.ParamsType,c.model.ValType] with HasName],
+                                algorithms:List[Algorithm[c.model.ValType,c.model.ResultType] with HasName],
+                                distributions:List[Distribution[c.model.ParamsType,c.model.ValType] with HasName],
                                 p:Properties with IntTypes):
         import BottomBar.*
 

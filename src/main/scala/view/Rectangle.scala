@@ -42,6 +42,7 @@ case class GraphFunctions(seq: Seq[State[Int]]):
   appendBottomBar()
     //replay()
 
+
   private def appendBottomBar(): Unit =
     if dom.document.querySelector(".bottomBar").innerHTML == "" then
       render(dom.document.querySelector(".bottomBar"), bottomBar.renderBottomBar())
@@ -75,7 +76,7 @@ case class GraphFunctions(seq: Seq[State[Int]]):
     isExecuting = true
     val task = new TimerTask() {
       def run(): Unit = index match
-        case _ if index equals seqStep.size-1 => end()
+       // case _ if index equals seqStep.size - 1 => end()
         case _ => nextStep()
     }
     timer.schedule(task, 0, period)
