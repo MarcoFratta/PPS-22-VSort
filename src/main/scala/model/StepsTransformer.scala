@@ -35,3 +35,6 @@ class StepsTransformer[T]:
   def getSeqList(steps: Seq[Step], seq: Seq[T]): Seq[State] =
     val state: State = seq.map(i => newInfo(i))
     steps.foldLeft(Seq(state)) ((acc, step) => acc :+ getNewSeq(step, acc.last))
+
+  def getString(steps: Seq[Step], seq: Seq[T]): String =
+    getSeqList(steps, seq).map(_.mkString(", ")).mkString("\n")

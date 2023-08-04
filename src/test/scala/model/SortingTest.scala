@@ -19,7 +19,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = bubbleSort(data)
 
-    print("Bubble sort\n" + visualizer.getSeqList(steps, data))
+    print("Bubble sort\n" + visualizer.getString(steps, data))
     visualizer.getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
@@ -27,7 +27,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = selectionSort(data)
 
-    print("Selection sort\n" + visualizer.getSeqList(steps, data))
+    print("Selection sort\n" + visualizer.getString(steps, data))
     visualizer.getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
@@ -35,7 +35,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = insertionSort(data)
 
-    print("Insertion Sort\n" + visualizer.getSeqList(steps, data))
+    print("Insertion Sort\n" + visualizer.getString(steps, data))
     visualizer.getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
@@ -43,7 +43,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = mergeSort(data)
 
-    print("Merge sort\n" + visualizer.getSeqList(steps, data))
+    print("Merge sort\n" + visualizer.getString(steps, data))
     visualizer.getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
@@ -51,7 +51,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
     val data = Seq(60, 20, 30, 40, 50, 10)
     val steps = heapSort(data)
 
-    print("Heap sort\n" + visualizer.getSeqList(steps, data))
+    print("Heap sort\n" + visualizer.getString(steps, data))
     visualizer.getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
@@ -59,7 +59,7 @@ class SortingTest extends AnyFlatSpec with Matchers:
     val data = Seq(20, 60, 10, 40, 50, 30)
     val steps = quickSort(data)
 
-    print("Quick sort\n" + visualizer.getSeqList(steps, data))
+    print("Quick sort\n" + visualizer.getString(steps, data))
     visualizer.getResult(steps, data) shouldBe Seq(10, 20, 30, 40, 50, 60)
   }
 
