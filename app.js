@@ -5656,6 +5656,114 @@ $c_Lmodel_SortingAlgorithms$.prototype.bubbleSort__sci_Seq__Lmodel_sortModel_Com
   };
   return $n($as_Lmodel_sortModel_Loopable$LoopableS($n($as_Lmodel_sortModel_SortableOps$Monad($$x2)).get__O())).Lmodel_sortModel_Loopable$LoopableS__f_steps
 });
+$c_Lmodel_SortingAlgorithms$.prototype.selectionSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq = (function(seq, evidence$2) {
+  var s = $m_Lmodel_sortModel_Loopable$().apply__sci_Seq__Lmodel_sortModel_Comparable__Lmodel_sortModel_Loopable$LoopableS(seq, evidence$2);
+  var end = (((-2) + $n(seq).length__I()) | 0);
+  var range = new $c_sci_Range$Inclusive(0, end, 1);
+  var this$45 = new $c_Lmodel_sortModel_LoopOperation$$anon$3(s, range);
+  var f$1 = ((i) => {
+    var i$1 = $as_Lmodel_sortModel_SortAddOns$Iteration(i);
+    var s$1 = $as_Lmodel_sortModel_Data($n(i$1).Lmodel_sortModel_SortAddOns$IterationImpl__f_prev);
+    var i$2 = $n(i$1).Lmodel_sortModel_SortAddOns$IterationImpl__f_index;
+    var this$10 = new $c_Lmodel_sortModel_SortableOps$$anon$5(s$1, "min", i$2);
+    var arg1 = this$10.get__Lmodel_sortModel_Data();
+    var p1 = $as_Lmodel_sortModel_Loopable$LoopableS(arg1);
+    var x = ((1 + $n(i$1).Lmodel_sortModel_SortAddOns$IterationImpl__f_index) | 0);
+    var end$1 = $n(seq).length__I();
+    var range$1 = new $c_sci_Range$Exclusive(x, end$1, 1);
+    var this$27 = new $c_Lmodel_sortModel_LoopOperation$$anon$3(p1, range$1);
+    var f = ((j) => {
+      var j$1 = $as_Lmodel_sortModel_SortAddOns$Iteration(j);
+      var s$3 = $as_Lmodel_sortModel_Data($n(j$1).Lmodel_sortModel_SortAddOns$IterationImpl__f_prev);
+      var s$2 = $as_Lmodel_sortModel_Selections($n(j$1).Lmodel_sortModel_SortAddOns$IterationImpl__f_prev);
+      var a = $uI($m_Lmodel_sortModel_SortableOps$().Alias$u0020for$u0020getSelection$u0020of$u0020Selection__Lmodel_sortModel_Selections__O__Lmodel_sortModel_Comparable__O(s$2, "min", evidence$2));
+      var b = $n(j$1).Lmodel_sortModel_SortAddOns$IterationImpl__f_index;
+      var ifTrue = new $c_sjsr_AnonFunction1(((x$1) => {
+        var x$2 = $as_Lmodel_sortModel_Loopable$LoopableS(x$1);
+        var i$3 = $n(j$1).Lmodel_sortModel_SortAddOns$IterationImpl__f_index;
+        return new $c_Lmodel_sortModel_SortableOps$$anon$5(x$2, "min", i$3)
+      }));
+      var ifFalse = new $c_sjsr_AnonFunction1(((x$2$1) => {
+        var x$3 = $as_Lmodel_sortModel_Loopable$LoopableS(x$2$1);
+        new $c_Lmodel_sortModel_SortOperations$c1();
+        return new $c_Lmodel_sortModel_SortableOps$$anon$1(x$3)
+      }));
+      var this$25 = new $c_Lmodel_sortModel_SortableOps$$anon$3(s$3, a, b, ifTrue, ifFalse, evidence$2);
+      var arg1$1 = this$25.get__Lmodel_sortModel_Data();
+      var l1 = $as_Lmodel_sortModel_Loopable$LoopableS(arg1$1);
+      return new $c_Lmodel_sortModel_SortableOps$$anon$1(l1)
+    });
+    var this$30 = $n($n(this$27.Lmodel_sortModel_LoopOperation$$anon$3__f_range$1).tail__sci_Range());
+    var value = $n(this$27.Lmodel_sortModel_LoopOperation$$anon$3__f_range$1).head__I();
+    var prev = this$27.Lmodel_sortModel_LoopOperation$$anon$3__f_s$2;
+    var arg1$2 = new $c_Lmodel_sortModel_SortAddOns$IterationImpl(value, prev);
+    var z = f(arg1$2);
+    var at = 0;
+    var end$2 = this$30.length__I();
+    var acc = z;
+    var $$x1;
+    while (true) {
+      if ((at !== end$2)) {
+        var temp$at = ((1 + at) | 0);
+        var arg1$3 = acc;
+        var i$4 = at;
+        var arg2 = this$30.apply$mcII$sp__I__I(i$4);
+        var b$1 = $as_Lmodel_sortModel_SortableOps$Monad(arg1$3);
+        var this$31 = $n(b$1);
+        var arg1$4 = this$31.get__O();
+        var arg1$5 = new $c_Lmodel_sortModel_SortAddOns$IterationImpl(arg2, arg1$4);
+        var temp$acc = $as_Lmodel_sortModel_SortableOps$Monad(f(arg1$5));
+        at = temp$at;
+        acc = temp$acc;
+        continue
+      };
+      var $$x1 = acc;
+      break
+    };
+    var this$34 = $n($as_Lmodel_sortModel_SortableOps$Monad($$x1));
+    var arg1$6 = this$34.get__O();
+    var p2 = $as_Lmodel_sortModel_Loopable$LoopableS(arg1$6);
+    var this$37 = new $c_Lmodel_sortModel_SortableOps$$anon$7(p2, "min");
+    var arg1$7 = this$37.get__s_Option();
+    var this$40 = new $c_Lmodel_sortModel_SortableOps$$anon$6(p2, "min");
+    var arg1$8 = this$40.get__Lmodel_sortModel_Selections();
+    var p3 = $as_Lmodel_sortModel_Loopable$LoopableS(arg1$8);
+    var a$1 = $uI($n(arg1$7).get__O());
+    var b$2 = $n(i$1).Lmodel_sortModel_SortAddOns$IterationImpl__f_index;
+    var this$43 = new $c_Lmodel_sortModel_SortableOps$$anon$2(p3, a$1, b$2);
+    var arg1$9 = this$43.get__Lmodel_sortModel_Data();
+    var p4 = $as_Lmodel_sortModel_Loopable$LoopableS(arg1$9);
+    return new $c_Lmodel_sortModel_SortableOps$$anon$1(p4)
+  });
+  var this$48 = $n($n(this$45.Lmodel_sortModel_LoopOperation$$anon$3__f_range$1).tail__sci_Range());
+  var value$1 = $n(this$45.Lmodel_sortModel_LoopOperation$$anon$3__f_range$1).head__I();
+  var prev$1 = this$45.Lmodel_sortModel_LoopOperation$$anon$3__f_s$2;
+  var arg1$10 = new $c_Lmodel_sortModel_SortAddOns$IterationImpl(value$1, prev$1);
+  var z$1 = f$1(arg1$10);
+  var at$1 = 0;
+  var end$3 = this$48.length__I();
+  var acc$1 = z$1;
+  var $$x2;
+  while (true) {
+    if ((at$1 !== end$3)) {
+      var temp$at$1 = ((1 + at$1) | 0);
+      var arg1$11 = acc$1;
+      var i$5 = at$1;
+      var arg2$1 = this$48.apply$mcII$sp__I__I(i$5);
+      var b$3 = $as_Lmodel_sortModel_SortableOps$Monad(arg1$11);
+      var this$49 = $n(b$3);
+      var arg1$12 = this$49.get__O();
+      var arg1$13 = new $c_Lmodel_sortModel_SortAddOns$IterationImpl(arg2$1, arg1$12);
+      var temp$acc$1 = $as_Lmodel_sortModel_SortableOps$Monad(f$1(arg1$13));
+      at$1 = temp$at$1;
+      acc$1 = temp$acc$1;
+      continue
+    };
+    var $$x2 = acc$1;
+    break
+  };
+  return $n($as_Lmodel_sortModel_Loopable$LoopableS($n($as_Lmodel_sortModel_SortableOps$Monad($$x2)).get__O())).Lmodel_sortModel_Loopable$LoopableS__f_steps
+});
 $c_Lmodel_SortingAlgorithms$.prototype.insertionSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq = (function(seq, evidence$3) {
   var s = $m_Lmodel_sortModel_Loopable$().apply__sci_Seq__Lmodel_sortModel_Comparable__Lmodel_sortModel_Loopable$LoopableS(seq, evidence$3);
   var end = $n(seq).length__I();
@@ -12014,6 +12122,36 @@ var $d_Lmodel_sortModel_SortableOps$$anon$6 = new $TypeData().initClass({
   Lmodel_sortModel_SortableOps$Monad: 1
 });
 $c_Lmodel_sortModel_SortableOps$$anon$6.prototype.$classData = $d_Lmodel_sortModel_SortableOps$$anon$6;
+/** @constructor */
+function $c_Lmodel_sortModel_SortableOps$$anon$7(s$12, k$6) {
+  this.Lmodel_sortModel_SortableOps$$anon$7__f_s$6 = null;
+  this.Lmodel_sortModel_SortableOps$$anon$7__f_k$3 = null;
+  this.Lmodel_sortModel_SortableOps$$anon$7__f_s$6 = s$12;
+  this.Lmodel_sortModel_SortableOps$$anon$7__f_k$3 = k$6
+}
+$c_Lmodel_sortModel_SortableOps$$anon$7.prototype = new $h_O();
+$c_Lmodel_sortModel_SortableOps$$anon$7.prototype.constructor = $c_Lmodel_sortModel_SortableOps$$anon$7;
+/** @constructor */
+function $h_Lmodel_sortModel_SortableOps$$anon$7() {
+  /*<skip>*/
+}
+$h_Lmodel_sortModel_SortableOps$$anon$7.prototype = $c_Lmodel_sortModel_SortableOps$$anon$7.prototype;
+$c_Lmodel_sortModel_SortableOps$$anon$7.prototype.get__s_Option = (function() {
+  var this$1 = $n(this.Lmodel_sortModel_SortableOps$$anon$7__f_s$6);
+  var s = this.Lmodel_sortModel_SortableOps$$anon$7__f_k$3;
+  return $n(this$1.Lmodel_sortModel_Loopable$LoopableS__f_selections).get__O__s_Option(s)
+});
+$c_Lmodel_sortModel_SortableOps$$anon$7.prototype.get__O = (function() {
+  return this.get__s_Option()
+});
+var $d_Lmodel_sortModel_SortableOps$$anon$7 = new $TypeData().initClass({
+  Lmodel_sortModel_SortableOps$$anon$7: 0
+}, false, "model.sortModel.SortableOps$$anon$7", {
+  Lmodel_sortModel_SortableOps$$anon$7: 1,
+  O: 1,
+  Lmodel_sortModel_SortableOps$Monad: 1
+});
+$c_Lmodel_sortModel_SortableOps$$anon$7.prototype.$classData = $d_Lmodel_sortModel_SortableOps$$anon$7;
 /** @constructor */
 function $c_s_$less$colon$less$() {
   this.s_$less$colon$less$__f_singleton = null;
@@ -30407,34 +30545,39 @@ $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.productElement__I__
   throw $ct_jl_IndexOutOfBoundsException__T__(new $c_jl_IndexOutOfBoundsException(), ("" + n))
 });
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.algorithms__sci_Set = (function() {
-  var this$16 = $n($m_s_Predef$().s_Predef$__f_Set);
-  var $$x5 = $m_sr_ScalaRunTime$();
+  var this$19 = $n($m_s_Predef$().s_Predef$__f_Set);
+  var $$x6 = $m_sr_ScalaRunTime$();
   var f = new $c_sjsr_AnonFunction1(((seq) => {
     var seq$1 = $as_sci_Seq(seq);
     return $m_Lmodel_SortingAlgorithms$().bubbleSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$1, $m_Lmodel_sortModel_SortOperations$comp$())
   }));
-  var $$x4 = new $c_Lmodel_AlgorithmFactory$$anon$3(f, "Bubble sort");
+  var $$x5 = new $c_Lmodel_AlgorithmFactory$$anon$3(f, "Bubble sort");
   var f$1 = new $c_sjsr_AnonFunction1(((seq$2) => {
     var seq$3 = $as_sci_Seq(seq$2);
     return $m_Lmodel_SortingAlgorithms$().mergeSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$3, $m_Lmodel_sortModel_SortOperations$comp$())
   }));
-  var $$x3 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$1, "Merge sort");
+  var $$x4 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$1, "Merge sort");
   var f$2 = new $c_sjsr_AnonFunction1(((seq$3$1) => {
     var seq$4 = $as_sci_Seq(seq$3$1);
     return $m_Lmodel_SortingAlgorithms$().insertionSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$4, $m_Lmodel_sortModel_SortOperations$comp$())
   }));
-  var $$x2 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$2, "Insertion sort");
+  var $$x3 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$2, "Insertion sort");
   var f$3 = new $c_sjsr_AnonFunction1(((seq$4$1) => {
     var seq$5 = $as_sci_Seq(seq$4$1);
     return $m_Lmodel_SortingAlgorithms$().quickSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$5, $m_Lmodel_sortModel_SortOperations$comp$())
   }));
-  var $$x1 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$3, "Quicksort");
+  var $$x2 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$3, "Quicksort");
   var f$4 = new $c_sjsr_AnonFunction1(((seq$5$1) => {
     var seq$6 = $as_sci_Seq(seq$5$1);
     return $m_Lmodel_SortingAlgorithms$().heapSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$6, $m_Lmodel_sortModel_SortOperations$comp$())
   }));
-  var elems = $n($$x5).genericWrapArray__O__sci_ArraySeq(new ($d_Lmodel_Algorithm.getArrayOf().constr)([$$x4, $$x3, $$x2, $$x1, new $c_Lmodel_AlgorithmFactory$$anon$3(f$4, "Heap sort")]));
-  return this$16.from__sc_IterableOnce__sci_Set(elems)
+  var $$x1 = new $c_Lmodel_AlgorithmFactory$$anon$3(f$4, "Heap sort");
+  var f$5 = new $c_sjsr_AnonFunction1(((seq$6$1) => {
+    var seq$7 = $as_sci_Seq(seq$6$1);
+    return $m_Lmodel_SortingAlgorithms$().selectionSort__sci_Seq__Lmodel_sortModel_Comparable__sci_Seq(seq$7, $m_Lmodel_sortModel_SortOperations$comp$())
+  }));
+  var elems = $n($$x6).genericWrapArray__O__sci_ArraySeq(new ($d_Lmodel_Algorithm.getArrayOf().constr)([$$x5, $$x4, $$x3, $$x2, $$x1, new $c_Lmodel_AlgorithmFactory$$anon$3(f$5, "Selection sort")]));
+  return this$19.from__sc_IterableOnce__sci_Set(elems)
 });
 $c_Lmodel_ModelComponent$Model$Component$ModelImpl.prototype.distributions__sci_Set = (function() {
   var given_Generable_Int$lzy1 = new $c_sr_LazyRef();
