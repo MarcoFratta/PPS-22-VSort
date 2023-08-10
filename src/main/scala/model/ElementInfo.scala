@@ -17,6 +17,8 @@ object ElementInfo:
       ElementInfo(e.value, e.compared, false, Option.empty, e.hidden)
     def compare: ElementInfo[K] =
       ElementInfo(e.value, true, e.selected, e.label, e.hidden)
+    def decompare: ElementInfo[K] =
+      ElementInfo(e.value, false, e.selected, e.label, e.hidden)
     def show: ElementInfo[K] =
       ElementInfo(e.value, e.compared, e.selected, e.label, false)
     def hide: ElementInfo[K] =

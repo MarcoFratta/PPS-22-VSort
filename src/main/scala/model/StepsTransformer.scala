@@ -15,9 +15,9 @@ class StepsTransformer[T]:
   private def applySteps(steps: Seq[Step], seq: State): Seq[T] =
     steps.foldLeft(seq)((currentSeq, step) => getNewSeq(step, currentSeq)).map(e => e.value)
 
-  private def getNewSeq(step: Step, seq: State): State = step match
-    case Step.Comparison(_, _) => seq
-    case s => stepFunction(s)(seq)
+  private def getNewSeq(step: Step, seq: State): State = stepFunction(step)(reset(seq))
+
+  private def reset(seq: State): State = seq.map(e => if e.compared then decompare(e) else e)
 
   private def stepFunction(step: Step): State => State = step match
     case Step.Swap(a: Int, b: Int) => seq
