@@ -32632,7 +32632,7 @@ $c_Lmodel_Params$$anon$3.prototype.$classData = $d_Lmodel_Params$$anon$3;
 function $c_Lmodel_Params$$anon$4() {
   this.Lmodel_Params__f_model$seqProperties$HasRange$$a = 0;
   this.Lmodel_Params__f_model$seqProperties$HasRange$$b = 0;
-  $ct_Lmodel_Params__I__I__(this, 0, 150)
+  $ct_Lmodel_Params__I__I__(this, 0, 100)
 }
 $c_Lmodel_Params$$anon$4.prototype = new $h_Lmodel_Params();
 $c_Lmodel_Params$$anon$4.prototype.constructor = $c_Lmodel_Params$$anon$4;
