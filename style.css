@@ -21,14 +21,84 @@ a {
 a:hover {
   color: #535bf2;
 }
+html{
+  height: 100%;
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
+div {
+    display: inline;
+}
+body, html {
+   margin: auto;
+   padding: 0;
+   place-items: center;
+   display: flex;
+      height: 100%; /* Imposta un'altezza specifica per body e html */
+    }
+#app{
+
+  height: 100%;
+  display: flex;
+}
+.topBar,
+    .bottomBar {
+      width: 100%;
+      height: 10%;
+      background-color: #333333;
+      margin: 3%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 20px;
+    }
+
+    .canvas {
+      height: 60%; /* Altezza del 60% per la canvas */
+      width: 100%;
+      margin: 3% 9%;
+
+    }
+
+    ul, .bottomBar>ul {
+      width: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333333;
+      display: flex; /* Utilizza Flexbox per allineare gli elementi */
+      justify-content: center; /* Distanza uniforme tra gli elementi */
+      align-items: center;
+      height: 100%; /* Altezza al 100% per gli <ul> interni */
+    }
+    form{
+    height: 100%;
+
+    }
+    li {
+    padding: 2%;
+    }
+
+    button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+/*
 
 h1 {
   font-size: 3.2em;
@@ -39,6 +109,9 @@ h1 {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+    display: flex;
+    flex-direction: column;
+  height: 90%;
 }
 
 button {
@@ -67,13 +140,15 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333333;
+  height: 20%;
+  display: inline;
 }
 li {
   float: left;
 }
 
 .div_canvas{
-  width: 80%;
+  width: 60%;
 
 }
 .canvas{
@@ -81,3 +156,4 @@ li {
   width: 80%;
   height: 80%;
 }
+*/

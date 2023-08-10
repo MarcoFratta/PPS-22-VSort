@@ -33,7 +33,8 @@ object ModelComponent:
             AlgorithmFactory.intAlgorithm(mergeSort, "Merge sort"),
             AlgorithmFactory.intAlgorithm(insertionSort, "Insertion sort"),
             AlgorithmFactory.intAlgorithm(quickSort, "Quicksort"),
-            AlgorithmFactory.intAlgorithm(heapSort, "Heap sort"))
+            AlgorithmFactory.intAlgorithm(heapSort, "Heap sort"),
+            AlgorithmFactory.intAlgorithm(selectionSort, "Selection sort"))
 
         override def distributions: Set[Distribution[ParamsType, ValType] with HasName] =
           import model.IntOrderings.*
