@@ -5961,26 +5961,33 @@ function $asArrayOf_Lmodel_State(obj, depth) {
   return (($isArrayOf_Lmodel_State(obj, depth) || (obj === null)) ? obj : $throwArrayCastException(obj, "Lmodel.State;", depth))
 }
 function $p_Lmodel_StepsTransformer__getNewSeq__Lmodel_Step__sci_Seq__sci_Seq($thiz, step, seq) {
-  if ((step instanceof $c_Lmodel_Step$Comparison)) {
-    var x$1 = $as_Lmodel_Step$Comparison(step);
-    var this$2 = $n(x$1);
-    var this$3 = $n(x$1);
-    return seq
-  } else {
-    return $as_sci_Seq($n($p_Lmodel_StepsTransformer__stepFunction__Lmodel_Step__F1($thiz, step)).apply__O__O(seq))
-  }
+  return $as_sci_Seq($n($p_Lmodel_StepsTransformer__stepFunction__Lmodel_Step__F1($thiz, step)).apply__O__O($p_Lmodel_StepsTransformer__reset__sci_Seq__sci_Seq($thiz, seq)))
+}
+function $p_Lmodel_StepsTransformer__reset__sci_Seq__sci_Seq($thiz, seq) {
+  return $as_sci_Seq($n(seq).map__F1__O(new $c_sjsr_AnonFunction1(((e) => {
+    var e$1 = $as_Lmodel_ElementInfo(e);
+    if ($n(e$1).Lmodel_ElementInfo$ElemInfo__f_compared) {
+      var value = $n(e$1).Lmodel_ElementInfo$ElemInfo__f_value;
+      var selected = $n(e$1).Lmodel_ElementInfo$ElemInfo__f_selected;
+      var label = $n(e$1).Lmodel_ElementInfo$ElemInfo__f_label;
+      var hidden = $n(e$1).Lmodel_ElementInfo$ElemInfo__f_hidden;
+      return new $c_Lmodel_ElementInfo$ElemInfo(value, false, selected, label, hidden)
+    } else {
+      return e$1
+    }
+  }))))
 }
 function $p_Lmodel_StepsTransformer__stepFunction__Lmodel_Step__F1($thiz, step) {
   if ((step instanceof $c_Lmodel_Step$Swap)) {
     var x$1 = $as_Lmodel_Step$Swap(step);
     var this$2 = $n(x$1);
-    var x31 = this$2.Lmodel_Step$Swap__f_a;
+    var x26 = this$2.Lmodel_Step$Swap__f_a;
     var this$3 = $n(x$1);
-    var x32 = this$3.Lmodel_Step$Swap__f_b;
-    if ($isInt(x31)) {
-      var a = $uI(x31);
-      if ($isInt(x32)) {
-        var b = $uI(x32);
+    var x27 = this$3.Lmodel_Step$Swap__f_b;
+    if ($isInt(x26)) {
+      var a = $uI(x26);
+      if ($isInt(x27)) {
+        var b = $uI(x27);
         return new $c_sjsr_AnonFunction1(((seq) => {
           var seq$1 = $as_sci_Seq(seq);
           var e = $as_Lmodel_ElementInfo($n(seq$1).apply__I__O(a));
@@ -6004,26 +6011,26 @@ function $p_Lmodel_StepsTransformer__stepFunction__Lmodel_Step__F1($thiz, step) 
   if ((step instanceof $c_Lmodel_Step$Selection)) {
     var x$1$1 = $as_Lmodel_Step$Selection(step);
     var this$11 = $n(x$1$1);
-    var x25 = this$11.Lmodel_Step$Selection__f_s;
+    var x20 = this$11.Lmodel_Step$Selection__f_s;
     var this$12 = $n(x$1$1);
-    var x26 = this$12.Lmodel_Step$Selection__f_a;
-    if (((typeof x25) === "string")) {
-      var s = $as_T(x25);
-      if ($isInt(x26)) {
-        var a$3 = $uI(x26);
+    var x21 = this$12.Lmodel_Step$Selection__f_a;
+    if (((typeof x20) === "string")) {
+      var s = $as_T(x20);
+      if ($isInt(x21)) {
+        var a$3 = $uI(x21);
         return new $c_sjsr_AnonFunction1(((seq$2) => {
           var seq$3 = $as_sci_Seq(seq$2);
-          var x6 = $as_sci_Seq($n($p_Lmodel_StepsTransformer__stepFunction__Lmodel_Step__F1($thiz, new $c_Lmodel_Step$Deselection(s))).apply__O__O(seq$3));
+          var x1 = $as_sci_Seq($n($p_Lmodel_StepsTransformer__stepFunction__Lmodel_Step__F1($thiz, new $c_Lmodel_Step$Deselection(s))).apply__O__O(seq$3));
           if ((a$3 >= 0)) {
-            var this$15 = $n(x6);
+            var this$15 = $n(x1);
             var $$x2 = (a$3 < this$15.length__I())
           } else {
             var $$x2 = false
           };
           if ($$x2) {
-            return $as_sci_Seq($n(x6).updated__I__O__O(a$3, $m_Lmodel_ElementInfo$().select__Lmodel_ElementInfo__T__Lmodel_ElementInfo($as_Lmodel_ElementInfo($n(x6).apply__I__O(a$3)), s)))
+            return $as_sci_Seq($n(x1).updated__I__O__O(a$3, $m_Lmodel_ElementInfo$().select__Lmodel_ElementInfo__T__Lmodel_ElementInfo($as_Lmodel_ElementInfo($n(x1).apply__I__O(a$3)), s)))
           };
-          return x6
+          return x1
         }))
       }
     }
@@ -6031,13 +6038,13 @@ function $p_Lmodel_StepsTransformer__stepFunction__Lmodel_Step__F1($thiz, step) 
   if ((step instanceof $c_Lmodel_Step$Deselection)) {
     var x$1$2 = $as_Lmodel_Step$Deselection(step);
     var this$17 = $n(x$1$2);
-    var x22 = this$17.Lmodel_Step$Deselection__f_s;
+    var x17 = this$17.Lmodel_Step$Deselection__f_s;
     return new $c_sjsr_AnonFunction1(((seq$3$1) => {
       var seq$4 = $as_sci_Seq(seq$3$1);
       return $as_sci_Seq($n(seq$4).map__F1__O(new $c_sjsr_AnonFunction1(((e$2) => {
         var e$3 = $as_Lmodel_ElementInfo(e$2);
         var x = $n(e$3).Lmodel_ElementInfo$ElemInfo__f_label;
-        var x$2 = $m_s_Option$().apply__O__s_Option(x22);
+        var x$2 = $m_s_Option$().apply__O__s_Option(x17);
         if (((x === null) ? (x$2 === null) : $n(x).equals__O__Z(x$2))) {
           var value$2 = $n(e$3).Lmodel_ElementInfo$ElemInfo__f_value;
           var compared$2 = $n(e$3).Lmodel_ElementInfo$ElemInfo__f_compared;
@@ -6053,13 +6060,13 @@ function $p_Lmodel_StepsTransformer__stepFunction__Lmodel_Step__F1($thiz, step) 
   if ((step instanceof $c_Lmodel_Step$Comparison)) {
     var x$1$3 = $as_Lmodel_Step$Comparison(step);
     var this$23 = $n(x$1$3);
-    var x16 = this$23.Lmodel_Step$Comparison__f_a;
+    var x11 = this$23.Lmodel_Step$Comparison__f_a;
     var this$24 = $n(x$1$3);
-    var x17 = this$24.Lmodel_Step$Comparison__f_b;
-    if ($isInt(x16)) {
-      var a$5 = $uI(x16);
-      if ($isInt(x17)) {
-        var b$3 = $uI(x17);
+    var x12 = this$24.Lmodel_Step$Comparison__f_b;
+    if ($isInt(x11)) {
+      var a$5 = $uI(x11);
+      if ($isInt(x12)) {
+        var b$3 = $uI(x12);
         return new $c_sjsr_AnonFunction1(((seq$4$1) => {
           var seq$5 = $as_sci_Seq(seq$4$1);
           var e$4 = $as_Lmodel_ElementInfo($n(seq$5).apply__I__O(a$5));
@@ -6081,13 +6088,13 @@ function $p_Lmodel_StepsTransformer__stepFunction__Lmodel_Step__F1($thiz, step) 
   if ((step instanceof $c_Lmodel_Step$Divide)) {
     var x$1$4 = $as_Lmodel_Step$Divide(step);
     var this$32 = $n(x$1$4);
-    var x10 = this$32.Lmodel_Step$Divide__f_start;
+    var x5 = this$32.Lmodel_Step$Divide__f_start;
     var this$33 = $n(x$1$4);
-    var x11 = this$33.Lmodel_Step$Divide__f_stop;
-    if ($isInt(x10)) {
-      var a$7 = $uI(x10);
-      if ($isInt(x11)) {
-        var b$5 = $uI(x11);
+    var x6 = this$33.Lmodel_Step$Divide__f_stop;
+    if ($isInt(x5)) {
+      var a$7 = $uI(x5);
+      if ($isInt(x6)) {
+        var b$5 = $uI(x6);
         return new $c_sjsr_AnonFunction1(((seq$5$1) => {
           var seq$6 = $as_sci_Seq(seq$5$1);
           return $as_sci_Seq($n($as_sc_IterableOps($n(seq$6).zipWithIndex__O())).map__F1__O(new $c_sjsr_AnonFunction1(((x$1$5) => {
