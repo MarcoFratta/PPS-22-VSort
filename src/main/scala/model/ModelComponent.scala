@@ -7,6 +7,7 @@ import model.seqProperties.*
 import model.seqProperties.Distributions.*
 import model.sortModel.Comparable
 import view.*
+import controller.Properties
 
 import javax.print.attribute.HashPrintRequestAttributeSet
 
@@ -15,7 +16,8 @@ object ModelComponent:
 
 
   object Model:
-    trait Model extends ModelTypes with Algorithms with Distributions
+    trait Model extends ModelTypes with Algorithms with Distributions:
+      def getData(p: Properties with IntTypes): ResultType
 
     trait Provider:
       val model: Model with IntTypes
@@ -36,6 +38,10 @@ object ModelComponent:
             AlgorithmFactory.intAlgorithm(heapSort, "Heap sort"),
             AlgorithmFactory.intAlgorithm(selectionSort, "Selection sort"))
 
+        override def getData(p: Properties with IntTypes): ResultType =
+          val seq = p.distribution.generator(p.params).generateAll(0 to
+            p.params(Size)).toList.sortWith(p.distribution.compare).map(x => x._2)
+          p.algorithm.execute(seq)
         override def distributions: Set[Distribution[ParamsType, ValType] with HasName] =
           import model.IntOrderings.*
           given Generable[Int] = x => x.toInt + 1

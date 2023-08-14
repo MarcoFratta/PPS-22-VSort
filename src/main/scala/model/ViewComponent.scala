@@ -4,7 +4,7 @@ import com.raquo.laminar.api.L
 import controller.Properties
 import model.*
 import org.scalajs.dom
-import view.{BottomBar, GraphFunctions, MultipleListFactory, MultipleListWithFFactory, SingleValue, SingleValueFactory}
+import view.{BottomBar, GraphicVisualizer, MultipleListFactory, MultipleListWithFFactory, SingleValue, SingleValueFactory}
 import com.raquo.laminar.api.L.{Element, button, canvasTag, child, children, className, div, i, li, nodeSeqToModifier, onClick, onLoad, onMountBind, onMountCallback, onMountInsert, render, renderOnDomContentLoaded, ul, windowEvents}
 import com.raquo.laminar.api.eventPropToProcessor
 
@@ -12,8 +12,6 @@ import com.raquo.laminar.api.eventPropToProcessor
 
 object ViewComponent:
   trait View extends ModelTypes:
-    def getAppElement: Element
-
     def update(data: ResultType): Unit
   trait Provider:
     val view: View with IntTypes
@@ -24,11 +22,9 @@ object ViewComponent:
 
     class ViewImpl extends View with IntTypes:
 
-      private var gui:JsView = JsView(Seq(), c.model.algorithms.toList,c.model.distributions.toList,
+      private var gui:JsView = JsView(Seq(), c.model.algorithms.toList, c.model.distributions.toList,
         Properties(c.model.algorithms.toList.head, c.model.distributions.toList.head,
           c.model.distributions.toList.head.params.map(a => a -> 10).toMap))
-      override def getAppElement: L.Element = gui.getAppElement
-
       override def update(data: c.model.ResultType): Unit = gui = gui.updated(data)
       private case class JsView(data:c.model.ResultType,
                                 algorithms:List[Algorithm[c.model.ValType,c.model.ResultType] with HasName],
@@ -57,7 +53,7 @@ object ViewComponent:
         private def replaceView(): Unit =
           dom.document.getElementById("app").addEventListener("onChange", _ =>  updated(data))
 
-        def getAppElement: Element =
+        private def getAppElement: Element =
           div(
             div(
               ul(className := "topBar",
@@ -77,14 +73,11 @@ object ViewComponent:
               )
             ),
             onMountCallback (_ =>
-              if data.nonEmpty then GraphFunctions(data)),
+              if data.nonEmpty then GraphicVisualizer(data)),
             div(canvasTag(
               className := "canvas")),
             div(className:= "bottomBar"),
           )
-
-        def computeUl: Element =
-          div(params.map(a => li(a.element)))
 
         def updated(data: c.model.ResultType): JsView =
           copy(data = data, p = selectedP)

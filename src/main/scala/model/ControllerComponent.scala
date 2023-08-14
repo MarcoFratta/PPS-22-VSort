@@ -1,7 +1,6 @@
 package model
 
 import controller.Properties
-import controller.StepController.SeqProperties
 import model.*
 import model.ModelComponent.Model
 import view.*
@@ -19,12 +18,10 @@ object ControllerComponent:
     c: Requirements =>
 
     class ControllerImpl extends Controller[Properties with IntTypes]:
-
+      import Params.*
       override def update(p: Properties with IntTypes): Unit =
-        val r = SeqProperties(p).getElements
-        //println(f"res  $r")
+        val r = c.model.getData(p)
         if checkField(p) then c.view.update(r)
-
 
       private def checkField(properties: Properties with IntTypes): Boolean =
         properties.algorithm != null && properties.distribution != null && properties.params.nonEmpty

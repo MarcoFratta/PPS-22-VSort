@@ -1,7 +1,6 @@
 package controller
 
 import controller.*
-import controller.StepController.SeqProperties
 import model.*
 import view.*
 

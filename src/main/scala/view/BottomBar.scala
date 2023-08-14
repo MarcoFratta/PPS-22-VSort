@@ -5,7 +5,7 @@ import com.raquo.laminar.api.L.*
 import com.raquo.laminar.nodes.ReactiveHtmlElement
 import jdk.jfr.Enabled
 import org.scalajs.dom
-import view.GraphFunctions.*
+import view.GraphicVisualizer.*
 trait Button:
   def id: String
 
@@ -25,25 +25,25 @@ trait Button:
 case class ButtonImpl(override val id:String, override val icon: String, override val function: Any => Unit,
                  override val buttonDisabled: Var[Boolean]) extends Button
 
-case class BottomBar(graphFunctions: GraphFunctions):
+case class BottomBar(graphFunctions: GraphicVisualizer):
  // private val graphFunctions = GraphFunctions(controller)
   private val nextDisable = Var(false)
   private val backDisable = Var(true)
   private val replayDisable = Var(false)
-  private val controlButton = Var( ButtonImpl("controlButton", "fa-play", _ => graphFunctions.play(), nextDisable).getButton)
-  private val playButton = ButtonImpl("play", "fa-play", _ => graphFunctions.play(), nextDisable)
-  private val stopButton = ButtonImpl("stop", "fa-stop", _ => graphFunctions.stop(), nextDisable)
+  private val controlButton = Var( ButtonImpl("controlButton", "fa-play", _ => graphFunctions.play, nextDisable).getButton)
+  private val playButton = ButtonImpl("play", "fa-play", _ => graphFunctions.play, nextDisable)
+  private val stopButton = ButtonImpl("stop", "fa-stop", _ => graphFunctions.stop, nextDisable)
 
-  def renderBottomBar() : Element =
+  def renderBottomBar : Element =
     ul(
-      li(ButtonImpl("replay", "fa-rotate-left", _ => graphFunctions.replay(), replayDisable).getButton),
-      li(ButtonImpl("back", "fa-backward", _ => graphFunctions.backStep(), backDisable).getButton),
+      li(ButtonImpl("replay", "fa-rotate-left", _ => graphFunctions.replay, replayDisable).getButton),
+      li(ButtonImpl("back", "fa-backward", _ => graphFunctions.backStep, backDisable).getButton),
       li(child <-- controlButton.signal),
-      li(ButtonImpl("next", "fa-forward", _ => graphFunctions.nextStep(), nextDisable).getButton),
-      li(renderSpeedBar())
+      li(ButtonImpl("next", "fa-forward", _ => graphFunctions.nextStep, nextDisable).getButton),
+      li(renderSpeedBar)
     )
 
-  private def renderSpeedBar(): Element =
+  private def renderSpeedBar: Element =
     val sliderValue: Var[Int] = Var(800)
     div(
       i(
@@ -60,18 +60,18 @@ case class BottomBar(graphFunctions: GraphFunctions):
 
       ),
     )
-  
-  
-  def changePlayIcon(): Unit =
+
+
+  def changePlayIcon: Unit =
     controlButton.set(stopButton.getButton)
 
-  def changeStopIcon(): Unit =
+  def changeStopIcon: Unit =
     controlButton.set(playButton.getButton)
 
   def enableBackButton(enabled: Boolean): Unit =
     backDisable.set(!enabled)
 
-  def disableNextButton(disable: Boolean): Unit =
-    nextDisable.set(disable)
+  def disableNextButton(disabled: Boolean): Unit =
+    nextDisable.set(disabled)
 
 
