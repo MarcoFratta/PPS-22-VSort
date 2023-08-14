@@ -18,7 +18,9 @@ trait ViewElement:
 trait Inputs[X,Y]:
   def get:Map[X,Y]
 
-trait MultipleList[X <: HasName, Y >: HasName](x:List[X], selected: X) extends ViewElement with Inputs[X,Y]:
+trait InputElement[X,Y] extends ViewElement with Inputs[X,Y]
+
+trait MultipleList[X <: HasName, Y >: HasName](x:List[X], selected: X) extends InputElement[X,Y]:
 
   val selectedVar: Var[String] = Var(selected.name)
   val map: Map[String, X] = x.map(a => (a.name, a)).toMap
@@ -51,7 +53,7 @@ case class MultipleListWithF[X <: HasName, Y >: HasName](x:List[X], selected: X,
 trait IntConverter[T]:
   def convert(x:T):Int
 
-case class SingleValue[X,Y >:Int](x:X, starterValue: Y, min: Y, max: Y) extends ViewElement with Inputs[X,Y]:
+case class SingleValue[X,Y >:Int](x:X, starterValue: Y, min: Y, max: Y) extends InputElement[X,Y]:
   val sliderValue = Var(starterValue)
   def renderSlider[T](item: T): Element =
     div(

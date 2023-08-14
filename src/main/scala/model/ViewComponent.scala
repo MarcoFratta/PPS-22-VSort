@@ -30,6 +30,7 @@ object ViewComponent:
                                 algorithms:List[Algorithm[c.model.ValType,c.model.ResultType] with HasName],
                                 distributions:List[Distribution[c.model.ParamsType,c.model.ValType] with HasName],
                                 p:Properties with IntTypes):
+        private val DefaultValue = 10
         import BottomBar.*
 
         println("Entering JsView")
@@ -38,7 +39,7 @@ object ViewComponent:
         println("selectedp " + selectedP.params)
         private val dis = MultipleListWithFFactory(distributions, p.distribution,
           x =>
-            val parameterMap = distributions.find(a => a equals x).get.params.map(a => a -> 10).toMap
+            val parameterMap = distributions.find(a => a equals x).get.params.map(a => a -> DefaultValue).toMap
             selectedP = Properties(algo.get.head._1,x, parameterMap)
             c.controller.update(selectedP)
         )
