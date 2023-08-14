@@ -10199,7 +10199,7 @@ function $p_Lview_GraphicVisualizer$__showGraphic__V($thiz) {
   canvasElem.getContext("2d");
   var x = (0.9 * $uD(window.innerWidth));
   canvasElem.width = $doubleToInt(x);
-  var x$1 = (0.35 * $uD(window.innerWidth));
+  var x$1 = (0.6 * $uD(window.innerHeight));
   canvasElem.height = $doubleToInt(x$1);
   canvasElem.style.height = (($uI(canvasElem.height) / $uD(window.devicePixelRatio)) + "px");
   canvasElem.style.width = (($uI(canvasElem.width) / $uD(window.devicePixelRatio)) + "px");
@@ -10372,7 +10372,7 @@ $c_Lview_RectanglesVisualizer$.prototype.setDimension__I__I__V = (function(nRect
   var x = (0.9 * $uD(window.innerWidth));
   $$x1.width = $doubleToInt(x);
   var $$x2 = this.Lview_RectanglesVisualizer$__f_canvasElem;
-  var x$1 = (0.35 * $uD(window.innerWidth));
+  var x$1 = (0.6 * $uD(window.innerHeight));
   $$x2.height = $doubleToInt(x$1);
   this.Lview_RectanglesVisualizer$__f_rectangleWidth = ($uI(this.Lview_RectanglesVisualizer$__f_canvasElem.width) / (1.5 * nRect))
 });
@@ -43753,4 +43753,4 @@ var $t_Lmodel_Params$__Std = null;
 var $t_Lmodel_Params$__Size = null;
 var $t_Lmodel_Params$__DuplicatesPercentage = null;
 $s_LMain__main__AT__V(new ($d_T.getArrayOf().constr)([]));
-//# sourceMappingURL=vsort-fastopt.js.map
+//# sourceMappingURL=main.js.map

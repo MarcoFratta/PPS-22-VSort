@@ -24,7 +24,7 @@ object RectanglesVisualizer:
     clear()
     maxValue = mValue
     canvasElem.width = (window.innerWidth * 0.9).intValue
-    canvasElem.height = (window.innerWidth * 0.35).intValue
+    canvasElem.height = (window.innerHeight * 0.6).intValue
     rectangleWidth = canvasElem.width / (1.5 * nRect)
 
   def drawSingleRectangle(value: Int, color: String): Unit =
@@ -66,7 +66,7 @@ object GraphicVisualizer:
     val context = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
 
     canvasElem.width = (window.innerWidth * 0.9).intValue
-    canvasElem.height = (window.innerWidth * 0.35).intValue
+    canvasElem.height = (window.innerHeight * 0.6).intValue
 
     canvasElem.style.height = canvasElem.height / window.devicePixelRatio + "px";
     canvasElem.style.width = canvasElem.width / window.devicePixelRatio + "px";
