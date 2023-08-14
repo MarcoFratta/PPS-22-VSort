@@ -34,12 +34,11 @@ object ModelComponent:
           AlgorithmFactory.intAlgorithm(heapSort, "Heap sort"),
             AlgorithmFactory.intAlgorithm(selectionSort, "Selection sort"))
 
-
-        override def getData(p: Properties with IntTypes): ResultType =
+      override def getData(p: Properties with IntTypes): ResultType =
           val seq = p.distribution.generator(p.params).generateAll(0 to
             p.params(Size)).toList.sortWith(p.distribution.compare).map(x => x._2)
           p.algorithm.execute(seq)
-        override def distributions: Set[Distribution[ParamsType, ValType] with HasName] =
+      override def distributions: Set[Distribution[ParamsType, ValType] with HasName] =
           import Distributions.intParams
           import model.DistributionFactory.*
           import model.IntOrderings.*

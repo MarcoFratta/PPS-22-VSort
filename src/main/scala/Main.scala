@@ -15,11 +15,12 @@ def Main(): Unit =
       with ViewComponent.Interface
       with ControllerComponent.Interface:
     // Instantiation of components , dependencies are implicit
-    override val model = intModel
-    override val viewModel = intModel
+
+    override val model = new ModelImpl()
+    override val viewModel = model
     override val view = new ViewImpl()
     override val controller = new ControllerImpl()
-    val intModel = new ModelImpl()
+
 
   MVC.controller.update(Properties.defaultProperty(MVC.viewModel))
 
