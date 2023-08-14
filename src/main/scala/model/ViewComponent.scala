@@ -72,11 +72,11 @@ object ViewComponent:
               )
             ),
             onMountCallback (_ =>
-              if data.nonEmpty then GraphicVisualizer.getData(data)),
+              if data.nonEmpty then GraphicVisualizer.setData(data)),
             div(canvasTag(
               className := "canvas")),
             div(className:= "bottomBar",
-              BottomBar.renderBottomBar),
+              BottomBar.getBottomBar),
           )
 
         def updated(data: c.model.ResultType): JsView =

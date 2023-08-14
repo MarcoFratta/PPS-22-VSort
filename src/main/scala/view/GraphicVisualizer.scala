@@ -9,17 +9,16 @@ import view.BottomBar
 import java.util.{Timer, TimerTask}
 import scala.annotation.tailrec
 
-
 object RectanglesVisualizer:
+
   private var canvasElem: html.Canvas = dom.document.querySelector(".canvas").asInstanceOf[dom.html.Canvas]
   var index = 0
   private var maxValue = 0
   private var rectangleWidth = 0.0
   def setDimension(nRect: Int, mValue: Int): Unit =
-    clear
+    clear()
     maxValue = mValue
     rectangleWidth = canvasElem.width / (1.5 * nRect)
-
 
   def drawSingleRectangle(value: Int, color: String): Unit =
 
@@ -29,7 +28,7 @@ object RectanglesVisualizer:
     val height = (value * canvasElem.height) / maxValue
     index = index + 1
     ctx.fillRect(x, canvasElem.height - height, rectangleWidth, height)
-  def clear: Unit =
+  def clear(): Unit =
     canvasElem = dom.document.querySelector(".canvas").asInstanceOf[dom.html.Canvas]
     val ctx = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
     index =0
@@ -45,27 +44,28 @@ object GraphicVisualizer:
   private var timer = new Timer()
   private var isExecuting: Boolean = false
 
-  def getData(seq: Seq[State[Int]]): Unit =
+  def setData(seq: Seq[State[Int]]): Unit =
     seqStep = seq
     starterSeq = seq
     RectanglesVisualizer.setDimension(seqStep.head.get.size,
       seqStep.head.get.map(a => a.value).max)
-    showGraphic
-    replay
-
-
+    showGraphic()
+    replay()
 
 
   private def getColourFromProperties(elementInfo: ElementInfo[Int]): String =
+    if index == seqStep.size - 1
+      then "green"
+    else
     elementInfo match
       case _ if elementInfo.selected => "green"
       case _ if elementInfo.compared => "blue"
       case _ if elementInfo.hidden => "black"
       case _ => "red"
 
-  private def showGraphic: Unit =
+  private def showGraphic(): Unit =
     val list1 = seqStep(index)
-    RectanglesVisualizer.clear
+    RectanglesVisualizer.clear()
     @tailrec
     def drawList(l: List[ElementInfo[Int]]): Unit =
       l match
@@ -75,49 +75,49 @@ object GraphicVisualizer:
         case _ =>
     drawList(list1.get.toList)
 
-  def play: Unit =
-    BottomBar.changePlayIcon
+  def play(): Unit =
+    BottomBar.changePlayIcon()
     timer = new Timer()
     isExecuting = true
     val task = new TimerTask() {
-      def run() = nextStep
+      def run(): Unit = nextStep()
     }
     timer.schedule(task, 0, period)
 
-  def nextStep: Unit =
+  def nextStep(): Unit =
     BottomBar.enableBackButton(true)
     if index == seqStep.size - 1
     then
       BottomBar.disableNextButton(true)
-      end
+      end()
     else index = index + 1
-    showGraphic
+    showGraphic()
 
-  def backStep: Unit =
+  def backStep(): Unit =
     if index equals 1 then
       BottomBar.enableBackButton(false)
     index = index - 1
     if index < seqStep.size then
       BottomBar.disableNextButton(false)
-      BottomBar.changeStopIcon
-    showGraphic
+      BottomBar.changeStopIcon()
+    showGraphic()
 
 
-  def stop: Unit =
+  def stop(): Unit =
     isExecuting = false
     timer.cancel()
-    BottomBar.changeStopIcon
+    BottomBar.changeStopIcon()
 
-  def replay: Unit =
+  def replay(): Unit =
     index = 0
     starterSeq = seqStep
     BottomBar.enableBackButton(false)
     BottomBar.disableNextButton(false)
-    stop
+    stop()
     isExecuting = false
-    showGraphic
+    showGraphic()
 
-  def end: Unit =
+  def end(): Unit =
     isExecuting = false
     timer.cancel()
     BottomBar.disableNextButton(true)
@@ -126,7 +126,7 @@ object GraphicVisualizer:
     timer.cancel()
     timer = new Timer()
     val task = new TimerTask() {
-      def run(): Unit = nextStep
+      def run(): Unit = nextStep()
     }
     period = 1001 - speed
     if isExecuting

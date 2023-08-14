@@ -30,16 +30,16 @@ object BottomBar:
   private val nextDisable = Var(false)
   private val backDisable = Var(true)
   private val replayDisable = Var(false)
-  private val controlButton = Var( ButtonImpl("controlButton", "fa-play", _ => GraphicVisualizer.play, nextDisable).getButton)
-  private val playButton = ButtonImpl("play", "fa-play", _ => GraphicVisualizer.play, nextDisable)
-  private val stopButton = ButtonImpl("stop", "fa-stop", _ => GraphicVisualizer.stop, nextDisable)
+  private val controlButton = Var( ButtonImpl("controlButton", "fa-play", _ => GraphicVisualizer.play(), nextDisable).getButton)
+  private val playButton = ButtonImpl("play", "fa-play", _ => GraphicVisualizer.play(), nextDisable)
+  private val stopButton = ButtonImpl("stop", "fa-stop", _ => GraphicVisualizer.stop(), nextDisable)
 
-  def renderBottomBar : Element =
+  def getBottomBar : Element =
     ul(
-      li(ButtonImpl("replay", "fa-rotate-left", _ => GraphicVisualizer.replay, replayDisable).getButton),
-      li(ButtonImpl("back", "fa-backward", _ => GraphicVisualizer.backStep, backDisable).getButton),
+      li(ButtonImpl("replay", "fa-rotate-left", _ => GraphicVisualizer.replay(), replayDisable).getButton),
+      li(ButtonImpl("back", "fa-backward", _ => GraphicVisualizer.backStep(), backDisable).getButton),
       li(child <-- controlButton.signal),
-      li(ButtonImpl("next", "fa-forward", _ => GraphicVisualizer.nextStep, nextDisable).getButton),
+      li(ButtonImpl("next", "fa-forward", _ => GraphicVisualizer.nextStep(), nextDisable).getButton),
       li(renderSpeedBar)
     )
 
@@ -62,10 +62,10 @@ object BottomBar:
     )
 
 
-  def changePlayIcon: Unit =
+  def changePlayIcon(): Unit =
     controlButton.set(stopButton.getButton)
 
-  def changeStopIcon: Unit =
+  def changeStopIcon(): Unit =
     controlButton.set(playButton.getButton)
 
   def enableBackButton(enabled: Boolean): Unit =
