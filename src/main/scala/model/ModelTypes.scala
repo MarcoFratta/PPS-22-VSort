@@ -39,12 +39,12 @@ trait Algorithms extends ModelTypes:
 trait Distributions extends ModelTypes:
   def distributions: Set[Distribution[ParamsType, ValType] with HasName]
 
-trait Model extends Algorithms with Distributions
-
-
 object DistributionFactory:
+
+
   def apply[K, T: Generable](f: Map[Params, K] => Generator[T],
-                             p: Set[Params], n: String)(using c: Comparable[(Int, T)]): Distribution[K, T] with HasName =
+                             p: Set[Params], n: String)
+                            (using c: Comparable[(Int, T)]): Distribution[K, T] with HasName =
     new Distribution[K, T] with HasName:
       override def generator(params: Map[Params, K]): Generator[T] = f(params)
 
@@ -54,17 +54,22 @@ object DistributionFactory:
 
       override def name: String = n
 
-  def apply[K, T: Generable](f: Map[Params, K] => Generator[T],
+  def apply[K, T: Generable](f: (Map[Params, K], Conversion[Params, K]) => Generator[T],
                              p: Set[Params], n: String,
                              c: Comparable[(Int, T)]): Distribution[K, T] with HasName =
     new Distribution[K, T] with HasName:
-      override def generator(params: Map[Params, K]): Generator[T] = f(params)
+      override def generator(params: Map[Params, K]): Generator[T] =
+        val ca: Conversion[Params, K] = x => params(x)
+        f(params, ca)
+
 
       override def params: Set[Params] = p
 
       override def compare(a: (Int, T), b: (Int, T)): Boolean = c.compare(a, b)
 
       override def name: String = n
+
+
 
 object AlgorithmFactory:
   def intAlgorithm[C:Comparable](f: Seq[C] => Seq[Step], n: String): Algorithm[C,Seq[State[C]]] with HasName =

@@ -3,8 +3,9 @@ package view
 import com.raquo.laminar.api.L.*
 import model.{ElementInfo, State}
 import org.scalajs.dom
-import org.scalajs.dom.html
+import org.scalajs.dom.{CanvasRenderingContext2D, html, window}
 import view.BottomBar
+import view.RectanglesVisualizer.canvasElem
 
 import java.util.{Timer, TimerTask}
 import scala.annotation.tailrec
@@ -12,16 +13,19 @@ import scala.annotation.tailrec
 object RectanglesVisualizer:
 
   private var canvasElem: html.Canvas = dom.document.querySelector(".canvas").asInstanceOf[dom.html.Canvas]
+  val context = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+  val scale = window.devicePixelRatio
+
   var index = 0
   private var maxValue = 0
   private var rectangleWidth = 0.0
+
   def setDimension(nRect: Int, mValue: Int): Unit =
     clear()
     maxValue = mValue
     rectangleWidth = canvasElem.width / (1.5 * nRect)
 
   def drawSingleRectangle(value: Int, color: String): Unit =
-
     val ctx = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
     val x = index * (rectangleWidth + 0.5)
     ctx.fillStyle = color
@@ -53,19 +57,18 @@ object GraphicVisualizer:
     replay()
 
 
-  private def getColourFromProperties(elementInfo: ElementInfo[Int]): String =
-    if index == seqStep.size - 1
-      then "green"
-    else
-    elementInfo match
-      case _ if elementInfo.selected => "green"
-      case _ if elementInfo.compared => "blue"
-      case _ if elementInfo.hidden => "black"
-      case _ => "red"
-
   private def showGraphic(): Unit =
     val list1 = seqStep(index)
     RectanglesVisualizer.clear()
+    val canvasElem: html.Canvas = dom.document.querySelector(".canvas").asInstanceOf[dom.html.Canvas]
+    val context = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
+
+    canvasElem.width = (window.innerWidth * 0.6).intValue
+    canvasElem.height = (window.innerWidth * 0.37).intValue
+
+    canvasElem.style.height = canvasElem.height / window.devicePixelRatio + "px";
+    canvasElem.style.width = canvasElem.width / window.devicePixelRatio + "px";
+
     @tailrec
     def drawList(l: List[ElementInfo[Int]]): Unit =
       l match
@@ -73,7 +76,18 @@ object GraphicVisualizer:
           RectanglesVisualizer.drawSingleRectangle(h.value, getColourFromProperties(h))
           drawList(t)
         case _ =>
+
     drawList(list1.get.toList)
+
+  private def getColourFromProperties(elementInfo: ElementInfo[Int]): String =
+    if index == seqStep.size - 1
+    then "#42A5F5"
+    else
+      elementInfo match
+        case _ if elementInfo.selected => "#E3F2FD"
+        case _ if elementInfo.compared => "#1565C0"
+        case _ if elementInfo.hidden => "#101010"
+        case _ => "#42A5F5"
 
   def play(): Unit =
     BottomBar.changePlayIcon()

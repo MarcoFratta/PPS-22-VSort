@@ -1,12 +1,12 @@
-package model
+package view
 
 import com.raquo.laminar.api.L.{Element, HtmlElement, button, canvasTag, child, children, className, div, i, li, nodeSeqToModifier, onClick, onLoad, onMountBind, onMountCallback, onMountInsert, render, renderOnDomContentLoaded, ul, windowEvents, *}
-import controller.Properties
+import com.raquo.laminar.api.eventPropToProcessor
+import controller.{ControllerComponent, Properties}
 import model.*
 import org.scalajs.dom
-import view.{BottomBar, GraphicVisualizer, MultipleListFactory, MultipleListWithFFactory, SingleValue, SingleValueFactory}
-import com.raquo.laminar.api.eventPropToProcessor
 import org.scalajs.dom.KeyFormat.raw
+import view.{BottomBar, GraphicVisualizer, MultipleListFactory, MultipleListWithFFactory, SingleValue, SingleValueFactory}
 
 
 
@@ -16,21 +16,25 @@ object ViewComponent:
   trait Provider:
     val view: View with IntTypes
 
-  type Requirements = ModelComponent.Model.Provider with ControllerComponent.Provider
+  type Requirements = ControllerComponent.Provider with ModelComponent.Observer
   trait Component:
     c:Requirements =>
 
     class ViewImpl extends View with IntTypes:
 
-      private var gui:JsView = JsView(Seq(), c.model.algorithms.toList, c.model.distributions.toList,
-        Properties(c.model.algorithms.toList.head, c.model.distributions.toList.head,
-          c.model.distributions.toList.head.params.map(a => a -> 10).toMap))
-      override def update(data: c.model.ResultType): Unit = gui = gui.updated(data)
-      private case class JsView(data:c.model.ResultType,
-                                algorithms:List[Algorithm[c.model.ValType,c.model.ResultType] with HasName],
-                                distributions:List[Distribution[c.model.ParamsType,c.model.ValType] with HasName],
-                                p:Properties with IntTypes):
+      private var gui: JsView = JsView(Seq(),
+        c.viewModel.algorithms.toList,
+        c.viewModel.distributions.toList,
+        Properties.defaultProperty(c.viewModel))
+
+      override def update(data: c.viewModel.ResultType): Unit = gui = gui.updated(data)
+
+      private case class JsView(data: c.viewModel.ResultType,
+                                algorithms: List[Algorithm[c.viewModel.ValType, c.viewModel.ResultType] with HasName],
+                                distributions: List[Distribution[c.viewModel.ParamsType, c.viewModel.ValType] with HasName],
+                                p: Properties with IntTypes):
         private val DefaultValue = 10
+
         import BottomBar.*
 
         private val algo = MultipleListFactory(algorithms, p.algorithm)
@@ -38,11 +42,11 @@ object ViewComponent:
         private val dis = MultipleListWithFFactory(distributions, p.distribution,
           x =>
             val parameterMap = distributions.find(a => a equals x).get.params.map(a => a -> DefaultValue).toMap
-            selectedP = Properties(algo.get.head._1,x, parameterMap)
+            selectedP = Properties(algo.get.head._1, x, parameterMap)
             c.controller.update(selectedP)
         )
 
-        given Conversion[c.model.ParamsType, Int] = x => x
+        given Conversion[c.viewModel.ParamsType, Int] = x => x
         private val params = p.params.map(a => SingleValueFactory(a._1, a._2, a._1.min, a._1.max)).toList
 
         dom.document.getElementById("app").innerHTML = ""
@@ -79,7 +83,7 @@ object ViewComponent:
               BottomBar.getBottomBar),
           )
 
-        def updated(data: c.model.ResultType): JsView =
+        def updated(data: c.viewModel.ResultType): JsView =
           copy(data = data, p = selectedP)
 
   trait Interface extends Provider with Component:

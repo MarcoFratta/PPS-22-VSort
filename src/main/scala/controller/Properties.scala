@@ -10,10 +10,17 @@ trait Properties extends ModelTypes:
   def distribution: Distribution[ParamsType, ValType] with HasName
 
 object Properties:
-  private case class PropertiesImpl(override val algorithm: Algorithm[Int,Seq[State[Int]]] with HasName,
-                                           override val distribution: Distribution[Int,Int] with HasName,
-                                           override val params: Map[Params, Int]) extends Properties with IntTypes
+
+  def defaultProperty(c: Algorithms with Distributions with IntTypes): Properties with IntTypes =
+    Properties(c.algorithms.head,
+      c.distributions.head,
+      c.distributions.head.params.map(a => a -> 10).toMap)
+
   def apply(algorithm: Algorithm[Int, Seq[State[Int]]] with HasName,
-                   distribution: Distribution[Int, Int] with HasName,
-                   params: Map[Params, Int]): Properties with IntTypes =
+            distribution: Distribution[Int, Int] with HasName,
+            params: Map[Params, Int]): Properties with IntTypes =
     PropertiesImpl(algorithm, distribution, params)
+
+  private case class PropertiesImpl(override val algorithm: Algorithm[Int, Seq[State[Int]]] with HasName,
+                                    override val distribution: Distribution[Int, Int] with HasName,
+                                    override val params: Map[Params, Int]) extends Properties with IntTypes

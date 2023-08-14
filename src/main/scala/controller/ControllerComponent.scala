@@ -1,12 +1,12 @@
-package model
+package controller
 
 import controller.Properties
-import model.*
 import model.ModelComponent.Model
+import model.{IntTypes, ModelComponent, Params}
 import view.*
 
 object ControllerComponent:
-  type Requirements = Model.Provider with ViewComponent.Provider
+
 
   trait Controller[T]:
     def update(p: T): Unit
@@ -14,6 +14,7 @@ object ControllerComponent:
   trait Provider:
     val controller: Controller[Properties with IntTypes]
 
+  type Requirements = ModelComponent.Provider with ViewComponent.Provider
   trait Component:
     c: Requirements =>
 

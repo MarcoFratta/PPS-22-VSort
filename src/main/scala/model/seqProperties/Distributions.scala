@@ -17,6 +17,9 @@ object Distributions:
     extends UniformGen[T](mi, ma)
       with Duplicated(percentage.toDouble / 100)
 
+  def intParams(p: Map[Params, Int]): Conversion[Params, Int] =
+    (x: Params) => p(x)
+
 
 
 
