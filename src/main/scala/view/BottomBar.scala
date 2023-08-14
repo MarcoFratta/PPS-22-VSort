@@ -25,21 +25,21 @@ trait Button:
 case class ButtonImpl(override val id:String, override val icon: String, override val function: Any => Unit,
                  override val buttonDisabled: Var[Boolean]) extends Button
 
-case class BottomBar(graphFunctions: GraphicVisualizer):
+object BottomBar:
  // private val graphFunctions = GraphFunctions(controller)
   private val nextDisable = Var(false)
   private val backDisable = Var(true)
   private val replayDisable = Var(false)
-  private val controlButton = Var( ButtonImpl("controlButton", "fa-play", _ => graphFunctions.play, nextDisable).getButton)
-  private val playButton = ButtonImpl("play", "fa-play", _ => graphFunctions.play, nextDisable)
-  private val stopButton = ButtonImpl("stop", "fa-stop", _ => graphFunctions.stop, nextDisable)
+  private val controlButton = Var( ButtonImpl("controlButton", "fa-play", _ => GraphicVisualizer.play, nextDisable).getButton)
+  private val playButton = ButtonImpl("play", "fa-play", _ => GraphicVisualizer.play, nextDisable)
+  private val stopButton = ButtonImpl("stop", "fa-stop", _ => GraphicVisualizer.stop, nextDisable)
 
   def renderBottomBar : Element =
     ul(
-      li(ButtonImpl("replay", "fa-rotate-left", _ => graphFunctions.replay, replayDisable).getButton),
-      li(ButtonImpl("back", "fa-backward", _ => graphFunctions.backStep, backDisable).getButton),
+      li(ButtonImpl("replay", "fa-rotate-left", _ => GraphicVisualizer.replay, replayDisable).getButton),
+      li(ButtonImpl("back", "fa-backward", _ => GraphicVisualizer.backStep, backDisable).getButton),
       li(child <-- controlButton.signal),
-      li(ButtonImpl("next", "fa-forward", _ => graphFunctions.nextStep, nextDisable).getButton),
+      li(ButtonImpl("next", "fa-forward", _ => GraphicVisualizer.nextStep, nextDisable).getButton),
       li(renderSpeedBar)
     )
 
@@ -56,7 +56,7 @@ case class BottomBar(graphFunctions: GraphicVisualizer):
         maxAttr := "1000",
         value := sliderValue.now().toString,
         onChange.mapToValue.map(_.toInt) --> sliderValue,
-        onChange --> (v => graphFunctions.setSpeed(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt))
+        onChange --> (v => GraphicVisualizer.setSpeed(v.target.asInstanceOf[org.scalajs.dom.HTMLInputElement].value.toInt))
 
       ),
     )

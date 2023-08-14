@@ -1,12 +1,12 @@
 package model
 
-import com.raquo.laminar.api.L
+import com.raquo.laminar.api.L.{Element, HtmlElement, button, canvasTag, child, children, className, div, i, li, nodeSeqToModifier, onClick, onLoad, onMountBind, onMountCallback, onMountInsert, render, renderOnDomContentLoaded, ul, windowEvents, *}
 import controller.Properties
 import model.*
 import org.scalajs.dom
 import view.{BottomBar, GraphicVisualizer, MultipleListFactory, MultipleListWithFFactory, SingleValue, SingleValueFactory}
-import com.raquo.laminar.api.L.{Element, button, canvasTag, child, children, className, div, i, li, nodeSeqToModifier, onClick, onLoad, onMountBind, onMountCallback, onMountInsert, render, renderOnDomContentLoaded, ul, windowEvents}
 import com.raquo.laminar.api.eventPropToProcessor
+import org.scalajs.dom.KeyFormat.raw
 
 
 
@@ -33,10 +33,8 @@ object ViewComponent:
         private val DefaultValue = 10
         import BottomBar.*
 
-        println("Entering JsView")
         private val algo = MultipleListFactory(algorithms, p.algorithm)
         private var selectedP = p
-        println("selectedp " + selectedP.params)
         private val dis = MultipleListWithFFactory(distributions, p.distribution,
           x =>
             val parameterMap = distributions.find(a => a equals x).get.params.map(a => a -> DefaultValue).toMap
@@ -74,10 +72,11 @@ object ViewComponent:
               )
             ),
             onMountCallback (_ =>
-              if data.nonEmpty then GraphicVisualizer(data)),
+              if data.nonEmpty then GraphicVisualizer.getData(data)),
             div(canvasTag(
               className := "canvas")),
-            div(className:= "bottomBar"),
+            div(className:= "bottomBar",
+              BottomBar.renderBottomBar),
           )
 
         def updated(data: c.model.ResultType): JsView =
