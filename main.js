@@ -10203,7 +10203,7 @@ function $p_Lview_GraphicVisualizer$__showGraphic__V($thiz) {
   canvasElem.width = $doubleToInt(x$1);
   var x$2 = $uD(window.innerWidth);
   var y$1 = $uD(window.innerHeight);
-  var x$3 = (0.35 * $uD(Math.min(x$2, y$1)));
+  var x$3 = (0.62 * $uD(Math.min(x$2, y$1)));
   canvasElem.height = $doubleToInt(x$3);
   canvasElem.style.height = (($uI(canvasElem.height) / $uD(window.devicePixelRatio)) + "px");
   canvasElem.style.width = (($uI(canvasElem.width) / $uD(window.devicePixelRatio)) + "px");
@@ -10380,7 +10380,7 @@ $c_Lview_RectanglesVisualizer$.prototype.setDimension__I__I__V = (function(nRect
   var $$x2 = this.Lview_RectanglesVisualizer$__f_canvasElem;
   var x$2 = $uD(window.innerWidth);
   var y$1 = $uD(window.innerHeight);
-  var x$3 = (0.35 * $uD(Math.min(x$2, y$1)));
+  var x$3 = (0.62 * $uD(Math.min(x$2, y$1)));
   $$x2.height = $doubleToInt(x$3);
   this.Lview_RectanglesVisualizer$__f_rectangleWidth = ($uI(this.Lview_RectanglesVisualizer$__f_canvasElem.width) / (1.5 * nRect))
 });
