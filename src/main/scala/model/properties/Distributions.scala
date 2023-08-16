@@ -4,7 +4,7 @@ import model.*
 import model.api.Comparable
 import model.component.Params
 import model.properties.*
-import model.properties.Modifier.Duplicated
+import model.properties.Modifier.{Duplicated, Shifted}
 
 import scala.util.Random
 

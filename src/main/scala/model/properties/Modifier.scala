@@ -22,6 +22,10 @@ object Modifier:
   private def getRandomIndex[T](s: Seq[T]): Option[Int] =
     if s.isEmpty then Option.empty else Option(Random.nextInt(s.length))
 
+  trait Shifted[T](min: Double, max: Double) extends Generator[T] with HasRange:
+    abstract override def f(x: Int): Double =
+      min + (((super.f(x) - super.min) * (max - min)) / (super.max - super.min))
+
   trait Duplicated[T: Generable](@targetName("percentage") % : Double) extends Generator[T]:
     if % > 1 || % < 0 then
       throw new IllegalArgumentException("percentage must be between 0 and 1")

@@ -1,6 +1,7 @@
 package model
 
 import model.properties.*
+import model.properties.Modifier.Shifted
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
