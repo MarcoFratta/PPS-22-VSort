@@ -38,9 +38,6 @@ trait Multiplied[T: Generable](r:Double) extends Generator[T] with HasRange:
 
   abstract override def min: Int = (super.min* r).floor.intValue
 
-trait Shifted[T](min: Double, max: Double) extends Generator[T] with HasRange:
-  abstract override def f(x: Int): Double =
-    min + (((super.f(x) - super.min) * (max - min)) / (super.max - super.min))
 
 
 class GaussianGen[T: Generable](mean: Double, std: Double) extends Generator[T]
