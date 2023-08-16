@@ -1,4 +1,3 @@
-
 package view
 
 import com.raquo.laminar.api.L
@@ -36,7 +35,7 @@ trait MultipleList[X <: HasName, Y >: HasName](x:List[X], selected: X) extends I
       )
     )
   override def get: Map[X, Y] = Map(map(selectedVar.now()) -> map(selectedVar.now()))
-  override def element: Element = renderSelectList(x.toList)
+  override def element: Element = renderSelectList(x)
 
 case class MultipleListImpl[X <: HasName, Y >: HasName](x:List[X], selected: X) extends MultipleList[X,Y](x, selected)
 case class MultipleListWithF[X <: HasName, Y >: HasName](x:List[X], selected: X, f: X => Unit)
@@ -45,18 +44,16 @@ case class MultipleListWithF[X <: HasName, Y >: HasName](x:List[X], selected: X,
     form(
     select(
       value <-- selectedVar.signal,
-      x.toList.map(a => option(a.name)).toList,
+      x.map(a => option(a.name)).toList,
       onChange.mapToValue --> selectedVar,
       onChange.mapToValue --> (a => f(map(selectedVar.now()))),
     )
   )
 
-trait IntConverter[T]:
-  def convert(x:T):Int
 
 case class SingleValue[X,Y >:Int](x:X, starterValue: Y, min: Y, max: Y) extends InputElement[X,Y]:
   val sliderValue = Var(starterValue)
-  def renderSlider[T](item: T): Element =
+  private def renderSlider[T](item: T): Element =
     div(
       label(item.toString),
       input(
