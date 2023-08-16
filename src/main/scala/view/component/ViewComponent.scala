@@ -23,7 +23,6 @@ object ViewComponent:
 
     class ViewImpl extends View with IntTypes:
       private val prop = Properties.defaultProperty(c.viewModel)
-      println("prop alg" + prop.algorithm.name)
       private var gui: JsView = JsView(Seq(),
         c.viewModel.algorithms.toList.sortBy(_.name),
         c.viewModel.distributions.toList.sortBy(_.name),
@@ -43,6 +42,7 @@ object ViewComponent:
         private var selectedP = p
         private val dis = MultipleListWithFFactory(distributions, p.distribution,
           x =>
+            GraphicVisualizer.replay()
             val parameterMap = distributions.find(a => a equals x).get.params.map(a => a -> DefaultValue).toMap
             selectedP = Properties(algo.get.head._1, x, parameterMap)
             c.controller.update(selectedP)
