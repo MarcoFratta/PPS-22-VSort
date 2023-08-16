@@ -9,14 +9,13 @@ import view.*
 @main
 def Main(): Unit =
 
-  println("Creating MVC")
   object MVC
     extends ModelComponent.Interface
       with ViewComponent.Interface
       with ControllerComponent.Interface:
     // Instantiation of components , dependencies are implicit
 
-    override val model = new ModelImpl()
+    override val model = ModelImpl()
     override val viewModel = model
     override val view = new ViewImpl()
     override val controller = new ControllerImpl()

@@ -13,8 +13,6 @@ import scala.annotation.tailrec
 object RectanglesVisualizer:
 
   private var canvasElem: html.Canvas = dom.document.querySelector(".canvas").asInstanceOf[dom.html.Canvas]
-  val context = canvasElem.getContext("2d").asInstanceOf[dom.CanvasRenderingContext2D]
-  val scale = window.devicePixelRatio
 
   var index = 0
   private var maxValue = 0
@@ -50,7 +48,7 @@ object GraphicVisualizer:
   private var timer = new Timer()
   private var isExecuting: Boolean = false
 
-  def setData(seq: Seq[State[Int]]): Unit =
+  def update(seq: Seq[State[Int]]): Unit =
     seqStep = seq
     starterSeq = seq
     RectanglesVisualizer.setDimension(seqStep.head.get.size,
@@ -68,8 +66,8 @@ object GraphicVisualizer:
     canvasElem.width = (window.innerWidth * 0.9).intValue
     canvasElem.height = (window.innerWidth * 0.35).intValue
 
-    canvasElem.style.height = canvasElem.height / window.devicePixelRatio + "px";
-    canvasElem.style.width = canvasElem.width / window.devicePixelRatio + "px";
+    canvasElem.style.height = canvasElem.height / window.devicePixelRatio + "px"
+    canvasElem.style.width = canvasElem.width / window.devicePixelRatio + "px"
 
     @tailrec
     def drawList(l: List[ElementInfo[Int]]): Unit =

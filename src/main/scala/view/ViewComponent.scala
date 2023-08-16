@@ -76,7 +76,7 @@ object ViewComponent:
               )
             ),
             onMountCallback (_ =>
-              if data.nonEmpty then GraphicVisualizer.setData(data)),
+              if data.nonEmpty then GraphicVisualizer.update(data)),
             div(canvasTag(
               className := "canvas")),
             div(className:= "bottomBar",
