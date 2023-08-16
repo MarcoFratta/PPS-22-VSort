@@ -10197,10 +10197,14 @@ function $p_Lview_GraphicVisualizer$__showGraphic__V($thiz) {
   $m_Lview_RectanglesVisualizer$().clear__V();
   var canvasElem = document.querySelector(".canvas");
   canvasElem.getContext("2d");
-  var x = (0.9 * $uD(window.innerWidth));
-  canvasElem.width = $doubleToInt(x);
-  var x$1 = (0.35 * $uD(window.innerWidth));
-  canvasElem.height = $doubleToInt(x$1);
+  var x = $uD(window.innerWidth);
+  var y = $uD(window.innerHeight);
+  var x$1 = (0.9 * $uD(Math.max(x, y)));
+  canvasElem.width = $doubleToInt(x$1);
+  var x$2 = $uD(window.innerWidth);
+  var y$1 = $uD(window.innerHeight);
+  var x$3 = (0.62 * $uD(Math.min(x$2, y$1)));
+  canvasElem.height = $doubleToInt(x$3);
   canvasElem.style.height = (($uI(canvasElem.height) / $uD(window.devicePixelRatio)) + "px");
   canvasElem.style.width = (($uI(canvasElem.width) / $uD(window.devicePixelRatio)) + "px");
   $p_Lview_GraphicVisualizer$__drawList$1__sci_List__V($thiz, $n($n(list1).Lmodel_AlgorithmFactory$State$$anon$5__f_v$1).toList__sci_List())
@@ -10369,11 +10373,15 @@ $c_Lview_RectanglesVisualizer$.prototype.setDimension__I__I__V = (function(nRect
   this.clear__V();
   this.Lview_RectanglesVisualizer$__f_maxValue = mValue;
   var $$x1 = this.Lview_RectanglesVisualizer$__f_canvasElem;
-  var x = (0.9 * $uD(window.innerWidth));
-  $$x1.width = $doubleToInt(x);
+  var x = $uD(window.innerWidth);
+  var y = $uD(window.innerHeight);
+  var x$1 = (0.9 * $uD(Math.max(x, y)));
+  $$x1.width = $doubleToInt(x$1);
   var $$x2 = this.Lview_RectanglesVisualizer$__f_canvasElem;
-  var x$1 = (0.35 * $uD(window.innerWidth));
-  $$x2.height = $doubleToInt(x$1);
+  var x$2 = $uD(window.innerWidth);
+  var y$1 = $uD(window.innerHeight);
+  var x$3 = (0.62 * $uD(Math.min(x$2, y$1)));
+  $$x2.height = $doubleToInt(x$3);
   this.Lview_RectanglesVisualizer$__f_rectangleWidth = ($uI(this.Lview_RectanglesVisualizer$__f_canvasElem.width) / (1.5 * nRect))
 });
 $c_Lview_RectanglesVisualizer$.prototype.drawSingleRectangle__I__T__V = (function(value, color) {
@@ -43753,4 +43761,4 @@ var $t_Lmodel_Params$__Std = null;
 var $t_Lmodel_Params$__Size = null;
 var $t_Lmodel_Params$__DuplicatesPercentage = null;
 $s_LMain__main__AT__V(new ($d_T.getArrayOf().constr)([]));
-//# sourceMappingURL=vsort-fastopt.js.map
+//# sourceMappingURL=main.js.map
