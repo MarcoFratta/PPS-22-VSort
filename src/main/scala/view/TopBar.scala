@@ -4,11 +4,12 @@ package view
 import com.raquo.laminar.api.L
 import com.raquo.laminar.api.L.*
 import com.raquo.laminar.nodes.ReactiveElement
-import controller.Properties
-import model.InputType.SelectList
+import controller.component.Properties
 import model.*
+import model.component.HasName
 import org.scalajs.dom
 import view.BottomBar
+import view.InputType.SelectList
 
 import scala.annotation.tailrec
 import scala.collection.immutable.List

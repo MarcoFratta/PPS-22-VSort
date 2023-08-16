@@ -1,8 +1,8 @@
 package model
 
-import model.SortingAlgorithms.*
-import model.StepsTransformer
-import model.sortModel.SortOperations.*
+import model.algorithms.SortingAlgorithms.*
+import model.algorithms.StepsTransformer
+import model.api.SortOperations.*
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
@@ -11,7 +11,7 @@ import scala.util.{Failure, Success}
 
 class SortingTest extends AnyFlatSpec with Matchers:
 
-  import model.sortModel.SortOperations.given
+  import model.api.SortOperations.given
 
   private val visualizer = StepsTransformer[Int]
 

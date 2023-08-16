@@ -1,11 +1,12 @@
-package model
+package model.component
 
 import controller.*
+import controller.component.Properties
 import model.*
-import model.SortingAlgorithms.*
-import model.seqProperties.*
-import model.seqProperties.Distributions.*
-import model.sortModel.Comparable
+import model.algorithms.SortingAlgorithms.*
+import model.api.Comparable
+import model.properties.*
+import model.properties.Distributions.*
 import view.*
 
 
@@ -23,8 +24,8 @@ object ModelComponent:
   trait Component:
     case class ModelImpl() extends Model[Properties with IntTypes] with IntTypes:
 
-      import model.Params.*
-      import model.SortingAlgorithms.{*, given}
+      import Params.*
+      import model.algorithms.SortingAlgorithms.{*, given}
 
       override def algorithms: Set[Algorithm[ValType, ResultType] with HasName] =
         Set(AlgorithmFactory.intAlgorithm(bubbleSort, "Bubble sort"),
@@ -39,9 +40,9 @@ object ModelComponent:
             p.params(Size)).toList.sortWith(p.distribution.compare).map(x => x._2)
           p.algorithm.execute(seq)
       override def distributions: Set[Distribution[ParamsType, ValType] with HasName] =
+          import DistributionFactory.*
           import Distributions.intParams
-          import model.DistributionFactory.*
-          import model.IntOrderings.*
+          import IntOrderings.*
           given Generable[Int] = x => x.toInt + 1
 
           Set(DistributionFactory((p, c) =>

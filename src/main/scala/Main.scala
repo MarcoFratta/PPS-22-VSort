@@ -1,8 +1,10 @@
 import com.raquo.laminar.api.L.renderOnDomContentLoaded
 import controller.*
-import model.{Algorithms, Distributions, IntTypes, ModelComponent}
+import controller.component.{ControllerComponent, Properties}
+import model.component.{Algorithms, Distributions, IntTypes, ModelComponent}
 import org.scalajs.dom
 import view.*
+import view.component.ViewComponent
 
 
 

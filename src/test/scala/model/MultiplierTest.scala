@@ -1,6 +1,6 @@
 package model
 
-import model.seqProperties.{GaussianGen, Generable, Multiplied, Shifted}
+import model.properties.{GaussianGen, Generable, Multiplied, Shifted}
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 

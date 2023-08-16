@@ -1,6 +1,7 @@
 package model
 
-import model.sortModel.SortOperations.*
+import model.api.SortOperations.*
+import model.api.Step
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
@@ -9,7 +10,7 @@ import scala.language.postfixOps
 
 class SortableTest extends AnyFlatSpec with Matchers:
 
-  import model.sortModel.SortOperations.given
+  import model.api.SortOperations.given
 
 
   "A Sortable[Int,String] with steps" should "exists" in {

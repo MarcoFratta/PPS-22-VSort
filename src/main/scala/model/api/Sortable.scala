@@ -1,7 +1,6 @@
-package model.sortModel
+package model.api
 
-import model.Step
-import model.Step.*
+import model.api.Step.*
 
 import scala.annotation.targetName
 
@@ -12,19 +11,19 @@ trait Comparable[T]:
 trait Steppable[+C]:
   def steps: Seq[Step]
 
-  private[sortModel] def ofSteps(st: Seq[Step]): C
+  private[api] def ofSteps(st: Seq[Step]): C
 
 trait Data[T, +C]:
   def data: Seq[T]
 
-  private[sortModel] def ofData(dt: Seq[T]): C
+  private[api] def ofData(dt: Seq[T]): C
 
 trait Selections[K, V, +C]:
   def selections: Map[K, V]
 
   def get(s: K): Option[V] = selections.get(s)
 
-  private[sortModel] def ofSelections(d: Map[K, V]): C
+  private[api] def ofSelections(d: Map[K, V]): C
 
 
 object Sortable:
@@ -36,11 +35,11 @@ object Sortable:
     extends Steppable[Sortable[T, K]]
       with Data[T, Sortable[T, K]]
       with Selections[K, Int, Sortable[T, K]]:
-    override private[sortModel] def ofSteps(st: Seq[Step]): Sortable[T, K] = this.copy(steps = st)
+    override private[api] def ofSteps(st: Seq[Step]): Sortable[T, K] = this.copy(steps = st)
 
-    override private[sortModel] def ofSelections(mp: Map[K, Int]) = this.copy(selections = mp)
+    override private[api] def ofSelections(mp: Map[K, Int]) = this.copy(selections = mp)
 
-    override private[sortModel] def ofData(dt: Seq[T]) = this.copy(data = dt)
+    override private[api] def ofData(dt: Seq[T]) = this.copy(data = dt)
 
 
 object SortableOps:

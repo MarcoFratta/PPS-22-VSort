@@ -1,9 +1,10 @@
-package model.seqProperties
+package model.properties
 
 import model.*
-import model.seqProperties.*
-import model.seqProperties.Modifier.Duplicated
-import model.sortModel.Comparable
+import model.api.Comparable
+import model.component.Params
+import model.properties.*
+import model.properties.Modifier.Duplicated
 
 import scala.util.Random
 

@@ -1,16 +1,17 @@
 package model
 
 import model.*
-import model.Params.*
-import model.seqProperties.Modifier.*
-import model.seqProperties.*
-import model.sortModel.Comparable
+import model.api.Comparable
+import model.component.Params.*
+import model.component.{AlgorithmFactory, DistributionFactory, IntOrderings, Params}
+import model.properties.*
+import model.properties.Modifier.*
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.must.Matchers
 
 class ModelTest extends AnyFlatSpec with Matchers:
 
-  import SortingAlgorithms.{*, given}
+  import model.algorithms.SortingAlgorithms.{*, given}
 
   given Generable[Int] = x => x.toInt
 

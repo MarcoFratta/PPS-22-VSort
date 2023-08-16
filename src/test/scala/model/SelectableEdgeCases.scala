@@ -1,7 +1,7 @@
 package model
 
-import model.sortModel.SortOperations.*
-import model.sortModel.Sortable
+import model.api.SortOperations.*
+import model.api.Sortable
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
@@ -10,9 +10,9 @@ import scala.util.{Failure, Success}
 
 class SelectableEdgeCases extends AnyFlatSpec with Matchers:
 
-  import model.Step.*
-  import model.sortModel.SortOperations.given
-  import model.sortModel.SortableOps.*
+  import model.api.SortOperations.given
+  import model.api.SortableOps.*
+  import model.api.Step.*
 
 
   "Swap on an empty list" should "not do anything" in {

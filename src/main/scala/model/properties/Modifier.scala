@@ -1,4 +1,4 @@
-package model.seqProperties
+package model.properties
 
 import ai.dragonfly.math.stats.probability.distributions.*
 

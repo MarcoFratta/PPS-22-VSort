@@ -1,6 +1,6 @@
 package model
 
-import model.sortModel.SortOperations.*
+import model.api.SortOperations.*
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
@@ -9,7 +9,7 @@ import scala.util.{Failure, Success, Try}
 
 class SelectableBehaviourTest extends AnyFlatSpec with Matchers:
 
-  import model.sortModel.SortOperations.given
+  import model.api.SortOperations.given
 
   behavior of "A selectable"
 

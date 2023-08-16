@@ -1,4 +1,4 @@
-package model
+package model.api
 
 enum Step:
     case Swap[K](a: K, b: K)

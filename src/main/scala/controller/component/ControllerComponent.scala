@@ -1,9 +1,9 @@
-package controller
+package controller.component
 
-import controller.Properties
-import model.ModelComponent.Model
-import model.{IntTypes, ModelComponent, Params}
+import model.component.ModelComponent.Model
+import model.component.{IntTypes, ModelComponent, Params}
 import view.*
+import view.component.ViewComponent
 
 object ControllerComponent:
 

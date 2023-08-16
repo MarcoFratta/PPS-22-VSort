@@ -1,9 +1,8 @@
-package model.sortModel
+package model.api
 
-import model.Step
-import model.sortModel.SortAddOns.*
-import model.sortModel.Sortable.*
-import model.sortModel.SortableOps.{!, Monad}
+import model.api.SortAddOns.*
+import model.api.Sortable.*
+import model.api.SortableOps.{!, Monad}
 
 import scala.annotation.{tailrec, targetName}
 import scala.language.postfixOps
@@ -36,9 +35,9 @@ object SortAddOns:
 
   trait Stoppale[C](b: Boolean):
 
-    private[sortModel] def stopped: C
+    private[api] def stopped: C
 
-    private[sortModel] def isStopped: Boolean = b
+    private[api] def isStopped: Boolean = b
 
 
   private case class IterationImpl[+T](override val index: Int,
@@ -102,13 +101,13 @@ object Loopable:
       with Data[T, LoopableS[T, K]]
       with Selections[K, Int, LoopableS[T, K]]
       with Stoppale[LoopableS[T, K]](b):
-    override private[sortModel] def ofSteps(st: Seq[Step]) = this.copy(steps = st)
+    override private[api] def ofSteps(st: Seq[Step]) = this.copy(steps = st)
 
-    override private[sortModel] def ofSelections(mp: Map[K, Int]) = this.copy(selections = mp)
+    override private[api] def ofSelections(mp: Map[K, Int]) = this.copy(selections = mp)
 
-    override private[sortModel] def ofData(dt: Seq[T]) = this.copy(data = dt)
+    override private[api] def ofData(dt: Seq[T]) = this.copy(data = dt)
 
-    override private[sortModel] def stopped = this.copy(b = true)
+    override private[api] def stopped = this.copy(b = true)
 
 
 

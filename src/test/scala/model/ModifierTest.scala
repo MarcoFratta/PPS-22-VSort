@@ -1,6 +1,6 @@
 package model
 
-import model.seqProperties.*
+import model.properties.*
 import org.scalatest.PrivateMethodTester
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers

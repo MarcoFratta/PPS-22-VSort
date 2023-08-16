@@ -1,12 +1,13 @@
-package view
+package view.component
 
-import com.raquo.laminar.api.L.{Element, HtmlElement, button, canvasTag, child, children, className, div, i, li, nodeSeqToModifier, onClick, onLoad, onMountBind, onMountCallback, onMountInsert, render, renderOnDomContentLoaded, ul, windowEvents, *}
+import com.raquo.laminar.api.L.*
 import com.raquo.laminar.api.eventPropToProcessor
-import controller.{ControllerComponent, Properties}
+import controller.component.{ControllerComponent, Properties}
 import model.*
+import model.component.*
 import org.scalajs.dom
 import org.scalajs.dom.KeyFormat.raw
-import view.{BottomBar, GraphicVisualizer, MultipleListFactory, MultipleListWithFFactory, SingleValue, SingleValueFactory}
+import view.*
 
 
 

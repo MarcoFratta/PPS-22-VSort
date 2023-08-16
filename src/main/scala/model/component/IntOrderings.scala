@@ -1,6 +1,6 @@
-package model
+package model.component
 
-import model.sortModel.Comparable
+import model.api.Comparable
 
 object IntOrderings:
   val ascendingXOrder: Comparable[(Int, Int)] = (a, b) => a._1 - b._1 > 0

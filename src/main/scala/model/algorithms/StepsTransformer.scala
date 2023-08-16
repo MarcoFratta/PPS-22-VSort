@@ -1,13 +1,14 @@
-package model
+package model.algorithms
 
 import com.sun.tools.javac.util.Pair
-import model.ElementInfo.*
+import model.algorithms.ElementInfo.*
+import model.api.Step
 
 import scala.annotation.tailrec
 
 class StepsTransformer[T]:
 
-  import model.Step.*
+  import model.api.Step.*
   private type State = Seq[ElementInfo[T]]
 
   def getResult(steps: Seq[Step], seq: Seq[T]): Seq[T] = this.applySteps(steps, seq.map(i => newInfo(i)))

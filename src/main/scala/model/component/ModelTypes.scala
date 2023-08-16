@@ -1,10 +1,12 @@
-package model
+package model.component
 
-import model.SortingAlgorithms.{*, given}
-import model.seqProperties.Distributions.{GaussianDistribution, UniformDistribution}
-import model.seqProperties.{Generable, Generator}
-import model.sortModel.Comparable
-import model.{InputType, StepsTransformer}
+import model.*
+import model.algorithms.SortingAlgorithms.{*, given}
+import model.algorithms.{ElementInfo, StepsTransformer}
+import model.api.{Comparable, Step}
+import model.properties.Distributions.{GaussianDistribution, UniformDistribution}
+import model.properties.{Generable, Generator}
+import view.InputType
 
 trait HasName:
   def name: String

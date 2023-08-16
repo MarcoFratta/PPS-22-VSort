@@ -1,7 +1,8 @@
-package controller
+package controller.component
 
 import controller.*
 import model.*
+import model.component.*
 import view.*
 
 trait Properties extends ModelTypes:

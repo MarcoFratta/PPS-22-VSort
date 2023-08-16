@@ -1,7 +1,7 @@
-package model.seqProperties
+package model.properties
 
 import ai.dragonfly.math.stats.probability.distributions.{Gaussian, Uniform}
-import model.Params.Max
+import model.component.Params.Max
 
 import scala.compiletime.ops.int.Min
 

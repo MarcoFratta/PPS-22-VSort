@@ -1,7 +1,8 @@
 package view
 
 import com.raquo.laminar.api.L.*
-import model.{ElementInfo, State}
+import model.algorithms.ElementInfo
+import model.component.State
 import org.scalajs.dom
 import org.scalajs.dom.{CanvasRenderingContext2D, html, window}
 import view.BottomBar

@@ -1,4 +1,6 @@
-package model
+package view
+
+import model.component.HasName
 
 enum InputType:
   case Slider(min: Int, max: Int, name: String, defaultValue: Int)

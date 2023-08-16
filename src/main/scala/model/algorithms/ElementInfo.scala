@@ -1,4 +1,6 @@
-package model
+package model.algorithms
+
+import model.algorithms.ElementInfo
 
 trait ElementInfo[K]:
   def value: K

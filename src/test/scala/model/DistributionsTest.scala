@@ -1,9 +1,9 @@
 package model
 
-import model.seqProperties.Distributions.*
-import model.seqProperties.Generable
-import model.seqProperties.Modifier.countDuplicates
-import model.sortModel.Comparable
+import model.api.Comparable
+import model.properties.Distributions.*
+import model.properties.Generable
+import model.properties.Modifier.countDuplicates
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 

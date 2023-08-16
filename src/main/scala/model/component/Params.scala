@@ -1,6 +1,7 @@
-package model
+package model.component
 
-import model.seqProperties.HasRange
+import model.component.Params
+import model.properties.HasRange
 
 enum Params(minV: Int, maxV:Int) extends HasRange(minV, maxV):
   case Max extends Params(0, 100)

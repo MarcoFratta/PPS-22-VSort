@@ -1,14 +1,15 @@
-package model
+package model.algorithms
 
-import model.sortModel.Loopable.LoopableS
-import model.sortModel.SortOperations._
+import model.api.Loopable.LoopableS
+import model.api.SortOperations.*
+import model.api.Step
 
 import scala.language.postfixOps
 
 object SortingAlgorithms:
 
-  import model.sortModel.SortOperations.{*, given}
-  export model.sortModel.SortOperations.given
+  import model.api.SortOperations.{*, given}
+  export model.api.SortOperations.given
 
   def bubbleSort[T: Comparable](seq: Seq[T]): Seq[Step] =
 

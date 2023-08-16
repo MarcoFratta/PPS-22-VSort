@@ -1,9 +1,10 @@
 package model
 
+import model.api.Step
+import model.api.Step.*
 import org.scalatest.*
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
-import model.Step.*
 
 class StepTest extends AnyFlatSpec with Matchers {
 
