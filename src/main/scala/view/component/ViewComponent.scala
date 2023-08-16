@@ -22,11 +22,12 @@ object ViewComponent:
     c:Requirements =>
 
     class ViewImpl extends View with IntTypes:
-
+      private val prop = Properties.defaultProperty(c.viewModel)
+      println("prop alg" + prop.algorithm.name)
       private var gui: JsView = JsView(Seq(),
-        c.viewModel.algorithms.toList,
-        c.viewModel.distributions.toList,
-        Properties.defaultProperty(c.viewModel))
+        c.viewModel.algorithms.toList.sortBy(_.name),
+        c.viewModel.distributions.toList.sortBy(_.name),
+        prop)
 
       override def update(data: c.viewModel.ResultType): Unit = gui = gui.updated(data)
 
@@ -67,6 +68,7 @@ object ViewComponent:
                 li(
                   button(
                     className := "fa fa-check",
+
                     onClick --> (_ =>
                       val paramMap = params.map(a => a.get).foldLeft(Map.empty[Params, ParamsType])((param, map) => param ++ map)
                       selectedP = Properties(algo.get.head._1, dis.get.head._1, paramMap)

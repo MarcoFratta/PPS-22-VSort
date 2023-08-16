@@ -13,9 +13,9 @@ trait Properties extends ModelTypes:
 object Properties:
 
   def defaultProperty(c: Algorithms with Distributions with IntTypes): Properties with IntTypes =
-    Properties(c.algorithms.head,
-      c.distributions.head,
-      c.distributions.head.params.map(a => a -> 10).toMap)
+    Properties(c.algorithms.toList.minBy(_.name),
+      c.distributions.toList.minBy(_.name),
+      c.distributions.toList.minBy(_.name).params.map(a => a -> 10).toMap)
 
   def apply(algorithm: Algorithm[Int, Seq[State[Int]]] with HasName,
             distribution: Distribution[Int, Int] with HasName,
